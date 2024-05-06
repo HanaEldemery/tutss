@@ -41,10 +41,14 @@ import Organisation from "./pages/Organisation";
 import CommonPageteacher from "./pages/CommonPageteacher";
 import CommonPagegeneral from "./pages/CommonPagegeneral";
 import CommonPageDoctor from "./pages/CommonPageDoctor";
+import AdminHomePage from "./pages/AdminHomePage";
+
 
 import Halla from "./Search2";
 import Hana from "./pages/BloodRequest";
 import ViewAllOrganisations from  "./pages/ViewAllOrganisations";
+import ViewAllDonors from  "./pages/ViewAllDonors";
+
 function App() {
   return (
     <div className="App">
@@ -121,8 +125,10 @@ function App() {
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
           <Route path="/ViewAllOrganisations" exact element={<ViewAllOrganisations />} />
+          <Route path="/AdminHomePage" exact element={<AdminHomePage />} />
 
-          
+          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
+
           <Route path="/halla" exact element={<Halla />} />
 
           <Route path="/hana" exact element={<Hana />} />

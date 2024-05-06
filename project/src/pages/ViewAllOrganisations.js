@@ -40,6 +40,9 @@ function Search({ closePopup }) {
     );
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
+  const handleRedirect = () => {
+    window.location.href = '/AdminHomePage';
+  };
 
   return (
     <div className="all">
@@ -120,10 +123,9 @@ function Search({ closePopup }) {
               ))}
             </tbody>
           </Table>
-          <button onClick={() => closePopup(false)} className="search-button">
-            {" "}
-            BACK{" "}
-          </button>
+          <button onClick={handleRedirect} className="search-button">
+      BACK
+    </button>
         </Container>
       )}
 

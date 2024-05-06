@@ -18,7 +18,7 @@ function Login() {
         else {
 
         if (username === "Seif" && password === "Hana") {
-            alert("Login successful");
+            window.location.href = '/AdminHomePage';
         } else {
             setError("Invalid username or password");
             const clearError = () => {
