@@ -69,7 +69,7 @@ function TransportationSelection() {
                 <div className="confirm">
                     <div className="confirm_message">
                         <p>Pickup Slot Confirmed, Thank You for Your Donation</p>
-                        <Link to="/Donor">
+                        <Link to="/donationRequests">
                             <button>Go Back To Main Page</button>
                         </Link>
                     </div>
