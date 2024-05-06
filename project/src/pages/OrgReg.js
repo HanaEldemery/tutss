@@ -107,12 +107,10 @@ function OrgReg() { // my first name, last name, gender, email, password, contac
                 <div>
                 <label for="orgtype">Select Organization Type:</label>
                     <select id="orgtype">
-                    <option value="healthsector">Health Sector</option>
+                    <option value="hospital">Hospital</option>
                     <option value="school">School</option>
-                    <option value="refaid">Refugee Aid Organization</option>
                     <option value="orphanage">Orphanage</option>
-                    <option value="mosque">Mosque</option>
-                    <option value="church">Church</option>
+                    <option value="vet">Vet</option>
 
 
 
