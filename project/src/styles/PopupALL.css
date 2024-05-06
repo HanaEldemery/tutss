@@ -1,0 +1,25 @@
+.body {
+  height: 500px;
+  max-height: 500px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.search-button {
+  border: 1px solid black;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.small-box {
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  border-radius: 5px;
+}

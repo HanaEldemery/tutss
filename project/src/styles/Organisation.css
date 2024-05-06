@@ -1,0 +1,15 @@
+.all {
+  width: auto;
+  height: 1000px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.button-used {
+  color: black;
+  border-radius: 5px;
+  width: 200px;
+  height: 80px;
+  margin: 30px;
+}

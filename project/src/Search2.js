@@ -4,12 +4,12 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 //import "bootstrap/dist/css/bootstrap.min.css";
-import { ClothesList } from "../helpers/ClothesList";
-import Details from "../helpers/Details";
+import { data } from "./List";
+import Details from "./Details2";
 
 function Search() {
   const [search, setSearch] = useState("");
-  const [selectedItemId, setSelectedItemId] = useState(null);
+  const [selectedItemId, setSelectedItemId] = useState(null); // Track the selected item ID
 
   const handleDetailsClick = (itemId) => {
     setSelectedItemId(itemId);
@@ -18,7 +18,7 @@ function Search() {
   return (
     <div>
       <Container>
-        <h1 className="text-center mt-4">Contact Keeper</h1>
+        <h1 className="text-center mt-4">Search</h1>
         <Form>
           <InputGroup className="my-3">
             {/* onChange for search */}
@@ -35,19 +35,21 @@ function Search() {
             </tr>
           </thead>
           <tbody>
-            {ClothesList.filter((item) => {
-              return search.toLowerCase() === ""
-                ? item
-                : item.type.toLowerCase().includes(search.toLowerCase());
-            }).map((item, index) => (
-              <tr key={index}>
-                <td>{item.name}</td>
-                <button onClick={() => handleDetailsClick(item.id)}>
-                  DETAILS
-                </button>
-                {selectedItemId === item.id && <Details theKey={item.id} />}
-              </tr>
-            ))}
+            {data
+              .filter((item) => {
+                return search.toLowerCase() === ""
+                  ? item
+                  : item.type.toLowerCase().includes(search.toLowerCase());
+              })
+              .map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <button onClick={() => handleDetailsClick(item.id)}>
+                    DETAILS
+                  </button>
+                  {selectedItemId === item.id && <Details theKey={item.id} />}
+                </tr>
+              ))}
           </tbody>
         </Table>
       </Container>

@@ -1,5 +1,5 @@
 /*import logo from "./logo.svg";*/
-import "./App.css";
+import "./styles/App.css";
 import Login from "./pages/Login";
 import DonorReg from "./pages/DonorReg";
 import Roleselection from "./pages/roleselection";
@@ -19,15 +19,28 @@ import ToysRequests from "./pages/ToysRequests";
 import FoodRequests from "./pages/FoodRequests";
 import MedicalSuppliesRequests from "./pages/MedicalSuppliesRequests";
 import BloodRequests from "./pages/BloodRequests";
-import TeachingPosts from './pages/TeachingPosts'
-import MedicalCases from './pages/MedicalCases';
-import TransportationSelection from './pages/TransportationSelection';
-import DonationSuccessful from './pages/DonationSuccessful';
-import DropoffSelection from './pages/DropoffSelection';
-import TeacherPage from './pages/TeacherPage';
+import TeachingPosts from "./pages/TeachingPosts";
+import MedicalCases from "./pages/MedicalCases";
+import TransportationSelection from "./pages/TransportationSelection";
+import DonationSuccessful from "./pages/DonationSuccessful";
+import DropoffSelection from "./pages/DropoffSelection";
+import TeacherPage from "./pages/TeacherPage";
 import ClothingRequests from "./pages/ClothingRequests";
 import SchoolSuppliesDonations from "./pages/SchoolSuppliesDonations";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import DonationTypes from "./pages/DonationTypes";
+import Footer from "./components/Footer";
+//import Donation from "./assets/donation.jpg";
+import SignUpIn from "./pages/SignUpIn";
+import Map from "./pages/Map";
+import Donor from "./pages/Donor";
+import Admin from "./pages/Admin";
+import Testing from "./pages/SearchShalloudy";
+import Organisation from "./pages/Organisation";
+
+import Halla from "./Search2";
+import Hana from "./pages/BloodRequest";
 
 function App() {
   return (
@@ -40,10 +53,22 @@ function App() {
             path="/donationRequestss"
             element={<DonationRequestss />}
           />
-                    <Route exact path="/DonationRequests"  element={<DonationRequests/>} />
-          <Route exact path="/DonationRequest"  element={<DonationRequest/>} />
-             <Route exact path="/ClothingRequests"  element={<ClothingRequests />} />
-          <Route exact path="/SchoolSuppliesDonations"  element={<SchoolSuppliesDonations />} />
+          <Route
+            exact
+            path="/DonationRequests"
+            element={<DonationRequests />}
+          />
+          <Route exact path="/DonationRequest" element={<DonationRequest />} />
+          <Route
+            exact
+            path="/ClothingRequests"
+            element={<ClothingRequests />}
+          />
+          <Route
+            exact
+            path="/SchoolSuppliesDonations"
+            element={<SchoolSuppliesDonations />}
+          />
           <Route exact path="/toysRequests" element={<ToysRequests />} />
           <Route exact path="/foodRequests" element={<FoodRequests />} />
           <Route
@@ -66,21 +91,37 @@ function App() {
           <Route path="/OrgReg" exact element={<OrgReg />} />
           <Route path="/teacherprobono" exact element={<Teacherprobono />} />
 
-         <Route path="/TeachingPosts" element={<TeachingPosts />} />
+          <Route path="/TeachingPosts" element={<TeachingPosts />} />
           <Route path="/MedicalCases" element={<MedicalCases />} />
-          <Route path="/TransportationSelection" element={<TransportationSelection />} />
+          <Route
+            path="/TransportationSelection"
+            element={<TransportationSelection />}
+          />
           <Route path="/DropoffSelection" element={<DropoffSelection />} />
-          <Route path="/DonationSuccessful" element={<DonationSuccessful/>} />
-          <Route path="/TeacherPage" element={<TeacherPage/>} />
-          <Route exact path="/DonationRequests"  element={<DonationRequests/>} />
-          <Route exact path="/DonationRequest"  element={<DonationRequest/>} />
-          </Routes>
+          <Route path="/DonationSuccessful" element={<DonationSuccessful />} />
+          <Route path="/TeacherPage" element={<TeacherPage />} />
+          <Route
+            exact
+            path="/DonationRequests"
+            element={<DonationRequests />}
+          />
+          <Route exact path="/DonationRequest" element={<DonationRequest />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/donation" exact element={<DonationTypes />} />
+          <Route path="/account" exact element={<SignUpIn />} />
+          <Route path="/map" exact element={<Map />} />
+          <Route path="/donor" exact element={<Donor />} />
+          <Route path="/admin" exact element={<Admin />} />
+          <Route path="/testing" exact element={<Testing />} />
+          <Route path="/organisation" exact element={<Organisation />} />
+
+          <Route path="/halla" exact element={<Halla />} />
+
+          <Route path="/hana" exact element={<Hana />} />
+        </Routes>
       </Router>
     </div>
   );
 }
 
-
 export default App;
-
-
