@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
+import { Link } from "react-router-dom";
 
 
 function TeacherRole() {
@@ -28,7 +29,9 @@ function TeacherRole() {
       <h2>Please Upload a Teacher Authentication Certificate to Verify Your Profession</h2>
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <button type="submit">Confirm</button>
+        <Link to="/teacherprobono">
+        <button>Confirm</button>
+      </Link>
       </form>
     </div>
   );

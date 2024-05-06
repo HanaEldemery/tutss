@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Box, FormGroup, FormControlLabel, Checkbox, TextField } from "@mui/material"; // Import Material-UI components
 function teacherprobono() {
   return (
@@ -47,8 +48,9 @@ function teacherprobono() {
         <br />
         <br />
         <br />
-
-<button type="submit">Submit</button>
+        <Link to="/CommonPageteacher">
+        <button>Submit</button>
+      </Link>
   </form> 
      </Box>
   )

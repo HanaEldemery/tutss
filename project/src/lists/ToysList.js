@@ -15,6 +15,7 @@ export const ToysList = [
     category: "Stuffed Toys",
     picture: rabbit,
     quantity: 3,
+    xyz:"Toys",
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ export const ToysList = [
     category: "Cars",
     picture: car,
     quantity: 3,
+    xyz:"Toys",
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ export const ToysList = [
     category: "Board Games",
     picture: monopoly,
     quantity: 3,
+    xyz:"Toys",
   },
   {
     id: 4,
@@ -45,6 +48,7 @@ export const ToysList = [
     category: "Dolls",
     picture: barbie,
     quantity: 3,
+    xyz:"Toys",
   },
   {
     id: 5,
@@ -55,6 +59,7 @@ export const ToysList = [
     category: "Sports",
     picture: football,
     quantity: 3,
+    xyz:"Toys",
   },
   {
     id: 6,
@@ -65,5 +70,6 @@ export const ToysList = [
     category: "Outdoor",
     picture: rope,
     quantity: 3,
+    xyz:"Toys",
   },
 ];

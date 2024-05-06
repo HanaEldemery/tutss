@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 function DoctorRole() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -30,8 +31,9 @@ function DoctorRole() {
       <h2>Please Upload a Doctor Authentication Certificate to Verify Your Profession</h2>
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
-      </form>
+        <Link to="/CommonPageDoctor">
+        <button>Confirm</button>
+      </Link>      </form>
     </div>
     </div>
   );

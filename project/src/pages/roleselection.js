@@ -17,7 +17,7 @@ function roleselection() {
       <Link to="/teacherrole">
         <button> Teacher </button>
       </Link>
-      <Link to="/donorrole">
+      <Link to="/CommonPagegeneral">
         <button> Regular Donor </button>
       </Link>
  
