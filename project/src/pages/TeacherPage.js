@@ -71,6 +71,7 @@ function TeacherPage() {
                             {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
                             {item.Address && <p>Address: {item.Address}</p>}
                             {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
+                            {item.Location_Google_Marker && <p>{item.Location_Google_Marker}</p>}
                             {showDonateOptions === item.id && (
                                 <> 
                                     <Link to="/TransportationSelection">

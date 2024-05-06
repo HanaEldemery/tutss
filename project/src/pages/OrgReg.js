@@ -222,10 +222,8 @@ function OrgReg() { // my first name, last name, gender, email, password, contac
                 {error && <p>{error}</p>}
                 <button type="submit">Register</button>
                 
-            
       </form>
     </div>
     );
 }
-
 export default OrgReg;
