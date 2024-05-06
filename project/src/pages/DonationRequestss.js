@@ -78,7 +78,7 @@ const handleDonate = (id, xyz) => {
     if (xyz === 'Medical' || xyz === 'Teaching') {
         setShowDonateOptions(id); // Show donation options for valid items
     } else {
-        navigate('/DonationSuccessful'); // Redirect using navigate
+        navigate('/TransportationSelection'); // Redirect using navigate
     }
 };
 
@@ -259,7 +259,7 @@ const handleViewLess = () => {
                             {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
                             {item.Address && <p>Address: {item.Address}</p>}
                             {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
-                            {item.Location_Google_Marker} && <p> {item.Location_Google_Marker}</p>
+                            {item.Location_Google_Marker && <p>{item.Location_Google_Marker}</p>}
 
           
                             {showDonateOptions === item.id && (
