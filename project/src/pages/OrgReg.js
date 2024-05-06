@@ -68,7 +68,7 @@ function OrgReg() { // my first name, last name, gender, email, password, contac
 
     return (
         <div>
-            <h1>Organization Registration</h1>
+            <h1>Organization Registeration</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="firstname"> Enter First Name: </label>
