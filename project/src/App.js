@@ -72,6 +72,8 @@ function App() {
           <Route path="/DropoffSelection" element={<DropoffSelection />} />
           <Route path="/DonationSuccessful" element={<DonationSuccessful/>} />
           <Route path="/TeacherPage" element={<TeacherPage/>} />
+          <Route exact path="/DonationRequests"  element={<DonationRequests/>} />
+          <Route exact path="/DonationRequest"  element={<DonationRequest/>} />
           </Routes>
       </Router>
     </div>

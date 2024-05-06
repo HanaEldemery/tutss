@@ -15,7 +15,7 @@ import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
  
-function DonationRequests() {
+function DonationRequest() {
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -305,7 +305,7 @@ const handleViewLess = () => {
   );
 }
 
-export default DonationRequests
+export default DonationRequest
 
 
   
