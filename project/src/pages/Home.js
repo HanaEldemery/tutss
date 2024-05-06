@@ -4,24 +4,17 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
+      <h1>HASSAH Donations</h1>
+      <h1>Who are you today?</h1>
       <Link to="/donationRequestss">
-        <button> View All Donation Requestss medical</button>
+        <button> I am an Admin</button>
       </Link>
       <Link to="/donationRequest">
-        <button> View All Donation Requestss teacher </button>
+        <button> I am an Organization </button>
       </Link>
       <Link to="/donationRequests">
-        <button> General ya amar </button>
+        <button> I am a donor </button>
       </Link>
-      <div className="home">
-        <div className="headerContainer">
-          <h1> Eccomerce website </h1>
-          <p> HELP ONE HELP EVERYONE </p>
-          <Link to="/donation">
-            <button> DONATE NOW </button>
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
