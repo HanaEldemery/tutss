@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BloodList } from "../lists/BloodList";
-import BloodPopup from "../popups/BloodPopup";
+import BloodPopup from "../Popups/BloodPopup";
 
 function BloodRequests() {
   const [hospitalNameFilter, setHospitalNameFilter] = useState("");

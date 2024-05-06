@@ -12,7 +12,7 @@ import Adminchangepass from "./pages/Adminchangepass";
 import OrgReg from "./pages/OrgReg";
 import Teacherprobono from "./pages/teacherprobono";
 import Home from "./pages/Home";
-import DonationRequests from "./pages/DonationRequests";
+import DonationRequestss from "./pages/DonationRequestss";
 import ToysRequests from "./pages/ToysRequests";
 import FoodRequests from "./pages/FoodRequests";
 import MedicalSuppliesRequests from "./pages/MedicalSuppliesRequests";
@@ -23,6 +23,8 @@ import TransportationSelection from './pages/TransportationSelection';
 import DonationSuccessful from './pages/DonationSuccessful';
 import DropoffSelection from './pages/DropoffSelection';
 import TeacherPage from './pages/TeacherPage';
+import ClothingRequests from "./pages/ClothingRequests";
+import SchoolSuppliesDonations from "./pages/SchoolSuppliesDonations";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -33,9 +35,11 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route
             exact
-            path="/donationRequests"
-            element={<DonationRequests />}
+            path="/donationRequestss"
+            element={<DonationRequestss />}
           />
+             <Route exact path="/ClothingRequests"  element={<ClothingRequests />} />
+          <Route exact path="/SchoolSuppliesDonations"  element={<SchoolSuppliesDonations />} />
           <Route exact path="/toysRequests" element={<ToysRequests />} />
           <Route exact path="/foodRequests" element={<FoodRequests />} />
           <Route
@@ -70,4 +74,7 @@ function App() {
   );
 }
 
+
 export default App;
+
+
