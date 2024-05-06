@@ -64,7 +64,6 @@ function App() {
       </Router>
       <Router>
         <Routes>
-          <Route path="/Donor" element={<Donor />} />
           <Route path="/TeachingPosts" element={<TeachingPosts />} />
           <Route path="/MedicalCases" element={<MedicalCases />} />
           <Route path="/TransportationSelection" element={<TransportationSelection />} />
