@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FoodList } from "../lists/FoodList";
-import FoodPopup from "../Popups/FoodPopup";
+import FoodPopup from "../popups/FoodPopup";
 
 function FoodRequests() {
   const [typeFilter, setTypeFilter] = useState(""); // State for type filter

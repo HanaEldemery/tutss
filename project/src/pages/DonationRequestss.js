@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-import ClothesPopup from "../Popups/ClothesPopup";
-import BloodPopup from "../Popups/BloodPopup";
+import ClothesPopup from "../popups/ClothesPopup";
+import BloodPopup from "../popups/BloodPopup";
 import { ClothesList } from "../helpers/ClothesList";
-import Popup from "../Popups/Popup";
-import FoodPopup from "../Popups/FoodPopup";
-import MedicalSuppliesPopup from "../Popups/MedicalSuppliesPopup";
-import ToysPopup from "../Popups/ToysPopup";
+import Popup from "../popups/Popup";
+import FoodPopup from "../popups/FoodPopup";
+import MedicalSuppliesPopup from "../popups/MedicalSuppliesPopup";
+import ToysPopup from "../popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
 import { MedicalData } from "../Data/MedicalData";
@@ -259,11 +259,7 @@ const handleViewLess = () => {
                             {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
                             {item.Address && <p>Address: {item.Address}</p>}
                             {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
-                            {item.name && <p>name: {item.name}</p>}
-                            {item.name && <p>type: {item.type}</p>}
-                            {item.name && <p>Age: {item.Age}</p>}
-                            {item.name && <p>Gender: {item.Gender}</p>}
-                           
+                            {item.Location_Google_Marker} && <p> {item.Location_Google_Marker}</p>
 
           
                             {showDonateOptions === item.id && (

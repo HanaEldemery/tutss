@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ClothesPopup from "../Popups/ClothesPopup";
+import ClothesPopup from "../popups/ClothesPopup";
 import { ClothesList } from "../helpers/ClothesList";
 
 function ClothingRequests() {

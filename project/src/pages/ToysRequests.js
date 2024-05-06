@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ToysList } from "../lists/ToysList";
-import ToysPopup from "../Popups/ToysPopup";
+import ToysPopup from "../popups/ToysPopup";
 
 function ToysRequests() {
   const [ageFilter, setAgeFilter] = useState(""); // State for age filter
