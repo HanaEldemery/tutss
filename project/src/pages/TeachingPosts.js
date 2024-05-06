@@ -1,0 +1,42 @@
+import React, { useState } from 'react';
+import FilterTeaching from '../Filters/FilterTeaching';
+import TeachingList from '../Lists/TeachingList';
+import { TeachingData } from '../Data/Teachingdata';
+
+function TeachingPosts() {
+    const [productList, setProductList] = useState(TeachingData);
+    const [filteredProductList, setFilteredProductList] = useState(TeachingData);
+    const [filters, setFilters] = useState({});
+
+    const handleFilterChange = (category, value) => {
+        const newFilters = { ...filters };
+        if (value === 'all') {
+            delete newFilters[category]; // Remove the filter if 'all' is selected
+        } else {
+            newFilters[category] = value;
+        }
+        setFilters(newFilters);
+        applyFilters(newFilters);
+    };
+
+
+    const applyFilters = (newFilters) => {
+        let filteredData = productList;
+        Object.keys(newFilters).forEach(key => {
+            if (newFilters[key]) {
+                filteredData = filteredData.filter(item => item[key] === newFilters[key]);
+            }
+        });
+        setFilteredProductList(filteredData);
+    };
+
+    return (
+        <div>
+            <FilterTeaching filters={filters} onFilterChange={handleFilterChange}/>
+            <h2>Hello from TeachingPosts</h2>
+            <TeachingList postsList={filteredProductList} />
+        </div>
+    );
+}
+
+export default TeachingPosts;

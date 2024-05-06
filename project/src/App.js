@@ -17,6 +17,12 @@ import ToysRequests from "./pages/ToysRequests";
 import FoodRequests from "./pages/FoodRequests";
 import MedicalSuppliesRequests from "./pages/MedicalSuppliesRequests";
 import BloodRequests from "./pages/BloodRequests";
+import TeachingPosts from './pages/TeachingPosts'
+import MedicalCases from './pages/MedicalCases';
+import TransportationSelection from './pages/TransportationSelection';
+import DonationSuccessful from './pages/DonationSuccessful';
+import DropoffSelection from './pages/DropoffSelection';
+import TeacherPage from './pages/TeacherPage';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -55,6 +61,17 @@ function App() {
           <Route path="/OrgReg" exact element={<OrgReg />} />
           <Route path="/teacherprobono" exact element={<Teacherprobono />} />
         </Routes>
+      </Router>
+      <Router>
+        <Routes>
+          <Route path="/Donor" element={<Donor />} />
+          <Route path="/TeachingPosts" element={<TeachingPosts />} />
+          <Route path="/MedicalCases" element={<MedicalCases />} />
+          <Route path="/TransportationSelection" element={<TransportationSelection />} />
+          <Route path="/DropoffSelection" element={<DropoffSelection />} />
+          <Route path="/DonationSuccessful" element={<DonationSuccessful/>} />
+          <Route path="/TeacherPage" element={<TeacherPage/>} />
+          </Routes>
       </Router>
     </div>
   );
