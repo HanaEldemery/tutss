@@ -44,10 +44,7 @@ function App() {
             element={<MedicalSuppliesRequests />}
           />
           <Route exact path="/bloodRequests" element={<BloodRequests />} />
-        </Routes>
-      </Router>
-      <Router>
-        <Routes>
+
           <Route path="/adminlogin" exact element={<Login />} />
           <Route path="/don" exact element={<DonorReg />} />
           <Route path="/role" exact element={<Roleselection />} />
@@ -60,11 +57,8 @@ function App() {
           <Route path="/Adminchangepass" exact element={<Adminchangepass />} />
           <Route path="/OrgReg" exact element={<OrgReg />} />
           <Route path="/teacherprobono" exact element={<Teacherprobono />} />
-        </Routes>
-      </Router>
-      <Router>
-        <Routes>
-          <Route path="/TeachingPosts" element={<TeachingPosts />} />
+
+         <Route path="/TeachingPosts" element={<TeachingPosts />} />
           <Route path="/MedicalCases" element={<MedicalCases />} />
           <Route path="/TransportationSelection" element={<TransportationSelection />} />
           <Route path="/DropoffSelection" element={<DropoffSelection />} />
