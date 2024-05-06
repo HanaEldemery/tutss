@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Popup from "../popups/Popup";
+import Popup from "../Popups/Popup";
 import { SchoolSupList } from '../helpers/SchoolSupList';
 
 function SchoolSuppliesDonations() {

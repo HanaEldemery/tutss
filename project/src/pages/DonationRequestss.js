@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-import ClothesPopup from "../popups/ClothesPopup";
-import BloodPopup from "../popups/BloodPopup";
+import ClothesPopup from "../Popups/ClothesPopup";
+import BloodPopup from "../Popups/BloodPopup";
 import { ClothesList } from "../helpers/ClothesList";
-import Popup from "../popups/Popup";
-import FoodPopup from "../popups/FoodPopup";
-import MedicalSuppliesPopup from "../popups/MedicalSuppliesPopup";
-import ToysPopup from "../popups/ToysPopup";
+import Popup from "../Popups/Popup";
+import FoodPopup from "../Popups/FoodPopup";
+import MedicalSuppliesPopup from "../Popups/MedicalSuppliesPopup";
+import ToysPopup from "../Popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
 import { MedicalData } from "../Data/MedicalData";
