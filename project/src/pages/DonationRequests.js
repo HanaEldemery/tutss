@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 function DonationRequests() {
   return (
     <div>
+       <Link to="/TeachingPosts">
+        <button>Go to Teaching Posts</button>
+      </Link>
+      <Link to="/MedicalCases">
+        <button>Go to Medical Cases</button>
+      </Link>
       <Link to="/toysRequests">
         <button> View All Toy Requests </button>
       </Link>
