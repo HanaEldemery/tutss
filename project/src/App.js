@@ -13,6 +13,8 @@ import OrgReg from "./pages/OrgReg";
 import Teacherprobono from "./pages/teacherprobono";
 import Home from "./pages/Home";
 import DonationRequestss from "./pages/DonationRequestss";
+import DonationRequests from "./pages/DonationRequests";
+import DonationRequest from "./pages/DonationRequest";
 import ToysRequests from "./pages/ToysRequests";
 import FoodRequests from "./pages/FoodRequests";
 import MedicalSuppliesRequests from "./pages/MedicalSuppliesRequests";
@@ -38,6 +40,8 @@ function App() {
             path="/donationRequestss"
             element={<DonationRequestss />}
           />
+                    <Route exact path="/DonationRequests"  element={<DonationRequests/>} />
+          <Route exact path="/DonationRequest"  element={<DonationRequest/>} />
              <Route exact path="/ClothingRequests"  element={<ClothingRequests />} />
           <Route exact path="/SchoolSuppliesDonations"  element={<SchoolSuppliesDonations />} />
           <Route exact path="/toysRequests" element={<ToysRequests />} />

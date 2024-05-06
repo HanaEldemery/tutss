@@ -10,11 +10,12 @@ import ToysPopup from "../Popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
 import { MedicalData } from "../Data/MedicalData";
+import { TeachingData } from "../Data/Teachingdata";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
  
-function DonationRequestss() {
+function DonationRequests() {
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -33,8 +34,8 @@ function DonationRequestss() {
   const [showPopup5, setShowPopup5] = useState(false);
   const [clickedId5, setClickedId5] = useState("");
 
-  const [data, setData] = useState([ ...MedicalData]);
-  const [filteredData, setFilteredData] = useState([ ...MedicalData]);
+  const [data, setData] = useState([...TeachingData]);
+  const [filteredData, setFilteredData] = useState([...TeachingData]);
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
@@ -43,7 +44,7 @@ function DonationRequestss() {
 
   useEffect(() => {
       if (searchTerm === '') {
-          setFilteredData([ ...MedicalData]);
+          setFilteredData([...TeachingData]);
       } else {
           setFilteredData(data.filter(item => item.xyz && item.xyz.toLowerCase().includes(searchTerm.toLowerCase())));
       }
@@ -77,7 +78,7 @@ const handleDonate = (id, xyz) => {
     if (xyz === 'Medical' || xyz === 'Teaching') {
         setShowDonateOptions(id); // Show donation options for valid items
     } else {
-        navigate('/TransportationSelection'); // Redirect using navigate
+        navigate('/DonationSuccessful'); // Redirect using navigate
     }
 };
 
@@ -120,9 +121,10 @@ const handleViewLess = () => {
       <Link to="/bloodRequests">
         <button> View All Blood Requests </button>
       </Link>
-      <Link to="/MedicalCases">
-        <button>Go to Medical Cases</button>
+      <Link to="/TeachingPosts">
+        <button>Go to Teaching Posts</button>
       </Link>
+   
       <br/>
       <input
                 type="text"
@@ -255,7 +257,11 @@ const handleViewLess = () => {
                             {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
                             {item.Address && <p>Address: {item.Address}</p>}
                             {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
-                            {item.Location_Google_Marker && <p>{item.Location_Google_Marker}</p>}
+                            {item.name && <p>name: {item.name}</p>}
+                            {item.name && <p>type: {item.type}</p>}
+                            {item.name && <p>Age: {item.Age}</p>}
+                            {item.name && <p>Gender: {item.Gender}</p>}
+                           
 
           
                             {showDonateOptions === item.id && (
@@ -299,7 +305,7 @@ const handleViewLess = () => {
   );
 }
 
-export default DonationRequestss
+export default DonationRequests
 
 
   

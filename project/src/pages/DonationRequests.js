@@ -10,11 +10,12 @@ import ToysPopup from "../Popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
 import { MedicalData } from "../Data/MedicalData";
+import { TeachingData } from "../Data/Teachingdata";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
  
-function DonationRequestss() {
+function DonationRequests() {
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -33,21 +34,12 @@ function DonationRequestss() {
   const [showPopup5, setShowPopup5] = useState(false);
   const [clickedId5, setClickedId5] = useState("");
 
-  const [data, setData] = useState([ ...MedicalData]);
-  const [filteredData, setFilteredData] = useState([ ...MedicalData]);
+ 
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
 
-  const navigate = useNavigate(); // useNavigate instead of useHistory
 
-  useEffect(() => {
-      if (searchTerm === '') {
-          setFilteredData([ ...MedicalData]);
-      } else {
-          setFilteredData(data.filter(item => item.xyz && item.xyz.toLowerCase().includes(searchTerm.toLowerCase())));
-      }
-  }, [searchTerm, data]);
   const viewDetails1 = (schoolsupItem) => {
     setShowPopup1(true);
     setClickedId1(schoolsupItem);
@@ -73,18 +65,9 @@ const viewDetails5 = (medicalSupplyItem) => {
   setShowPopup5(true);
   setClickedId5(medicalSupplyItem);
 };
-const handleDonate = (id, xyz) => {
-    if (xyz === 'Medical' || xyz === 'Teaching') {
-        setShowDonateOptions(id); // Show donation options for valid items
-    } else {
-        navigate('/TransportationSelection'); // Redirect using navigate
-    }
-};
 
-const handleViewLess = () => {
-    setExpandedId(null);
-    setShowDonateOptions(null);
-};
+
+
 
   const viewDetails = (clothesItem) => {
     setShowPopup(true);
@@ -120,9 +103,7 @@ const handleViewLess = () => {
       <Link to="/bloodRequests">
         <button> View All Blood Requests </button>
       </Link>
-      <Link to="/MedicalCases">
-        <button>Go to Medical Cases</button>
-      </Link>
+    
       <br/>
       <input
                 type="text"
@@ -240,56 +221,7 @@ const handleViewLess = () => {
         )}
           </div>
         )}
-        {filteredData.map((item) => (
-                <div key={item.id} style={{ margin: '10px', padding: '5px', border: '1px solid gray' }}>
-                    <h2 onClick={() => toggleDetails(item.id)}>
-                        {item.xyz} Donation Request {item.id}
-                    </h2>
-                    {expandedId === item.id && (
-                        <div>
-                            {item.Subject && <p>Subject: {item.Subject}</p>}
-                            {item.Patient_Name && <p>Patient Name: {item.Patient_Name}</p>}
-                            <p>Area: {item.Area || item.area}</p>
-                            <p>Governorate: {item.Governorate}</p>
-                            {item.No_of_students && <p>No. of Students: {item.No_of_students}</p>}
-                            {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
-                            {item.Address && <p>Address: {item.Address}</p>}
-                            {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
-                            {item.Location_Google_Marker && <p>{item.Location_Google_Marker}</p>}
-
-          
-                            {showDonateOptions === item.id && (
-                                <> 
-                                    <Link to="/TransportationSelection">
-                                        <button onClick={() => console.log('Would you like a ride?')} style={{ margin: '10px' }}>
-                                            Would you like a ride?
-                                        </button>
-                                    </Link>
-                                    <Link to="/DonationSuccessful">
-                                        <button onClick={() => console.log('No thank you')} style={{ margin: '10px' }}>
-                                            No thank you
-                                        </button>
-                                    </Link>
-                                </>
-                            )}
-                            {showDonateOptions !== item.id && (
-                                <button onClick={() => handleDonate(item.id, item.xyz)} style={{ margin: '10px' }}>
-                                    Donate
-                                </button>
-                            )}
-                            <button onClick={() => handleViewLess()} style={{ margin: '10px' }}>
-                                View Less Details
-                            </button>
-                        </div>
-                    )}
-                    {expandedId !== item.id && (
-                        <button onClick={() => toggleDetails(item.id)} style={{ margin: '10px' }}>
-                            View Details
-                        </button>
-                    )}
-                     
-                </div>
-            ))}
+        
                         </div>
         </div>
         
@@ -299,7 +231,7 @@ const handleViewLess = () => {
   );
 }
 
-export default DonationRequestss
+export default DonationRequests
 
 
   
