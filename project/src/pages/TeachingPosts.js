@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FilterTeaching from '../Filters/FilterTeaching';
-import TeachingList from '../Lists/TeachingList';
+import TeachingList from '../lists/TeachingList';
 import { TeachingData } from '../Data/Teachingdata';
 
 function TeachingPosts() {

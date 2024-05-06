@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FilterMedical from '../Filters/FilterMedical';
-import MedicalList from '../Lists/MedicalList';
+import MedicalList from '../lists/MedicalList';
 import { MedicalData } from '../Data/MedicalData';
 
 function MedicalCases() {
