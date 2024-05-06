@@ -4,10 +4,13 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/Donor.css";
 import Popup from "../components/Popup";
 import ViewAllOrganisations from "../pages/ViewAllOrganisations";
+import ViewEditAccount from "../pages/ViewEditAccount";
 
-const Donor = () => {
+const Donor = ({ idOfDonorFromLogin }) => {
+  idOfDonorFromLogin = 1;
   const [flag, setFlag] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [showAccountInfo, setShowAccountInfo] = useState(false);
 
   const notify = () => {
     toast(" Estimated Delivery Time: 2 days ", {
@@ -18,6 +21,10 @@ const Donor = () => {
 
   const viewList = () => {
     setShowPopup(true);
+  };
+
+  const viewEditAccount = () => {
+    setShowAccountInfo(true);
   };
 
   useEffect(() => {
@@ -32,13 +39,20 @@ const Donor = () => {
   return (
     <div>
       <div className="donor">
-        {showPopup ? null : (
+        {showPopup || showAccountInfo ? null : (
           <div className="buttonnow">
             <button onClick={notify}>DONATE</button>
             <button onClick={viewList}>VIEW ALL ORGANISATIONS</button>
+            <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
           </div>
         )}
         {showPopup && <ViewAllOrganisations closePopup={setShowPopup} />}
+        {showAccountInfo && (
+          <ViewEditAccount
+            closePopup={setShowAccountInfo}
+            donorId={idOfDonorFromLogin}
+          />
+        )}
       </div>
       <ToastContainer />
     </div>
