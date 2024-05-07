@@ -7,6 +7,7 @@ export const data = [
     speciality: "Neurology",
     number: "01013422290",
     living: "The best place",
+    email: "omar@gmail.com",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const data = [
     speciality: "Pediatrics",
     number: "01115566574",
     living: "Amazing place",
+    email: "testdoc@hotmail.com",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const data = [
     speciality: "Pediatrics",
     number: "01091191960",
     living: "Bad place",
+    email: "hana@yahoo.com",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const data = [
     speciality: "All",
     number: "01016662910",
     living: "Good place",
+    email: "omar.elmeligy@mymail.com",
   },
   {
     id: 5,
@@ -43,5 +47,6 @@ export const data = [
     speciality: "English",
     number: "01110077288",
     living: "Best place",
+    email: "seifhallaadham@fakemail.com",
   },
 ];

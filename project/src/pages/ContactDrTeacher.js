@@ -17,6 +17,7 @@ function ContactDrTeacher({ closeThis, teacherDrId, teacherDrName }) {
                 <>
                   <p>{item.number}</p>
                   <p>{item.living}</p>
+                  <p>{item.email}</p>
                 </>
               )}
             </div>
