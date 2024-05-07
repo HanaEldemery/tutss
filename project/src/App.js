@@ -38,9 +38,16 @@ import Donor from "./pages/Donor";
 import Admin from "./pages/Admin";
 import Testing from "./pages/SearchShalloudy";
 import Organisation from "./pages/Organisation";
+import CommonPageteacher from "./pages/CommonPageteacher";
+import CommonPagegeneral from "./pages/CommonPagegeneral";
+import CommonPageDoctor from "./pages/CommonPageDoctor";
+import AdminHomePage from "./pages/AdminHomePage";
+
 
 import Halla from "./Search2";
 import Hana from "./pages/BloodRequest";
+import ViewAllOrganisations from  "./pages/ViewAllOrganisations";
+import ViewAllDonors from  "./pages/ViewAllDonors";
 
 function App() {
   return (
@@ -84,6 +91,9 @@ function App() {
           <Route path="/doctorrole" exact element={<Doctorrole />} />
           <Route path="/DonorReg" exact element={<DonorReg />} />
           <Route path="/donorrole" exact element={<Donorrole />} />
+          <Route path="/CommonPageteacher" exact element={<CommonPageteacher />} />
+          <Route path="/CommonPagegeneral" exact element={<CommonPagegeneral />} />
+          <Route path="/CommonPageDoctor" exact element={<CommonPageDoctor />} />
           <Route path="/teacherrole" exact element={<Teacherrole />} />
           <Route path="/AdminOrgReq" exact element={<AdminOrgReq />} />
           <Route path="/AdminDonReq" exact element={<AdminDonReq />} />
@@ -114,6 +124,10 @@ function App() {
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
+          <Route path="/ViewAllOrganisations" exact element={<ViewAllOrganisations />} />
+          <Route path="/AdminHomePage" exact element={<AdminHomePage />} />
+
+          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
 
           <Route path="/halla" exact element={<Halla />} />
 

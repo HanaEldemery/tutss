@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function DonorReg() {  //my first name, last name, gender, email, contact number, password, address, area, governorate
     const [firstname, setfirstname] = useState("");
@@ -187,7 +188,9 @@ function DonorReg() {  //my first name, last name, gender, email, contact number
                     />
                 </div> */}
                 {error && <p>{error}</p>}
-                <button type="submit">Register</button>
+                <Link to="/role">
+        <button> Register </button>
+      </Link>
             </form>
         </div>
     );
