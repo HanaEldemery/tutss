@@ -9,7 +9,7 @@ function PopupREQ({ closePopup, organisation }) {
   const [textInput1, setTextInput1] = useState("");
   const [textInput2, setTextInput2] = useState("");
   const [textInput3, setTextInput3] = useState("");
-  const [textInput4, setTextInput4] = useState(""); // For Furniture's Model
+  const [textInput4, setTextInput4] = useState("");
   const [textInput5, setTextInput5] = useState("");
   const [error, setError] = useState("");
   const [notification, setNotification] = useState(false);

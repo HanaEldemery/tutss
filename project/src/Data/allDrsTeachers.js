@@ -5,6 +5,8 @@ export const data = [
     exp: "40 years",
     workplace: "New Cairo",
     speciality: "Neurology",
+    number: "01013422290",
+    living: "The best place",
   },
   {
     id: 2,
@@ -12,6 +14,8 @@ export const data = [
     exp: "20 years",
     workplace: "Zamalek",
     speciality: "Pediatrics",
+    number: "01115566574",
+    living: "Amazing place",
   },
   {
     id: 3,
@@ -19,6 +23,8 @@ export const data = [
     exp: "2 years",
     workplace: "Zamalek",
     speciality: "Pediatrics",
+    number: "01091191960",
+    living: "Bad place",
   },
   {
     id: 4,
@@ -26,6 +32,8 @@ export const data = [
     exp: "80 years",
     workplace: "Home",
     speciality: "All",
+    number: "01016662910",
+    living: "Good place",
   },
   {
     id: 5,
@@ -33,5 +41,7 @@ export const data = [
     exp: "5 years",
     workplace: "X School, Y School",
     speciality: "English",
+    number: "01110077288",
+    living: "Best place",
   },
 ];

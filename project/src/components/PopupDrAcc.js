@@ -1,10 +1,23 @@
 import React, { useState } from "react";
 import "../styles/Popup.css";
 import { data } from "../Data/allDrsTeachers";
+import ContactDrTeacher from "../pages/ContactDrTeacher";
 //var data = require("../data/regorgname.json");
 
 function PopupDrAcc({ closePopup, drName, drID }) {
-  return (
+  const [showNOW, setShowNOW] = useState(false);
+
+  const showContact = () => {
+    setShowNOW(true);
+  };
+
+  return showNOW ? (
+    <ContactDrTeacher
+      closeThis={setShowNOW}
+      teacherDrId={drID}
+      teacherDrName={drName}
+    />
+  ) : (
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
@@ -19,6 +32,12 @@ function PopupDrAcc({ closePopup, drName, drID }) {
                   <p>{item.exp}</p>
                   <p>{item.workplace}</p>
                   <p>{item.speciality}</p>
+                  <button
+                    onClick={() => showContact(item.id)}
+                    className="search-button"
+                  >
+                    CONTACT DETAILS
+                  </button>
                 </>
               )}
             </div>

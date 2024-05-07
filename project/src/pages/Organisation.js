@@ -5,6 +5,7 @@ import PopupALL from "../components/PopupALL";
 import PopupACC from "../components/PopupACC";
 import PopupDONREQ from "../components/PopupDONREQ";
 import { data } from "../Data/regorgname";
+import { Link } from "react-router-dom";
 
 function Organisation({ organisationName }) {
   organisationName = "Eire";
@@ -48,6 +49,9 @@ function Organisation({ organisationName }) {
           <button onClick={viewAcceptedDonationReq} className="button-used">
             VIEW FUILFILLED DONATION REQUESTS
           </button>
+          <Link to="/DropoffSelection">
+            <button className="button-used">SET TIME SLOT SUITABLE</button>
+          </Link>
         </div>
       )}
       {showPopup && (
