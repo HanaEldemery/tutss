@@ -36,6 +36,7 @@ function OrganisationHospital({ organisationName }) {
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
         <div className="addmargin">
+          <h1>Welcome Hospital!</h1>
           <button onClick={viewList} className="button-used">
             Create a Request Donation Post
           </button>

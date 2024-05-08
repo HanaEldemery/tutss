@@ -31,12 +31,12 @@ function OrganisationSchool({ organisationName }) {
 
   return (
     <div className="all">
-      <h1>Welcome School</h1>
       {showPopup ||
       showPopupAll ||
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
         <div className="addmargin">
+          <h1>Welcome School!</h1>
           <button onClick={viewList} className="button-used">
             Create a Request Donation Post
           </button>

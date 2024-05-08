@@ -36,6 +36,7 @@ function OrganisationVet({ organisationName }) {
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
         <div className="addmargin">
+          <h1>Welcome Vet!</h1>
           <button onClick={viewList} className="button-used">
             Create a Request Donation Post
           </button>

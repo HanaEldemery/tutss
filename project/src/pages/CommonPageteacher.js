@@ -12,7 +12,6 @@ function CommonPageteacher(idOfDonorFromLogin) {
   return (
     <div>
       <br />
-      <h1>Welcome Teacher!</h1>
       {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
@@ -20,6 +19,7 @@ function CommonPageteacher(idOfDonorFromLogin) {
         />
       ) : (
         <div>
+          <h1>Welcome Teacher!</h1>
           <Link to="/ViewAllOrganisationsForDonor">
             <button>View All Organizations</button>
           </Link>

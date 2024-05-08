@@ -12,7 +12,6 @@ function CommonPageDoctor(idOfDonorFromLogin) {
   return (
     <div>
       <br />
-      <h1>Welcome Doctor!</h1>
       {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
@@ -20,6 +19,7 @@ function CommonPageDoctor(idOfDonorFromLogin) {
         />
       ) : (
         <div>
+          <h1>Welcome Doctor!</h1>
           <Link to="/ViewAllOrganisationsForDonor">
             <button>View All OrganizationsS</button>
           </Link>

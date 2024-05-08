@@ -11,7 +11,6 @@ function CommonPagegeneral(idOfDonorFromLogin) {
   return (
     <div>
       <br />
-      <h1>Welcome Donor!</h1>
       {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
@@ -19,6 +18,7 @@ function CommonPagegeneral(idOfDonorFromLogin) {
         />
       ) : (
         <div>
+          <h1>Welcome Donor!</h1>
           <Link to="/ViewAllOrganisationsForDonor">
             <button>View All Organizations</button>
           </Link>
