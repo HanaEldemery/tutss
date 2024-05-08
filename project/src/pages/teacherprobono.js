@@ -17,9 +17,7 @@ function teacherprobono() {
       <FormControlLabel control={<Checkbox defaultUnChecked />} label="English" />
       <FormControlLabel control={<Checkbox defaultUnChecked />} label="Maths" />
       <FormControlLabel control={<Checkbox defaultUnChecked />} label="Science" />  
-   <FormControlLabel control={<Checkbox defaultUnChecked />} label="other"   />
 
-      <TextField id="outlined-basic" label="please specify" variant="outlined" />
 
       <br />
       <br />

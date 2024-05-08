@@ -12,7 +12,8 @@ function DonorReg() {
   const [address, setaddress] = useState("");
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
-  const [donorType, setDonorType] = useState("normal");
+  const [donorType, setDonorType] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,14 +50,34 @@ function DonorReg() {
         if (!flag)
           switch (donorType) {
             case "normal":
-              window.location.href = "/CommonPagegeneral";
+                setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setTimeout(() => {
+                setPopupMessage("");
+                window.location.href = "/CommonPagegeneral";
+            }, 3000);
               break;
             case "doctor":
-              window.location.href = "/teacherrole";
+                setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+                setTimeout(() => {
+                  setPopupMessage("");
+                  window.location.href = "/teacherrole";
+                }, 3000);
               break;
             case "teacher":
-              window.location.href = "/doctorrole";
+                setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+                setTimeout(() => {
+                  setPopupMessage("");
+                  window.location.href = "/doctorrole";
+                }, 3000);
               break;
+            default:setError("Please Choose your Role as a Donor");
+            const clearError = () => {
+              setError(null);
+            };
+
+            setTimeout(clearError, 3000);
+            break;
+
           }
       } else {
         setError("Password Confirmation Failed");
@@ -214,6 +235,7 @@ function DonorReg() {
                 value={donorType}
                 onChange={(e) => setDonorType(e.target.value)}
               >
+                <option value="choose">Choose</option>
                 <option value="normal">Normal Donor</option>
                 <option value="doctor">Doctor</option>
                 <option value="teacher">Teacher</option>
@@ -222,6 +244,23 @@ function DonorReg() {
             {/* Your other form fields */}
           </form>
         </div>
+        {popupMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "white",
+              padding: "20px",
+              border: "1px solid black",
+              borderRadius: "5px",
+              zIndex: 1,
+            }}
+          >
+            {popupMessage}
+          </div>
+        )}
         {error && <p>{error}</p>}
 
         <button> Register </button>

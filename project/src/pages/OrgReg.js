@@ -13,6 +13,8 @@ function OrgReg() {
   const [address, setaddress] = useState("");
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
+
 
   const [orgType, setOrgType] = useState("");
 
@@ -40,7 +42,7 @@ function OrgReg() {
         setError(null);
       };
 
-      setTimeout(clearError, 1500);
+      setTimeout(clearError, 3000);
     } else {
       if (password === conpassword) {
         let flag = false;
@@ -51,7 +53,7 @@ function OrgReg() {
               setError(null);
             };
 
-            setTimeout(clearError, 1500);
+            setTimeout(clearError, 3000);
             flag = true;
           }
         }
@@ -60,17 +62,43 @@ function OrgReg() {
         } else if (flag === false)
           switch (orgType) {
             case "hospital":
-              window.location.href = "/organisationHospital";
+              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setTimeout(() => {
+                setPopupMessage("");
+                window.location.href = "/organisationHospital";
+              }, 3000);
+    
               break;
             case "school":
-              window.location.href = "/organisation";
+              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setTimeout(() => {
+                setPopupMessage("");
+                window.location.href = "/organisation";
+              }, 3000);
               break;
             case "orphanage":
-              window.location.href = "/organisationOrphanage";
+              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setTimeout(() => {
+                setPopupMessage("");
+                window.location.href = "/organisationOrphanage";
+              }, 3000);
               break;
             case "vet":
-              window.location.href = "/organisationVet";
+              setPopupMessage(`Registeration Accepted by System; Redirecting you to your Home Page.`);
+              setTimeout(() => {
+                setPopupMessage("");
+                window.location.href = "/organisationVet";
+              }, 3000);
               break;
+              default:            
+              setError("Please Choose your Organization");
+              const clearError = () => {
+                setError(null);
+              };
+  
+              setTimeout(clearError, 3000);
+              break;
+
           }
 
         // if (orgType === "Hospital") {
@@ -149,6 +177,7 @@ function OrgReg() {
             value={orgType}
             onChange={(e) => setOrgType(e.target.value)}
           >
+            <option value="choose">Choose</option>
             <option value="hospital">Hospital</option>
             <option value="school">School</option>
             <option value="orphanage">Orphanage</option>
@@ -241,6 +270,23 @@ function OrgReg() {
             <option value="Suez">Suez</option>
           </select>
         </div>
+        {popupMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "white",
+              padding: "20px",
+              border: "1px solid black",
+              borderRadius: "5px",
+              zIndex: 1,
+            }}
+          >
+            {popupMessage}
+          </div>
+        )}
         <div>
           <h2>Specify Your Location on Map</h2>
           <iframe
@@ -270,6 +316,7 @@ function OrgReg() {
         {error && <p>{error}</p>}
 
         <button type="submit">Register</button>
+        
       </form>
     </div>
   );
