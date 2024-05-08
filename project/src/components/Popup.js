@@ -30,7 +30,7 @@ function Popup({ closePopup }) {
             : "not apple widjaisdajwda, wdisdawdasm wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> CANCEL </button>
+          <button onClick={() => closePopup(false)}> Cancel </button>
         </div>
       </div>
     </div>

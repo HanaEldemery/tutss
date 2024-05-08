@@ -50,13 +50,13 @@ function PopupALL({ closePopup, organisationName }) {
                           className="search-button"
                           onClick={() => backToUpdate(item.category)}
                         >
-                          UPDATE
+                          Update
                         </button>
                         <button
                           onClick={() => callOnDelete(item.id)}
                           className="search-button"
                         >
-                          DELETE
+                          Delete
                         </button>
                       </p>
                     </div>
@@ -65,7 +65,7 @@ function PopupALL({ closePopup, organisationName }) {
               ))}
             </div>
             <div className="footer">
-              <button onClick={() => closePopup(false)}> BACK </button>
+              <button onClick={() => closePopup(false)}> Back </button>
             </div>
           </div>
         </div>

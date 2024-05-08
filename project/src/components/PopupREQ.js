@@ -387,8 +387,8 @@ function PopupREQ({ closePopup, organisation }) {
         </div>
         {error && <p className="error">{error}</p>}
         <div className="footer">
-          <button onClick={() => closePopup(false)}>BACK</button>
-          <button onClick={notify}>SUBMIT</button>
+          <button onClick={() => closePopup(false)}>Back</button>
+          <button onClick={notify}>Submit</button>
         </div>
         <ToastContainer />
       </div>

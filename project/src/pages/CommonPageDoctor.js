@@ -21,7 +21,7 @@ function CommonPageDoctor(idOfDonorFromLogin) {
         <div>
           <h1>Welcome Doctor!</h1>
           <Link to="/ViewAllOrganisationsForDonor">
-            <button>View All OrganizationsS</button>
+            <button>View All Organizations</button>
           </Link>
           <Link to="/DonationRequestss">
             <button>View All Donation Requests</button>

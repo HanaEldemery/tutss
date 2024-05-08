@@ -131,10 +131,7 @@ function ViewEditAccount({ closePopup, donorId }) {
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}>
-            {" "}
-            Collapse Account Information{" "}
-          </button>
+          <button onClick={() => closePopup(false)}> Back </button>
           <button onClick={notify}> Save </button>
         </div>
         <ToastContainer />
