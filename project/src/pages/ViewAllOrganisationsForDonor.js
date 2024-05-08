@@ -40,14 +40,14 @@ function Search({ closePopup }) {
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
   const handleRedirect = () => {
-    window.location.href = "/AdminHomePage";
+    window.location.href = "/CommonPagegeneral";
   };
 
   return (
     <div className="all">
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">Organisation Names</h1>
+          <h1 className="TEXT">Organization Names</h1>
 
           <Form className="form">
             <Form.Control
@@ -108,7 +108,7 @@ function Search({ closePopup }) {
                         onClick={() => handleDetailsClick(item.id)}
                         className="search-button"
                       >
-                        DETAILS
+                        View Details
                       </button>
                       {/* <button
                         onClick={() => handleOnDelete(item.id)}
@@ -123,7 +123,7 @@ function Search({ closePopup }) {
             </tbody>
           </Table>
           <button onClick={handleRedirect} className="search-button">
-            BACK
+            Back
           </button>
         </Container>
       )}

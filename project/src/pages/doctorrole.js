@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 function DoctorRole() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [error, seterror] = useState("");
+  const clearError = () => {
+    seterror("");
+  };
+
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -12,9 +17,11 @@ function DoctorRole() {
     event.preventDefault();
     if (selectedFile) {
       console.log('Selected file:', selectedFile);
-      alert('Admin has accepted your Application')
+     window.location.href="/CommonPageDoctor"
     } else {
-      alert('Please select a file.');
+      seterror('Please select a file.');
+      setTimeout(clearError, 3000);
+
     }
   };
 
@@ -31,9 +38,11 @@ function DoctorRole() {
       <h2>Please Upload a Doctor Authentication Certificate to Verify Your Profession</h2>
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <Link to="/CommonPageDoctor">
-        <button>Confirm</button>
-      </Link>      </form>
+        
+        <button>Confirm</button>         {error && <p>{error}</p>}
+
+
+            </form>
     </div>
     </div>
   );
