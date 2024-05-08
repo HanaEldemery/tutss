@@ -6,6 +6,8 @@ function DoctorRole() {
   const [error, setError] = useState("");
   const [normalClasses, setNormalClasses] = useState(0);
   const [DoctorType, setDoctorType] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
+
 
 
 
@@ -22,7 +24,7 @@ function DoctorRole() {
       };
 
       setTimeout(clearError, 3000);    }
-    else if (normalClasses === 0) {
+    else if (normalClasses <= 0) {
       setError("Please specify the number of Pro Bono Cases.");
       const clearError = () => {
         setError(null);
@@ -30,7 +32,6 @@ function DoctorRole() {
 
       setTimeout(clearError, 3000);
 
-      // Clear the timeout to avoid memory leaks
     }
     
     else if (!selectedFile) {
@@ -44,9 +45,27 @@ function DoctorRole() {
     } 
     
     else {
-      window.location.href="/CommonPageDoctor";
+      let flag = false;
+      for (let i = 0; i < normalClasses.length; i++) {
+        if (isNaN(parseInt(normalClasses[i]))) {
+          setError("Enter a Valid Pro Bono Cases Number");
+          const clearError = () => {
+            setError(null);
+          };
+
+          setTimeout(clearError, 3000);
+          flag = true;
+        }
+      }
+      if(!flag) {
+     setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+      setTimeout(() => {
+        setPopupMessage("");
+        window.location.href="/CommonPageDoctor";
+      }, 3000);
 
     }
+  }
 
   };
 
@@ -66,15 +85,11 @@ function DoctorRole() {
           <br/>
           <br/>
           <br/>
-
           <TextField
             id="normal-classes"
             label="# of probono cases"
-            type="number"
-            inputProps={{ min: 0 }} // Prevents negative numbers
-            InputLabelProps={{
-              shrink: true,
-            }}
+            type="text"
+
             value={normalClasses}
             onChange={(e) => setNormalClasses(e.target.value)}
           />
@@ -100,6 +115,23 @@ function DoctorRole() {
             </div>
           <button>Confirm</button>
           {error && <p>{error}</p>}
+          {popupMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "white",
+              padding: "20px",
+              border: "1px solid black",
+              borderRadius: "5px",
+              zIndex: 1,
+            }}
+          >
+            {popupMessage}
+          </div>
+        )}
         </form>
       </div>
     </div>

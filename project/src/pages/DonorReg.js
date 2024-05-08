@@ -13,7 +13,6 @@ function DonorReg() {
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
   const [donorType, setDonorType] = useState("");
-  const [popupMessage, setPopupMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();

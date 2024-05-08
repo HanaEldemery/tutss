@@ -9,7 +9,13 @@ function TeacherProbono() {
   const [normalClasses, setNormalClasses] = useState(0);
   const [privateTutoringClasses, setPrivateTutoringClasses] = useState(0);
   const [error, setError] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [popupMessage, setPopupMessage] = useState("");
 
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     
@@ -24,22 +30,63 @@ function TeacherProbono() {
 
     }
 
-    else if (normalClasses === 0 ) {
-      setError("Please specify the number of classes.");
+    else if (normalClasses <= "0"  ) {
+      setError("Please specify the number of Normal classes.");
       const clearError = () => {
         setError(null);
       };
       setTimeout(clearError, 5000);
     }
-    else if (privateTutoringClasses === 0) {
-      setError("Please specify the number of classes.");
+    else if (privateTutoringClasses<= "0") {
+      setError("Please specify the number of  Private Tutoring classes.");
       const clearError = () => {
         setError(null);
       };
-      setTimeout(clearError, 5000);
+      setTimeout(clearError, 3000);
+    }
+    else if (!selectedFile) {
+      setError("Please select a File.");
+      const clearError = () => {
+        setError(null);
+      };
+      setTimeout(clearError, 3000);
     }
     else {
-      window.location.href = "/CommonPageteacher";
+      let flag1 = false;
+
+      for (let i = 0; i < normalClasses.length; i++) {
+        if (isNaN(parseInt(normalClasses[i]))) {
+          setError("Enter a Valid Number of Normal Classes");
+          const clearError = () => {
+            setError(null);
+          };
+
+          setTimeout(clearError, 3000);
+          flag1 = true;
+          break;
+        }
+      }
+      let flag2 = false;
+
+      for (let i = 0; i < privateTutoringClasses.length; i++) {
+        if (isNaN(parseInt(privateTutoringClasses[i]))) {
+          setError("Enter a Valid Number of Private Tutoring Classes");
+          const clearError = () => {
+            setError(null);
+          };
+
+          setTimeout(clearError, 3000);
+          flag2 = true;
+          break;
+        }
+      }
+      
+      setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+      setTimeout(() => {
+        setPopupMessage("");
+        window.location.href = "/CommonPageteacher";
+      }, 3000);
+
 
     }
 
@@ -49,6 +96,8 @@ function TeacherProbono() {
   return (
     
 <div>
+<h2>Please Upload a Teacher Authentication Certificate to Verify Your Profession</h2>
+        <input type="file" accept=".pdf" onChange={handleFileChange} />
 
 
     <Box
@@ -80,7 +129,7 @@ function TeacherProbono() {
       <TextField
         id="normal-classes"
         label="# of normal classes"
-        type="number"
+        type="text"
         inputProps={{ min: 0 }}
         InputLabelProps={{
           shrink: true,
@@ -93,7 +142,7 @@ function TeacherProbono() {
       <TextField
         id="private-tutoring-classes"
         label="# of Private tutoring classes"
-        type="number"
+        type="text"
         inputProps={{ min: 0 }}
         InputLabelProps={{
           shrink: true,
@@ -112,7 +161,23 @@ function TeacherProbono() {
       
 
     </Box>
-    
+    {popupMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "white",
+              padding: "20px",
+              border: "1px solid black",
+              borderRadius: "5px",
+              zIndex: 1,
+            }}
+          >
+            {popupMessage}
+          </div>
+        )}
 </div>
   );
 
