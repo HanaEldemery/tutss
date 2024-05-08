@@ -7,7 +7,7 @@ function Popup({ closePopup, currentItemId }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>DETAILS</h1>
+          <h1>Details</h1>
         </div>
         <div className="body">
           {data.map((item, index) => (
@@ -25,7 +25,7 @@ function Popup({ closePopup, currentItemId }) {
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> BACK </button>
+          <button onClick={() => closePopup(false)}> Back </button>
         </div>
       </div>
     </div>

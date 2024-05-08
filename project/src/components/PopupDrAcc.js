@@ -20,7 +20,7 @@ function PopupDrAcc({ closePopup, drName, drID }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>DOCTOR DETAILS</h1>
+          <h1>Doctor Details</h1>
         </div>
         <div className="body">
           {data.map((item, index) => (
@@ -35,7 +35,7 @@ function PopupDrAcc({ closePopup, drName, drID }) {
                     onClick={() => showContact(item.id)}
                     className="search-button"
                   >
-                    CONTACT DETAILS
+                    Contact Details
                   </button>
                 </>
               )}
@@ -43,7 +43,7 @@ function PopupDrAcc({ closePopup, drName, drID }) {
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> CANCEL </button>
+          <button onClick={() => closePopup(false)}> Back </button>
         </div>
       </div>
     </div>

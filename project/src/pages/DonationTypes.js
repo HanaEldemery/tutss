@@ -5,7 +5,7 @@ import Donation from "../components/Donation";
 function DonationTypes() {
   return (
     <div className="menu">
-      <h1 className="menuTitle"> DONATE NOW </h1>
+      <h1 className="menuTitle"> Donate Now </h1>
       <div className="menuList">
         {donationTypes.map((item, key) => {
           return (

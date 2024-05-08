@@ -19,7 +19,7 @@ function PopupTeacherAcc({ closePopup, teacherName, teacherId }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>TEACHER DETAILS</h1>
+          <h1>Teacher Details</h1>
         </div>
         <div className="body">
           {data.map((item, index) => (
@@ -34,7 +34,7 @@ function PopupTeacherAcc({ closePopup, teacherName, teacherId }) {
                     onClick={() => showContact(item.id)}
                     className="search-button"
                   >
-                    CONTACT DETAILS
+                    Contant Details
                   </button>
                 </>
               )}
@@ -42,7 +42,7 @@ function PopupTeacherAcc({ closePopup, teacherName, teacherId }) {
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> BACK </button>
+          <button onClick={() => closePopup(false)}> Back </button>
         </div>
       </div>
     </div>

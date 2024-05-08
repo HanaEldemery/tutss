@@ -43,7 +43,7 @@ function Search() {
               <tr key={index}>
                 <td>{item.name}</td>
                 <button onClick={() => handleDetailsClick(item.id)}>
-                  DETAILS
+                  Details
                 </button>
                 {selectedItemId === item.id && <Details theKey={item.id} />}
               </tr>

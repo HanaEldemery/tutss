@@ -28,7 +28,7 @@ function Search() {
     <div className="all">
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">Organisation Names</h1>
+          <h1 className="TEXT">Organization Names</h1>
 
           <Form className="form">
             <Form.Control
@@ -59,7 +59,7 @@ function Search() {
                               onClick={() => handleDetailsClick(item.id)}
                               className="search-button"
                             >
-                              DETAILS
+                              Details
                             </button>
                             <button
                               onClick={() => {
@@ -67,7 +67,7 @@ function Search() {
                               }}
                               className="search-button"
                             >
-                              DELETE
+                              Delete
                             </button>
                           </p>
                         )}
@@ -90,7 +90,7 @@ function Search() {
                               onClick={() => handleDetailsClick(item.id)}
                               className="search-button"
                             >
-                              DETAILS
+                              Details
                             </button>
                             <button
                               onClick={() => {
@@ -98,7 +98,7 @@ function Search() {
                               }}
                               className="search-button"
                             >
-                              DELETE
+                              Delete
                             </button>
                           </p>
                         )}

@@ -64,7 +64,7 @@ function PopupREQ({ closePopup, organisation, requestType }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>MAKE A REQUEST</h1>
+          <h1>Make a Request</h1>
         </div>
 
         <div className="body">
@@ -334,8 +334,8 @@ function PopupREQ({ closePopup, organisation, requestType }) {
         </div>
         {error && <p className="error">{error}</p>}
         <div className="footer">
-          <button onClick={() => closePopup(false)}>BACK</button>
-          <button onClick={notify}>SUBMIT</button>
+          <button onClick={() => closePopup(false)}>Back</button>
+          <button onClick={notify}>Submit</button>
         </div>
         <ToastContainer />
       </div>

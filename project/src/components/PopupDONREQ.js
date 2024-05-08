@@ -51,7 +51,7 @@ function PopupDONREQ({ closePopup, organisationName }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>FULFILLED REQUESTS</h1>
+          <h1>Fulfilled Requests</h1>
         </div>
         <div className="body">
           {dataList.map((item, index) => (
@@ -63,21 +63,21 @@ function PopupDONREQ({ closePopup, organisationName }) {
                     onClick={() => newPopup(item.id)}
                     className="search-button"
                   >
-                    DETAILS
+                    Details
                   </button>
                   <button
                     className="search-button"
                     onClick={() => removeThis(item.id)}
                   >
                     {" "}
-                    REMOVE{" "}
+                    Remove{" "}
                   </button>
                   {item.type === "Medical" ? (
                     <button
                       className="search-button"
                       onClick={() => openDoctorAccount(item.drName, item.drId)}
                     >
-                      DOCTOR
+                      Doctor
                     </button>
                   ) : null}
                   {item.type === "Education" ? (
@@ -87,7 +87,7 @@ function PopupDONREQ({ closePopup, organisationName }) {
                         openTeacherAccount(item.teacherName, item.teacherId)
                       }
                     >
-                      TEACHER
+                      Teacher
                     </button>
                   ) : null}
                   {}
@@ -97,7 +97,7 @@ function PopupDONREQ({ closePopup, organisationName }) {
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> BACK </button>
+          <button onClick={() => closePopup(false)}> Back </button>
         </div>
       </div>
     </div>
