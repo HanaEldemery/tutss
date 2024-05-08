@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory from react-router-dom
+import { useHistory } from 'react-router-dom'; 
 import { Link } from "react-router-dom";
 
 
@@ -9,6 +9,8 @@ function TeacherRole() {
   const clearError = () => {
     seterror("");
   };
+  const [popupMessage, setPopupMessage] = useState("");
+
 
 
 
@@ -19,9 +21,12 @@ function TeacherRole() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (selectedFile) {
-      console.log('Selected file:', selectedFile);
-     // alert('Admin has accepted your Application');
-     window.location.href = '/teacherprobono';
+      setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+      setTimeout(() => {
+        setPopupMessage("");
+        window.location.href = '/teacherprobono';
+      }, 3000);
+
 
 
       
@@ -39,6 +44,23 @@ function TeacherRole() {
         <input type="file" accept=".pdf" onChange={handleFileChange} />
         <button>Confirm</button>
         {error && <p>{error}</p>}
+        {popupMessage && (
+          <div
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              backgroundColor: "white",
+              padding: "20px",
+              border: "1px solid black",
+              borderRadius: "5px",
+              zIndex: 1,
+            }}
+          >
+            {popupMessage}
+          </div>
+        )}
 
       </form>
     </div>
