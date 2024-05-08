@@ -48,6 +48,10 @@ import ViewAllOrganisations from "./pages/ViewAllOrganisations";
 import ViewAllDonors from "./pages/ViewAllDonors";
 import ViewAllOrganisationsForDonor from "./pages/ViewAllOrganisationsForDonor";
 
+import OrganisationHospital from "./pages/organisationHospital";
+import OrganisationOrphanage from "./pages/organisationVet";
+import OrganisationVet from "./pages/organisationVet";
+
 function App() {
   return (
     <div className="App">
@@ -136,6 +140,17 @@ function App() {
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
+          <Route
+            path="/organisationHospital"
+            exact
+            element={<OrganisationHospital />}
+          />
+          <Route
+            path="/organisationOrphanage"
+            exact
+            element={<OrganisationOrphanage />}
+          />
+          <Route path="/organisationVet" exact element={<OrganisationVet />} />
           <Route
             path="/ViewAllOrganisations"
             exact

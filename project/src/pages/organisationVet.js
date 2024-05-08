@@ -6,8 +6,8 @@ import PopupDONREQ from "../components/PopupDONREQ";
 import { data } from "../Data/regorgname";
 import { Link } from "react-router-dom";
 
-function OrganisationSchool({ organisationName }) {
-  organisationName = "Eire";
+function OrganisationVet({ organisationName }) {
+  organisationName = "Youopia";
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupAll, setShowPopupALL] = useState(false);
   const [showAccountInfo, setShowAccountInfo] = useState(false);
@@ -31,7 +31,6 @@ function OrganisationSchool({ organisationName }) {
 
   return (
     <div className="all">
-      <h1>Welcome School</h1>
       {showPopup ||
       showPopupAll ||
       showAccountInfo ||
@@ -97,4 +96,4 @@ function OrganisationSchool({ organisationName }) {
   );
 }
 
-export default OrganisationSchool;
+export default OrganisationVet;

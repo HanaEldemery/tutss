@@ -14,6 +14,8 @@ function OrgReg() {
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
 
+  const [orgType, setOrgType] = useState("");
+
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -55,7 +57,31 @@ function OrgReg() {
         }
         if (!selectedFile) {
           setError("Please select a file.");
-        } else if (flag === false) window.location.href = "/Organisation";
+        } else if (flag === false)
+          switch (orgType) {
+            case "hospital":
+              window.location.href = "/organisationHospital";
+              break;
+            case "school":
+              window.location.href = "/organisation";
+              break;
+            case "orphanage":
+              window.location.href = "/organisationOrphanage";
+              break;
+            case "vet":
+              window.location.href = "/organisationVet";
+              break;
+          }
+
+        // if (orgType === "Hospital") {
+        //   window.location.href = "/organisationHospital";
+        // } else if (orgType === "School") {
+        //   window.location.href = "/organisation";
+        // } else if (orgType === "Orphanage") {
+        //   window.location.href = "/organisationOrphanage";
+        // } else {
+        //   window.location.href = "/organisationVet";
+        // }
       } else {
         setError("Password Confirmation Failed");
         const clearError = () => {
@@ -105,9 +131,24 @@ function OrgReg() {
             onChange={(e) => setorgname(e.target.value)}
           />
         </div>
-        <div>
+        {/* <div>
           <label for="orgtype">Select Organization Type:</label>
           <select id="orgtype">
+            <option value="hospital">Hospital</option>
+            <option value="school">School</option>
+            <option value="orphanage">Orphanage</option>
+            <option value="vet">Vet</option>
+          </select>
+
+        </div> */}
+
+        <div>
+          <label htmlFor="orgtype">Select Organization Type:</label>
+          <select
+            id="orgtype"
+            value={orgType}
+            onChange={(e) => setOrgType(e.target.value)}
+          >
             <option value="hospital">Hospital</option>
             <option value="school">School</option>
             <option value="orphanage">Orphanage</option>
