@@ -7,7 +7,7 @@ import Bag from "../assets/Bag.jpeg";
 
 export const ClothesList = [
   {
-    id: 1,
+
     name: "Pants",
     type: "Cargo",
     Age: "2",
@@ -19,7 +19,7 @@ export const ClothesList = [
     xyz: "Clothes"
   },
   {
-    id: 2,
+
     name: "Dress",
     type: "Short Cotton",
     Age: "5",
@@ -31,7 +31,7 @@ export const ClothesList = [
     xyz: "Clothes"
   },
   {
-    id: 3,
+
     name: "T-shirts",
     type: "Oversized",
     Age: "10",
@@ -43,7 +43,7 @@ export const ClothesList = [
     xyz: "Clothes"
   },
   {
-    id: 4,
+
     name: "Bag",
     type: "Backpack",
     Age: "7",
@@ -55,7 +55,7 @@ export const ClothesList = [
     xyz: "Clothes"
   },
   {
-    id: 5,
+
     name: "Shoes",
     type: "sneakers",
     Age: "3",
@@ -67,7 +67,7 @@ export const ClothesList = [
     xyz: "Clothes"
   },
   {
-    id: 6,
+
     name: "Hoodie",
     type: "pullover hoodies",
     Age: "3",

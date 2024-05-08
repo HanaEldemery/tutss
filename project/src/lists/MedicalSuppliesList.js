@@ -5,7 +5,7 @@ import tylenol from "../images/tylenol.jpg";
 
 export const MedicalSuppliesList = [
   {
-    id: 1,
+
     name: "MRI Machine",
     type: "Medical Equipment",
     use: "For brain scans",
@@ -15,7 +15,7 @@ export const MedicalSuppliesList = [
 
   },
   {
-    id: 2,
+
     name: "Thermometer",
     type: "Medical Devices",
     use: "For measuring temperature",
@@ -24,7 +24,7 @@ export const MedicalSuppliesList = [
     xyz:"Medical Supplies",
   },
   {
-    id: 3,
+
     name: "Panadol",
     type: "Medications",
     use: "For headaches",
@@ -33,7 +33,7 @@ export const MedicalSuppliesList = [
     xyz: "Medical Supplies"
   },
   {
-    id: 4,
+
     name: "Tylenol",
     type: "Medications",
     use: "For stomachaches",

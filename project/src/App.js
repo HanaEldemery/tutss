@@ -47,7 +47,7 @@ import ViewEditAccount from "./pages/ViewEditAccount";
 import Halla from "./Search2";
 import Hana from "./pages/BloodRequest";
 import ViewAllOrganisations from  "./pages/ViewAllOrganisations";
-import ViewAllDonors from  "./pages/ViewAllDonors";
+import ViewAllOrganisationsForDonor from  "./pages/ViewAllOrganisationsForDonor";
 
 function App() {
   return (
@@ -125,11 +125,10 @@ function App() {
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
           <Route path="/ViewAllOrganisations" exact element={<ViewAllOrganisations />} />
-          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
 
           <Route path="/AdminHomePage" exact element={<AdminHomePage />} />
 
-          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
+          <Route path="/ViewAllOrganisationsForDonor" exact element={<ViewAllOrganisationsForDonor />} />
 
           <Route path="/halla" exact element={<Halla />} />
 

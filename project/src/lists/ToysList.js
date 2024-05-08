@@ -7,7 +7,7 @@ import rope from "../images/rope.jpg";
 
 export const ToysList = [
   {
-    id: 1,
+
     name: "Pink Rabbit",
     type: "Build-a-Bear",
     age: 2,
@@ -18,7 +18,7 @@ export const ToysList = [
     xyz:"Toys",
   },
   {
-    id: 2,
+
     name: "Red Car",
     type: "Porsche Car",
     age: 3,
@@ -29,7 +29,7 @@ export const ToysList = [
     xyz:"Toys",
   },
   {
-    id: 3,
+
     name: "Monopoly",
     type: "Monopoly Deal",
     age: 7,
@@ -40,7 +40,7 @@ export const ToysList = [
     xyz:"Toys",
   },
   {
-    id: 4,
+
     name: "Barbie",
     type: "Dua Lipa",
     age: 5,
@@ -51,7 +51,7 @@ export const ToysList = [
     xyz:"Toys",
   },
   {
-    id: 5,
+ 
     name: "Football",
     type: "Black and White",
     age: 10,
@@ -62,7 +62,7 @@ export const ToysList = [
     xyz:"Toys",
   },
   {
-    id: 6,
+
     name: "Jump Rope",
     type: "Elastic",
     age: 12,

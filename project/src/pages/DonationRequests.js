@@ -120,7 +120,6 @@ const viewDetails5 = (medicalSupplyItem) => {
                 onChange={handleChange}
                 style={{ marginBottom: '20px' }}
             />
-      <h1>Clothes Requests</h1>
           {showPopup ? (
             <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
@@ -138,7 +137,6 @@ const viewDetails5 = (medicalSupplyItem) => {
               ))}
             </div>
           )}
-          <h1>School Supplies Requests</h1>
           {showPopup1 ? (
           <Popup closePopup={setShowPopup1} theKey={clickedId1} />
         ) : (
@@ -157,7 +155,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           </div>
         )}
          
-         <h1>Toys Requests</h1>
+
         {showPopup3 ? (
           <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
         ) : (
@@ -175,7 +173,7 @@ const viewDetails5 = (medicalSupplyItem) => {
             ))}
           </div>
         )}
-                 <h1>Food Requests</h1>
+               
         {showPopup4 ? (
           <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
         ) : (
@@ -191,7 +189,7 @@ const viewDetails5 = (medicalSupplyItem) => {
                 </button>
               </div>
             ))}
-           <h1>Medical Supplies Requests</h1>
+
            {showPopup5 ? (
           <MedicalSuppliesPopup closePopup={setShowPopup5} theKey={clickedId5} />
         ) : (
@@ -209,7 +207,6 @@ const viewDetails5 = (medicalSupplyItem) => {
             ))}
           </div>
         )}
-        <h1>Blood Requests</h1>
          {showPopup2 ? (
           <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
         ) : (

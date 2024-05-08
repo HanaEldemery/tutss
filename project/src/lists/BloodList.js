@@ -1,6 +1,6 @@
 export const BloodList = [
   {
-    id: 1,
+
     xyz:"Blood",
     name: "Blood Type A+",
     patientName: "Halla Tarek",
@@ -24,7 +24,7 @@ export const BloodList = [
     ),
   },
   {
-    id: 2,
+
     xyz:"Blood",
     name: "Blood Type B+",
     patientName: "Seif Selim",
@@ -48,7 +48,7 @@ export const BloodList = [
     ),
   },
   {
-    id: 3,
+
     xyz:"Blood",
     name: "Blood Type O+",
     patientName: "Omar Ayman",
@@ -72,7 +72,7 @@ export const BloodList = [
     ),
   },
   {
-    id: 4,
+
     xyz:"Blood",
     name: "Blood Type B+",
     patientName: "Adham Sameh",
