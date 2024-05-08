@@ -271,7 +271,7 @@ const handleViewLess = () => {
   <div className="medical-list">
     {filteredMedicalList.map((medicalItem) =>  (
       <div key={medicalItem.id} className="medical-item">
-        {medicalItem.id} - {medicalItem.Patient_Name} 
+      - {medicalItem.Patient_Name} 
 
         <button onClick={() => viewMedicalDetails(medicalItem.id)} className="button-used">
           View Details

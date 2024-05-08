@@ -6,7 +6,8 @@ export const TeachingData = [
     "Governorate": "Cairo",
     "No_of_students": "17",
     "address": "233 Degla Maadi",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@ export const TeachingData = [
     "Governorate": "Cairo",
     "No_of_students": "6",
     "address": "Street 9 Maadi",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@ export const TeachingData = [
     "Governorate": "Cairo",
     "No_of_students": "9",
     "address": "Street 4 Mokattam",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@ export const TeachingData = [
     "Governorate": "Cairo",
     "No_of_students": "14",
     "address": "El Hadaba al wosta",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@ export const TeachingData = [
     "Governorate": "Cairo",
     "No_of_students": "11",
     "address": "Guc street Tagamoa",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@ export const TeachingData = [
     "Governorate": "Giza",
     "No_of_students": "6",
     "address": "29 Yasmine eldemery Zamalek",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@ export const TeachingData = [
     "Governorate": "Giza",
     "No_of_students": "19",
     "address": "Hardees Zamalek",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@ export const TeachingData = [
     "Governorate": "Giza",
     "No_of_students": "11",
     "address": "71 hana eldemery Zamalek",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@ export const TeachingData = [
     "Governorate": "Giza",
     "No_of_students": "14",
     "address": "corniche el nile Zamalek",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   },
   {
     "id": 10,
@@ -87,7 +96,9 @@ export const TeachingData = [
     "Governorate": "Giza",
     "No_of_students": "16",
     "address": "78 dokki Street",
-    "xyz": "Teaching"
+    "xyz": "Teaching",
+    "Location_Google_Marker": ""
   }
 ];
 
+export default TeachingData;
