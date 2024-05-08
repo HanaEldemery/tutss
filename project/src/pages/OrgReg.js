@@ -55,8 +55,7 @@ function OrgReg() {
         }
         if (!selectedFile) {
           setError("Please select a file.");
-        } else if (flag === false) alert("Success!");
-        // window.location.href = '/role';
+        } else if (flag === false) window.location.href = "/Organisation";
       } else {
         setError("Password Confirmation Failed");
         const clearError = () => {
@@ -228,9 +227,8 @@ function OrgReg() {
         <br />
 
         {error && <p>{error}</p>}
-        <Link to="/organisation">
-          <button type="submit">Register</button>
-        </Link>
+
+        <button type="submit">Register</button>
       </form>
     </div>
   );
