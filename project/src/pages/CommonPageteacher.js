@@ -11,20 +11,24 @@ function CommonPageteacher(idOfDonorFromLogin) {
 
   return (
     <div>
-      <Link to="/ViewAllOrganisationsForDonor">
-        <button>ViewAllOrganisationsForDonor</button>
-      </Link>
-
-      <Link to="/DonationRequest">
-        <button>ViewAllDonationRequests</button>
-      </Link>
-      <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
-
-      {showAccountInfo && (
+      <br />
+      <h1>Welcome Teacher!</h1>
+      {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
           donorId={idOfDonorFromLogin}
         />
+      ) : (
+        <div>
+          <Link to="/ViewAllOrganisationsForDonor">
+            <button>View All Organizations</button>
+          </Link>
+
+          <Link to="/DonationRequest">
+            <button>View All Donation Requests</button>
+          </Link>
+          <button onClick={viewEditAccount}>Manage Account Information</button>
+        </div>
       )}
     </div>
   );

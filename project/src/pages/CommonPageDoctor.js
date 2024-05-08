@@ -11,20 +11,24 @@ function CommonPageDoctor(idOfDonorFromLogin) {
 
   return (
     <div>
-      <Link to="/ViewAllOrganisationsForDonor">
-        <button>ViewAllOrganisationsForDonor</button>
-      </Link>
-      <Link to="/DonationRequestss">
-        <button>ViewAllDonationRequests</button>
-      </Link>
-
-      <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
-
-      {showAccountInfo && (
+      <br />
+      <h1>Welcome Doctor!</h1>
+      {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
           donorId={idOfDonorFromLogin}
         />
+      ) : (
+        <div>
+          <Link to="/ViewAllOrganisationsForDonor">
+            <button>View All OrganizationsS</button>
+          </Link>
+          <Link to="/DonationRequestss">
+            <button>View All Donation Requests</button>
+          </Link>
+
+          <button onClick={viewEditAccount}>Manage Account Information</button>
+        </div>
       )}
     </div>
   );

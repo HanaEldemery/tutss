@@ -12,20 +12,21 @@ function CommonPagegeneral(idOfDonorFromLogin) {
     <div>
       <br />
       <h1>Welcome Donor!</h1>
-      <Link to="/ViewAllOrganisationsForDonor">
-        <button>ViewAllOrganisationsForDonor</button>
-      </Link>
-      <Link to="/DonationRequests">
-        <button>ViewAllDonationRequests</button>
-      </Link>
-
-      <button onClick={viewEditAccount}>Manage Account Information</button>
-
-      {showAccountInfo && (
+      {showAccountInfo ? (
         <ViewEditAccount
           closePopup={setShowAccountInfo}
           donorId={idOfDonorFromLogin}
         />
+      ) : (
+        <div>
+          <Link to="/ViewAllOrganisationsForDonor">
+            <button>View All Organizations</button>
+          </Link>
+          <Link to="/DonationRequests">
+            <button>View All Donation Requests</button>
+          </Link>
+          <button onClick={viewEditAccount}>Manage Account Information</button>
+        </div>
       )}
     </div>
   );
