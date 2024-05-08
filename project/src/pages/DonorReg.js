@@ -13,6 +13,7 @@ function DonorReg() {
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
   const [donorType, setDonorType] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,22 +59,11 @@ function DonorReg() {
               }, 3000);
               break;
             case "doctor":
-              setPopupMessage(
-                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/doctorrole";
-              }, 3000);
+              window.location.href = "/doctorrole";
+
               break;
             case "teacher":
-              setPopupMessage(
-                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/teacherrole";
-              }, 3000);
+              window.location.href = "/teacherprobono";
               break;
             default:
               setError("Please Choose your Role as a Donor");
