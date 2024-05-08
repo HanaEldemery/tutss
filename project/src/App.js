@@ -42,7 +42,7 @@ import CommonPageteacher from "./pages/CommonPageteacher";
 import CommonPagegeneral from "./pages/CommonPagegeneral";
 import CommonPageDoctor from "./pages/CommonPageDoctor";
 import AdminHomePage from "./pages/AdminHomePage";
-
+import ViewEditAccount from "./pages/ViewEditAccount";
 
 import Halla from "./Search2";
 import Hana from "./pages/BloodRequest";
@@ -100,7 +100,7 @@ function App() {
           <Route path="/Adminchangepass" exact element={<Adminchangepass />} />
           <Route path="/OrgReg" exact element={<OrgReg />} />
           <Route path="/teacherprobono" exact element={<Teacherprobono />} />
-
+          <Route path="/ViewEditAccount" exact element={<ViewEditAccount />} />
           <Route path="/TeachingPosts" element={<TeachingPosts />} />
           <Route path="/MedicalCases" element={<MedicalCases />} />
           <Route
@@ -125,6 +125,8 @@ function App() {
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
           <Route path="/ViewAllOrganisations" exact element={<ViewAllOrganisations />} />
+          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
+
           <Route path="/AdminHomePage" exact element={<AdminHomePage />} />
 
           <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
