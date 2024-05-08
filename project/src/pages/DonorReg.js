@@ -188,9 +188,7 @@ function DonorReg() {  //my first name, last name, gender, email, contact number
                     />
                 </div> */}
                 {error && <p>{error}</p>}
-                <Link to="/role">
         <button> Register </button>
-      </Link>
             </form>
         </div>
     );
