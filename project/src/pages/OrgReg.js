@@ -160,7 +160,7 @@ function OrgReg() {
           />
         </div>
         <div>
-          <label htmlFor="area"> Enter Area: </label>
+          <label htmlFor="area"> Enter Organization Area: </label>
           <input
             type="text"
             id="area"
@@ -217,7 +217,7 @@ function OrgReg() {
         <div>
           <h2>
             Please Upload an Official Government License to Ensure
-            Authentication
+            Authentication of Organization
           </h2>
           <form onSubmit={handleSubmit}>
             <input type="file" accept=".pdf" onChange={handleFileChange} />

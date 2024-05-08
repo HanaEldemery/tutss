@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
 import { data } from "../Data/accepteddonationreq";
 //var data = require("../data/regorgname.json");
 

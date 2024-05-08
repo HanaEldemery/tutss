@@ -14,16 +14,16 @@ function Details({ theKey, closePopup }) {
           <div className="popupBackground">
             <div className="popupContainer">
               <div className="title">
-                <h1>CONTACT DETAILS</h1>
+                <h1>Contact Details</h1>
               </div>
               <div className="body">
-                <p>{matchedItem.details}</p>
-                <p>{matchedItem.address}</p>
-                <p>{matchedItem.location}</p>
-                <p>{matchedItem.type}</p>
+                <p>Phone Number: {matchedItem.details}</p>
+                <p>Address: {matchedItem.address}</p>
+                <p>Location: {matchedItem.location}</p>
+                <p>Organization Type: {matchedItem.type}</p>
               </div>
               <div className="footer">
-                <button onClick={() => closePopup(false)}> BACK </button>
+                <button onClick={() => closePopup(false)}> Back </button>
               </div>
             </div>
           </div>

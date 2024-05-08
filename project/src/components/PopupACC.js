@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
 import { data } from "../Data/regorgname";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+//import "react-toastify/dist/ReactToastify.css";
 //var data = require("../data/regorgname.json");
 
 function PopupACC({ closePopup, organisationName }) {

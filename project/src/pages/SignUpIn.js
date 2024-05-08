@@ -3,7 +3,6 @@ import EmailIcon from "@mui/icons-material/Email";
 import PasswordIcon from "@mui/icons-material/Password";
 import PersonIcon from "@mui/icons-material/Person";
 //import { Link } from "react-router-dom";
-import "../styles/SignUpIn.css";
 
 const SignUpIn = () => {
   const [action, setAction] = useState("Sign Up");

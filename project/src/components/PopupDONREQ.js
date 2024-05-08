@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../styles/Popup.css";
 import PopupHELPER from "../components/PopupHELPER";
 import PopupDrAcc from "../components/PopupDrAcc";
 import PopupTeacherAcc from "../components/PopupTeacherAcc";

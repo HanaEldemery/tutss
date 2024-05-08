@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import ViewEditAccount from "../pages/ViewEditAccount";
-import "../styles/Search.css";
 function CommonPagegeneral(idOfDonorFromLogin) {
   idOfDonorFromLogin = 1;
   const [showAccountInfo, setShowAccountInfo] = useState(false);
@@ -10,27 +9,25 @@ function CommonPagegeneral(idOfDonorFromLogin) {
   };
 
   return (
-    
     <div>
-
-   <br/>
-   <Link to="/ViewAllOrganisationsForDonor">
+      <br />
+      <Link to="/ViewAllOrganisationsForDonor">
         <button>ViewAllOrganisationsForDonor</button>
       </Link>
-       <Link to="/DonationRequests">
+      <Link to="/DonationRequests">
         <button>ViewAllDonationRequests</button>
       </Link>
 
       <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
 
       {showAccountInfo && (
-          <ViewEditAccount
-            closePopup={setShowAccountInfo}
-            donorId={idOfDonorFromLogin}
-          />
-        )}
+        <ViewEditAccount
+          closePopup={setShowAccountInfo}
+          donorId={idOfDonorFromLogin}
+        />
+      )}
     </div>
-  )
+  );
 }
 
-export default CommonPagegeneral
+export default CommonPagegeneral;

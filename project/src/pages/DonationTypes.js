@@ -1,7 +1,6 @@
 import React from "react";
 import { donationTypes } from "../helpers/donationTypes";
 import Donation from "../components/Donation";
-import "../styles/Donation.css";
 
 function DonationTypes() {
   return (

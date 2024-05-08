@@ -13,7 +13,7 @@ function Home() {
         <button> I am an Organization </button>
       </Link>
       <Link to="/DonorReg">
-        <button> I am a donor </button>
+        <button> I am a Donor </button>
       </Link>
     </div>
   );

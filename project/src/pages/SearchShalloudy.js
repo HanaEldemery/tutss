@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { data } from "../Data/regorgname";
 import Details from "./Details";
-import "../styles/Search.css";
 
 function Search() {
   const [search, setSearch] = useState("");

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "../styles/Donor.css";
 import Popup from "../components/Popup";
 import ViewAllOrganisationsForDonor from "../pages/ViewAllOrganisationsForDonor";
 import ViewEditAccount from "../pages/ViewEditAccount";

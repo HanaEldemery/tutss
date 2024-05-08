@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
 //var data = require("../data/regorgname.json");
 
 function Popup({ closePopup }) {

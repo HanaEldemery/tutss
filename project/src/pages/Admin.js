@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Donor.css";
 import ViewAllOrganisations from "../pages/ViewAllOrganisations";
 import ViewAllDonors from "../pages/ViewAllDonors";
 

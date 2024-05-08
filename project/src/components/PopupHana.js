@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Popup.css";
 import { BloodList } from "../Data/BloodList";
 //var data = require("../data/regorgname.json");
 

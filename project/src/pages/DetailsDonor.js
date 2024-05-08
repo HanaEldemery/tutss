@@ -14,15 +14,15 @@ function DetailsDonor({ theKey, closePopup }) {
           <div className="popupBackground">
             <div className="popupContainer">
               <div className="title">
-                <h1>DETAILS</h1>
+                <h1>Donor Details</h1>
               </div>
               <div className="body">
                 <p>Age: {matchedItem.age}</p>
                 <p>Address: {matchedItem.address}</p>
-                <p>Type of Donor: {matchedItem.typeDonor}</p>
+                <p>Donor Type: {matchedItem.typeDonor}</p>
               </div>
               <div className="footer">
-                <button onClick={() => closePopup(false)}> BACK </button>
+                <button onClick={() => closePopup(false)}> Back </button>
               </div>
             </div>
           </div>

@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import { data } from "../Data/regdonor";
 import DetailsDonor from "./DetailsDonor";
-import "../styles/Search.css";
 
 function Search({ closePopup }) {
   const [search, setSearch] = useState("");
@@ -40,14 +39,14 @@ function Search({ closePopup }) {
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
   const handleRedirect = () => {
-    window.location.href = '/AdminHomePage';
+    window.location.href = "/AdminHomePage";
   };
 
   return (
     <div className="all">
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">DONORS</h1>
+          <h1 className="TEXT">Donors</h1>
 
           <Table className="table">
             <tbody>
@@ -60,13 +59,13 @@ function Search({ closePopup }) {
                         onClick={() => handleDetailsClick(item.id)}
                         className="search-button"
                       >
-                        DETAILS
+                        View Details
                       </button>
                       <button
                         onClick={() => handleOnDelete(item.id)}
                         className="search-button"
                       >
-                        DELETE
+                        Delete Donor
                       </button>
                     </p>
                   )}
@@ -75,8 +74,8 @@ function Search({ closePopup }) {
             </tbody>
           </Table>
           <button onClick={handleRedirect} className="search-button">
-      BACK
-    </button>
+            Back
+          </button>
         </Container>
       )}
 

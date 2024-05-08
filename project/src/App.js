@@ -1,5 +1,3 @@
-/*import logo from "./logo.svg";*/
-import "./styles/App.css";
 import Login from "./pages/Login";
 import DonorReg from "./pages/DonorReg";
 import Roleselection from "./pages/roleselection";
@@ -46,8 +44,9 @@ import ViewEditAccount from "./pages/ViewEditAccount";
 
 import Halla from "./Search2";
 import Hana from "./pages/BloodRequest";
-import ViewAllOrganisations from  "./pages/ViewAllOrganisations";
-import ViewAllOrganisationsForDonor from  "./pages/ViewAllOrganisationsForDonor";
+import ViewAllOrganisations from "./pages/ViewAllOrganisations";
+import ViewAllDonors from "./pages/ViewAllDonors";
+import ViewAllOrganisationsForDonor from "./pages/ViewAllOrganisationsForDonor";
 
 function App() {
   return (
@@ -91,9 +90,22 @@ function App() {
           <Route path="/doctorrole" exact element={<Doctorrole />} />
           <Route path="/DonorReg" exact element={<DonorReg />} />
           <Route path="/donorrole" exact element={<Donorrole />} />
-          <Route path="/CommonPageteacher" exact element={<CommonPageteacher />} />
-          <Route path="/CommonPagegeneral" exact element={<CommonPagegeneral />} />
-          <Route path="/CommonPageDoctor" exact element={<CommonPageDoctor />} />
+          <Route
+            path="/CommonPageteacher"
+            exact
+            element={<CommonPageteacher />}
+          />
+          <Route
+            path="/CommonPagegeneral"
+            exact
+            element={<CommonPagegeneral />}
+          />
+          <Route
+            path="/CommonPageDoctor"
+            exact
+            element={<CommonPageDoctor />}
+          />
+          <Route path="/ViewAllDonors" exact element={<ViewAllDonors />} />
           <Route path="/teacherrole" exact element={<Teacherrole />} />
           <Route path="/AdminOrgReq" exact element={<AdminOrgReq />} />
           <Route path="/AdminDonReq" exact element={<AdminDonReq />} />
@@ -124,11 +136,19 @@ function App() {
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/testing" exact element={<Testing />} />
           <Route path="/organisation" exact element={<Organisation />} />
-          <Route path="/ViewAllOrganisations" exact element={<ViewAllOrganisations />} />
+          <Route
+            path="/ViewAllOrganisations"
+            exact
+            element={<ViewAllOrganisations />}
+          />
 
           <Route path="/AdminHomePage" exact element={<AdminHomePage />} />
 
-          <Route path="/ViewAllOrganisationsForDonor" exact element={<ViewAllOrganisationsForDonor />} />
+          <Route
+            path="/ViewAllOrganisationsForDonor"
+            exact
+            element={<ViewAllOrganisationsForDonor />}
+          />
 
           <Route path="/halla" exact element={<Halla />} />
 

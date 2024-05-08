@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
 import { data } from "../Data/regdonor";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 //var data = require("../data/regorgname.json");
 
 function ViewEditAccount({ closePopup, donorId }) {

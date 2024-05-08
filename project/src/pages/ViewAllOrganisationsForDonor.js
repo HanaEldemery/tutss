@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import { data } from "../Data/regorgname";
 import Details from "./Details";
 import { Link } from "react-router-dom";
-import "../styles/Search.css";
 
 function Search({ closePopup }) {
   const [search, setSearch] = useState("");

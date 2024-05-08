@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { data } from "../Data/regorgname";
-import "../styles/PopupREQ.css";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function PopupREQ({ closePopup, organisation, requestType }) {
   const [selectedOption, setSelectedOption] = useState("");

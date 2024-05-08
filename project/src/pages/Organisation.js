@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Organisation.css";
 import PopupREQ from "../components/PopupREQ";
 import PopupALL from "../components/PopupALL";
 import PopupACC from "../components/PopupACC";
@@ -38,22 +37,22 @@ function Organisation({ organisationName }) {
       showAcceptedDonationReq ? null : (
         <div className="addmargin">
           <button onClick={viewList} className="button-used">
-            CREATE A REQUEST DONATION POST
+            Create a Request Donation Post
           </button>
           <button onClick={viewListALL} className="button-used">
-            VIEW ALL CURRENT REQUESTS
+            View All Current Requests
           </button>
           <button onClick={viewAccountInformation} className="button-used">
-            EDIT ACCOUNT INFORMATION
+            Edit Account Information
           </button>
           <button onClick={viewAcceptedDonationReq} className="button-used">
-            VIEW FUILFILLED DONATION REQUESTS
+            View Fulfilled Donation Requests
           </button>
           <Link to="/DropoffSelection">
-            <button className="button-used">SET TIME SLOT SUITABLE</button>
+            <button className="button-used">Set Suitable Time Slot</button>
           </Link>
           <Link to="/">
-            <button className="button-used"> BACK TO HOME </button>
+            <button className="button-used"> Logout </button>
           </Link>
         </div>
       )}

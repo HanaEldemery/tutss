@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { data } from "../Data/allrequests";
-import "../styles/PopupALL.css";
 import PopupEDIT from "../components/PopupEDIT";
 
 function PopupALL({ closePopup, organisationName }) {

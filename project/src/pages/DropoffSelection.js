@@ -5,6 +5,7 @@ function DropoffSelection() {
   const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [popupMessage, setPopupMessage] = useState("");
 
   // Available time slots for donation dropoff
   const timeSlots = [
@@ -26,6 +27,14 @@ function DropoffSelection() {
       setErrorMessage("Please select a time slot.");
     } else {
       setShowConfirmation(true);
+      setPopupMessage(
+        `Drop Off Slot Confirmed, We will get in touch when the donation is about to arrive!`
+      );
+      setTimeout(() => {
+        setPopupMessage("");
+        // Redirect to another page after the popup message disappears
+        window.location.href = "/organisation";
+      }, 3000);
       setErrorMessage(""); // Clear any error messages
     }
   };
@@ -50,23 +59,31 @@ function DropoffSelection() {
 
       <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
 
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      {errorMessage && <p>{errorMessage}</p>}
 
-      {showConfirmation && (
-        <div className="confirm">
-          <div className="confirm_message">
-            <p>
-              Drop Off Slot Confirmed, We will get in touch when the donation is
-              about to arrive
-            </p>
-            <Link to="/organisation">
-              {" "}
-              {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
-              <button>Go Back To Main Page</button>
-            </Link>
-          </div>
+      {showConfirmation}
+      <br />
+      {popupMessage && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            backgroundColor: "white",
+            padding: "20px",
+            border: "1px solid black",
+            borderRadius: "5px",
+            zIndex: 1,
+          }}
+        >
+          {popupMessage}
         </div>
       )}
+      <Link to="/organisation">
+        {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
+        <button>Back</button>
+      </Link>
     </div>
   );
 }

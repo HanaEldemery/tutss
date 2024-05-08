@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import { data } from "../Data/regorgname";
 import Details from "./Details";
 import { Link } from "react-router-dom";
-import "../styles/Search.css";
 
 function Search({ closePopup }) {
   const [search, setSearch] = useState("");
@@ -41,14 +40,14 @@ function Search({ closePopup }) {
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
   const handleRedirect = () => {
-    window.location.href = '/AdminHomePage';
+    window.location.href = "/AdminHomePage";
   };
 
   return (
     <div className="all">
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">Organisation Names</h1>
+          <h1 className="TEXT">Organization Names</h1>
 
           <Form className="form">
             <Form.Control
@@ -109,13 +108,13 @@ function Search({ closePopup }) {
                         onClick={() => handleDetailsClick(item.id)}
                         className="search-button"
                       >
-                        DETAILS
+                        View Details
                       </button>
                       <button
                         onClick={() => handleOnDelete(item.id)}
                         className="search-button"
                       >
-                        DELETE
+                        Delete Organization
                       </button>
                     </p>
                   )}
@@ -124,8 +123,8 @@ function Search({ closePopup }) {
             </tbody>
           </Table>
           <button onClick={handleRedirect} className="search-button">
-      BACK
-    </button>
+            Back
+          </button>
         </Container>
       )}
 

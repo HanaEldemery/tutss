@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Popup.css";
 import { data } from "../Data/allDrsTeachers";
 //var data = require("../data/regorgname.json");
 

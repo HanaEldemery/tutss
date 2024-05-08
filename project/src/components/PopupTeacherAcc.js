@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/Popup.css";
 import { data } from "../Data/allDrsTeachers";
 import ContactDrTeacher from "../pages/ContactDrTeacher";
 //var data = require("../data/regorgname.json");
