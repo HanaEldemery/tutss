@@ -31,7 +31,7 @@ function DonorReg() {
         setError(null);
       };
 
-      setTimeout(clearError, 1500);
+      setTimeout(clearError, 3000);
     } else {
       if (password === conpassword) {
         let flag = false;
@@ -42,7 +42,7 @@ function DonorReg() {
               setError(null);
             };
 
-            setTimeout(clearError, 1500);
+            setTimeout(clearError, 3000);
             flag = true;
           }
         }
@@ -64,7 +64,7 @@ function DonorReg() {
           setError(null);
         };
 
-        setTimeout(clearError, 1500);
+        setTimeout(clearError, 3000);
       }
     }
   };

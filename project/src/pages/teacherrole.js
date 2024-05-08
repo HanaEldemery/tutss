@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 
 function TeacherRole() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [error, seterror] = useState("");
+  const clearError = () => {
+    seterror("");
+  };
+
+
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -20,7 +26,9 @@ function TeacherRole() {
 
       
     } else {
-      alert('Please select a file.');
+      seterror('Please select a file.');
+      
+  setTimeout(clearError, 3000);
     }
   };
 
@@ -29,9 +37,9 @@ function TeacherRole() {
       <h2>Please Upload a Teacher Authentication Certificate to Verify Your Profession</h2>
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".pdf" onChange={handleFileChange} />
-        <Link to="/teacherprobono">
         <button>Confirm</button>
-      </Link>
+        {error && <p>{error}</p>}
+
       </form>
     </div>
   );
