@@ -11,7 +11,7 @@ export const MedicalSuppliesList = [
     use: "For brain scans",
     image: mri,
     quantity: 3,
-    xyz:"Medical Supply",
+    xyz:"Medical Supplies",
 
   },
   {
@@ -21,7 +21,7 @@ export const MedicalSuppliesList = [
     use: "For measuring temperature",
     image: thermometer,
     quantity: 3,
-    xyz:"Medical Supply",
+    xyz:"Medical Supplies",
   },
   {
     id: 3,
@@ -30,6 +30,7 @@ export const MedicalSuppliesList = [
     use: "For headaches",
     image: panadol,
     quantity: 3,
+    xyz: "Medical Supplies"
   },
   {
     id: 4,
@@ -38,6 +39,6 @@ export const MedicalSuppliesList = [
     use: "For stomachaches",
     image: tylenol,
     quantity: 3,
-    xyz:"Medical Supply",
+    xyz:"Medical Supplies",
   },
 ];
