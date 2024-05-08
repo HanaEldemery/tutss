@@ -145,7 +145,7 @@ const handleViewLess = () => {
         <button> View All Blood Requests </button>
       </Link>
       <Link to="/MedicalCases">
-        <button>Go to Medical Cases</button>
+        <button>View All Medical Cases</button>
       </Link>
       <br/>
       <input

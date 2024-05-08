@@ -22,11 +22,11 @@ function TeacherPopup({
           <p>Governorate: {teacher.Governorate}</p>
           <p>Number of Students: {teacher.No_of_students}</p>
           <p>Address: {teacher.address}</p>
-          {/* {matchedItem.Location_Google_Marker && (
+          {teacher.Location_Google_Marker && (
           <div className="google-maps">
-            {matchedItem.Location_Google_Marker}
+            {teacher.Location_Google_Marker}
           </div>
-        )}*/}
+        )}
         </div>
         <div className="footer">
           {showDonateOptions === teacher.id ? (

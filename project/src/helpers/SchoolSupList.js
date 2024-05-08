@@ -9,9 +9,9 @@ import sharpener from "../assets/sharpener.webp";
 
 export const SchoolSupList = [
   {
-
+    id: 1,
     name: "Children's Book",
-    BookName: "The Very Hungry Caterpilar",
+    BookName: "The Very Hungry Caterpillar",
     Author: "Eric Carle's",
     type: "Fiction",
     Language: "English",
@@ -23,7 +23,7 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 2,
     name: "Copybook",
     BookName: null,
     Author: null,
@@ -37,10 +37,10 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 3,
     name: "Maths Book",
     BookName: "Cambridge Lower Secondary Complete Mathematics 7",
-    Author: "Debroah Barton",
+    Author: "Deborah Barton",
     type: "Non-Fiction",
     Language: "English",
     Edition: "Second Edition",
@@ -51,7 +51,7 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 4,
     name: "Pencil Case",
     BookName: null,
     Author: null,
@@ -65,7 +65,7 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 5,
     name: "English Book",
     BookName: "Cambridge Primary English Learner's Book 1",
     Author: "Gill Budgell",
@@ -79,7 +79,7 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 6,
     name: "Coloring Pencil",
     BookName: null,
     Author: null,
@@ -93,7 +93,7 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 7,
     name: "Eraser",
     BookName: null,
     Author: null,
@@ -107,12 +107,12 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   },
   {
-
+    id: 8,
     name: "Sharpener",
     BookName: null,
     Author: null,
     type: "pencil sharpener",
-    type1: sharpener,
+    type1: "sharpener",
     Language: null,
     Edition: null,
     Summary: null,
@@ -121,3 +121,5 @@ export const SchoolSupList = [
     xyz: "School Supplies"
   }
 ];
+
+export default SchoolSupList;
