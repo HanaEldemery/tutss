@@ -39,7 +39,8 @@ function DoctorRole() {
       <form onSubmit={handleSubmit}>
         <input type="file" accept=".pdf" onChange={handleFileChange} />
         
-        <button>Confirm</button>         {error && <p>{error}</p>}
+        <button>Confirm</button>         
+        {error && <p>{error}</p>}
 
 
             </form>

@@ -60,14 +60,14 @@ function DonorReg() {
                 setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
                 setTimeout(() => {
                   setPopupMessage("");
-                  window.location.href = "/teacherrole";
+                  window.location.href = "/doctorrole";
                 }, 3000);
               break;
             case "teacher":
                 setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
                 setTimeout(() => {
                   setPopupMessage("");
-                  window.location.href = "/doctorrole";
+                  window.location.href = "/teacherrole";
                 }, 3000);
               break;
             default:setError("Please Choose your Role as a Donor");
