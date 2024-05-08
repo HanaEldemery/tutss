@@ -27,8 +27,8 @@ function MedicalCases() {
 
     return (
         <div>
+             <h2>Medical Cases Requests</h2>
             <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
-            <h2>Hello from MedicalCases</h2>
             <MedicalList postsList={filteredProductList} />
         </div>
     );

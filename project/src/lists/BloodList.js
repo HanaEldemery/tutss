@@ -1,7 +1,7 @@
 export const BloodList = [
   {
-
-    xyz:"Blood",
+    id: 1,
+    xyz: "Blood",
     name: "Blood Type A+",
     patientName: "Halla Tarek",
     bloodType: "A+",
@@ -13,10 +13,10 @@ export const BloodList = [
       <iframe
         width="100%"
         height="200"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Dar%20El%20Fouad+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       >
         <a href="https://www.gps.ie/">gps trackers</a>
@@ -24,8 +24,8 @@ export const BloodList = [
     ),
   },
   {
-
-    xyz:"Blood",
+    id: 2,
+    xyz: "Blood",
     name: "Blood Type B+",
     patientName: "Seif Selim",
     bloodType: "B+",
@@ -37,10 +37,10 @@ export const BloodList = [
       <iframe
         width="100%"
         height="200"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=El-Safa%20Agouza+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       >
         <a href="https://www.gps.ie/">gps trackers</a>
@@ -48,8 +48,8 @@ export const BloodList = [
     ),
   },
   {
-
-    xyz:"Blood",
+    id: 3,
+    xyz: "Blood",
     name: "Blood Type O+",
     patientName: "Omar Ayman",
     bloodType: "O+",
@@ -61,10 +61,10 @@ export const BloodList = [
       <iframe
         width="100%"
         height="200"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Anglo,%20Zamalek+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       >
         <a href="https://www.gps.ie/">gps devices</a>
@@ -72,8 +72,8 @@ export const BloodList = [
     ),
   },
   {
-
-    xyz:"Blood",
+    id: 4,
+    xyz: "Blood",
     name: "Blood Type B+",
     patientName: "Adham Sameh",
     bloodType: "B+",
@@ -85,10 +85,10 @@ export const BloodList = [
       <iframe
         width="100%"
         height="200"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Dar%20El%20Fouad+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       >
         <a href="https://www.gps.ie/">gps trackers</a>
@@ -96,3 +96,5 @@ export const BloodList = [
     ),
   },
 ];
+
+export default BloodList;
