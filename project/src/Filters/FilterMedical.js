@@ -6,8 +6,8 @@ const FilterMedical = ({ filters, onFilterChange }) => {
     ];
 
     const organizationNames = [
-        'Cairo Medical Center', 'Nile Hospital', 'El Salam Hospital', 'Giza General Hospital', 
-        'Nile Health Center', 'Masr Medical Clinic', 'El Zahraa Medical Center'
+        'Cairo Medical Center', 'Nile Hospital', 'Lotus Medical Center', 'Giza General Hospital', 
+         'El Zahraa Medical Center',"Althuria Hospital","Mokattam Specialized Hospital", "Andalusia Hospital","Masr Medical Clinic"
     ];
 
     const areas = ['Maadi', 'Zamalek', 'Dokki', 'Tagamoa'];

@@ -1,3 +1,5 @@
+//Normal Page
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import ClothesPopup from "../Popups/ClothesPopup";
@@ -9,13 +11,12 @@ import MedicalSuppliesPopup from "../Popups/MedicalSuppliesPopup";
 import ToysPopup from "../Popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
-import { MedicalData } from "../Data/MedicalData";
-import { TeachingData } from "../Data/Teachingdata";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
  
 function DonationRequests() {
+
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -34,10 +35,29 @@ function DonationRequests() {
   const [showPopup5, setShowPopup5] = useState(false);
   const [clickedId5, setClickedId5] = useState("");
 
- 
-  const [searchTerm, setSearchTerm] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
+
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const navigate = useNavigate(); 
+
+  const handleChange = (event) => {
+    const search = event.target.value.toLowerCase();
+    setSearchTerm(search);
+  };
+
+  const filterList = (list) => {
+    return list.filter(item => item.xyz.toLowerCase().includes(searchTerm));
+  };
+
+  const filteredClothesList = searchTerm ? filterList(ClothesList) : ClothesList;
+  const filteredSchoolSupList = searchTerm ? filterList(SchoolSupList) : SchoolSupList;
+  const filteredToysList = searchTerm ? filterList(ToysList) : ToysList;
+  const filteredFoodList = searchTerm ? filterList(FoodList) : FoodList;
+  const filteredMedicalSuppliesList = searchTerm ? filterList(MedicalSuppliesList) : MedicalSuppliesList;
+  const filteredBloodList = searchTerm ? filterList(BloodList) : BloodList;
+
 
 
   const viewDetails1 = (schoolsupItem) => {
@@ -45,18 +65,7 @@ function DonationRequests() {
     setClickedId1(schoolsupItem);
   };
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-};
 
-const toggleDetails = (id) => {
-    if (expandedId === id) {
-        setExpandedId(null);
-        setShowDonateOptions(null);
-    } else {
-        setExpandedId(id);
-    }
-};
 const viewDetails4 = (FoodItem) => {
   setShowPopup4(true);
   setClickedId4(FoodItem);
@@ -65,9 +74,6 @@ const viewDetails5 = (medicalSupplyItem) => {
   setShowPopup5(true);
   setClickedId5(medicalSupplyItem);
 };
-
-
-
 
   const viewDetails = (clothesItem) => {
     setShowPopup(true);
@@ -81,6 +87,9 @@ const viewDetails5 = (medicalSupplyItem) => {
     setShowPopup3(true);
     setClickedId3(toyItem);
   };
+
+  
+  //whattttttt theeeee hecckkkkkkkjkkjk
   return (
       <div>
 
@@ -103,7 +112,6 @@ const viewDetails5 = (medicalSupplyItem) => {
       <Link to="/bloodRequests">
         <button> View All Blood Requests </button>
       </Link>
-    
       <br/>
       <input
                 type="text"
@@ -117,7 +125,7 @@ const viewDetails5 = (medicalSupplyItem) => {
             <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
             <div className="clothes-list">
-              {ClothesList.map((clothesItem) => (
+              {filteredClothesList.map((clothesItem) => (
                 <div key={clothesItem.id} className="clothes-item">
                   {clothesItem.id}- {clothesItem.name}
                   <button
@@ -135,7 +143,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           <Popup closePopup={setShowPopup1} theKey={clickedId1} />
         ) : (
           <div className="schoolsup-list">
-            {SchoolSupList.map((SchoolSupItem) => (
+            {filteredSchoolSupList.map((SchoolSupItem) => (
               <div key={SchoolSupItem.id} className="schoolsup-item">
                 {SchoolSupItem.id}- {SchoolSupItem.name}
                 <button
@@ -154,7 +162,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
         ) : (
           <div className="toys-list">
-            {ToysList.map((toyItem) => (
+            {filteredToysList.map((toyItem) =>  (
               <div key={toyItem.id} className="toy-item">
                 {toyItem.id}- {toyItem.name}
                 <button
@@ -172,7 +180,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
         ) : (
           <div className="food-list">
-            {FoodList.map((foodItem) => (
+           {filteredFoodList.map((foodItem) =>(
               <div key={foodItem.id} className="food-item">
                 {foodItem.id}- {foodItem.name}
                 <button
@@ -188,7 +196,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           <MedicalSuppliesPopup closePopup={setShowPopup5} theKey={clickedId5} />
         ) : (
           <div className="medical-supplies-list">
-            {MedicalSuppliesList.map((medicalSupplyItem) => (
+           {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
               <div key={medicalSupplyItem.id} className="medical-supply-item">
                 {medicalSupplyItem.id}- {medicalSupplyItem.name}
                 <button
@@ -206,7 +214,7 @@ const viewDetails5 = (medicalSupplyItem) => {
           <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
         ) : (
           <div className="blood-list">
-            {BloodList.map((bloodItem) => (
+              {filteredBloodList.map((bloodItem) => (
               <div key={bloodItem.id} className="blood-item">
                 {bloodItem.id}- {bloodItem.name}
                 <button
@@ -221,7 +229,7 @@ const viewDetails5 = (medicalSupplyItem) => {
         )}
           </div>
         )}
-        
+      
                         </div>
         </div>
         
@@ -234,4 +242,5 @@ const viewDetails5 = (medicalSupplyItem) => {
 export default DonationRequests
 
 
+  
   

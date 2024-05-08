@@ -8,6 +8,7 @@ export const donationTypes = [
     name: "Orphanage",
     image: Orphanage,
     other: "Clothes",
+
   },
   {
     name: "School",

@@ -1,3 +1,5 @@
+//DOCTOR DONATION REQUESTS
+
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 import ClothesPopup from "../Popups/ClothesPopup";
@@ -13,8 +15,12 @@ import { MedicalData } from "../Data/MedicalData";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
+import MedicalPopup from "../Popups/MedicalPopup";
  
 function DonationRequestss() {
+  const [showMedicalPopup, setShowMedicalPopup] = useState(false);
+  const [clickedMedicalId, setClickedMedicalId] = useState(null);
+
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -35,27 +41,42 @@ function DonationRequestss() {
 
   const [data, setData] = useState([ ...MedicalData]);
   const [filteredData, setFilteredData] = useState([ ...MedicalData]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
 
-  const navigate = useNavigate(); // useNavigate instead of useHistory
+  const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-      if (searchTerm === '') {
-          setFilteredData([ ...MedicalData]);
-      } else {
-          setFilteredData(data.filter(item => item.xyz && item.xyz.toLowerCase().includes(searchTerm.toLowerCase())));
-      }
-  }, [searchTerm, data]);
+  const navigate = useNavigate(); 
+
+  const handleChange = (event) => {
+    const search = event.target.value.toLowerCase();
+    setSearchTerm(search);
+  };
+
+  const filterList = (list) => {
+    return list.filter(item => item.xyz.toLowerCase().includes(searchTerm));
+  };
+
+  const filteredClothesList = searchTerm ? filterList(ClothesList) : ClothesList;
+  const filteredSchoolSupList = searchTerm ? filterList(SchoolSupList) : SchoolSupList;
+  const filteredToysList = searchTerm ? filterList(ToysList) : ToysList;
+  const filteredFoodList = searchTerm ? filterList(FoodList) : FoodList;
+  const filteredMedicalSuppliesList = searchTerm ? filterList(MedicalSuppliesList) : MedicalSuppliesList;
+  const filteredBloodList = searchTerm ? filterList(BloodList) : BloodList;
+  const filteredMedicalList = searchTerm ? filterList(MedicalData) : MedicalData;
+
+
+  const viewMedicalDetails = (id) => {
+    setShowMedicalPopup(true);
+    setClickedMedicalId(id);
+  };
+
+
   const viewDetails1 = (schoolsupItem) => {
     setShowPopup1(true);
     setClickedId1(schoolsupItem);
   };
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-};
 
 const toggleDetails = (id) => {
     if (expandedId === id) {
@@ -98,6 +119,8 @@ const handleViewLess = () => {
     setShowPopup3(true);
     setClickedId3(toyItem);
   };
+
+  
   //whattttttt theeeee hecckkkkkkkjkkjk
   return (
       <div>
@@ -137,7 +160,7 @@ const handleViewLess = () => {
             <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
             <div className="clothes-list">
-              {ClothesList.map((clothesItem) => (
+              {filteredClothesList.map((clothesItem) => (
                 <div key={clothesItem.id} className="clothes-item">
                   {clothesItem.id}- {clothesItem.name}
                   <button
@@ -155,7 +178,7 @@ const handleViewLess = () => {
           <Popup closePopup={setShowPopup1} theKey={clickedId1} />
         ) : (
           <div className="schoolsup-list">
-            {SchoolSupList.map((SchoolSupItem) => (
+            {filteredSchoolSupList.map((SchoolSupItem) => (
               <div key={SchoolSupItem.id} className="schoolsup-item">
                 {SchoolSupItem.id}- {SchoolSupItem.name}
                 <button
@@ -174,7 +197,7 @@ const handleViewLess = () => {
           <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
         ) : (
           <div className="toys-list">
-            {ToysList.map((toyItem) => (
+            {filteredToysList.map((toyItem) =>  (
               <div key={toyItem.id} className="toy-item">
                 {toyItem.id}- {toyItem.name}
                 <button
@@ -192,7 +215,7 @@ const handleViewLess = () => {
           <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
         ) : (
           <div className="food-list">
-            {FoodList.map((foodItem) => (
+           {filteredFoodList.map((foodItem) =>(
               <div key={foodItem.id} className="food-item">
                 {foodItem.id}- {foodItem.name}
                 <button
@@ -208,7 +231,7 @@ const handleViewLess = () => {
           <MedicalSuppliesPopup closePopup={setShowPopup5} theKey={clickedId5} />
         ) : (
           <div className="medical-supplies-list">
-            {MedicalSuppliesList.map((medicalSupplyItem) => (
+           {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
               <div key={medicalSupplyItem.id} className="medical-supply-item">
                 {medicalSupplyItem.id}- {medicalSupplyItem.name}
                 <button
@@ -226,7 +249,7 @@ const handleViewLess = () => {
           <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
         ) : (
           <div className="blood-list">
-            {BloodList.map((bloodItem) => (
+              {filteredBloodList.map((bloodItem) => (
               <div key={bloodItem.id} className="blood-item">
                 {bloodItem.id}- {bloodItem.name}
                 <button
@@ -241,56 +264,30 @@ const handleViewLess = () => {
         )}
           </div>
         )}
-        {filteredData.map((item) => (
-                <div key={item.id} style={{ margin: '10px', padding: '5px', border: '1px solid gray' }}>
-                    <h2 onClick={() => toggleDetails(item.id)}>
-                        {item.xyz} Donation Request {item.id}
-                    </h2>
-                    {expandedId === item.id && (
-                        <div>
-                            {item.Subject && <p>Subject: {item.Subject}</p>}
-                            {item.Patient_Name && <p>Patient Name: {item.Patient_Name}</p>}
-                            <p>Area: {item.Area || item.area}</p>
-                            <p>Governorate: {item.Governorate}</p>
-                            {item.No_of_students && <p>No. of Students: {item.No_of_students}</p>}
-                            {item.Medical_Specialty && <p>Medical Specialty: {item.Medical_Specialty}</p>}
-                            {item.Address && <p>Address: {item.Address}</p>}
-                            {item.Case_Description && <p>Case Description: {item.Case_Description}</p>}
-                            {item.Location_Google_Marker && <p>{item.Location_Google_Marker}</p>}
+        <h1>Medical Requests</h1>
+{showMedicalPopup ? (
+ <MedicalPopup
+  closePopup={() => setShowMedicalPopup(false)}
+  theKey={clickedMedicalId}
+  showDonateOptions={showDonateOptions}
+  setShowDonateOptions={setShowDonateOptions}
+  handleDonate={handleDonate}
+  handleViewLess={handleViewLess}
+/>
+) : (
+  <div className="medical-list">
+    {filteredMedicalList.map((medicalItem) =>  (
+      <div key={medicalItem.id} className="medical-item">
+        {medicalItem.id} - {medicalItem.Patient_Name} 
 
-          
-                            {showDonateOptions === item.id && (
-                                <> 
-                                    <Link to="/TransportationSelection">
-                                        <button onClick={() => console.log('Would you like a ride?')} style={{ margin: '10px' }}>
-                                            Would you like a ride?
-                                        </button>
-                                    </Link>
-                                    <Link to="/DonationSuccessful">
-                                        <button onClick={() => console.log('No thank you')} style={{ margin: '10px' }}>
-                                            No thank you
-                                        </button>
-                                    </Link>
-                                </>
-                            )}
-                            {showDonateOptions !== item.id && (
-                                <button onClick={() => handleDonate(item.id, item.xyz)} style={{ margin: '10px' }}>
-                                    Donate
-                                </button>
-                            )}
-                            <button onClick={() => handleViewLess()} style={{ margin: '10px' }}>
-                                View Less Details
-                            </button>
-                        </div>
-                    )}
-                    {expandedId !== item.id && (
-                        <button onClick={() => toggleDetails(item.id)} style={{ margin: '10px' }}>
-                            View Details
-                        </button>
-                    )}
-                     
-                </div>
-            ))}
+        <button onClick={() => viewMedicalDetails(medicalItem.id)} className="button-used">
+          View Details
+        </button>
+      </div>
+    ))}
+  </div>
+)}
+     
                         </div>
         </div>
         

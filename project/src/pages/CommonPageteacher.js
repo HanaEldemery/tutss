@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import { data } from "../Data/regorgname";
 import Details from "./Details";
 import "../styles/Search.css";
-function CommonPage(closePopup) {
+function CommonPageteacher(closePopup) {
     const [search, setSearch] = useState("");
     const [selectedItemId, setSelectedItemId] = useState(null);
     const [popupFlag, setPopupFlag] = useState(false);
@@ -35,7 +35,9 @@ function CommonPage(closePopup) {
       );
       setFilteredData(filtered);
     }, [search, areaFilter, governorateFilter, typeFilter]);
-  
+    const handleRedirect = () => {
+      window.location.href = '/teacherprobono';
+    };
   return (
     <div className="all">
     {popupFlag ? null : (
@@ -110,10 +112,9 @@ function CommonPage(closePopup) {
             ))}
           </tbody>
         </Table>
-        <button onClick={() => closePopup(false)} className="search-button">
-          {" "}
-          BACK{" "}
-        </button>
+        <button onClick={handleRedirect} className="search-button">
+      BACK
+    </button>
       </Container>
     )}
 
@@ -125,8 +126,11 @@ function CommonPage(closePopup) {
        <Link to="/DonationRequest">
         <button>ViewAllDonationRequests</button>
       </Link>
+      <Link to="/">
+        <button>Update/Delete Account info</button>
+      </Link>
     </div>
   )
 }
 
-export default CommonPage
+export default CommonPageteacher

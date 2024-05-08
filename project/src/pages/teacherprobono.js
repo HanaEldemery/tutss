@@ -14,10 +14,10 @@ function teacherprobono() {
       <h1>ProBono Classes</h1>
       <form id="contact-form" method="POST">
       <FormGroup>
-      <FormControlLabel control={<Checkbox defaultChecked />} label="English" />
-      <FormControlLabel control={<Checkbox defaultChecked />} label="Maths" />
-      <FormControlLabel control={<Checkbox defaultChecked />} label="Science" />  
-   <FormControlLabel control={<Checkbox defaultChecked />} label="other"   />
+      <FormControlLabel control={<Checkbox defaultUnChecked />} label="English" />
+      <FormControlLabel control={<Checkbox defaultUnChecked />} label="Maths" />
+      <FormControlLabel control={<Checkbox defaultUnChecked />} label="Science" />  
+   <FormControlLabel control={<Checkbox defaultUnChecked />} label="other"   />
 
       <TextField id="outlined-basic" label="please specify" variant="outlined" />
 
