@@ -10,7 +10,7 @@ import sharpener from "../assets/sharpener.webp";
 export const SchoolSupList = [
   {
 
-    name: "Childrensbooks",
+    name: "Children's Book",
     BookName: "The Very Hungry Caterpilar",
     Author: "Eric Carle's",
     type: "Fiction",
@@ -38,7 +38,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "Mathsbook",
+    name: "Maths Book",
     BookName: "Cambridge Lower Secondary Complete Mathematics 7",
     Author: "Debroah Barton",
     type: "Non-Fiction",
@@ -52,7 +52,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "Pencilcase",
+    name: "Pencil Case",
     BookName: null,
     Author: null,
     type: "nylon Pencilcase",
@@ -66,7 +66,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "Englishbook",
+    name: "English Book",
     BookName: "Cambridge Primary English Learner's Book 1",
     Author: "Gill Budgell",
     type: "Non-Fiction",
@@ -80,7 +80,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "ColoringPencil",
+    name: "Coloring Pencil",
     BookName: null,
     Author: null,
     type: "wax-based ColoringPencil",
@@ -94,7 +94,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "eraser",
+    name: "Eraser",
     BookName: null,
     Author: null,
     type: "pvc-free gum eraser",
@@ -108,7 +108,7 @@ export const SchoolSupList = [
   },
   {
 
-    name: "sharpener",
+    name: "Sharpener",
     BookName: null,
     Author: null,
     type: "pencil sharpener",

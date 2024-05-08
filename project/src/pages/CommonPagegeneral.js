@@ -13,10 +13,10 @@ function CommonPagegeneral(idOfDonorFromLogin) {
       <br />
       <h1>Welcome Donor!</h1>
       <Link to="/ViewAllOrganisationsForDonor">
-        <button>ViewAllOrganisationsForDonor</button>
+        <button>ViewAll Organisations For Donor</button>
       </Link>
       <Link to="/DonationRequests">
-        <button>ViewAllDonationRequests</button>
+        <button>View All Donation Requests</button>
       </Link>
 
       <button onClick={viewEditAccount}>Manage Account Information</button>
