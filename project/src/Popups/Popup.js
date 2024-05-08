@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { SchoolSupList } from "../helpers/SchoolSupList"; 
+import { SchoolSupList } from "../helpers/SchoolSupList";
 //var data = require("../data/regorgname.json");
 
 class Popup extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       quantity: "", // State for quantity input
@@ -21,7 +21,7 @@ class Popup extends Component {
     // Check if the input is a valid number within the range 1-3
     if (quantity >= 1 && quantity <= 3) {
       // Redirect to the donate page
-      window.location.href = "/";
+      window.location.href = "/TransportationSelection";
     } else {
       // Set error message if input is not valid
       this.setState({ errorMessage: "Please enter a number between 1 and 3." });
@@ -31,7 +31,7 @@ class Popup extends Component {
   render() {
     const { closePopup, theKey } = this.props;
     const matchedItem = SchoolSupList.find((item) => item.id === theKey);
-    
+
     const { errorMessage } = this.state;
 
     return (
@@ -40,19 +40,13 @@ class Popup extends Component {
           <div className="title"></div>
           <div className="body">
             <h1>{matchedItem.name}</h1>
-  
+
             <p>type: {matchedItem.type}</p>
-            {matchedItem.BookName && (
-            <p>BookName: {matchedItem.BookName}</p>)}
-              {matchedItem.Author && (
-            <p>Author: {matchedItem.Author}</p>)}
-            {matchedItem.Language && (
-            <p>Language: {matchedItem.Language}</p>)}
-            {matchedItem.Edition && (
-            <p>Edition: {matchedItem.Edition}</p>)}
-            {matchedItem.Summary && (
-            <p>Summary: {matchedItem.Summary}</p>
-            )}
+            {matchedItem.BookName && <p>BookName: {matchedItem.BookName}</p>}
+            {matchedItem.Author && <p>Author: {matchedItem.Author}</p>}
+            {matchedItem.Language && <p>Language: {matchedItem.Language}</p>}
+            {matchedItem.Edition && <p>Edition: {matchedItem.Edition}</p>}
+            {matchedItem.Summary && <p>Summary: {matchedItem.Summary}</p>}
             <p>Image: </p>
             <img src={matchedItem.picture} alt="SchoolSupply" />
             <p> Quantity: {matchedItem.quantity}</p>

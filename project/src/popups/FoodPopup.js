@@ -20,7 +20,7 @@ class Popup extends Component {
     // Check if the input is a valid number within the range 1-3
     if (quantity >= 1 && quantity <= 3) {
       // Redirect to the donate page
-      window.location.href = "/";
+      window.location.href = "/TransportationSelection";
     } else {
       // Set error message if input is not valid
       this.setState({ errorMessage: "Please enter a number between 1 and 3." });

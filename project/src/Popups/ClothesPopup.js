@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { ClothesList } from "../helpers/ClothesList"; 
+import { ClothesList } from "../helpers/ClothesList";
 //var data = require("../data/regorgname.json");
 
 class ClothesPopup extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       quantity: "", // State for quantity input
@@ -21,7 +21,7 @@ class ClothesPopup extends Component {
     // Check if the input is a valid number within the range 1-3
     if (quantity >= 1 && quantity <= 3) {
       // Redirect to the donate page
-      window.location.href = "/";
+      window.location.href = "/TransportationSelection";
     } else {
       // Set error message if input is not valid
       this.setState({ errorMessage: "Please enter a number between 1 and 3." });
@@ -31,7 +31,7 @@ class ClothesPopup extends Component {
   render() {
     const { closePopup, theKey } = this.props;
     const matchedItem = ClothesList.find((item) => item.id === theKey);
-    
+
     const { errorMessage } = this.state;
 
     return (
@@ -46,10 +46,10 @@ class ClothesPopup extends Component {
             <p>Age: {matchedItem.Age}</p>
             <p>Gender: {matchedItem.Gender}</p>
             {matchedItem.Season && (
-  <div>
-    <p>Season:{matchedItem.Season}</p>
-  </div>
-)}
+              <div>
+                <p>Season:{matchedItem.Season}</p>
+              </div>
+            )}
             <p>Material: {matchedItem.Material}</p>
 
             <p>Image: </p>

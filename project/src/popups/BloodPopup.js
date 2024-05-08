@@ -20,7 +20,7 @@ function Popup({ closePopup, theKey }) {
         </div>
         <div className="footer">
           <button onClick={() => closePopup(false)}> Hide Details </button>
-          <Link to="/">
+          <Link to="/TransportationSelection">
             <button> Donate Now</button>
           </Link>
         </div>
