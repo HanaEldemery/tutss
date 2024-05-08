@@ -52,6 +52,9 @@ function Organisation({ organisationName }) {
           <Link to="/DropoffSelection">
             <button className="button-used">SET TIME SLOT SUITABLE</button>
           </Link>
+          <Link to="/">
+            <button className="button-used"> BACK TO HOME </button>
+          </Link>
         </div>
       )}
       {showPopup && (
