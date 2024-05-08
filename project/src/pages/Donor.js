@@ -3,7 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/Donor.css";
 import Popup from "../components/Popup";
-import ViewAllOrganisations from "../pages/ViewAllOrganisations";
+import ViewAllOrganisationsForDonor from "../pages/ViewAllOrganisationsForDonor";
 import ViewEditAccount from "../pages/ViewEditAccount";
 
 const Donor = ({ idOfDonorFromLogin }) => {
@@ -46,7 +46,9 @@ const Donor = ({ idOfDonorFromLogin }) => {
             <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
           </div>
         )}
-        {showPopup && <ViewAllOrganisations closePopup={setShowPopup} />}
+        {showPopup && (
+          <ViewAllOrganisationsForDonor closePopup={setShowPopup} />
+        )}
         {showAccountInfo && (
           <ViewEditAccount
             closePopup={setShowAccountInfo}
