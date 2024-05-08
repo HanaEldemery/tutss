@@ -20,14 +20,17 @@ function CommonPageDoctor(idOfDonorFromLogin) {
       ) : (
         <div>
           <h1>Welcome Doctor!</h1>
-          <Link to="/ViewAllOrganisationsForDonor">
+          <Link to="/ViewAllOrganisationsForDoctor">
             <button>View All Organizations</button>
           </Link>
-          <Link to="/DonationRequestss">
+          <Link to="/DonationRequestssDoctor">
             <button>View All Donation Requests</button>
           </Link>
 
           <button onClick={viewEditAccount}>Manage Account Information</button>
+          <Link to="/">
+            <button> Logout </button>
+          </Link>
         </div>
       )}
     </div>

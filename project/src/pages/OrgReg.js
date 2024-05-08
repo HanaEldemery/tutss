@@ -15,7 +15,6 @@ function OrgReg() {
   const [error, setError] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
 
-
   const [orgType, setOrgType] = useState("");
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -62,43 +61,50 @@ function OrgReg() {
         } else if (flag === false)
           switch (orgType) {
             case "hospital":
-              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setPopupMessage(
+                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+              );
               setTimeout(() => {
                 setPopupMessage("");
                 window.location.href = "/organisationHospital";
               }, 3000);
-    
+
               break;
             case "school":
-              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setPopupMessage(
+                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+              );
               setTimeout(() => {
                 setPopupMessage("");
                 window.location.href = "/organisation";
               }, 3000);
               break;
             case "orphanage":
-              setPopupMessage(`Registeration Accepted by Admin; Redirecting you to your Home Page.`);
+              setPopupMessage(
+                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+              );
               setTimeout(() => {
                 setPopupMessage("");
                 window.location.href = "/organisationOrphanage";
               }, 3000);
               break;
             case "vet":
-              setPopupMessage(`Registeration Accepted by System; Redirecting you to your Home Page.`);
+              setPopupMessage(
+                `Registeration Accepted by System; Redirecting you to your Home Page.`
+              );
               setTimeout(() => {
                 setPopupMessage("");
                 window.location.href = "/organisationVet";
               }, 3000);
               break;
-              default:            
+            default:
               setError("Please Choose your Organization");
               const clearError = () => {
                 setError(null);
               };
-  
+
               setTimeout(clearError, 3000);
               break;
-
           }
 
         // if (orgType === "Hospital") {
@@ -315,8 +321,10 @@ function OrgReg() {
 
         {error && <p>{error}</p>}
 
+        <Link to="/">
+          <button> Back </button>
+        </Link>
         <button type="submit">Register</button>
-        
       </form>
     </div>
   );

@@ -7,7 +7,7 @@ import { data } from "../Data/regorgname";
 import { Link } from "react-router-dom";
 
 function OrganisationHospital({ organisationName }) {
-  organisationName = "Hipo";
+  organisationName = "Oyope";
   const [showPopup, setShowPopup] = useState(false);
   const [showPopupAll, setShowPopupALL] = useState(false);
   const [showAccountInfo, setShowAccountInfo] = useState(false);
@@ -49,7 +49,7 @@ function OrganisationHospital({ organisationName }) {
           <button onClick={viewAcceptedDonationReq} className="button-used">
             View Fulfilled Donation Requests
           </button>
-          <Link to="/DropoffSelection">
+          <Link to="/DropoffSelectionHospital">
             <button className="button-used">Set Suitable Time Slot</button>
           </Link>
           <Link to="/">

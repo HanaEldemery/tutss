@@ -49,7 +49,7 @@ function OrganisationOrphanage({ organisationName }) {
           <button onClick={viewAcceptedDonationReq} className="button-used">
             View Fulfilled Donation Requests
           </button>
-          <Link to="/DropoffSelection">
+          <Link to="/DropoffSelectionOrphanage">
             <button className="button-used">Set Suitable Time Slot</button>
           </Link>
           <Link to="/">

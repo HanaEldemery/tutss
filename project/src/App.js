@@ -49,8 +49,18 @@ import ViewAllDonors from "./pages/ViewAllDonors";
 import ViewAllOrganisationsForDonor from "./pages/ViewAllOrganisationsForDonor";
 
 import OrganisationHospital from "./pages/organisationHospital";
-import OrganisationOrphanage from "./pages/organisationVet";
+import OrganisationOrphanage from "./pages/organisationOrphanage";
 import OrganisationVet from "./pages/organisationVet";
+
+import DropoffSelectionHospital from "./pages/DropoffSelectionHospital";
+import DropoffSelectionOrphanage from "./pages/DropOffSelectionOrphanage";
+import DropoffSelectionVet from "./pages/DropOffSelectionVet";
+
+import ViewAllOrganisationsForDoctor from "./pages/ViewAllOrganisationsForDoctor";
+import ViewAllOrganisationsForTeacher from "./pages/ViewAllOrganisationsForTeacher";
+
+import DonationRequestssDoctor from "./pages/DonationRequestssDoctor";
+import DonationRequestssTeacher from "./pages/DonationRequestssTeacher";
 
 function App() {
   return (
@@ -94,6 +104,21 @@ function App() {
           <Route path="/doctorrole" exact element={<Doctorrole />} />
           <Route path="/DonorReg" exact element={<DonorReg />} />
           <Route path="/donorrole" exact element={<Donorrole />} />
+          <Route
+            path="DropoffSelectionHospital"
+            exact
+            element={<DropoffSelectionHospital />}
+          />
+          <Route
+            path="DropoffSelectionOrphanage"
+            exact
+            element={<DropoffSelectionOrphanage />}
+          />
+          <Route
+            path="DropoffSelectionVet"
+            exect
+            element={<DropoffSelectionVet />}
+          />
           <Route
             path="/CommonPageteacher"
             exact
@@ -168,6 +193,27 @@ function App() {
           <Route path="/halla" exact element={<Halla />} />
 
           <Route path="/hana" exact element={<Hana />} />
+
+          <Route
+            path="/ViewAllOrganisationsForDoctor"
+            exact
+            element={<ViewAllOrganisationsForDoctor />}
+          />
+          <Route
+            path="/ViewAllOrganisationsForTeacher"
+            exact
+            element={<ViewAllOrganisationsForTeacher />}
+          />
+          <Route
+            path="/DonationRequestssDoctor"
+            exact
+            element={<DonationRequestssDoctor />}
+          />
+          <Route
+            path="/DonationRequestssTeacher"
+            exact
+            element={<DonationRequestssTeacher />}
+          />
         </Routes>
       </Router>
     </div>

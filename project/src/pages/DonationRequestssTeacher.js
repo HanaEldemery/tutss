@@ -1,4 +1,4 @@
-//Teacher Page
+//DOCTOR DONATION REQUESTS
 
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
@@ -11,15 +11,16 @@ import MedicalSuppliesPopup from "../Popups/MedicalSuppliesPopup";
 import ToysPopup from "../Popups/ToysPopup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
 import { BloodList } from "../lists/BloodList";
-import { TeachingData } from "../Data/Teachingdata";
+import { MedicalData } from "../Data/MedicalData";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
-import TeacherPopup from "../Popups/TeacherPopup";
+import MedicalPopup from "../Popups/MedicalPopup";
 
-function DonationRequest() {
-  const [showTeacherPopup, setShowTeacherPopup] = useState(false);
-  const [clickedTeacherId, setClickedTeacherId] = useState(null);
+function DonationRequestss() {
+  const [showMedicalPopup, setShowMedicalPopup] = useState(false);
+  const [clickedMedicalId, setClickedMedicalId] = useState(null);
+
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -38,8 +39,8 @@ function DonationRequest() {
   const [showPopup5, setShowPopup5] = useState(false);
   const [clickedId5, setClickedId5] = useState("");
 
-  const [data, setData] = useState([...TeachingData]);
-  const [filteredData, setFilteredData] = useState([...TeachingData]);
+  const [data, setData] = useState([...MedicalData]);
+  const [filteredData, setFilteredData] = useState([...MedicalData]);
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
 
@@ -68,13 +69,13 @@ function DonationRequest() {
     ? filterList(MedicalSuppliesList)
     : MedicalSuppliesList;
   const filteredBloodList = searchTerm ? filterList(BloodList) : BloodList;
-  const filteredTeacherList = searchTerm
-    ? filterList(TeachingData)
-    : TeachingData;
+  const filteredMedicalList = searchTerm
+    ? filterList(MedicalData)
+    : MedicalData;
 
-  const viewTeacherDetails = (id) => {
-    setShowTeacherPopup(true);
-    setClickedTeacherId(id);
+  const viewMedicalDetails = (id) => {
+    setShowMedicalPopup(true);
+    setClickedMedicalId(id);
   };
 
   const viewDetails1 = (schoolsupItem) => {
@@ -146,8 +147,8 @@ function DonationRequest() {
         <Link to="/bloodRequests">
           <button> View All Blood Requests </button>
         </Link>
-        <Link to="/TeachingPosts">
-          <button>View All Teaching Requests</button>
+        <Link to="/MedicalCases">
+          <button>View All Medical Cases</button>
         </Link>
         <br />
         <input
@@ -209,7 +210,6 @@ function DonationRequest() {
             ))}
           </div>
         )}
-
         {showPopup4 ? (
           <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
         ) : (
@@ -267,22 +267,22 @@ function DonationRequest() {
             )}
           </div>
         )}
-        {showTeacherPopup ? (
-          <TeacherPopup
-            closePopup={() => setShowTeacherPopup(false)}
-            theKey={clickedTeacherId}
+        {showMedicalPopup ? (
+          <MedicalPopup
+            closePopup={() => setShowMedicalPopup(false)}
+            theKey={clickedMedicalId}
             showDonateOptions={showDonateOptions}
             setShowDonateOptions={setShowDonateOptions}
             handleDonate={handleDonate}
             handleViewLess={handleViewLess}
           />
         ) : (
-          <div className="Teacher-list">
-            {filteredTeacherList.map((TeacherItem) => (
-              <div key={TeacherItem.id} className="Teacher-item">
-                - {TeacherItem.Subject}
+          <div className="medical-list">
+            {filteredMedicalList.map((medicalItem) => (
+              <div key={medicalItem.id} className="medical-item">
+                - {medicalItem.Patient_Name}
                 <button
-                  onClick={() => viewTeacherDetails(TeacherItem.id)}
+                  onClick={() => viewMedicalDetails(medicalItem.id)}
                   className="button-used"
                 >
                   View Details
@@ -299,4 +299,4 @@ function DonationRequest() {
   );
 }
 
-export default DonationRequest;
+export default DonationRequestss;

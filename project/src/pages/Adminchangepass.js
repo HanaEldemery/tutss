@@ -90,11 +90,11 @@ function Adminchangepass() {
             {popupMessage}
           </div>
         )}
+        <Link to="/AdminHomePage">
+          <button>Back</button>
+        </Link>
         <button type="submit">Confirm</button>
       </form>
-      <Link to="/AdminHomePage">
-        <button>Back</button>
-      </Link>
     </div>
   );
 }
