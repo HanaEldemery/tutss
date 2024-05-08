@@ -11,6 +11,7 @@ function CommonPagegeneral(idOfDonorFromLogin) {
   return (
     <div>
       <br />
+      <h1>Welcome Donor!</h1>
       <Link to="/ViewAllOrganisationsForDonor">
         <button>ViewAllOrganisationsForDonor</button>
       </Link>
@@ -18,7 +19,7 @@ function CommonPagegeneral(idOfDonorFromLogin) {
         <button>ViewAllDonationRequests</button>
       </Link>
 
-      <button onClick={viewEditAccount}>ACCOUNT INFORMATION</button>
+      <button onClick={viewEditAccount}>Manage Account Information</button>
 
       {showAccountInfo && (
         <ViewEditAccount
