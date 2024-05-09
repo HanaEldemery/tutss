@@ -1,7 +1,7 @@
 //DOCTOR DONATION REQUESTS
 
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
 import ClothesPopup from "../Popups/ClothesPopup";
 import BloodPopup from "../Popups/BloodPopup";
 import { ClothesList } from "../helpers/ClothesList";
@@ -16,7 +16,7 @@ import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
 import MedicalPopup from "../Popups/MedicalPopup";
- 
+
 function DonationRequestss() {
   const [showMedicalPopup, setShowMedicalPopup] = useState(false);
   const [clickedMedicalId, setClickedMedicalId] = useState(null);
@@ -39,14 +39,14 @@ function DonationRequestss() {
   const [showPopup5, setShowPopup5] = useState(false);
   const [clickedId5, setClickedId5] = useState("");
 
-  const [data, setData] = useState([ ...MedicalData]);
-  const [filteredData, setFilteredData] = useState([ ...MedicalData]);
+  const [data, setData] = useState([...MedicalData]);
+  const [filteredData, setFilteredData] = useState([...MedicalData]);
   const [expandedId, setExpandedId] = useState(null);
   const [showDonateOptions, setShowDonateOptions] = useState(null);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const search = event.target.value.toLowerCase();
@@ -54,58 +54,63 @@ function DonationRequestss() {
   };
 
   const filterList = (list) => {
-    return list.filter(item => item.xyz.toLowerCase().includes(searchTerm));
+    return list.filter((item) => item.xyz.toLowerCase().includes(searchTerm));
   };
 
-  const filteredClothesList = searchTerm ? filterList(ClothesList) : ClothesList;
-  const filteredSchoolSupList = searchTerm ? filterList(SchoolSupList) : SchoolSupList;
+  const filteredClothesList = searchTerm
+    ? filterList(ClothesList)
+    : ClothesList;
+  const filteredSchoolSupList = searchTerm
+    ? filterList(SchoolSupList)
+    : SchoolSupList;
   const filteredToysList = searchTerm ? filterList(ToysList) : ToysList;
   const filteredFoodList = searchTerm ? filterList(FoodList) : FoodList;
-  const filteredMedicalSuppliesList = searchTerm ? filterList(MedicalSuppliesList) : MedicalSuppliesList;
+  const filteredMedicalSuppliesList = searchTerm
+    ? filterList(MedicalSuppliesList)
+    : MedicalSuppliesList;
   const filteredBloodList = searchTerm ? filterList(BloodList) : BloodList;
-  const filteredMedicalList = searchTerm ? filterList(MedicalData) : MedicalData;
-
+  const filteredMedicalList = searchTerm
+    ? filterList(MedicalData)
+    : MedicalData;
 
   const viewMedicalDetails = (id) => {
     setShowMedicalPopup(true);
     setClickedMedicalId(id);
   };
 
-
   const viewDetails1 = (schoolsupItem) => {
     setShowPopup1(true);
     setClickedId1(schoolsupItem);
   };
 
-
-const toggleDetails = (id) => {
+  const toggleDetails = (id) => {
     if (expandedId === id) {
-        setExpandedId(null);
-        setShowDonateOptions(null);
+      setExpandedId(null);
+      setShowDonateOptions(null);
     } else {
-        setExpandedId(id);
+      setExpandedId(id);
     }
-};
-const viewDetails4 = (FoodItem) => {
-  setShowPopup4(true);
-  setClickedId4(FoodItem);
-};
-const viewDetails5 = (medicalSupplyItem) => {
-  setShowPopup5(true);
-  setClickedId5(medicalSupplyItem);
-};
-const handleDonate = (id, xyz) => {
-    if (xyz === 'Medical' || xyz === 'Teaching') {
-        setShowDonateOptions(id); // Show donation options for valid items
+  };
+  const viewDetails4 = (FoodItem) => {
+    setShowPopup4(true);
+    setClickedId4(FoodItem);
+  };
+  const viewDetails5 = (medicalSupplyItem) => {
+    setShowPopup5(true);
+    setClickedId5(medicalSupplyItem);
+  };
+  const handleDonate = (id, xyz) => {
+    if (xyz === "Medical" || xyz === "Teaching") {
+      setShowDonateOptions(id); // Show donation options for valid items
     } else {
-        navigate('/TransportationSelection'); // Redirect using navigate
+      navigate("/TransportationSelection"); // Redirect using navigate
     }
-};
+  };
 
-const handleViewLess = () => {
+  const handleViewLess = () => {
     setExpandedId(null);
     setShowDonateOptions(null);
-};
+  };
 
   const viewDetails = (clothesItem) => {
     setShowPopup(true);
@@ -120,59 +125,57 @@ const handleViewLess = () => {
     setClickedId3(toyItem);
   };
 
-  
   //whattttttt theeeee hecckkkkkkkjkkjk
   return (
-      <div>
-
     <div>
-    <Link to="/SchoolSuppliesDonations">
-        <button> View All School Supplies Requests </button>
-      </Link>
-      <Link to="/ClothingRequests">
-        <button> View All Clothing Requests </button>
-      </Link>
-    <Link to="/toysRequests">
-        <button> View All Toy Requests </button>
-      </Link>
-      <Link to="/foodRequests">
-        <button> View All Food Requests </button>
-      </Link>
-      <Link to="/medicalSuppliesRequests">
-        <button> View All Medical Supplies Requests </button>
-      </Link>
-      <Link to="/bloodRequests">
-        <button> View All Blood Requests </button>
-      </Link>
-      <Link to="/MedicalCases">
-        <button>View All Medical Cases</button>
-      </Link>
-      <br/>
-      <input
-                type="text"
-                placeholder="Search by Type "
-                value={searchTerm}
-                onChange={handleChange}
-                style={{ marginBottom: '20px' }}
-            />
-          {showPopup ? (
-            <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
-          ) : (
-            <div className="clothes-list">
-              {filteredClothesList.map((clothesItem) => (
-                <div key={clothesItem.id} className="clothes-item">
-                  {clothesItem.id}- {clothesItem.name}
-                  <button
-                    onClick={() => viewDetails(clothesItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-          {showPopup1 ? (
+      <div>
+        <Link to="/SchoolSuppliesDonations">
+          <button> View All School Supplies Requests </button>
+        </Link>
+        <Link to="/ClothingRequests">
+          <button> View All Clothing Requests </button>
+        </Link>
+        <Link to="/toysRequests">
+          <button> View All Toy Requests </button>
+        </Link>
+        <Link to="/foodRequests">
+          <button> View All Food Requests </button>
+        </Link>
+        <Link to="/medicalSuppliesRequests">
+          <button> View All Medical Supplies Requests </button>
+        </Link>
+        <Link to="/bloodRequests">
+          <button> View All Blood Requests </button>
+        </Link>
+        <Link to="/MedicalCases">
+          <button>View All Medical Cases</button>
+        </Link>
+        <br />
+        <input
+          type="text"
+          placeholder="Search by Type "
+          value={searchTerm}
+          onChange={handleChange}
+          style={{ marginBottom: "20px" }}
+        />
+        {showPopup ? (
+          <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
+        ) : (
+          <div className="clothes-list">
+            {filteredClothesList.map((clothesItem) => (
+              <div key={clothesItem.id} className="clothes-item">
+                {clothesItem.id}- {clothesItem.name}
+                <button
+                  onClick={() => viewDetails(clothesItem.id)}
+                  className="button-used"
+                >
+                  View Details
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+        {showPopup1 ? (
           <Popup closePopup={setShowPopup1} theKey={clickedId1} />
         ) : (
           <div className="schoolsup-list">
@@ -189,12 +192,12 @@ const handleViewLess = () => {
             ))}
           </div>
         )}
-         
+
         {showPopup3 ? (
           <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
         ) : (
           <div className="toys-list">
-            {filteredToysList.map((toyItem) =>  (
+            {filteredToysList.map((toyItem) => (
               <div key={toyItem.id} className="toy-item">
                 {toyItem.id}- {toyItem.name}
                 <button
@@ -211,7 +214,7 @@ const handleViewLess = () => {
           <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
         ) : (
           <div className="food-list">
-           {filteredFoodList.map((foodItem) =>(
+            {filteredFoodList.map((foodItem) => (
               <div key={foodItem.id} className="food-item">
                 {foodItem.id}- {foodItem.name}
                 <button
@@ -222,15 +225,64 @@ const handleViewLess = () => {
                 </button>
               </div>
             ))}
-           {showPopup5 ? (
-          <MedicalSuppliesPopup closePopup={setShowPopup5} theKey={clickedId5} />
+            {showPopup5 ? (
+              <MedicalSuppliesPopup
+                closePopup={setShowPopup5}
+                theKey={clickedId5}
+              />
+            ) : (
+              <div className="medical-supplies-list">
+                {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
+                  <div
+                    key={medicalSupplyItem.id}
+                    className="medical-supply-item"
+                  >
+                    {medicalSupplyItem.id}- {medicalSupplyItem.name}
+                    <button
+                      onClick={() => viewDetails5(medicalSupplyItem.id)}
+                      className="button-used"
+                    >
+                      View Details
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+            {showPopup2 ? (
+              <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
+            ) : (
+              <div className="blood-list">
+                {filteredBloodList.map((bloodItem) => (
+                  <div key={bloodItem.id} className="blood-item">
+                    {bloodItem.id}- {bloodItem.name}
+                    <button
+                      onClick={() => viewDetails2(bloodItem.id)}
+                      className="button-used"
+                    >
+                      View Details
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        {showMedicalPopup ? (
+          <MedicalPopup
+            closePopup={() => setShowMedicalPopup(false)}
+            theKey={clickedMedicalId}
+            showDonateOptions={showDonateOptions}
+            setShowDonateOptions={setShowDonateOptions}
+            handleDonate={handleDonate}
+            handleViewLess={handleViewLess}
+          />
         ) : (
-          <div className="medical-supplies-list">
-           {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
-              <div key={medicalSupplyItem.id} className="medical-supply-item">
-                {medicalSupplyItem.id}- {medicalSupplyItem.name}
+          <div className="medical-list">
+            {filteredMedicalList.map((medicalItem) => (
+              <div key={medicalItem.id} className="medical-item">
+                - {medicalItem.Patient_Name}
                 <button
-                  onClick={() => viewDetails5(medicalSupplyItem.id)}
+                  onClick={() => viewMedicalDetails(medicalItem.id)}
                   className="button-used"
                 >
                   View Details
@@ -239,58 +291,9 @@ const handleViewLess = () => {
             ))}
           </div>
         )}
-         {showPopup2 ? (
-          <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
-        ) : (
-          <div className="blood-list">
-              {filteredBloodList.map((bloodItem) => (
-              <div key={bloodItem.id} className="blood-item">
-                {bloodItem.id}- {bloodItem.name}
-                <button
-                  onClick={() => viewDetails2(bloodItem.id)}
-                  className="button-used"
-                >
-                  View Details
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-          </div>
-        )}
-{showMedicalPopup ? (
- <MedicalPopup
-  closePopup={() => setShowMedicalPopup(false)}
-  theKey={clickedMedicalId}
-  showDonateOptions={showDonateOptions}
-  setShowDonateOptions={setShowDonateOptions}
-  handleDonate={handleDonate}
-  handleViewLess={handleViewLess}
-/>
-) : (
-  <div className="medical-list">
-    {filteredMedicalList.map((medicalItem) =>  (
-      <div key={medicalItem.id} className="medical-item">
-      - {medicalItem.Patient_Name} 
-
-        <button onClick={() => viewMedicalDetails(medicalItem.id)} className="button-used">
-          View Details
-        </button>
       </div>
-    ))}
-  </div>
-)}
-     
-                        </div>
-        </div>
-        
-     
-
-
+    </div>
   );
 }
 
-export default DonationRequestss
-
-
-  
+export default DonationRequestss;

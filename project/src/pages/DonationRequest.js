@@ -172,12 +172,21 @@ function DonationRequest() {
           />
         ) : showPopup2 ? (
           <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
+        ) : showTeacherPopup ? (
+          <TeacherPopup
+            closePopup={() => setShowTeacherPopup(false)}
+            theKey={clickedTeacherId}
+            showDonateOptions={showDonateOptions}
+            setShowDonateOptions={setShowDonateOptions}
+            handleDonate={handleDonate}
+            handleViewLess={handleViewLess}
+          />
         ) : (
           <div>
             <div className="clothes-list">
               {filteredClothesList.map((clothesItem) => (
                 <div key={clothesItem.id} className="clothes-item">
-                  {clothesItem.id}- {clothesItem.name}
+                  {clothesItem.name}
                   <button
                     onClick={() => viewDetails(clothesItem.id)}
                     className="button-used"
@@ -190,7 +199,7 @@ function DonationRequest() {
             <div className="schoolsup-list">
               {filteredSchoolSupList.map((SchoolSupItem) => (
                 <div key={SchoolSupItem.id} className="schoolsup-item">
-                  {SchoolSupItem.id}- {SchoolSupItem.name}
+                  {SchoolSupItem.name}
                   <button
                     onClick={() => viewDetails1(SchoolSupItem.id)}
                     className="button-used"
@@ -203,7 +212,7 @@ function DonationRequest() {
             <div className="toys-list">
               {filteredToysList.map((toyItem) => (
                 <div key={toyItem.id} className="toy-item">
-                  {toyItem.id}- {toyItem.name}
+                  {toyItem.name}
                   <button
                     onClick={() => viewDetails3(toyItem.id)}
                     className="button-used"
@@ -216,7 +225,7 @@ function DonationRequest() {
             <div className="food-list">
               {filteredFoodList.map((foodItem) => (
                 <div key={foodItem.id} className="food-item">
-                  {foodItem.id}- {foodItem.name}
+                  {foodItem.name}
                   <button
                     onClick={() => viewDetails4(foodItem.id)}
                     className="button-used"
@@ -225,26 +234,53 @@ function DonationRequest() {
                   </button>
                 </div>
               ))}
-            </div>
-            <div className="medical-supplies-list">
-              {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
-                <div key={medicalSupplyItem.id} className="medical-supply-item">
-                  {medicalSupplyItem.id}- {medicalSupplyItem.name}
-                  <button
-                    onClick={() => viewDetails5(medicalSupplyItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
+              {showPopup5 ? (
+                <MedicalSuppliesPopup
+                  closePopup={setShowPopup5}
+                  theKey={clickedId5}
+                />
+              ) : (
+                <div className="medical-supplies-list">
+                  {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
+                    <div
+                      key={medicalSupplyItem.id}
+                      className="medical-supply-item"
+                    >
+                      {medicalSupplyItem.name}
+                      <button
+                        onClick={() => viewDetails5(medicalSupplyItem.id)}
+                        className="button-used"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
+              {showPopup2 ? (
+                <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
+              ) : (
+                <div className="blood-list">
+                  {filteredBloodList.map((bloodItem) => (
+                    <div key={bloodItem.id} className="blood-item">
+                      {bloodItem.name}
+                      <button
+                        onClick={() => viewDetails2(bloodItem.id)}
+                        className="button-used"
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="blood-list">
-              {filteredBloodList.map((bloodItem) => (
-                <div key={bloodItem.id} className="blood-item">
-                  {bloodItem.id}- {bloodItem.name}
+            <div className="Teacher-list">
+              {filteredTeacherList.map((TeacherItem) => (
+                <div key={TeacherItem.id} className="Teacher-item">
+                  {TeacherItem.Subject}
                   <button
-                    onClick={() => viewDetails2(bloodItem.id)}
+                    onClick={() => viewTeacherDetails(TeacherItem.id)}
                     className="button-used"
                   >
                     View Details

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function TransportationSelection() {
+function TransportationSelection({ closePopup }) {
   const [selectedVehicle, setSelectedVehicle] = useState("");
   const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [popupMessage, setPopupMessage] = useState(""); // State for popup notifications
 
-  // Vehicles and their available time slots
   const vehicles = {
     truck: ["9:00 AM - 11:00 AM", "1:00 PM - 3:00 PM"],
     car: ["10:00 AM - 12:00 PM", "2:00 PM - 4:00 PM"],
@@ -17,42 +17,55 @@ function TransportationSelection() {
   const handleVehicleChange = (event) => {
     const vehicle = event.target.value;
     setSelectedVehicle(vehicle);
-    setSelectedTimeSlot(""); // Reset time slot when vehicle changes
-    setErrorMessage(""); // Clear error message law al user ekhtar both
+    setSelectedTimeSlot("");
+    setErrorMessage("");
   };
 
   const handleTimeSlotChange = (event) => {
     setSelectedTimeSlot(event.target.value);
-    setErrorMessage(""); // Clear error message law al user ekhtar both
+    setErrorMessage("");
   };
 
   const handleConfirmation = () => {
     if (!selectedVehicle || !selectedTimeSlot) {
-      // Check if both vehicle and time slot are selected
       setErrorMessage("Please select both a vehicle and a time slot.");
     } else {
       setShowConfirmation(true);
-      setErrorMessage(""); // Clear any error messages
-    }
-  };
-  const [flag, setFlag] = useState(false);
-  const [popupMessage, setPopupMessage] = useState("");
-  const notify = () => {
-    setPopupMessage("Estimated Delivery Time: 2 days");
+      setErrorMessage("");
 
-    setTimeout(() => {
-      setPopupMessage("Your order has been delivered!");
+      // Show notifications sequentially
       setTimeout(() => {
-        setPopupMessage("");
-      }, 3000);
-    }, 3000);
+        setPopupMessage("A driver has accepted your order!"); // New notification
+        setTimeout(() => {
+          setPopupMessage("Estimated Delivery Time: 2 days");
+          setTimeout(() => {
+            setPopupMessage("Your order has been delivered!");
+            setTimeout(() => {
+              closePopup(false); // Close the popup after showing notifications
+            }, 3000);
+          }, 3000);
+        }, 3000);
+      }, 1000);
+    }
   };
 
   useEffect(() => {
     if (showConfirmation) {
-      notify(); // Call notify when showConfirmation is true
+      // This useEffect handles the popup notifications
+      setTimeout(() => {
+        setPopupMessage("A driver has accepted your order!"); // New notification
+        setTimeout(() => {
+          setPopupMessage("Estimated Delivery Time: 2 days");
+          setTimeout(() => {
+            setPopupMessage("Your order has been delivered!");
+            setTimeout(() => {
+              closePopup(false); // Close the popup after showing notifications
+            }, 3000);
+          }, 3000);
+        }, 3000);
+      }, 1000);
     }
-  }, [showConfirmation]);
+  }, [showConfirmation, closePopup]);
 
   return (
     <div>
@@ -109,16 +122,6 @@ function TransportationSelection() {
       <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
 
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-
-      {showConfirmation && notify && (
-        <div className="confirm">
-          <div className="confirm_message">
-            <Link to="/donationRequests">
-              <button>Go Back To Main Page</button>
-            </Link>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

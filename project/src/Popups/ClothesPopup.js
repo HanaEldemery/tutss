@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { ClothesList } from "../helpers/ClothesList";
-//var data = require("../data/regorgname.json");
+import TransportationSelection from "../pages/TransportationSelection";
 
 class ClothesPopup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: "", // State for quantity input
-      errorMessage: "", // State for error message
+      quantity: "",
+      errorMessage: "",
+      showTransportationSelection: false,
     };
   }
 
@@ -18,21 +19,25 @@ class ClothesPopup extends Component {
 
   handleDonate = () => {
     const { quantity } = this.state;
-    // Check if the input is a valid number within the range 1-3
-    if (quantity >= 1 && quantity <= 3) {
-      // Redirect to the donate page
-      window.location.href = "/TransportationSelection";
+    if (
+      quantity.trim() !== "" &&
+      !isNaN(quantity) &&
+      quantity >= 1 &&
+      quantity <= 3
+    ) {
+      this.setState({ showTransportationSelection: true, errorMessage: "" });
     } else {
-      // Set error message if input is not valid
-      this.setState({ errorMessage: "Please enter a number between 1 and 3." });
+      this.setState({
+        errorMessage: "Please enter a valid number between 1 and 3.",
+        showTransportationSelection: false,
+      });
     }
   };
 
   render() {
     const { closePopup, theKey } = this.props;
     const matchedItem = ClothesList.find((item) => item.id === theKey);
-
-    const { errorMessage } = this.state;
+    const { errorMessage, showTransportationSelection } = this.state;
 
     return (
       <div className="popupBackground">
@@ -70,6 +75,13 @@ class ClothesPopup extends Component {
             <button onClick={this.handleDonate}>Donate Now</button>
           </div>
         </div>
+        {showTransportationSelection && (
+          <TransportationSelection
+            closePopup={() =>
+              this.setState({ showTransportationSelection: false })
+            }
+          />
+        )}
       </div>
     );
   }
