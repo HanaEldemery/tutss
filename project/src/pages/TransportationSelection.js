@@ -41,7 +41,7 @@ function TransportationSelection({ closePopup }) {
           setTimeout(() => {
             setPopupMessage("Your order has been delivered!");
             setTimeout(() => {
-              closePopup(false); // Close the popup after showing notifications
+              closePopup(false);
             }, 3000);
           }, 3000);
         }, 3000);
@@ -51,15 +51,14 @@ function TransportationSelection({ closePopup }) {
 
   useEffect(() => {
     if (showConfirmation) {
-      // This useEffect handles the popup notifications
       setTimeout(() => {
-        setPopupMessage("A driver has accepted your order!"); // New notification
+        setPopupMessage("A driver has accepted your order!");
         setTimeout(() => {
           setPopupMessage("Estimated Delivery Time: 2 days");
           setTimeout(() => {
             setPopupMessage("Your order has been delivered!");
             setTimeout(() => {
-              closePopup(false); // Close the popup after showing notifications
+              closePopup(false);
             }, 3000);
           }, 3000);
         }, 3000);

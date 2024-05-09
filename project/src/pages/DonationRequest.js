@@ -128,22 +128,22 @@ function DonationRequest() {
   return (
     <div>
       <div>
-        <Link to="/SchoolSuppliesDonations">
+        <Link to="/SchoolSuppliesDonationsTeacher">
           <button> View All School Supplies Requests </button>
         </Link>
-        <Link to="/ClothingRequests">
+        <Link to="/ClothingRequestsTeacher">
           <button> View All Clothing Requests </button>
         </Link>
-        <Link to="/toysRequests">
+        <Link to="/toysRequestsTeacher">
           <button> View All Toy Requests </button>
         </Link>
-        <Link to="/foodRequests">
+        <Link to="/foodRequestsTeacher">
           <button> View All Food Requests </button>
         </Link>
-        <Link to="/medicalSuppliesRequests">
+        <Link to="/medicalSuppliesRequestsTeacher">
           <button> View All Medical Supplies Requests </button>
         </Link>
-        <Link to="/bloodRequests">
+        <Link to="/bloodRequestsTeacher">
           <button> View All Blood Requests </button>
         </Link>
         <Link to="/TeachingPosts">

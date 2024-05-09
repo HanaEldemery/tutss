@@ -62,6 +62,21 @@ import ViewAllOrganisationsForTeacher from "./pages/ViewAllOrganisationsForTeach
 import DonationRequestssDoctor from "./pages/DonationRequestssDoctor";
 import DonationRequestssTeacher from "./pages/DonationRequestssTeacher";
 
+import SchoolSuppliesDonationsDoctor from "./pages/SchoolSuppliesDonationsDoctor";
+import SchoolSuppliesDonationsTeacher from "./pages/SchoolSuppliesDonationsTeacher";
+
+import ClothingRequestsDoctor from "./pages/ClothingRequestsDoctor";
+import ClothingRequestsTeacher from "./pages/ClothingRequestsTeacher";
+
+import ToysRequestsDoctor from "./pages/toysRequestsDoctor";
+import ToysRequestsTeacher from "./pages/toysRequestsTeacher";
+import FoodRequestsDoctor from "./pages/foodRequestsDoctor";
+import FoodRequestsTeacher from "./pages/foodRequestsTeacher";
+import MedicalSuppliesRequestsDoctor from "./pages/medicalSuppliesRequestsDoctor";
+import MedicalSuppliesRequestsTeacher from "./pages/medicalSuppliesRequestsTeacher";
+import BloodRequestsDoctor from "./pages/bloodRequestsDoctor";
+import BloodRequestsTeacher from "./pages/bloodRequestsTeacher";
+
 function App() {
   return (
     <div className="App">
@@ -213,6 +228,66 @@ function App() {
             path="/DonationRequestssTeacher"
             exact
             element={<DonationRequestssTeacher />}
+          />
+          <Route
+            path="/SchoolSuppliesDonationsDoctor"
+            exact
+            element={<SchoolSuppliesDonationsDoctor />}
+          />
+          <Route
+            path="/SchoolSuppliesDonationsTeacher"
+            exact
+            element={<SchoolSuppliesDonationsTeacher />}
+          />
+          <Route
+            exact
+            path="/ClothingRequestsDoctor"
+            element={<ClothingRequestsDoctor />}
+          />
+          <Route
+            exact
+            path="/ClothingRequestsTeacher"
+            element={<ClothingRequestsTeacher />}
+          />
+          <Route
+            exact
+            path="/toysRequestsDoctor"
+            element={<ToysRequestsDoctor />}
+          />
+          <Route
+            exact
+            path="/toysRequestsTeacher"
+            element={<ToysRequestsTeacher />}
+          />
+          <Route
+            exact
+            path="/foodRequestsDoctor"
+            element={<FoodRequestsDoctor />}
+          />
+          <Route
+            exact
+            path="/foodRequestsTeacher"
+            element={<FoodRequestsTeacher />}
+          />
+          <Route
+            exact
+            path="/medicalSuppliesRequestsDoctor"
+            element={<MedicalSuppliesRequestsDoctor />}
+          />
+          <Route
+            exact
+            path="/medicalSuppliesRequestsTeacher"
+            element={<MedicalSuppliesRequestsTeacher />}
+          />
+          <Route
+            exact
+            path="/bloodRequestsDoctor"
+            element={<BloodRequestsDoctor />}
+          />
+          <Route
+            exact
+            path="/bloodRequestsTeacher"
+            element={<BloodRequestsTeacher />}
           />
         </Routes>
       </Router>

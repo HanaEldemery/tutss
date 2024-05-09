@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { SchoolSupList } from "../helpers/SchoolSupList";
-//var data = require("../data/regorgname.json");
+import TransportationSelection from "../pages/TransportationSelection";
 
 class Popup extends Component {
   constructor(props) {
@@ -8,6 +8,7 @@ class Popup extends Component {
     this.state = {
       quantity: "", // State for quantity input
       errorMessage: "", // State for error message
+      showTransportationSelection: false, // State to control rendering TransportationSelection
     };
   }
 
@@ -18,21 +19,28 @@ class Popup extends Component {
 
   handleDonate = () => {
     const { quantity } = this.state;
-    // Check if the input is a valid number within the range 1-3
-    if (quantity >= 1 && quantity <= 3) {
-      // Redirect to the donate page
-      window.location.href = "/TransportationSelection";
+    // Check if the input is not empty and is a valid number within the range 1-3
+    if (
+      quantity.trim() !== "" &&
+      !isNaN(quantity) &&
+      quantity >= 1 &&
+      quantity <= 3
+    ) {
+      // Set state to render TransportationSelection component
+      this.setState({ showTransportationSelection: true, errorMessage: "" });
     } else {
-      // Set error message if input is not valid
-      this.setState({ errorMessage: "Please enter a number between 1 and 3." });
+      // Set error message if input is empty or not valid
+      this.setState({
+        errorMessage: "Please enter a valid number between 1 and 3.",
+        showTransportationSelection: false,
+      });
     }
   };
 
   render() {
     const { closePopup, theKey } = this.props;
     const matchedItem = SchoolSupList.find((item) => item.id === theKey);
-
-    const { errorMessage } = this.state;
+    const { errorMessage, showTransportationSelection } = this.state;
 
     return (
       <div className="popupBackground">
@@ -65,6 +73,13 @@ class Popup extends Component {
             <button onClick={this.handleDonate}>Donate Now</button>
           </div>
         </div>
+        {showTransportationSelection && (
+          <TransportationSelection
+            closePopup={() =>
+              this.setState({ showTransportationSelection: false })
+            }
+          />
+        )}
       </div>
     );
   }

@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import { BloodList } from "../lists/BloodList";
-import { Link } from "react-router-dom";
+import TransportationSelection from "../pages/TransportationSelection";
 
 function Popup({ closePopup, theKey }) {
+  const [showTransportationSelection, setShowTransportationSelection] =
+    useState(false);
   const matchedItem = BloodList.find((item) => item.id === theKey);
+
+  const handleDonate = () => {
+    // Set state to render TransportationSelection component
+    setShowTransportationSelection(true);
+  };
+
   return (
     <div className="popupBackground">
       <div className="popupContainer">
@@ -19,12 +27,15 @@ function Popup({ closePopup, theKey }) {
           {matchedItem.googleMarker}
         </div>
         <div className="footer">
-          <button onClick={() => closePopup(false)}> Hide Details </button>
-          <Link to="/TransportationSelection">
-            <button> Donate Now</button>
-          </Link>
+          <button onClick={() => closePopup(false)}>Hide Details</button>
+          <button onClick={handleDonate}>Donate Now</button>
         </div>
       </div>
+      {showTransportationSelection && (
+        <TransportationSelection
+          closePopup={() => setShowTransportationSelection(false)}
+        />
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import React, { useState } from "react";
+import TransportationSelection from "../pages/TransportationSelection";
+import DonationConfirmationPopup from "../pages/DonationConfirmationPopup";
 import { TeachingData } from "../Data/Teachingdata";
 
 function TeacherPopup({
@@ -7,10 +8,25 @@ function TeacherPopup({
   theKey,
   showDonateOptions,
   setShowDonateOptions,
-  handleDonate,
 }) {
-  const navigate = useNavigate();
+  const [donationConfirmed, setDonationConfirmed] = useState(false);
+  const [showTransportationSelection, setShowTransportationSelection] =
+    useState(false);
+  const [showDonatePopup, setShowDonatePopup] = useState(false);
   const teacher = TeachingData.find((item) => item.id === theKey);
+
+  const handleNoThankYou = () => {
+    setDonationConfirmed(true);
+    setTimeout(() => {
+      setDonationConfirmed(false);
+    }, 3000); // 3 seconds
+    setShowDonatePopup(false); // Close the donation confirmation popup
+  };
+
+  const handleRide = () => {
+    setShowTransportationSelection(true);
+    setShowDonatePopup(false); // Close the donation confirmation popup
+  };
 
   return (
     <div className="popupBackground">
@@ -23,46 +39,42 @@ function TeacherPopup({
           <p>Number of Students: {teacher.No_of_students}</p>
           <p>Address: {teacher.address}</p>
           {teacher.Location_Google_Marker && (
-          <div className="google-maps">
-            {teacher.Location_Google_Marker}
-          </div>
-        )}
-        </div>
-        <div className="footer">
-          {showDonateOptions === teacher.id ? (
-            <>
-              <button onClick={() => closePopup()} style={{ margin: "10px" }}>
-                Hide Details
-              </button>
-
-              <Link to="/TransportationSelection">
-                <button style={{ margin: "10px" }}>
-                  Would you like a ride?
-                </button>
-              </Link>
-              <button
-                onClick={() => navigate("/DonationSuccessful")}
-                style={{ margin: "10px" }}
-              >
-                No thank you
-              </button>
-            </>
-          ) : (
-            <>
-              <button onClick={() => closePopup()} style={{ margin: "10px" }}>
-                Hide Details
-              </button>
-
-              <button
-                onClick={() => setShowDonateOptions(teacher.id)}
-                style={{ margin: "10px" }}
-              >
-                Donate
-              </button>
-            </>
+            <div className="google-maps">{teacher.Location_Google_Marker}</div>
           )}
         </div>
+        <div className="footer">
+          <button onClick={closePopup}>Hide Details</button>
+          <button onClick={() => setShowDonatePopup(true)}>Donate</button>
+        </div>
       </div>
+      {showDonatePopup && (
+        <DonationConfirmationPopup
+          handleNoThankYou={handleNoThankYou}
+          handleRide={handleRide}
+        />
+      )}
+      {showTransportationSelection && (
+        <TransportationSelection
+          closePopup={() => setShowTransportationSelection(false)}
+        />
+      )}
+      {donationConfirmed && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            backgroundColor: "white",
+            padding: "20px",
+            border: "1px solid black",
+            borderRadius: "5px",
+            zIndex: 1,
+          }}
+        >
+          Donation Confirmed
+        </div>
+      )}
     </div>
   );
 }

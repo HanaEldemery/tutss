@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ClothesPopup from "../Popups/ClothesPopup";
 import { ClothesList } from "../helpers/ClothesList";
+import { Link } from "react-router-dom";
 
 function ClothingRequests() {
   const [ageFilter, setAgeFilter] = useState(""); // State for age filter
@@ -20,10 +21,9 @@ function ClothingRequests() {
     setSeasonFilter(event.target.value);
   };
 
-
   const filteredClothesList = ClothesList.filter((item) => {
     return (
-      (ageFilter === "" || item.Age === (ageFilter)) &&
+      (ageFilter === "" || item.Age === ageFilter) &&
       (genderFilter === "" || item.Gender === genderFilter) &&
       (SeasonFilter === "" || item.Season === SeasonFilter)
     );
@@ -38,7 +38,7 @@ function ClothingRequests() {
     <div>
       <h1>Clothes Requests</h1>
       <div>
-      <select onChange={handleAgeChange}>
+        <select onChange={handleAgeChange}>
           <option value="">All Ages</option>
           <option value="2">1-2</option>
           <option value="3">3-4</option>
@@ -50,7 +50,7 @@ function ClothingRequests() {
         </select>
       </div>
       <div>
-        <select onChange={handleGenderChange }>
+        <select onChange={handleGenderChange}>
           <option value="">All Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
@@ -59,7 +59,7 @@ function ClothingRequests() {
         </select>
       </div>
       <div>
-        <select onChange={handleSeasonChange }>
+        <select onChange={handleSeasonChange}>
           <option value="">All Seasons</option>
           <option value="Summer">Summer</option>
           <option value="Spring">Spring</option>
@@ -88,6 +88,9 @@ function ClothingRequests() {
           </div>
         )}
       </div>
+      <Link to="/DonationRequests">
+        <button> Back </button>
+      </Link>
     </div>
   );
 }

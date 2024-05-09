@@ -129,22 +129,22 @@ function DonationRequestss() {
   return (
     <div>
       <div>
-        <Link to="/SchoolSuppliesDonations">
+        <Link to="/SchoolSuppliesDonationsDoctor">
           <button> View All School Supplies Requests </button>
         </Link>
-        <Link to="/ClothingRequests">
+        <Link to="/ClothingRequestsDoctor">
           <button> View All Clothing Requests </button>
         </Link>
-        <Link to="/toysRequests">
+        <Link to="/toysRequestsDoctor">
           <button> View All Toy Requests </button>
         </Link>
-        <Link to="/foodRequests">
+        <Link to="/foodRequestsDoctor">
           <button> View All Food Requests </button>
         </Link>
-        <Link to="/medicalSuppliesRequests">
+        <Link to="/medicalSuppliesRequestsDoctor">
           <button> View All Medical Supplies Requests </button>
         </Link>
-        <Link to="/bloodRequests">
+        <Link to="/bloodRequestsDoctor">
           <button> View All Blood Requests </button>
         </Link>
         <Link to="/MedicalCases">

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { ToysList } from "../lists/ToysList";
-import ToysPopup from "../Popups/ToysPopup";
+import ClothesPopup from "../Popups/ClothesPopup";
+import { ClothesList } from "../helpers/ClothesList";
 import { Link } from "react-router-dom";
 
-function ToysRequests() {
+function ClothingRequests() {
   const [ageFilter, setAgeFilter] = useState(""); // State for age filter
   const [genderFilter, setGenderFilter] = useState(""); // State for gender filter
-  const [categoryFilter, setCategoryFilter] = useState(""); // State for category filter
+  const [SeasonFilter, setSeasonFilter] = useState(""); // State for gender filter
   const [showPopup, setShowPopup] = useState(false);
   const [clickedId, setClickedId] = useState("");
 
@@ -17,27 +17,26 @@ function ToysRequests() {
   const handleGenderChange = (event) => {
     setGenderFilter(event.target.value);
   };
-
-  const handleCategoryChange = (event) => {
-    setCategoryFilter(event.target.value);
+  const handleSeasonChange = (event) => {
+    setSeasonFilter(event.target.value);
   };
 
-  const filteredToysList = ToysList.filter((item) => {
+  const filteredClothesList = ClothesList.filter((item) => {
     return (
-      (ageFilter === "" || item.age === parseInt(ageFilter)) &&
-      (genderFilter === "" || item.gender === genderFilter) &&
-      (categoryFilter === "" || item.category === categoryFilter)
+      (ageFilter === "" || item.Age === ageFilter) &&
+      (genderFilter === "" || item.Gender === genderFilter) &&
+      (SeasonFilter === "" || item.Season === SeasonFilter)
     );
   });
 
-  const viewDetails = (toyItem) => {
+  const viewDetails = (clothesItem) => {
     setShowPopup(true);
-    setClickedId(toyItem);
+    setClickedId(clothesItem);
   };
 
   return (
     <div>
-      <h1>Toys Requests</h1>
+      <h1>Clothes Requests</h1>
       <div>
         <select onChange={handleAgeChange}>
           <option value="">All Ages</option>
@@ -52,34 +51,34 @@ function ToysRequests() {
       </div>
       <div>
         <select onChange={handleGenderChange}>
-          <option value="">All Genders</option>
+          <option value="">All Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+          <option value="Unisex">Unisex</option>
           {/* Add options for other genders as needed */}
         </select>
       </div>
       <div>
-        <select onChange={handleCategoryChange}>
-          <option value="">All Categories</option>
-          <option value="Stuffed Toys">Stuffed Toys</option>
-          <option value="Cars">Cars</option>
-          <option value="Board Games">Board Games</option>
-          <option value="Dolls">Dolls</option>
-          <option value="Sports">Sports</option>
-          <option value="Outdoor">Outdoor</option>
-          {/* Add options for other categories as needed */}
+        <select onChange={handleSeasonChange}>
+          <option value="">All Seasons</option>
+          <option value="Summer">Summer</option>
+          <option value="Spring">Spring</option>
+          <option value="Winter">Winter</option>
+          <option value="Fall">Fall</option>
+
+          {/* Add options for other genders as needed */}
         </select>
       </div>
       <div className="all">
         {showPopup ? (
-          <ToysPopup closePopup={setShowPopup} theKey={clickedId} />
+          <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
         ) : (
-          <div className="toys-list">
-            {filteredToysList.map((toyItem) => (
-              <div key={toyItem.id} className="toy-item">
-                {toyItem.id}- {toyItem.name}
+          <div className="clothes-list">
+            {filteredClothesList.map((clothesItem) => (
+              <div key={clothesItem.id} className="clothes-item">
+                {clothesItem.id}- {clothesItem.name}
                 <button
-                  onClick={() => viewDetails(toyItem.id)}
+                  onClick={() => viewDetails(clothesItem.id)}
                   className="button-used"
                 >
                   View Details
@@ -89,11 +88,10 @@ function ToysRequests() {
           </div>
         )}
       </div>
-      <Link to="/DonationRequests">
-        <button>Back</button>
+      <Link to="/DonationRequest">
+        <button> Back </button>
       </Link>
     </div>
   );
 }
-
-export default ToysRequests;
+export default ClothingRequests;

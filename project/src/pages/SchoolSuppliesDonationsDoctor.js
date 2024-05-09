@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Popup from "../Popups/Popup";
 import { SchoolSupList } from "../helpers/SchoolSupList";
+import { Link } from "react-router-dom";
 
 function SchoolSuppliesDonations() {
   const [bookFilter, setBookFilter] = useState(""); // State for age filter
@@ -71,6 +72,9 @@ function SchoolSuppliesDonations() {
           </div>
         )}
       </div>
+      <Link to="/DonationRequestssDoctor">
+        <button> Back </button>
+      </Link>
     </div>
   );
 }

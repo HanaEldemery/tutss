@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Popup from "../Popups/Popup";
-import { SchoolSupList } from '../helpers/SchoolSupList';
+import { SchoolSupList } from "../helpers/SchoolSupList";
+import { Link } from "react-router-dom";
 
 function SchoolSuppliesDonations() {
   const [bookFilter, setBookFilter] = useState(""); // State for age filter
@@ -16,10 +17,9 @@ function SchoolSuppliesDonations() {
     setStationaryFilter(event.target.value);
   };
 
-
   const filteredSchoolSupList = SchoolSupList.filter((item) => {
     return (
-      (bookFilter === "" || item.type === (bookFilter)) &&
+      (bookFilter === "" || item.type === bookFilter) &&
       (stationaryFilter === "" || item.type1 === stationaryFilter)
     );
   });
@@ -41,7 +41,7 @@ function SchoolSuppliesDonations() {
         </select>
       </div>
       <div>
-        <select onChange={handleStationaryChange }>
+        <select onChange={handleStationaryChange}>
           <option value="">All Stationary</option>
           <option value="Copybook">Copybook</option>
           <option value="Pencilcase">Pencilcase</option>
@@ -52,7 +52,7 @@ function SchoolSuppliesDonations() {
           {/* Add options for other genders as needed */}
         </select>
       </div>
-    
+
       <div className="all">
         {showPopup ? (
           <Popup closePopup={setShowPopup} theKey={clickedId} />
@@ -72,6 +72,9 @@ function SchoolSuppliesDonations() {
           </div>
         )}
       </div>
+      <Link to="/DonationRequests">
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
