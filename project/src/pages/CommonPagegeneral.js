@@ -26,6 +26,9 @@ function CommonPagegeneral(idOfDonorFromLogin) {
             <button>View All Donation Requests</button>
           </Link>
           <button onClick={viewEditAccount}>Manage Account Information</button>
+          <Link to="/">
+            <button>Logout</button>
+          </Link>
         </div>
       )}
     </div>

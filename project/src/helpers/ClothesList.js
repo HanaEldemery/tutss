@@ -14,9 +14,9 @@ export const ClothesList = [
     Gender: "Male",
     Season: "Summer",
     Material: "jeans",
-    Quantity: 1,
+    Quantity: 3,
     picture: Jeans,
-    xyz: "Clothes"
+    xyz: "Clothes",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const ClothesList = [
     Material: "Cotton",
     Quantity: 3,
     picture: Dress,
-    xyz: "Clothes"
+    xyz: "Clothes",
   },
   {
     id: 3,
@@ -38,9 +38,9 @@ export const ClothesList = [
     Gender: "Female",
     Season: "Fall",
     Material: "Cotton",
-    Quantity: 2,
+    Quantity: 3,
     picture: TShirt,
-    xyz: "Clothes"
+    xyz: "Clothes",
   },
   {
     id: 4,
@@ -50,9 +50,9 @@ export const ClothesList = [
     Gender: "Female",
     Season: null,
     Material: "Fabric",
-    Quantity: 2,
+    Quantity: 3,
     picture: Bag,
-    xyz: "Clothes"
+    xyz: "Clothes",
   },
   {
     id: 5,
@@ -62,9 +62,9 @@ export const ClothesList = [
     Gender: "Unisex",
     Season: null,
     Material: "Rubber",
-    Quantity: 2,
+    Quantity: 3,
     picture: Shoes,
-    xyz: "Clothes"
+    xyz: "Clothes",
   },
   {
     id: 6,
@@ -74,10 +74,10 @@ export const ClothesList = [
     Gender: "Unisex",
     Season: "Winter",
     Material: "Cotton",
-    Quantity: 2,
+    Quantity: 3,
     picture: hoodie,
-    xyz: "Clothes"
-  }
+    xyz: "Clothes",
+  },
 ];
 
 export default ClothesList;
