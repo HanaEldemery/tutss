@@ -3,16 +3,23 @@ import FilterMedical from "../Filters/FilterMedical";
 import MedicalList from "../lists/MedicalList";
 import { MedicalData } from "../Data/MedicalData";
 import { Link } from "react-router-dom";
+import MedicalPopup from "../Popups/MedicalPopup";
 
 function MedicalCases() {
   const [productList, setProductList] = useState(MedicalData);
   const [filteredProductList, setFilteredProductList] = useState(MedicalData);
   const [filters, setFilters] = useState({});
+  const [showMedicalPopup, setShowMedicalPopup] = useState(false);
+  const [clickedMedicalId, setClickedMedicalId] = useState(null);
+  const [showDonateOptions, setShowDonateOptions] = useState(null);
+  const [showDetailsId, setShowDetailsId] = useState(null); // State to manage visibility of details
 
   const handleFilterChange = (category, value) => {
-    const newFilters = { ...filters, [category]: value };
+    const newFilters = { ...filters };
     if (value === "all") {
       delete newFilters[category]; // Remove the filter if 'all' is selected
+    } else {
+      newFilters[category] = value;
     }
     setFilters(newFilters);
     applyFilters(newFilters);
@@ -21,19 +28,67 @@ function MedicalCases() {
   const applyFilters = (newFilters) => {
     let filteredData = productList;
     Object.keys(newFilters).forEach((key) => {
-      filteredData = filteredData.filter(
-        (item) => item[key] === newFilters[key]
-      );
+      if (newFilters[key]) {
+        filteredData = filteredData.filter((item) => item[key] === newFilters[key]);
+      }
     });
     setFilteredProductList(filteredData);
   };
 
+  const toggleDetails = (id) => {
+    if (showDetailsId === id) {
+      setShowDetailsId(null); // Hide details if the same button is clicked
+    } else {
+      setShowDetailsId(id); // Show details for clicked item
+    }
+  };
+
+  const handleDonate = (id, xyz) => {
+    if (xyz === "Medical" || xyz === "Teaching") {
+      setShowDonateOptions(id); // Show donation options for valid items
+    } 
+  };
+
   return (
     <div>
-      <h2>Medical Cases Requests</h2>
       <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
-      <MedicalList postsList={filteredProductList} />
-      <Link to="/DonationRequestssDoctor">
+      <h2>Hello from MedicalCases</h2>
+      <div className="Medical-list">
+        {filteredProductList.map((MedicalItem) => (
+          <div key={MedicalItem.id} className="Medical-item">
+            {showDetailsId !== MedicalItem.id && (
+              <div>
+                {MedicalItem.Patient_Name}
+                <button
+                  onClick={() => toggleDetails(MedicalItem.id)}
+                  className="button-used"
+                >
+                  View Details
+                </button>
+              </div>
+            )}
+            {showDetailsId === MedicalItem.id && (
+              <MedicalPopup
+                closePopup={() => setShowDetailsId(null)}
+                theKey={MedicalItem.id}
+                showDonateOptions={showDonateOptions}
+                setShowDonateOptions={setShowDonateOptions}
+                handleDonate={handleDonate}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      {showMedicalPopup && (
+        <MedicalPopup
+          closePopup={() => setShowMedicalPopup(false)}
+          theKey={clickedMedicalId}
+          showDonateOptions={showDonateOptions}
+          setShowDonateOptions={setShowDonateOptions}
+          handleDonate={handleDonate}
+        />
+      )}
+      <Link to="/DonationRequests">
         <button>Back</button>
       </Link>
     </div>
