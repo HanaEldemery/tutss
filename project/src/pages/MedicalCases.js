@@ -88,7 +88,7 @@ function MedicalCases() {
           handleDonate={handleDonate}
         />
       )}
-      <Link to="/DonationRequests">
+      <Link to="/donationRequestssDoctor">
         <button>Back</button>
       </Link>
     </div>
