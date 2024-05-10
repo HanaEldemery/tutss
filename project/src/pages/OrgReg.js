@@ -62,7 +62,7 @@ function OrgReg() {
           switch (orgType) {
             case "hospital":
               setPopupMessage(
-                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
               );
               setTimeout(() => {
                 setPopupMessage("");
@@ -72,7 +72,7 @@ function OrgReg() {
               break;
             case "school":
               setPopupMessage(
-                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
               );
               setTimeout(() => {
                 setPopupMessage("");
@@ -81,7 +81,7 @@ function OrgReg() {
               break;
             case "orphanage":
               setPopupMessage(
-                `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
               );
               setTimeout(() => {
                 setPopupMessage("");
@@ -90,7 +90,7 @@ function OrgReg() {
               break;
             case "vet":
               setPopupMessage(
-                `Registeration Accepted by System; Redirecting you to your Home Page.`
+                `Registeration Accepted by System, Redirecting you to your Home Page.`
               );
               setTimeout(() => {
                 setPopupMessage("");

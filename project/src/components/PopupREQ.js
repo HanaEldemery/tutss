@@ -74,7 +74,7 @@ function PopupREQ({ closePopup, organisation }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>MAKE A REQUEST</h1>
+          <h1>Make a Request</h1>
         </div>
 
         <div className="body">

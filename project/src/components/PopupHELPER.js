@@ -14,11 +14,11 @@ function Popup({ closePopup, currentItemId }) {
             <div key={index}>
               {item.id === currentItemId && (
                 <div>
-                  <p>{item.category}</p>
-                  <p>{item.type}</p>
-                  <p>{item.material}</p>
-                  <p>{item.model}</p>
-                  <p>{item.year}</p>
+                  <p>Category: {item.category}</p>
+                  <p>Type: {item.type}</p>
+                  <p>Material: {item.material}</p>
+                  <p>Model: {item.model}</p>
+                  <p>Year: {item.year}</p>
                 </div>
               )}
             </div>

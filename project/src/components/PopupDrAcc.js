@@ -27,10 +27,10 @@ function PopupDrAcc({ closePopup, drName, drID }) {
             <div key={index}>
               {item.name === drName && item.id === drID && (
                 <>
-                  <p>{item.name}</p>
-                  <p>{item.exp}</p>
-                  <p>{item.workplace}</p>
-                  <p>{item.speciality}</p>
+                  <p>Name: {item.name}</p>
+                  <p>Experience: {item.exp}</p>
+                  <p>Workplace: {item.workplace}</p>
+                  <p>Specialty: {item.speciality}</p>
                   <button
                     onClick={() => showContact(item.id)}
                     className="search-button"

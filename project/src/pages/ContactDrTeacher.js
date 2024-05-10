@@ -7,23 +7,23 @@ function ContactDrTeacher({ closeThis, teacherDrId, teacherDrName }) {
     <div className="popupBackground">
       <div className="popupContainer">
         <div className="title">
-          <h1>CONTACT DETAILS</h1>
+          <h1>Contact Details</h1>
         </div>
         <div className="body">
           {data.map((item, index) => (
             <div key={index}>
               {item.name === teacherDrName && item.id === teacherDrId && (
                 <>
-                  <p>{item.number}</p>
-                  <p>{item.living}</p>
-                  <p>{item.email}</p>
+                  <p>Number: {item.number}</p>
+                  <p>Living: {item.living}</p>
+                  <p>Email: {item.email}</p>
                 </>
               )}
             </div>
           ))}
         </div>
         <div className="footer">
-          <button onClick={() => closeThis(false)}> BACK </button>
+          <button onClick={() => closeThis(false)}> Back </button>
         </div>
       </div>
     </div>

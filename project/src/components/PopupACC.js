@@ -93,7 +93,7 @@ function PopupACC({ closePopup, organisationName }) {
                         Area:
                         <input type="text" placeholder={item.area} />
                         <button onClick={areaClick} className="search-button">
-                          Remove
+                          Delete
                         </button>
                       </p>
                     </div>
@@ -114,7 +114,7 @@ function PopupACC({ closePopup, organisationName }) {
                           className="search-button"
                         >
                           {" "}
-                          Remove{" "}
+                          Delete{" "}
                         </button>
                       </p>
                     </div>
@@ -135,7 +135,7 @@ function PopupACC({ closePopup, organisationName }) {
                           className="search-button"
                         >
                           {" "}
-                          Remove{" "}
+                          Delete{" "}
                         </button>
                       </p>
                     </div>
@@ -156,7 +156,7 @@ function PopupACC({ closePopup, organisationName }) {
                           className="search-button"
                         >
                           {" "}
-                          Remove{" "}
+                          Delete{" "}
                         </button>
                       </p>
                     </div>
@@ -172,7 +172,7 @@ function PopupACC({ closePopup, organisationName }) {
                           className="search-button"
                         >
                           {" "}
-                          Remove{" "}
+                          Delete{" "}
                         </button>
                       </p>
                     </div>

@@ -73,7 +73,7 @@ function PopupREQ({ closePopup, organisation, requestType }) {
               {item.organisation === organisation && (
                 <div className="requestType">
                   <h3>{item.type} Request</h3>
-                  {requestType === "Supplies" && (
+                  {requestType === "Supplies" && item.type === "School" && (
                     <div className="textInputContainer">
                       <input
                         type="text"

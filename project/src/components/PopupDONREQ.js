@@ -70,7 +70,7 @@ function PopupDONREQ({ closePopup, organisationName }) {
                     onClick={() => removeThis(item.id)}
                   >
                     {" "}
-                    Remove{" "}
+                    Delete{" "}
                   </button>
                   {item.type === "Medical" ? (
                     <button

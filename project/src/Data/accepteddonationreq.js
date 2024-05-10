@@ -5,6 +5,7 @@ export const data = [
     category: "Supplies",
     type: "Bookmark",
     material: "Paper",
+    year: "2025",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const data = [
     category: "Supplies",
     type: "Pencil",
     material: "2B",
+    year: "2020",
   },
   {
     id: 3,
@@ -19,7 +21,7 @@ export const data = [
     category: "Furniture",
     type: "Chair",
     material: "Metal",
-    model: "1990",
+    year: "1990",
   },
   {
     id: 4,
@@ -27,7 +29,7 @@ export const data = [
     category: "Furniture",
     type: "Chair",
     material: "Leather",
-    model: "2017",
+    year: "2017",
   },
   {
     id: 6,
@@ -35,7 +37,7 @@ export const data = [
     category: "Furniture",
     type: "Table",
     material: "Glass",
-    model: "2013",
+    year: "2013",
   },
   {
     id: 7,
@@ -44,7 +46,7 @@ export const data = [
     category: "Probono Doctor Visit",
     drName: "Test Doctor",
     drId: 2,
-    speciality: "Pediatrics",
+    material: "Pediatrics",
     year: "2020",
   },
   {
@@ -54,7 +56,7 @@ export const data = [
     category: "Probono Doctor Visit",
     drName: "Omar Ayman",
     drId: 1,
-    speciality: "Neurology",
+    material: "Neurology",
     year: "2016",
   },
   {
@@ -63,6 +65,7 @@ export const data = [
     category: "Supplies",
     type: "Surgical",
     material: "Steel",
+    year: "2025",
   },
   {
     id: 10,
@@ -71,6 +74,23 @@ export const data = [
     category: "Probono Teaching Lession",
     teacherName: "Test Teacher",
     teacherId: 5,
-    speciality: "English",
+    material: "English",
+    year: "Year 10",
+  },
+  {
+    id: 11,
+    organisation: "Rhyzio",
+    type: "Toy",
+    category: "Boardgame",
+    year: "2012",
+    material: "Paper",
+  },
+  {
+    id: 12,
+    organisation: "Youopia",
+    type: "Dry Food",
+    category: "Cat Food",
+    year: "2024",
+    material: "Wet Food",
   },
 ];
