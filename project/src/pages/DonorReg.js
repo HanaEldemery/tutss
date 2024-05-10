@@ -90,7 +90,7 @@ function DonorReg() {
                         );
                         setTimeout(() => {
                           setPopupMessage("");
-                          window.location.href = "/doctorrole";
+                          window.location.href = "/CommonPagegeneral";
                         }, 3000);
                         break;
                         default:
