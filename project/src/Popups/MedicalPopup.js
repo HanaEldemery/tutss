@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TransportationSelection from "../pages/TransportationSelection";
+import TransportationSelection2 from "../pages/TransportationSelection2";
 import { MedicalData } from "../Data/MedicalData";
 import DonationConfirmationPopup from "../pages/DonationConfirmationPopup";
 
@@ -60,7 +60,7 @@ function MedicalPopup({
         />
       )}
       {showTransportationSelection && (
-        <TransportationSelection
+        <TransportationSelection2
           closePopup={() => setShowTransportationSelection(false)}
         />
       )}

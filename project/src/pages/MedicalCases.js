@@ -29,24 +29,22 @@ function MedicalCases() {
     let filteredData = productList;
     Object.keys(newFilters).forEach((key) => {
       if (newFilters[key]) {
-        filteredData = filteredData.filter((item) => item[key] === newFilters[key]);
+        filteredData = filteredData.filter(
+          (item) => item[key] === newFilters[key]
+        );
       }
     });
     setFilteredProductList(filteredData);
   };
 
   const toggleDetails = (id) => {
-    if (showDetailsId === id) {
-      setShowDetailsId(null); // Hide details if the same button is clicked
-    } else {
-      setShowDetailsId(id); // Show details for clicked item
-    }
+    setShowDetailsId(id === showDetailsId ? null : id); // Toggle visibility of details
   };
 
   const handleDonate = (id, xyz) => {
     if (xyz === "Medical" || xyz === "Teaching") {
       setShowDonateOptions(id); // Show donation options for valid items
-    } 
+    }
   };
 
   return (
@@ -56,7 +54,16 @@ function MedicalCases() {
       <div className="Medical-list">
         {filteredProductList.map((MedicalItem) => (
           <div key={MedicalItem.id} className="Medical-item">
-            {showDetailsId !== MedicalItem.id && (
+            {showDetailsId === MedicalItem.id && (
+              <MedicalPopup
+                closePopup={() => setShowDetailsId(null)}
+                theKey={MedicalItem.id}
+                showDonateOptions={showDonateOptions}
+                setShowDonateOptions={setShowDonateOptions}
+                handleDonate={handleDonate}
+              />
+            )}
+            {!showDetailsId && (
               <div>
                 {MedicalItem.Patient_Name}
                 <button
@@ -66,15 +73,6 @@ function MedicalCases() {
                   View Details
                 </button>
               </div>
-            )}
-            {showDetailsId === MedicalItem.id && (
-              <MedicalPopup
-                closePopup={() => setShowDetailsId(null)}
-                theKey={MedicalItem.id}
-                showDonateOptions={showDonateOptions}
-                setShowDonateOptions={setShowDonateOptions}
-                handleDonate={handleDonate}
-              />
             )}
           </div>
         ))}

@@ -29,24 +29,22 @@ function TeachingPosts() {
     let filteredData = productList;
     Object.keys(newFilters).forEach((key) => {
       if (newFilters[key]) {
-        filteredData = filteredData.filter((item) => item[key] === newFilters[key]);
+        filteredData = filteredData.filter(
+          (item) => item[key] === newFilters[key]
+        );
       }
     });
     setFilteredProductList(filteredData);
   };
 
   const toggleDetails = (id) => {
-    if (showDetailsId === id) {
-      setShowDetailsId(null); // Hide details if the same button is clicked
-    } else {
-      setShowDetailsId(id); // Show details for clicked item
-    }
+    setShowDetailsId(id === showDetailsId ? null : id); // Toggle visibility of details
   };
 
   const handleDonate = (id, xyz) => {
     if (xyz === "Medical" || xyz === "Teaching") {
       setShowDonateOptions(id); // Show donation options for valid items
-    } 
+    }
   };
 
   return (
@@ -56,7 +54,16 @@ function TeachingPosts() {
       <div className="Teacher-list">
         {filteredProductList.map((TeacherItem) => (
           <div key={TeacherItem.id} className="Teacher-item">
-            {showDetailsId !== TeacherItem.id && (
+            {showDetailsId === TeacherItem.id && (
+              <TeacherPopup
+                closePopup={() => setShowDetailsId(null)}
+                theKey={TeacherItem.id}
+                showDonateOptions={showDonateOptions}
+                setShowDonateOptions={setShowDonateOptions}
+                handleDonate={handleDonate}
+              />
+            )}
+            {!showDetailsId && (
               <div>
                 {TeacherItem.Subject}
                 <button
@@ -66,15 +73,6 @@ function TeachingPosts() {
                   View Details
                 </button>
               </div>
-            )}
-            {showDetailsId === TeacherItem.id && (
-              <TeacherPopup
-                closePopup={() => setShowDetailsId(null)}
-                theKey={TeacherItem.id}
-                showDonateOptions={showDonateOptions}
-                setShowDonateOptions={setShowDonateOptions}
-                handleDonate={handleDonate}
-              />
             )}
           </div>
         ))}

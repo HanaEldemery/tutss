@@ -77,6 +77,9 @@ import MedicalSuppliesRequestsTeacher from "./pages/medicalSuppliesRequestsTeach
 import BloodRequestsDoctor from "./pages/bloodRequestsDoctor";
 import BloodRequestsTeacher from "./pages/bloodRequestsTeacher";
 
+import TransportationSelection2 from "./pages/TransportationSelection2";
+import TransportationSelection3 from "./pages/TransportationSelection3";
+
 function App() {
   return (
     <div className="App">
@@ -288,6 +291,16 @@ function App() {
             exact
             path="/bloodRequestsTeacher"
             element={<BloodRequestsTeacher />}
+          />
+          <Route
+            exact
+            path="/TransportationSelection2"
+            element={<TransportationSelection2 />}
+          />
+          <Route
+            exact
+            path="/TransportationSelection2"
+            element={<TransportationSelection3 />}
           />
         </Routes>
       </Router>
