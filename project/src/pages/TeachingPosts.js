@@ -86,9 +86,11 @@ function TeachingPosts() {
           handleDonate={handleDonate}
         />
       )}
-      <Link to="/DonationRequest">
-        <button>Back</button>
-      </Link>
+      {!showTeacherPopup && !showDetailsId && (
+        <Link to="/DonationRequest">
+          <button>Back</button>
+        </Link>
+      )}
     </div>
   );
 }

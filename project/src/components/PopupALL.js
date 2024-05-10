@@ -32,7 +32,7 @@ function PopupALL({ closePopup, organisationName }) {
         <div className="popupBackground">
           <div className="popupContainer">
             <div className="title">
-              <h1>ALL REQUESTS</h1>
+              <h1>All Requests</h1>
             </div>
 
             <div className="body">

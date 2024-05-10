@@ -80,12 +80,12 @@ function BloodRequests() {
                 </button>
               </div>
             ))}
+            <Link to="/DonationRequestssDoctor">
+              <button>Back</button>
+            </Link>
           </div>
         )}
       </div>
-      <Link to="/DonationRequestssDoctor">
-        <button>Back</button>
-      </Link>
     </div>
   );
 }

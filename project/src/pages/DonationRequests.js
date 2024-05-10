@@ -215,12 +215,12 @@ function DonationRequests() {
                 </div>
               ))}
             </div>
+            <Link to="/Commonpagegeneral">
+              <button> Back </button>
+            </Link>
           </div>
         )}
       </div>
-      <Link to="/Commonpagegeneral">
-        <button> Back </button>
-      </Link>
     </div>
   );
 }

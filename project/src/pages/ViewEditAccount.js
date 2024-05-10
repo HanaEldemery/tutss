@@ -84,6 +84,7 @@ function ViewEditAccount({ closePopup, donorId }) {
                     </p>
                   ) : (
                     <div>
+                      Donor Type:
                       <input type="text" placeholder={item.typeDonor} />
                       <button onClick={detailsClick} className="search-button">
                         Remove
