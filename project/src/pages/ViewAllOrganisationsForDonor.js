@@ -97,34 +97,40 @@ function Search({ closePopup }) {
             </Form.Control>
           </Form>
 
-          <Table className="table">
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  {popupFlag ? null : (
-                    <p>
-                      {item.organisation}
+          <div className="table-wrapper">
+            <Table className="table">
+              <tbody className="containing">
+                {filteredData.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      <div className="item-container">
+                        <p>{item.organisation}</p>
+                        <button
+                          onClick={() => handleDetailsClick(item.id)}
+                          className="search-button"
+                          style={{ margin: "0 auto" }}
+                        >
+                          View Details
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+                <tr>
+                  <td>
+                    <div style={{ textAlign: "center" }}>
                       <button
-                        onClick={() => handleDetailsClick(item.id)}
+                        onClick={handleRedirect}
                         className="search-button"
                       >
-                        View Details
+                        Back
                       </button>
-                      {/* <button
-                        onClick={() => handleOnDelete(item.id)}
-                        className="search-button"
-                      >
-                        DELETE
-                      </button> */}
-                    </p>
-                  )}
+                    </div>
+                  </td>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-          <button onClick={handleRedirect} className="search-button">
-            Back
-          </button>
+              </tbody>
+            </Table>
+          </div>
         </Container>
       )}
 

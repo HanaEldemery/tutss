@@ -30,33 +30,35 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Admin Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username"> Enter Username: </label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password"> Enter Password: </label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {error && <p>{error}</p>}
-        <Link to="/">
-          <button> Back </button>
-        </Link>
-        <button type="submit">Login</button>
-      </form>
+    <div className="home">
+      <div className="headerContainer">
+        <h1>Admin Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="username"> Username: </label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password"> Password: </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          {error && <p>{error}</p>}
+          <Link to="/">
+            <button> Back </button>
+          </Link>
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   );
 }

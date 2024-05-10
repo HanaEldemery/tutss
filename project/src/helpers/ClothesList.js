@@ -1,6 +1,6 @@
 import Dress from "../assets/Dress.jpeg";
-import Jeans from "../assets/Jeans.webp";
-import hoodie from "../assets/hoodie.webp";
+import Jeans from "../assets/Jeans.jpg";
+import hoodie from "../assets/hoodie.jpg";
 import Shoes from "../assets/Shoes.jpeg";
 import TShirt from "../assets/T-shirt.jpeg";
 import Bag from "../assets/Bag.jpeg";
@@ -9,7 +9,7 @@ export const ClothesList = [
   {
     id: 1,
     name: "Pants",
-    type: "Cargo",
+    type: "Jeans",
     Age: "2",
     Gender: "Male",
     Season: "Summer",
@@ -17,6 +17,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: Jeans,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: Dress,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: TShirt,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
   {
     id: 4,
@@ -53,6 +56,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: Bag,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
   {
     id: 5,
@@ -65,6 +69,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: Shoes,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
   {
     id: 6,
@@ -77,6 +82,7 @@ export const ClothesList = [
     Quantity: 3,
     picture: hoodie,
     xyz: "Clothes",
+    imageClass: "popup-image", // Add the CSS class here
   },
 ];
 

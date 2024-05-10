@@ -9,28 +9,33 @@ function CommonPagegeneral(idOfDonorFromLogin) {
   };
 
   return (
-    <div>
-      <br />
-      {showAccountInfo ? (
-        <ViewEditAccount
-          closePopup={setShowAccountInfo}
-          donorId={idOfDonorFromLogin}
-        />
-      ) : (
-        <div>
-          <h1>Welcome Donor!</h1>
-          <Link to="/ViewAllOrganisationsForDonor">
-            <button>View All Organizations</button>
-          </Link>
-          <Link to="/DonationRequests">
-            <button>View All Donation Requests</button>
-          </Link>
-          <button onClick={viewEditAccount}>Manage Account Information</button>
-          <Link to="/">
-            <button>Logout</button>
-          </Link>
-        </div>
-      )}
+    <div className="home">
+      <div className="headerContainer">
+        <br />
+        {showAccountInfo ? (
+          <ViewEditAccount
+            closePopup={setShowAccountInfo}
+            donorId={idOfDonorFromLogin}
+          />
+        ) : (
+          <div>
+            <h1>Welcome Donor!</h1>
+            <Link to="/ViewAllOrganisationsForDonor">
+              <button>View All Organizations</button>
+            </Link>
+            <Link to="/DonationRequests">
+              <button>View All Donation Requests</button>
+            </Link>
+            <button onClick={viewEditAccount}>
+              Manage Account Information
+            </button>
+            <br />
+            <Link to="/">
+              <button>Logout</button>
+            </Link>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

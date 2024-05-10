@@ -78,6 +78,7 @@ import BloodRequestsTeacher from "./pages/bloodRequestsTeacher";
 import Navbar2 from "./pages/NavBar";
 import TransportationSelection2 from "./pages/TransportationSelection2";
 import TransportationSelection3 from "./pages/TransportationSelection3";
+import "./styles/App.css";
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SchoolSupList } from "../helpers/SchoolSupList";
+import { ToysList } from "../lists/ToysList";
 import TransportationSelection from "../pages/TransportationSelection";
 
 class Popup extends Component {
@@ -39,7 +39,7 @@ class Popup extends Component {
 
   render() {
     const { closePopup, theKey } = this.props;
-    const matchedItem = SchoolSupList.find((item) => item.id === theKey);
+    const matchedItem = ToysList.find((item) => item.id === theKey);
     const { errorMessage, showTransportationSelection } = this.state;
 
     return (
