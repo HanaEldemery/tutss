@@ -4,17 +4,19 @@ import "../styles/Home.css"; // Import the updated CSS file
 
 function Home() {
   return (
-    <div className="container">
-      <h2>Who are you today?</h2>
-      <Link to="/adminlogin" className="button button-link">
-        I am an Admin
-      </Link>
-      <Link to="/OrgReg" className="button button-link">
-        I am an Organization
-      </Link>
-      <Link to="/DonorReg" className="button button-link">
-        I am a Donor
-      </Link>
+    <div className="home">
+      <div className="headerContainer">
+        <h2>Who are you today?</h2>
+        <Link to="/adminlogin">
+          <button> I am an Admin</button>
+        </Link>
+        <Link to="/OrgReg">
+          <button>I am an Organization</button>
+        </Link>
+        <Link to="/DonorReg">
+          <button>I am a Donor</button>
+        </Link>
+      </div>
     </div>
   );
 }

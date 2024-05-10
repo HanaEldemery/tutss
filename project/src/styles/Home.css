@@ -1,71 +1,72 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
 
-/* Apply Montserrat font to all elements */
 * {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
-/* Apply styles to the entire page */
+html,
 body {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    height: 100vh; /* Set full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0e1ca; /* Background color */
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-/* Container styles */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f0e1ca; /* Background color */
+  font-family: "Montserrat", sans-serif; /* Font family */
+  color: #4b392f; /* Font color for headings */
+  margin: 0; /* Remove default margin */
 }
 
-/* Heading styles */
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #2b2722; /* Text color for headings */
+.headerContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%; /* Limit the width to prevent overflow */
+  padding: 20px;
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #2b2722; /* Text color for subheadings */
+.headerContainer h1 {
+  font-size: 40px;
+  margin-bottom: 40px; /* Adjusted margin to create more space between h1 and buttons */
 }
 
-/* Button styles */
-.button {
-    display: block;
-    width: 250px;
-    padding: 15px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    color: #ffffff; /* Text color for buttons (white) */
-    background-color: #a8907d; /* Button background color */
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.headerContainer button {
+  margin: 10px;
+  padding: 15px 0; /* Fixed padding top and bottom */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a8907d; /* Button background color */
+  color: white; /* Button text color */
+  font-size: 20px;
+  width: 200px; /* Fixed width for all buttons */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.button:hover {
-    background-color: #4b392f; /* Lighter background color on hover */
-    color: #ffffff; /* Text color for buttons (white) on hover */
+.headerContainer button:hover {
+  background-color: #4b392f; /* Change background color on hover */
 }
 
-/* Link styles */
-.button-link {
-    text-decoration: none;
-    color: #ffffff; /* Text color for button links (white) */
+@media only screen and (max-width: 650px) {
+  .home {
+    padding: 10px;
+  }
+
+  .headerContainer h1 {
+    font-size: 30px;
+  }
+
+  .headerContainer button {
+    font-size: 16px;
+    width: 150px; /* Adjust width for smaller screens */
+  }
 }

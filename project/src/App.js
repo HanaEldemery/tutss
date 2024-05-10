@@ -82,9 +82,8 @@ import TransportationSelection3 from "./pages/TransportationSelection3";
 function App() {
   return (
     <div className="App">
-    
       <Router>
-      <Navbar2/>
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route
@@ -303,6 +302,7 @@ function App() {
             element={<TransportationSelection3 />}
           />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
