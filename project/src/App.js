@@ -75,14 +75,16 @@ import MedicalSuppliesRequestsDoctor from "./pages/medicalSuppliesRequestsDoctor
 import MedicalSuppliesRequestsTeacher from "./pages/medicalSuppliesRequestsTeacher";
 import BloodRequestsDoctor from "./pages/bloodRequestsDoctor";
 import BloodRequestsTeacher from "./pages/bloodRequestsTeacher";
-
+import Navbar2 from "./pages/NavBar";
 import TransportationSelection2 from "./pages/TransportationSelection2";
 import TransportationSelection3 from "./pages/TransportationSelection3";
 
 function App() {
   return (
     <div className="App">
+    
       <Router>
+      <Navbar2/>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route

@@ -1,0 +1,37 @@
+/* Navbar styles */
+.navbar {
+    position: fixed; /* Fixed position to stay at the top of the viewport */
+    top: 0; /* Align navbar to the top */
+    left: 0; /* Align navbar to the left */
+    width: 100%; /* Full width */
+    background-color: #968c7d; /* Background color */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure navbar is above other content */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f3fbfc;
+  }
+  
+  .logo-img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

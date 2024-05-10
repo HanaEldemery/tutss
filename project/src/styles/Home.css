@@ -1,0 +1,71 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+/* Apply Montserrat font to all elements */
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Apply styles to the entire page */
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0e1ca; /* Background color */
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2b2722; /* Text color for headings */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2b2722; /* Text color for subheadings */
+}
+
+/* Button styles */
+.button {
+    display: block;
+    width: 250px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff; /* Text color for buttons (white) */
+    background-color: #a8907d; /* Button background color */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4b392f; /* Lighter background color on hover */
+    color: #ffffff; /* Text color for buttons (white) on hover */
+}
+
+/* Link styles */
+.button-link {
+    text-decoration: none;
+    color: #ffffff; /* Text color for button links (white) */
+}
