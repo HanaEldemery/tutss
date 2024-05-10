@@ -86,9 +86,11 @@ function MedicalCases() {
           handleDonate={handleDonate}
         />
       )}
-      <Link to="/donationRequestssDoctor">
-        <button>Back</button>
-      </Link>
+      {!showMedicalPopup && !showDetailsId && (
+        <Link to="/donationRequestssDoctor">
+          <button>Back</button>
+        </Link>
+      )}
     </div>
   );
 }

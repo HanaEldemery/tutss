@@ -54,12 +54,12 @@ function FoodRequests() {
                 </button>
               </div>
             ))}
+            <Link to="/DonationRequest">
+              <button>Back</button>
+            </Link>
           </div>
         )}
       </div>
-      <Link to="/DonationRequest">
-        <button>Back</button>
-      </Link>
     </div>
   );
 }

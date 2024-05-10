@@ -14,6 +14,9 @@ function OrgReg() {
   const [area, setarea] = useState("");
   const [error, setError] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
+  const [gender, setgender] = useState("");
+  const [governorate, setgovernorate] = useState("");
+
 
   const [orgType, setOrgType] = useState("");
 
@@ -61,44 +64,281 @@ function OrgReg() {
         } else if (flag === false)
           switch (orgType) {
             case "hospital":
-              setPopupMessage(
-                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/organisationHospital";
-              }, 3000);
+              switch(governorate) {
+                case "Alexandria":
+                  case "Aswan":
+                  case "Asyut":
+                  case "Beheira":
+                  case "Beni Suef":
+                  case "Cairo":
+                  case "Dakahlia":
+                  case "Damietta":
+                  case "Faiyum":
+                  case "Gharbia":
+                  case "Giza":
+                  case "Ismailia":
+                  case "Kafr El Sheikh":
+                  case "Luxor":
+                  case "Matrouh":
+                  case "Minya":
+                  case "Monufia":
+                  case "New Valley":
+                  case "North Sinai":
+                  case "Port Said":
+                  case "Qalyubia":
+                  case "Qena":
+                  case "Red Sea":
+                  case "Sharqia":
+                  case "Sohag":
+                  case "South Sinai":
+                  case "Suez":
+                    switch(gender) {
+                      case "male":
+                      case "female":
+                        setPopupMessage(
+                          `Registeration Accepted by Admin, Redirecting you to your Home Page.`
+                        );
+                        setTimeout(() => {
+                          setPopupMessage("");
+                          window.location.href = "/organisationHospital";
+                        }, 3000);
+                        break;
+                        default:
+                          setError("Please Choose your Gender");
+                        const clearError = () => {
+                          setError(null);
+                        };
+          
+                        setTimeout(clearError, 3000);
+                        break;
+                          ;
+                    }
+                    break;
+            
+            default:
+              setError("Please Choose your Governorate");
+              const clearError = () => {
+                setError(null);
+              };
+
+              setTimeout(clearError, 3000);
+              break;
+
+            
+            }
+              
 
               break;
             case "school":
-              setPopupMessage(
-                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/organisation";
-              }, 3000);
-              break;
-            case "orphanage":
-              setPopupMessage(
-                `Registeration Accepted by Admin, Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/organisationOrphanage";
-              }, 3000);
-              break;
-            case "vet":
-              setPopupMessage(
-                `Registeration Accepted by System, Redirecting you to your Home Page.`
-              );
-              setTimeout(() => {
-                setPopupMessage("");
-                window.location.href = "/organisationVet";
-              }, 3000);
-              break;
+              switch(governorate) {
+                case "Alexandria":
+                  case "Aswan":
+                  case "Asyut":
+                  case "Beheira":
+                  case "Beni Suef":
+                  case "Cairo":
+                  case "Dakahlia":
+                  case "Damietta":
+                  case "Faiyum":
+                  case "Gharbia":
+                  case "Giza":
+                  case "Ismailia":
+                  case "Kafr El Sheikh":
+                  case "Luxor":
+                  case "Matrouh":
+                  case "Minya":
+                  case "Monufia":
+                  case "New Valley":
+                  case "North Sinai":
+                  case "Port Said":
+                  case "Qalyubia":
+                  case "Qena":
+                  case "Red Sea":
+                  case "Sharqia":
+                  case "Sohag":
+                  case "South Sinai":
+                  case "Suez":
+                    switch(gender) {
+                      case "male":
+                      case "female":
+                        setPopupMessage(
+                          `Registeration Accepted by Admin, Redirecting you to your Home Page.`
+                        );
+                        setTimeout(() => {
+                          setPopupMessage("");
+                          window.location.href = "/organisation";
+                        }, 3000);
+                        break;
+                      case "orphanage":
+                        setPopupMessage(
+                          `Registeration Accepted by Admin, Redirecting you to your Home Page.`
+                        );
+                        setTimeout(() => {
+                          setPopupMessage("");
+                          window.location.href = "/organisationOrphanage";
+                        }, 3000);
+                        break;
+                        default:
+                          setError("Please Choose your Gender");
+                        const clearError = () => {
+                          setError(null);
+                        };
+          
+                        setTimeout(clearError, 3000);
+                        break;
+                          ;
+                    }
+                    break;
+            
             default:
-              setError("Please Choose your Organization");
+              setError("Please Choose your Governorate");
+              const clearError = () => {
+                setError(null);
+              };
+
+              setTimeout(clearError, 3000);
+              break;
+
+            
+            }
+              
+              break;
+              
+            case "vet":
+              switch(governorate) {
+                case "Alexandria":
+                  case "Aswan":
+                  case "Asyut":
+                  case "Beheira":
+                  case "Beni Suef":
+                  case "Cairo":
+                  case "Dakahlia":
+                  case "Damietta":
+                  case "Faiyum":
+                  case "Gharbia":
+                  case "Giza":
+                  case "Ismailia":
+                  case "Kafr El Sheikh":
+                  case "Luxor":
+                  case "Matrouh":
+                  case "Minya":
+                  case "Monufia":
+                  case "New Valley":
+                  case "North Sinai":
+                  case "Port Said":
+                  case "Qalyubia":
+                  case "Qena":
+                  case "Red Sea":
+                  case "Sharqia":
+                  case "Sohag":
+                  case "South Sinai":
+                  case "Suez":
+                    switch(gender) {
+                      case "male":
+                      case "female":
+                        setPopupMessage(
+                          `Registeration Accepted by System, Redirecting you to your Home Page.`
+                        );
+                        setTimeout(() => {
+                          setPopupMessage("");
+                          window.location.href = "/organisationVet";
+                        }, 3000);
+                        break;
+                        default:
+                          setError("Please Choose your Gender");
+                        const clearError = () => {
+                          setError(null);
+                        };
+          
+                        setTimeout(clearError, 3000);
+                        break;
+                          ;
+                    }
+                    break;
+            
+            
+            default:
+              setError("Please Choose your Governorate");
+              const clearError = () => {
+                setError(null);
+              };
+
+              setTimeout(clearError, 3000);
+              break;
+
+            
+            }
+            break;
+            
+              
+            case "orphanage":
+              switch(governorate) {
+                case "Alexandria":
+                  case "Aswan":
+                  case "Asyut":
+                  case "Beheira":
+                  case "Beni Suef":
+                  case "Cairo":
+                  case "Dakahlia":
+                  case "Damietta":
+                  case "Faiyum":
+                  case "Gharbia":
+                  case "Giza":
+                  case "Ismailia":
+                  case "Kafr El Sheikh":
+                  case "Luxor":
+                  case "Matrouh":
+                  case "Minya":
+                  case "Monufia":
+                  case "New Valley":
+                  case "North Sinai":
+                  case "Port Said":
+                  case "Qalyubia":
+                  case "Qena":
+                  case "Red Sea":
+                  case "Sharqia":
+                  case "Sohag":
+                  case "South Sinai":
+                  case "Suez":
+                    switch(gender) {
+                      case "male":
+                      case "female":
+                        setPopupMessage(
+                          `Registeration Accepted by System, Redirecting you to your Home Page.`
+                        );
+                        setTimeout(() => {
+                          setPopupMessage("");
+                          window.location.href = "/organisationOrphanage";
+                        }, 3000);
+                        break;
+                        default:
+                          setError("Please Choose your Gender");
+                        const clearError = () => {
+                          setError(null);
+                        };
+          
+                        setTimeout(clearError, 3000);
+                        break;
+                          ;
+                    }
+                    break;
+            
+            
+            default:
+              setError("Please Choose your Governorate");
+              const clearError = () => {
+                setError(null);
+              };
+
+              setTimeout(clearError, 3000);
+              break;
+
+            
+            }
+            break;
+            
+            default:
+              setError("Please Choose your Organization Type");
               const clearError = () => {
                 setError(null);
               };
@@ -151,8 +391,11 @@ function OrgReg() {
         </div>
         <div>
           <label for="gender">Select Gender:</label>
-          <select id="gender">
-            <option value="male">Male</option>
+          <select id="gender"
+           value={gender}
+           onChange={(e) => setgender(e.target.value)}>
+            <option value="choose">Choose</option>
+           <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
@@ -246,8 +489,11 @@ function OrgReg() {
         </div>
         <div>
           <label for="governorate">Select Governorate:</label>
-          <select id="governorate">
-            <option value="Alexandria">Alexandria</option>
+          <select id="governorate"
+          value={governorate}
+          onChange={(e) => setgovernorate(e.target.value)}>   
+             <option value="choose">Choose</option>
+           <option value="Alexandria">Alexandria</option>
             <option value="Aswan">Aswan</option>
             <option value="Asyut">Asyut</option>
             <option value="Beheira">Beheira</option>

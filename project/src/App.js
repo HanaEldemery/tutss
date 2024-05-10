@@ -2,7 +2,6 @@ import Login from "./pages/Login";
 import DonorReg from "./pages/DonorReg";
 import Roleselection from "./pages/roleselection";
 import Doctorrole from "./pages/doctorrole";
-import Donorrole from "./pages/donorrole";
 import Teacherrole from "./pages/teacherrole";
 import AdminOrgReq from "./pages/AdminOrgReq";
 import AdminDonReq from "./pages/AdminDonReq";
@@ -121,7 +120,6 @@ function App() {
           <Route path="/role" exact element={<Roleselection />} />
           <Route path="/doctorrole" exact element={<Doctorrole />} />
           <Route path="/DonorReg" exact element={<DonorReg />} />
-          <Route path="/donorrole" exact element={<Donorrole />} />
           <Route
             path="DropoffSelectionHospital"
             exact

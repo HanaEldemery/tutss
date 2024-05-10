@@ -288,12 +288,12 @@ function DonationRequest() {
                 </div>
               ))}
             </div>
+            <Link to="/CommonPageTeacher">
+              <button> Back </button>
+            </Link>
           </div>
         )}
       </div>
-      <Link to="/CommonPageTeacher">
-        <button> Back </button>
-      </Link>
     </div>
   );
 }

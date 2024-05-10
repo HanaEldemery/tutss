@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function DoctorRole() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState("");
-  const [normalClasses, setNormalClasses] = useState(0);
+  const [normalClasses, setNormalClasses] = useState("");
   const [DoctorType, setDoctorType] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
 
@@ -30,13 +30,28 @@ function DoctorRole() {
 
       setTimeout(clearError, 3000);
     } else if (!selectedFile) {
-      console.log("Selected file:", selectedFile);
-      setError("Please select a file.");
-      const clearError = () => {
-        setError(null);
-      };
+      let flag = false;
+      for (let i = 0; i < normalClasses.length; i++) {
+        if (isNaN(parseInt(normalClasses[i]))) {
+          setError("Enter a Valid Pro Bono Cases Number");
+          const clearError = () => {
+            setError(null);
+          };
 
-      setTimeout(clearError, 3000);
+          setTimeout(clearError, 3000);
+          flag = true;
+        }
+      }
+      if (!flag) {
+        setError("Please select a file.");
+        const clearError = () => {
+          setError(null);
+        };
+  
+        setTimeout(clearError, 3000);
+      }
+    
+
     } else {
       let flag = false;
       for (let i = 0; i < normalClasses.length; i++) {
@@ -115,11 +130,12 @@ function DoctorRole() {
               <option value="Dermatology">Dermatology</option>
             </select>
           </div>
+          {error && <p>{error}</p>}
+
           <Link to="/DonorReg">
             <button>Back</button>
           </Link>
           <button>Confirm</button>
-          {error && <p>{error}</p>}
           {popupMessage && (
             <div
               style={{
