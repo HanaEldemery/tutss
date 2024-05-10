@@ -75,6 +75,8 @@ export const data = [
     category: "Toys",
     gender: "Male",
     color: "Orange",
+    type: "boarding game",
+    material: "paper",
   },
   {
     id: 10,
@@ -84,6 +86,8 @@ export const data = [
     brand: "Happy Pet",
     sizeofbag: "10kg",
     typeofanimal: "Cat",
+    type: "Crunchy",
+    material: "Food",
   },
   {
     id: 11,
@@ -93,6 +97,8 @@ export const data = [
     brand: "Happy Pet",
     sizeofbag: "5kg",
     typeofanimal: "Dog",
+    type: "Crunchy",
+    material: "Food",
   },
   {
     id: 12,
@@ -109,6 +115,8 @@ export const data = [
     category: "Machines",
     model: "2023",
     capacity: "10 patients/day",
+    type: "Machine",
+    material: "Metal",
   },
   {
     id: 14,
@@ -127,6 +135,7 @@ export const data = [
     material: "Cotton",
     size: "XS",
     color: "Purple",
+    type: "Pants",
   },
   {
     id: 16,
@@ -135,6 +144,8 @@ export const data = [
     category: "Probono Doctor Visit",
     drName: "Test Doctor",
     speciality: "Pediatrics",
+    type: "Pedia",
+    material: "Pediatrics",
   },
   {
     id: 17,
@@ -143,6 +154,8 @@ export const data = [
     category: "Probono Doctor Visit",
     drName: "Omar Ayman",
     speciality: "Neurology",
+    type: "Neuro",
+    material: "Neurology",
   },
   {
     id: 18,
@@ -158,6 +171,7 @@ export const data = [
     organisationType: "School",
     category: "Probono Teaching Lession",
     type: "Education",
+    material: "English",
     subject: "English",
   },
   {
@@ -166,6 +180,7 @@ export const data = [
     organisationType: "Probono Teaching Lession",
     category: "Supplies",
     type: "Education",
+    material: "French",
     subject: "French",
   },
 ];

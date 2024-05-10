@@ -17,7 +17,6 @@ function Popup({ closePopup, currentItemId }) {
                   <p>Category: {item.category}</p>
                   <p>Type: {item.type}</p>
                   <p>Material: {item.material}</p>
-                  <p>Model: {item.model}</p>
                   <p>Year: {item.year}</p>
                 </div>
               )}
