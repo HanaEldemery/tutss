@@ -12,38 +12,36 @@ function PopupREQ({ closePopup, organisation, requestType }) {
   const [error, setError] = useState("");
   const [notification, setNotification] = useState(false);
 
+  const [popupMessage, setPopupMessage] = useState("");
+  const [showConfirmation, setShowConfirmation] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const notify = () => {
     let fieldsToCheck = [];
     switch (requestType) {
       case "Supplies":
-        fieldsToCheck = [textInput1, textInput2, textInput3];
+        fieldsToCheck = [textInput1, textInput2];
         break;
       case "Furniture":
-        fieldsToCheck = [textInput1, textInput2, textInput3, textInput4];
+        fieldsToCheck = [textInput1, textInput2, textInput3];
         break;
       case "Probono Teaching Lesson":
-        fieldsToCheck = [textInput1, textInput2];
+        fieldsToCheck = [textInput1];
         break;
       case "Toys":
-        fieldsToCheck = [textInput1, textInput2, textInput3];
+        fieldsToCheck = [textInput1, textInput2];
         break;
       case "Clothes":
-        fieldsToCheck = [
-          textInput1,
-          textInput2,
-          textInput3,
-          textInput4,
-          textInput5,
-        ];
-        break;
-      case "Dry Food":
         fieldsToCheck = [textInput1, textInput2, textInput3, textInput4];
         break;
-      case "Machines":
+      case "Dry Food":
         fieldsToCheck = [textInput1, textInput2, textInput3];
         break;
-      case "Probono Doctor Visit":
+      case "Machines":
         fieldsToCheck = [textInput1, textInput2];
+        break;
+      case "Probono Doctor Visit":
+        fieldsToCheck = [textInput1];
         break;
       default:
         break;
@@ -53,15 +51,40 @@ function PopupREQ({ closePopup, organisation, requestType }) {
     if (!requestType || requestType.trim() === "" || isEmptyField) {
       setError("Please fill in all fields");
     } else {
+      // setError("");
+      // toast("Request updated!", {
+      //   autoClose: false,
+      // });
       setError("");
-      toast("Request updated!", {
-        autoClose: false,
-      });
+      setShowConfirmation(true);
+      setErrorMessage("");
+
+      setPopupMessage("Request updated!");
+      setTimeout(() => {
+        closePopup(false);
+      }, 3000);
     }
   };
 
   return (
     <div className="popupBackground">
+      {popupMessage && (
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            backgroundColor: "white",
+            padding: "20px",
+            border: "1px solid black",
+            borderRadius: "5px",
+            zIndex: 1,
+          }}
+        >
+          {popupMessage}
+        </div>
+      )}
       <div className="popupContainer">
         <div className="title">
           <h1>Make a Request</h1>
@@ -87,12 +110,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                         value={textInput2}
                         onChange={(e) => setTextInput2(e.target.value)}
                       />
-                      <input
+                      {/* <input
                         type="text"
                         placeholder="Extra information"
                         value={textInput3}
                         onChange={(e) => setTextInput3(e.target.value)}
-                      />
+                      /> */}
                     </div>
                   )}
 
@@ -116,12 +139,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                         value={textInput3}
                         onChange={(e) => setTextInput3(e.target.value)}
                       />
-                      <input
+                      {/* <input
                         type="text"
                         placeholder="Extra information"
                         value={textInput4}
                         onChange={(e) => setTextInput4(e.target.value)}
-                      />
+                      /> */}
                     </div>
                   )}
 
@@ -133,12 +156,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                         value={textInput1}
                         onChange={(e) => setTextInput1(e.target.value)}
                       />
-                      <input
+                      {/* <input
                         type="text"
                         placeholder="Extra information"
                         value={textInput2}
                         onChange={(e) => setTextInput2(e.target.value)}
-                      />
+                      /> */}
                     </div>
                   )}
 
@@ -160,12 +183,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput2}
                             onChange={(e) => setTextInput2(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput3}
                             onChange={(e) => setTextInput3(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                       {requestType === "Clothes" && (
@@ -194,12 +217,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput4}
                             onChange={(e) => setTextInput4(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput5}
                             onChange={(e) => setTextInput5(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                     </>
@@ -223,12 +246,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput2}
                             onChange={(e) => setTextInput2(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput3}
                             onChange={(e) => setTextInput3(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                       {requestType === "Machines" && (
@@ -245,12 +268,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput2}
                             onChange={(e) => setTextInput2(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput3}
                             onChange={(e) => setTextInput3(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                       {requestType === "Probono Doctor Visit" && (
@@ -261,12 +284,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput1}
                             onChange={(e) => setTextInput1(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput2}
                             onChange={(e) => setTextInput2(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                     </>
@@ -289,12 +312,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput2}
                             onChange={(e) => setTextInput2(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput3}
                             onChange={(e) => setTextInput3(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                       {requestType === "Dry Food" && (
@@ -317,12 +340,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
                             value={textInput3}
                             onChange={(e) => setTextInput3(e.target.value)}
                           />
-                          <input
+                          {/* <input
                             type="text"
                             placeholder="Extra information"
                             value={textInput4}
                             onChange={(e) => setTextInput4(e.target.value)}
-                          />
+                          /> */}
                         </div>
                       )}
                     </>
