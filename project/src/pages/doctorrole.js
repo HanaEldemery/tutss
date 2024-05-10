@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function DoctorRole() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [error, setError] = useState("");
-  const [normalClasses, setNormalClasses] = useState(0);
+  const [normalClasses, setNormalClasses] = useState("");
   const [DoctorType, setDoctorType] = useState("");
   const [popupMessage, setPopupMessage] = useState("");
 
@@ -115,11 +115,12 @@ function DoctorRole() {
               <option value="Dermatology">Dermatology</option>
             </select>
           </div>
+          {error && <p>{error}</p>}
+
           <Link to="/DonorReg">
             <button>Back</button>
           </Link>
           <button>Confirm</button>
-          {error && <p>{error}</p>}
           {popupMessage && (
             <div
               style={{

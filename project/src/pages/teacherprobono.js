@@ -12,8 +12,8 @@ function TeacherProbono() {
   const [englishChecked, setEnglishChecked] = useState(false);
   const [mathsChecked, setMathsChecked] = useState(false);
   const [scienceChecked, setScienceChecked] = useState(false);
-  const [normalClasses, setNormalClasses] = useState(0);
-  const [privateTutoringClasses, setPrivateTutoringClasses] = useState(0);
+  const [normalClasses, setNormalClasses] = useState("");
+  const [privateTutoringClasses, setPrivateTutoringClasses] = useState("");
   const [error, setError] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [popupMessage, setPopupMessage] = useState("");
@@ -29,13 +29,13 @@ function TeacherProbono() {
       const clearError = () => {
         setError(null);
       };
-      setTimeout(clearError, 5000);
+      setTimeout(clearError, 3000);
     } else if (normalClasses <= "0") {
       setError("Please specify the number of Normal classes.");
       const clearError = () => {
         setError(null);
       };
-      setTimeout(clearError, 5000);
+      setTimeout(clearError, 3000);
     } else if (privateTutoringClasses <= "0") {
       setError("Please specify the number of  Private Tutoring classes.");
       const clearError = () => {
