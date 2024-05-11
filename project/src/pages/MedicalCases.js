@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import FilterMedical from "../Filters/FilterMedical";
-import MedicalList from "../lists/MedicalList";
 import { MedicalData } from "../Data/MedicalData";
 import { Link } from "react-router-dom";
 import MedicalPopup from "../Popups/MedicalPopup";
+
 
 function MedicalCases() {
   const [productList, setProductList] = useState(MedicalData);
@@ -48,12 +48,12 @@ function MedicalCases() {
   };
 
   return (
-    <div>
+    <div className="MedicalCasescontainer">
       <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
       <h2>Hello from MedicalCases</h2>
       <div className="Medical-list">
         {filteredProductList.map((MedicalItem) => (
-          <div key={MedicalItem.id} className="Medical-item">
+          <div key={MedicalItem.id} className="MedicalCasesItem">
             {showDetailsId === MedicalItem.id && (
               <MedicalPopup
                 closePopup={() => setShowDetailsId(null)}
@@ -68,7 +68,7 @@ function MedicalCases() {
                 {MedicalItem.Patient_Name}
                 <button
                   onClick={() => toggleDetails(MedicalItem.id)}
-                  className="button-used"
+                  className="MedicalCasesbutton"
                 >
                   View Details
                 </button>
@@ -87,8 +87,10 @@ function MedicalCases() {
         />
       )}
       {!showMedicalPopup && !showDetailsId && (
-        <Link to="/donationRequestssDoctor">
-          <button>Back</button>
+        <Link to="/donationRequestssDoctor" className="MedicalCasesbutton-link">
+          <button className="MedicalCasesbutton">
+            Back
+          </button>
         </Link>
       )}
     </div>

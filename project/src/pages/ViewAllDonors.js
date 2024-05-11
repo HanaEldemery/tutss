@@ -38,6 +38,7 @@ function Search({ closePopup }) {
     );
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
+  
   const handleRedirect = () => {
     window.location.href = "/AdminHomePage";
   };
@@ -52,28 +53,26 @@ function Search({ closePopup }) {
             <tbody>
               {filteredData.map((item, index) => (
                 <tr key={index}>
-                  {popupFlag ? null : (
-                    <p>
-                      {item.patientName}
-                      <button
-                        onClick={() => handleDetailsClick(item.id)}
-                        className="search-button"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={() => handleOnDelete(item.id)}
-                        className="search-button"
-                      >
-                        Delete Donor
-                      </button>
-                    </p>
-                  )}
+                  <td>
+                    <p style={{ textAlign: "center" }}>{item.patientName}</p>
+                    <button
+                      onClick={() => handleDetailsClick(item.id)}
+                      className="search-button"
+                    >
+                      View Details
+                    </button>
+                    <button
+                      onClick={() => handleOnDelete(item.id)}
+                      className="search-button"
+                    >
+                      Delete Donor
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </Table>
-          <button onClick={handleRedirect} className="search-button">
+          <button onClick={handleRedirect} className="donation-button">
             Back
           </button>
         </Container>

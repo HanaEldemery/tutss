@@ -51,28 +51,34 @@ function Adminchangepass() {
   };
 
   return (
-    <div>
+    <div className="all">
+      <div className="headerContainer">
       <h1>Admin Change Password</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="form">
+      <div className="input-container">
+          <div className="input-wrapper">          
           <label htmlFor="oldpass"> Enter Current Password: </label>
           <input
             type="password"
             id="oldpass"
             value={currpassword}
             onChange={(e) => setcurrPassword(e.target.value)}
+            className="inputForm"
+
           />
         </div>
-        <div>
+        <div className="input-wrapper">
           <label htmlFor="password"> Enter New Password: </label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="inputForm"
+
           />
         </div>
-        {error && <p>{error}</p>}
+        {error && <p className="error">{error}</p>}
         {popupMessage && (
           <div
             style={{
@@ -90,11 +96,18 @@ function Adminchangepass() {
             {popupMessage}
           </div>
         )}
-        <Link to="/AdminHomePage">
-          <button>Back</button>
-        </Link>
-        <button type="submit">Confirm</button>
-      </form>
+           <div className="button-container">
+              
+              <Link to="/AdminHomePage">
+                <button className="back-button">Back</button>
+              </Link>
+              <button type="submit" className="donate-button">
+                Confirm
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

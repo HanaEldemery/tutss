@@ -78,12 +78,12 @@ function DoctorRole() {
   };
 
   return (
-    <div>
-      <div>
+    <div className="all">
+      <div className="headerContainer">
         <h2>Specify Your Clinic Location on Map</h2>
         <iframe
-          width="40%"
-          height="600"
+          width="100%"
+          height="500"
           frameborder="0"
           scrolling="no"
           marginheight="0"
@@ -94,69 +94,77 @@ function DoctorRole() {
         </iframe>
       </div>
       <br />
-      <div>
-        <h2>
-          Please Upload a Doctor Authentication Certificate to Verify Your
-          Profession
-        </h2>
-        <form onSubmit={handleSubmit}>
-          <input type="file" accept=".pdf" onChange={handleFileChange} />
-          <br />
-          <br />
-          <br />
-          <TextField
-            id="normal-classes"
-            label="# of probono cases"
-            type="text"
-            value={normalClasses}
-            onChange={(e) => setNormalClasses(e.target.value)}
-          />
-          <br />
-          <br />
-          <div>
-            <label htmlFor="type">Select Profession Field:</label>
-            <select
-              id="type"
-              value={DoctorType}
-              onChange={(e) => setDoctorType(e.target.value)}
-            >
-              <option value="choose">Choose</option>
-              <option value="Cardiologist">Cardiologist</option>
-              <option value="Dentist">Dentist</option>
-              <option value="Dermatology">Dermatology</option>
-              <option value="Pediatriction">Pediatriction</option>
-              <option value="Gynecologist">Gynecologist</option>
-              <option value="Psychitrist">Psychitrist</option>
-              <option value="Dermatology">Dermatology</option>
-            </select>
-          </div>
-          {error && <p>{error}</p>}
-
-          <Link to="/DonorReg">
-            <button>Back</button>
-          </Link>
-          <button>Confirm</button>
-          {popupMessage && (
-            <div
-              style={{
-                position: "fixed",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                backgroundColor: "white",
-                padding: "20px",
-                border: "1px solid black",
-                borderRadius: "5px",
-                zIndex: 1,
-              }}
-            >
-              {popupMessage}
+      <div className="input-container">
+        <div className="input-wrapper">
+          <h2>
+            Please Upload a Doctor Authentication Certificate to Verify Your
+            Profession
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <input type="file" accept=".pdf" onChange={handleFileChange}  classname="file-input"/>
+            <br />
+            <br />
+            <br />
+            <label htmlFor="normal-classes">
+              # of Probono Cases You Are Ready to take:
+            </label>
+            <input
+              id="normal-classes"
+              type="text"
+              value={normalClasses}
+              onChange={(e) => setNormalClasses(e.target.value)}
+              className="inputForm"
+            />
+            <br />
+            <br />
+            <div className="input-wrapper">
+              <label htmlFor="type">Select Profession Field:</label>
+              <select
+                id="type"
+                value={DoctorType}
+                onChange={(e) => setDoctorType(e.target.value)}
+                className="inputForm"
+              >
+                <option value="choose">Choose</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Pediatriction">Pediatriction</option>
+                <option value="Gynecologist">Gynecologist</option>
+                <option value="Psychitrist">Psychitrist</option>
+                <option value="Dermatology">Dermatology</option>
+              </select>
             </div>
-          )}
-        </form>
+            {error && <p className="error">{error}</p>}
+
+
+            {popupMessage && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  backgroundColor: "white",
+                  padding: "20px",
+                  border: "1px solid black",
+                  borderRadius: "5px",
+                  zIndex: 1,
+                }}
+              >
+                {popupMessage}
+              </div>
+            )}
+              <Link to="/DonorReg">
+              <button className="donation-button">Back</button>
+            </Link>
+            <button className="donation-button">Confirm</button>
+          </form>
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default DoctorRole;
