@@ -48,13 +48,15 @@ function TeachingPosts() {
   };
 
   return (
-    <div>
-      <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
+    <div className="home">
       <h2>Hello from TeachingPosts</h2>
-      <div className="Teacher-list">
+      <div className="headerContainer">
+      <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
         {filteredProductList.map((TeacherItem) => (
-          <div key={TeacherItem.id} className="Teacher-item">
+          <div key={TeacherItem.id} className="TeacherItem">
             {showDetailsId === TeacherItem.id && (
+                     <div className="popup-overlay">
+                     <div className="popup-content">
               <TeacherPopup
                 closePopup={() => setShowDetailsId(null)}
                 theKey={TeacherItem.id}
@@ -62,13 +64,16 @@ function TeachingPosts() {
                 setShowDonateOptions={setShowDonateOptions}
                 handleDonate={handleDonate}
               />
+              </div>
+              </div>
             )}
             {!showDetailsId && (
               <div>
-                {TeacherItem.Subject}
+                <p>{TeacherItem.Subject}</p>
+
                 <button
                   onClick={() => toggleDetails(TeacherItem.id)}
-                  className="button-used"
+                  className="detail-button"
                 >
                   View Details
                 </button>
@@ -76,6 +81,14 @@ function TeachingPosts() {
             )}
           </div>
         ))}
+        {!showTeacherPopup && !showDetailsId && (
+          <Link
+            to="/DonationRequest"
+            className="button-link"
+          >
+            <button className="back-button">Back</button>
+          </Link>
+        )}
       </div>
       {showTeacherPopup && (
         <TeacherPopup
@@ -85,11 +98,6 @@ function TeachingPosts() {
           setShowDonateOptions={setShowDonateOptions}
           handleDonate={handleDonate}
         />
-      )}
-      {!showTeacherPopup && !showDetailsId && (
-        <Link to="/DonationRequest">
-          <button>Back</button>
-        </Link>
       )}
     </div>
   );

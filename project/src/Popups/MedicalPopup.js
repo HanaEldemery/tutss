@@ -49,8 +49,8 @@ function MedicalPopup({
           )}
         </div>
         <div className="footer">
-          <button onClick={closePopup}>Hide Details</button>
-          <button onClick={() => setShowDonatePopup(true)}>Donate</button>
+          <button className="details-button" onClick={closePopup}>Hide Details</button>
+          <button className="details-button" onClick={() => setShowDonatePopup(true)}>Donate</button>
         </div>
       </div>
       {showDonatePopup && (

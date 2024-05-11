@@ -63,8 +63,8 @@ class Popup extends Component {
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
           <div className="footer">
-            <button onClick={() => closePopup(false)}>Hide Details</button>
-            <button onClick={this.handleDonate}>Donate Now</button>
+            <button className="details-button" onClick={() => closePopup(false)}>Hide Details</button>
+            <button className="details-button" onClick={this.handleDonate}>Donate Now</button>
           </div>
         </div>
         {showTransportationSelection && (
