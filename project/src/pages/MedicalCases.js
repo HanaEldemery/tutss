@@ -4,7 +4,6 @@ import { MedicalData } from "../Data/MedicalData";
 import { Link } from "react-router-dom";
 import MedicalPopup from "../Popups/MedicalPopup";
 
-
 function MedicalCases() {
   const [productList, setProductList] = useState(MedicalData);
   const [filteredProductList, setFilteredProductList] = useState(MedicalData);
@@ -48,10 +47,10 @@ function MedicalCases() {
   };
 
   return (
-    <div className="MedicalCasescontainer">
-      <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
+    <div className="home">
       <h2>Hello from MedicalCases</h2>
-      <div className="Medical-list">
+      <div className="headerContainer">
+        <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
         {filteredProductList.map((MedicalItem) => (
           <div key={MedicalItem.id} className="MedicalCasesItem">
             {showDetailsId === MedicalItem.id && (
@@ -65,7 +64,8 @@ function MedicalCases() {
             )}
             {!showDetailsId && (
               <div>
-                {MedicalItem.Patient_Name}
+                <p>{MedicalItem.Patient_Name}</p>
+
                 <button
                   onClick={() => toggleDetails(MedicalItem.id)}
                   className="MedicalCasesbutton"
@@ -76,6 +76,14 @@ function MedicalCases() {
             )}
           </div>
         ))}
+        {!showMedicalPopup && !showDetailsId && (
+          <Link
+            to="/donationRequestssDoctor"
+            className="MedicalCasesbutton-link"
+          >
+            <button className="MedicalCasesbutton">Back</button>
+          </Link>
+        )}
       </div>
       {showMedicalPopup && (
         <MedicalPopup
@@ -85,13 +93,6 @@ function MedicalCases() {
           setShowDonateOptions={setShowDonateOptions}
           handleDonate={handleDonate}
         />
-      )}
-      {!showMedicalPopup && !showDetailsId && (
-        <Link to="/donationRequestssDoctor" className="MedicalCasesbutton-link">
-          <button className="MedicalCasesbutton">
-            Back
-          </button>
-        </Link>
       )}
     </div>
   );
