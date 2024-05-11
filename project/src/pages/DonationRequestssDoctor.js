@@ -1,4 +1,5 @@
-//DOCTOR DONATION REQUESTS
+// DonationRequestss.js
+//doctor
 
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate instead of useHistory
@@ -16,6 +17,9 @@ import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
 import MedicalPopup from "../Popups/MedicalPopup";
+import Table from "react-bootstrap/Table";
+
+
 
 function DonationRequestss() {
   const [showMedicalPopup, setShowMedicalPopup] = useState(false);
@@ -91,14 +95,17 @@ function DonationRequestss() {
       setExpandedId(id);
     }
   };
+
   const viewDetails4 = (FoodItem) => {
     setShowPopup4(true);
     setClickedId4(FoodItem);
   };
+
   const viewDetails5 = (medicalSupplyItem) => {
     setShowPopup5(true);
     setClickedId5(medicalSupplyItem);
   };
+
   const handleDonate = (id, xyz) => {
     if (xyz === "Medical" || xyz === "Teaching") {
       setShowDonateOptions(id); // Show donation options for valid items
@@ -116,64 +123,101 @@ function DonationRequestss() {
     setShowPopup(true);
     setClickedId(clothesItem);
   };
+
   const viewDetails2 = (bloodItem) => {
     setShowPopup2(true);
     setClickedId2(bloodItem);
   };
+
   const viewDetails3 = (toyItem) => {
     setShowPopup3(true);
     setClickedId3(toyItem);
   };
 
-  //whattttttt theeeee hecckkkkkkkjkkjk
-  return (
-    <div>
-      <div>
-        <Link to="/SchoolSuppliesDonationsDoctor">
-          <button> View All School Supplies Requests </button>
-        </Link>
-        <Link to="/ClothingRequestsDoctor">
-          <button> View All Clothing Requests </button>
-        </Link>
-        <Link to="/toysRequestsDoctor">
-          <button> View All Toy Requests </button>
-        </Link>
-        <Link to="/foodRequestsDoctor">
-          <button> View All Food Requests </button>
-        </Link>
-        <Link to="/medicalSuppliesRequestsDoctor">
-          <button> View All Medical Supplies Requests </button>
-        </Link>
-        <Link to="/bloodRequestsDoctor">
-          <button> View All Blood Requests </button>
-        </Link>
-        <Link to="/MedicalCases">
-          <button>View All Medical Cases</button>
-        </Link>
-        <br />
+          return (  
+           <div> 
+          <div className="home">
+          <div className="button-container">
+            <Link to="/SchoolSuppliesDonations">
+              <button className="donate-button">
+                View All School Supplies Requests
+              </button>
+            </Link>
+            <Link to="/ClothingRequests">
+              <button className="donate-button">View All Clothing Requests</button>
+            </Link>
+            <Link to="/toysRequests">
+              <button className="donate-button">View All Toy Requests</button>
+            </Link>
+            <Link to="/foodRequests">
+              <button className="donate-button">View All Food Requests</button>
+            </Link>
+            <Link to="/medicalSuppliesRequests">
+              <button className="donate-button">
+                View All Medical Supplies Requests
+              </button>
+            </Link>
+            <Link to="/bloodRequests">
+              <button className="donate-button">View All Blood Requests</button>
+            </Link>
+            <Link to="/MedicalCases">
+            <button className="donate-button">
+              View All Medical Cases
+            </button>
+          </Link>
+          </div>
+          
+          <br />
+          
         <input
           type="text"
           placeholder="Search by Type "
           value={searchTerm}
           onChange={handleChange}
           style={{ marginBottom: "20px" }}
+          className="DoctorDonationRequestsInput"
         />
-        {showPopup ? (
-          <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
-        ) : showPopup1 ? (
-          <Popup closePopup={setShowPopup1} theKey={clickedId1} />
-        ) : showPopup3 ? (
-          <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
-        ) : showPopup4 ? (
-          <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
-        ) : showPopup5 ? (
-          <MedicalSuppliesPopup
-            closePopup={setShowPopup5}
-            theKey={clickedId5}
-          />
-        ) : showPopup2 ? (
-          <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
+          {showPopup ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
+          </div>
+        </div>
+      ) : showPopup1 ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <Popup closePopup={setShowPopup1} theKey={clickedId1} />
+          </div>
+        </div>
+      ) : showPopup3 ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <ToysPopup closePopup={setShowPopup3} theKey={clickedId3} />
+          </div>
+        </div>
+      ) : showPopup4 ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <FoodPopup closePopup={setShowPopup4} theKey={clickedId4} />
+          </div>
+        </div>
+      ) : showPopup5 ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <MedicalSuppliesPopup
+              closePopup={setShowPopup5}
+              theKey={clickedId5}
+            />
+          </div>
+        </div> ) : showPopup2 ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
+          </div>
+        </div>
         ) : showMedicalPopup ? (
+          <div className="popup-overlay">
+            <div className="popup-content">
           <MedicalPopup
             closePopup={() => setShowMedicalPopup(false)}
             theKey={clickedMedicalId}
@@ -182,106 +226,139 @@ function DonationRequestss() {
             handleDonate={handleDonate}
             handleViewLess={handleViewLess}
           />
+          </div>
+          </div>
         ) : (
-          <div>
-            <div className="clothes-list">
-              {filteredClothesList.map((clothesItem) => (
-                <div key={clothesItem.id} className="clothes-item">
-                  {clothesItem.name}
-                  <button
-                    onClick={() => viewDetails(clothesItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="schoolsup-list">
-              {filteredSchoolSupList.map((SchoolSupItem) => (
-                <div key={SchoolSupItem.id} className="schoolsup-item">
-                  {SchoolSupItem.name}
-                  <button
-                    onClick={() => viewDetails1(SchoolSupItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="toys-list">
-              {filteredToysList.map((toyItem) => (
-                <div key={toyItem.id} className="toy-item">
-                  {toyItem.name}
-                  <button
-                    onClick={() => viewDetails3(toyItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="food-list">
-              {filteredFoodList.map((foodItem) => (
-                <div key={foodItem.id} className="food-item">
-                  {foodItem.name}
-                  <button
-                    onClick={() => viewDetails4(foodItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="medical-supplies-list">
-              {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
-                <div key={medicalSupplyItem.id} className="medical-supply-item">
-                  {medicalSupplyItem.name}
-                  <button
-                    onClick={() => viewDetails5(medicalSupplyItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="blood-list">
-              {filteredBloodList.map((bloodItem) => (
-                <div key={bloodItem.id} className="blood-item">
-                  {bloodItem.name}
-                  <button
-                    onClick={() => viewDetails2(bloodItem.id)}
-                    className="button-used"
-                  >
-                    View Details
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div className="medical-list">
+          <div className="headerContainer">
+          <div className="table-wrapper">
+            <div className="item-container">
+              <Table className="table">
+                <tbody className="containing">
+                  {filteredClothesList.map((clothesItem) => (
+                    <tr key={clothesItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{clothesItem.name}</p>
+                          <button
+                            onClick={() => viewDetails(clothesItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredSchoolSupList.map((SchoolSupItem) => (
+                    <tr key={SchoolSupItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{SchoolSupItem.name}</p>
+                          <button
+                            onClick={() => viewDetails1(SchoolSupItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredToysList.map((toyItem) => (
+                    <tr key={toyItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{toyItem.name}</p>
+                          <button
+                            onClick={() => viewDetails3(toyItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredFoodList.map((foodItem) => (
+                    <tr key={foodItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{foodItem.name}</p>
+                          <button
+                            onClick={() => viewDetails4(foodItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
+                    <tr key={medicalSupplyItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{medicalSupplyItem.name}</p>
+                          <button
+                            onClick={() => viewDetails5(medicalSupplyItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  {filteredBloodList.map((bloodItem) => (
+                    <tr key={bloodItem.id}>
+                      <td>
+                        <div className="item-container">
+                          <p>{bloodItem.name}</p>
+                          <button
+                            onClick={() => viewDetails2(bloodItem.id)}
+                            className="detail-button"
+                          >
+                            View Details
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                  <div className="medical-list">
               {filteredMedicalList.map((medicalItem) => (
-                <div key={medicalItem.id} className="medical-item">
-                  {medicalItem.Patient_Name}
+                <tr key={medicalItem.id}>
+                  <td>
+                 <p> {medicalItem.Patient_Name} </p>
                   <button
                     onClick={() => viewMedicalDetails(medicalItem.id)}
-                    className="button-used"
+                    className="detail-button"
                   >
                     View Details
                   </button>
-                </div>
+                </td>
+                </tr>
+              
               ))}
             </div>
-            <Link to="/CommonPageDoctor">
-              <button> Back </button>
-            </Link>
+
+                  <tr>
+                    <td>
+                      <div style={{ textAlign: "center" }}>
+                        <Link to="/CommonPageDoctor">
+                          <button className="back-button">Back</button>
+                        </Link>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
           </div>
-        )}
+        </div>
+      )}
+        </div>
       </div>
-    </div>
+    
   );
 }
 
