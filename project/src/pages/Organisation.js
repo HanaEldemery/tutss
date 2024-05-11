@@ -30,34 +30,38 @@ function OrganisationSchool({ organisationName }) {
   };
 
   return (
-    <div className="home">
+    <div className="seifhome">
       {showPopup ||
       showPopupAll ||
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
-        <div className="headerContainer">
+        <div className="seifhome">
           <h1>Welcome School!</h1>
-          <div>
-            <button onClick={viewList} className="button-used">
+          <div className="seifhome-button-container">
+            <div className="seifhome-button-row">            
+            <button onClick={viewList} className="seifhome-button">
               Create a Request Donation Post
             </button>
-            <button onClick={viewListALL} className="button-used">
+            <button onClick={viewListALL} className="seifhome-button">
               View All Current Requests
             </button>
-            <button onClick={viewAccountInformation} className="button-used">
+            <button onClick={viewAccountInformation} className="seifhome-button">
               Edit Account Information
             </button>
-            <button onClick={viewAcceptedDonationReq} className="button-used">
+            </div>
+            <div className="seifhome-button-row">
+            <button onClick={viewAcceptedDonationReq} className="seifhome-button">
               View Fulfilled Donation Requests
             </button>
             <Link to="/DropoffSelection">
-              <button className="button-used">Set Suitable Time Slot</button>
+              <button className="seifhome-button">Set Suitable Time Slot</button>
             </Link>
-          </div>
           <br />
           <Link to="/">
-            <button className="button-used"> Logout </button>
+            <button className="seifhome-button"> Logout </button>
           </Link>
+        </div>
+        </div>
         </div>
       )}
       {showPopup && (

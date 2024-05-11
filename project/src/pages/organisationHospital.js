@@ -5,7 +5,6 @@ import PopupACC from "../components/PopupACC";
 import PopupDONREQ from "../components/PopupDONREQ";
 import { data } from "../Data/regorgname";
 import { Link } from "react-router-dom";
-import SettingsIcon from "@mui/icons-material/Settings";
 
 function OrganisationHospital({ organisationName }) {
   organisationName = "Oyope";
@@ -36,29 +35,32 @@ function OrganisationHospital({ organisationName }) {
       showPopupAll ||
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
-        <div className="headerContainer">
+        <div className="seifhome">
           <h1>Welcome Hospital!</h1>
-          <div>
-            <button onClick={viewList} className="button-used">
-              Create a Request Donation Post
-            </button>
-            <button onClick={viewListALL} className="button-used">
-              View All Current Requests
-            </button>
-            <button onClick={viewAccountInformation} className="button-used">
-              Edit Account Information
-            </button>
-            <button onClick={viewAcceptedDonationReq} className="button-used">
-              View Fulfilled Donation Requests
-            </button>
-            <Link to="/DropoffSelectionHospital">
-              <button className="button-used">Set Suitable Time Slot</button>
-            </Link>
+          <div className="seifhome-button-container">
+            <div className="button-container">
+              <button onClick={viewList} className="seifhome-button">
+                Create a Request Donation Post
+              </button>
+              <button onClick={viewListALL} className="seifhome-button">
+                View All Current Requests
+              </button>
+              <button onClick={viewAccountInformation} className="seifhome-button">
+                Edit Account Information
+              </button>
+            </div>
+            <div className="button-container">
+              <button onClick={viewAcceptedDonationReq} className="seifhome-button">
+                View Fulfilled Donation Requests
+              </button>
+              <Link to="/DropoffSelectionHospital">
+                <button className="seifhome-button">Set Suitable Time Slot</button>
+              </Link>
+              <Link to="/">
+                <button className="seifhome-button"> Logout </button>
+              </Link>
+            </div>
           </div>
-          <br />
-          <Link to="/">
-            <button className="button-used"> Logout </button>
-          </Link>
         </div>
       )}
       {showPopup && (

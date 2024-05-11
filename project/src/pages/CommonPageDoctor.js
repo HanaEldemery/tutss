@@ -10,29 +10,38 @@ function CommonPageDoctor(idOfDonorFromLogin) {
   };
 
   return (
-    <div>
-      <br />
-      {showAccountInfo ? (
-        <ViewEditAccount
-          closePopup={setShowAccountInfo}
-          donorId={idOfDonorFromLogin}
-        />
-      ) : (
-        <div>
-          <h1>Welcome Doctor!</h1>
-          <Link to="/ViewAllOrganisationsForDoctor">
-            <button>View All Organizations</button>
-          </Link>
-          <Link to="/DonationRequestssDoctor">
-            <button>View All Donation Requests</button>
-          </Link>
-
-          <button onClick={viewEditAccount}>Manage Account Information</button>
-          <Link to="/">
-            <button> Logout </button>
-          </Link>
-        </div>
-      )}
+    <div className="seifhome">
+      <div className="headerContainer">
+        <br />
+        {showAccountInfo ? (
+          <ViewEditAccount
+            closePopup={setShowAccountInfo}
+            donorId={idOfDonorFromLogin}
+          />
+        ) : (
+          <div>
+            <h1>Welcome Doctor!</h1>
+            <div className="seifhome-button-container">
+              <div className="seifhome-button-row">
+                <Link to="/ViewAllOrganisationsForDoctor">
+                  <button className="seifhome-button">View All Organizations</button>
+                </Link>
+                <Link to="/DonationRequestssDoctor">
+                  <button className="seifhome-button">View All Donation Requests</button>
+                </Link>
+                <button className="seifhome-button" onClick={viewEditAccount}>
+                  Manage Account Information
+                </button>
+              </div>
+              <div className="seifhome-button-row">
+                <Link to="/">
+                  <button className="seifhome-button">Logout</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
