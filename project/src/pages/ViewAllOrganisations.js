@@ -39,14 +39,15 @@ function Search({ closePopup }) {
     );
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
+
   const handleRedirect = () => {
     window.location.href = "/AdminHomePage";
   };
 
   return (
-    <div className="all">
+    <Container className="all">
       {popupFlag ? null : (
-        <Container>
+        <div>
           <h1 className="TEXT">Organization Names</h1>
 
           <Form className="form">
@@ -97,41 +98,49 @@ function Search({ closePopup }) {
             </Form.Control>
           </Form>
 
-          <Table className="table">
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  {popupFlag ? null : (
-                    <p>
-                      {item.organisation}
+          <div className="table-wrapper">
+            <Table className="table">
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index}>
+                    <td>
+                      <p style={{ textAlign: "center" }}>{item.organisation}</p>
                       <button
                         onClick={() => handleDetailsClick(item.id)}
-                        className="search-button"
+                        className="donation-button"
                       >
                         View Details
                       </button>
                       <button
                         onClick={() => handleOnDelete(item.id)}
-                        className="search-button"
+                        className="donation-button"
                       >
                         Delete Organization
                       </button>
-                    </p>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-          <button onClick={handleRedirect} className="search-button">
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+
+          <button onClick={handleRedirect} className="donation-button">
             Back
           </button>
-        </Container>
+        </div>
       )}
 
-      {popupFlag && (
-        <Details theKey={selectedItemId} closePopup={setPopupFlag} />
-      )}
+{popupFlag && (
+  <div className="seifpopup-overlay">
+    <div className="seifpopup-content">
+      <Details theKey={selectedItemId} closePopup={setPopupFlag} />
+
     </div>
+  </div>
+)}
+
+
+    </Container>
   );
 }
 
