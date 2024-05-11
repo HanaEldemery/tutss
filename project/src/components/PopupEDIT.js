@@ -67,7 +67,7 @@ function PopupREQ({ closePopup, organisation, requestType }) {
   };
 
   return (
-    <div className="popupBackground">
+    <div className="home">
       {popupMessage && (
         <div
           style={{
@@ -85,12 +85,10 @@ function PopupREQ({ closePopup, organisation, requestType }) {
           {popupMessage}
         </div>
       )}
-      <div className="popupContainer">
-        <div className="title">
-          <h1>Make a Request</h1>
-        </div>
+      <div className="headerContainer">
+        <h1>Make a Request</h1>
 
-        <div className="body">
+        <div className="popupContainer">
           {data.map((item, index) => (
             <div key={index}>
               {item.organisation === organisation && (
@@ -356,7 +354,7 @@ function PopupREQ({ closePopup, organisation, requestType }) {
           ))}
         </div>
         {error && <p className="error">{error}</p>}
-        <div className="footer">
+        <div className="button-container">
           <button onClick={() => closePopup(false)}>Back</button>
           <button onClick={notify}>Submit</button>
         </div>

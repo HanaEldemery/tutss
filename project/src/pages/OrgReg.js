@@ -353,48 +353,61 @@ function OrgReg() {
   return (
     <div className="home">
       <div className="headerContainer">
-        <h1>Organization Registeration</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="firstname"> First Name: </label>
-            <input
-              type="text"
-              id="firstname"
-              value={firstname}
-              onChange={(e) => setfirstname(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="lastname"> Last Name: </label>
-            <input
-              type="text"
-              id="lastname"
-              value={lastname}
-              onChange={(e) => setlastname(e.target.value)}
-            />
-          </div>
-          <div>
-            <label for="gender">Gender: </label>
-            <select
-              id="gender"
-              value={gender}
-              onChange={(e) => setgender(e.target.value)}
-            >
-              <option value="choose">Choose</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="orgname"> Organization Name: </label>
-            <input
-              type="text"
-              id="orgname"
-              value={orgname}
-              onChange={(e) => setorgname(e.target.value)}
-            />
-          </div>
-          {/* <div>
+        <div className="popupContainer">
+          <h1>Organization Registeration</h1>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <p>
+                <label htmlFor="firstname"> First Name </label>
+              </p>
+
+              <input
+                type="text"
+                id="firstname"
+                value={firstname}
+                onChange={(e) => setfirstname(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="lastname"> Last Name </label>
+              </p>
+
+              <input
+                type="text"
+                id="lastname"
+                value={lastname}
+                onChange={(e) => setlastname(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label for="gender">Gender </label>
+              </p>
+
+              <select
+                id="gender"
+                value={gender}
+                onChange={(e) => setgender(e.target.value)}
+              >
+                <option value="choose">Choose</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div>
+              <p>
+                <label htmlFor="orgname"> Organization Name </label>
+              </p>
+
+              <input
+                type="text"
+                id="orgname"
+                value={orgname}
+                onChange={(e) => setorgname(e.target.value)}
+              />
+            </div>
+            {/* <div>
           <label for="orgtype">Select Organization Type:</label>
           <select id="orgtype">
             <option value="hospital">Hospital</option>
@@ -405,161 +418,186 @@ function OrgReg() {
 
         </div> */}
 
-          <div>
-            <label htmlFor="orgtype">Organization Type: </label>
-            <select
-              id="orgtype"
-              value={orgType}
-              onChange={(e) => setOrgType(e.target.value)}
-            >
-              <option value="choose">Choose</option>
-              <option value="hospital">Hospital</option>
-              <option value="school">School</option>
-              <option value="orphanage">Orphanage</option>
-              <option value="vet">Vet</option>
-            </select>
-          </div>
-          <div>
-            <label htmlFor="email"> Email: </label>
-            <input
-              type="text"
-              id="email"
-              value={email}
-              onChange={(e) => setemail(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="number"> Contact Number: </label>
-            <input
-              type="text"
-              id="number"
-              value={number}
-              onChange={(e) => setnumber(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password"> Password: </label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setpassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="conpassword"> Password Again: </label>
-            <input
-              type="password"
-              id="conpassword"
-              value={conpassword}
-              onChange={(e) => setconpassword(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="address"> Organization Address: </label>
-            <input
-              type="text"
-              id="address"
-              value={address}
-              onChange={(e) => setaddress(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="area"> Organization Area: </label>
-            <input
-              type="text"
-              id="area"
-              value={area}
-              onChange={(e) => setarea(e.target.value)}
-            />
-          </div>
-          <div>
-            <label for="governorate">Governorate: </label>
-            <select
-              id="governorate"
-              value={governorate}
-              onChange={(e) => setgovernorate(e.target.value)}
-            >
-              <option value="choose">Choose</option>
-              <option value="Alexandria">Alexandria</option>
-              <option value="Aswan">Aswan</option>
-              <option value="Asyut">Asyut</option>
-              <option value="Beheira">Beheira</option>
-              <option value="Beni Suef">Beni Suef</option>
-              <option value="Cairo">Cairo</option>
-              <option value="Dakahlia">Dakahlia</option>
-              <option value="Damietta">Damietta</option>
-              <option value="Faiyum">Faiyum</option>
-              <option value="Gharbia">Gharbia</option>
-              <option value="Giza">Giza</option>
-              <option value="Ismailia">Ismailia</option>
-              <option value="Kafr El Sheikh">Kafr El Sheikh</option>
-              <option value="Luxor">Luxor</option>
-              <option value="Matrouh">Matrouh</option>
-              <option value="Minya">Minya</option>
-              <option value="Monufia">Monufia</option>
-              <option value="New Valley">New Valley</option>
-              <option value="North Sinai">North Sinai</option>
-              <option value="Port Said">Port Said</option>
-              <option value="Qalyubia">Qalyubia</option>
-              <option value="Qena">Qena</option>
-              <option value="Red Sea">Red Sea</option>
-              <option value="Sharqia">Sharqia</option>
-              <option value="Sohag">Sohag</option>
-              <option value="South Sinai">South Sinai</option>
-              <option value="Suez">Suez</option>
-            </select>
-          </div>
-          {popupMessage && (
-            <div
-              style={{
-                position: "fixed",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                backgroundColor: "white",
-                padding: "20px",
-                border: "1px solid black",
-                borderRadius: "5px",
-                zIndex: 1,
-              }}
-            >
-              {popupMessage}
+            <div>
+              <p>
+                <label htmlFor="orgtype">Organization Type </label>
+              </p>
+
+              <select
+                id="orgtype"
+                value={orgType}
+                onChange={(e) => setOrgType(e.target.value)}
+              >
+                <option value="choose">Choose</option>
+                <option value="hospital">Hospital</option>
+                <option value="school">School</option>
+                <option value="orphanage">Orphanage</option>
+                <option value="vet">Vet</option>
+              </select>
             </div>
-          )}
-          <div>
-            <h2>Location on Map</h2>
-            <iframe
-              width="40%"
-              height="600"
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
-              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%D9%86%D8%A7%D8%AF%D9%8A%20%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AF%D9%82%D9%8A+(Organization%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            >
-              <a href="https://www.gps.ie/">gps vehicle tracker</a>
-            </iframe>
-          </div>
-          <div>
-            <h2>
-              Please Upload an Official Government License to Ensure
-              Authentication of Organization
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <input type="file" accept=".pdf" onChange={handleFileChange} />
-            </form>
-          </div>
-          <br />
-          <br />
+            <div>
+              <p>
+                <label htmlFor="email"> Email </label>
+              </p>
 
-          {error && <p>{error}</p>}
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="number"> Contact Number </label>
+              </p>
 
-          <Link to="/">
-            <button> Back </button>
-          </Link>
-          <button type="submit">Register</button>
-        </form>
+              <input
+                type="text"
+                id="number"
+                value={number}
+                onChange={(e) => setnumber(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="password"> Password </label>
+              </p>
+
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="conpassword"> Password Again </label>
+              </p>
+
+              <input
+                type="password"
+                id="conpassword"
+                value={conpassword}
+                onChange={(e) => setconpassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="address"> Organization Address </label>
+              </p>
+
+              <input
+                type="text"
+                id="address"
+                value={address}
+                onChange={(e) => setaddress(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label htmlFor="area"> Organization Area </label>
+              </p>
+
+              <input
+                type="text"
+                id="area"
+                value={area}
+                onChange={(e) => setarea(e.target.value)}
+              />
+            </div>
+            <div>
+              <p>
+                <label for="governorate">Governorate </label>
+              </p>
+
+              <select
+                id="governorate"
+                value={governorate}
+                onChange={(e) => setgovernorate(e.target.value)}
+              >
+                <option value="choose">Choose</option>
+                <option value="Alexandria">Alexandria</option>
+                <option value="Aswan">Aswan</option>
+                <option value="Asyut">Asyut</option>
+                <option value="Beheira">Beheira</option>
+                <option value="Beni Suef">Beni Suef</option>
+                <option value="Cairo">Cairo</option>
+                <option value="Dakahlia">Dakahlia</option>
+                <option value="Damietta">Damietta</option>
+                <option value="Faiyum">Faiyum</option>
+                <option value="Gharbia">Gharbia</option>
+                <option value="Giza">Giza</option>
+                <option value="Ismailia">Ismailia</option>
+                <option value="Kafr El Sheikh">Kafr El Sheikh</option>
+                <option value="Luxor">Luxor</option>
+                <option value="Matrouh">Matrouh</option>
+                <option value="Minya">Minya</option>
+                <option value="Monufia">Monufia</option>
+                <option value="New Valley">New Valley</option>
+                <option value="North Sinai">North Sinai</option>
+                <option value="Port Said">Port Said</option>
+                <option value="Qalyubia">Qalyubia</option>
+                <option value="Qena">Qena</option>
+                <option value="Red Sea">Red Sea</option>
+                <option value="Sharqia">Sharqia</option>
+                <option value="Sohag">Sohag</option>
+                <option value="South Sinai">South Sinai</option>
+                <option value="Suez">Suez</option>
+              </select>
+            </div>
+            {popupMessage && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  backgroundColor: "white",
+                  padding: "20px",
+                  border: "1px solid black",
+                  borderRadius: "5px",
+                  zIndex: 1,
+                }}
+              >
+                {popupMessage}
+              </div>
+            )}
+            <div>
+              <h2>Location on Map</h2>
+              <iframe
+                width="40%"
+                height="600"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%D9%86%D8%A7%D8%AF%D9%8A%20%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%20%D8%A7%D9%84%D8%AF%D9%82%D9%8A+(Organization%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              >
+                <a href="https://www.gps.ie/">gps vehicle tracker</a>
+              </iframe>
+            </div>
+            <div>
+              <h2>
+                Please Upload an Official Government License to Ensure
+                Authentication of Organization
+              </h2>
+              <form onSubmit={handleSubmit}>
+                <input type="file" accept=".pdf" onChange={handleFileChange} />
+              </form>
+            </div>
+            <br />
+            <br />
+
+            {error && <p>{error}</p>}
+
+            <Link to="/">
+              <button> Back </button>
+            </Link>
+            <button type="submit">Register</button>
+          </form>
+        </div>
       </div>
     </div>
   );

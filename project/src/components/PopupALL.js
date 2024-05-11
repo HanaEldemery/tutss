@@ -21,7 +21,7 @@ function PopupALL({ closePopup, organisationName }) {
   };
 
   return (
-    <div>
+    <div className="home">
       {showUpdatePopup ? (
         <PopupEDIT
           organisation={organisationName}
@@ -29,45 +29,39 @@ function PopupALL({ closePopup, organisationName }) {
           closePopup={setShowUpdatePopup}
         />
       ) : (
-        <div className="popupBackground">
-          <div className="popupContainer">
-            <div className="title">
-              <h1>All Requests</h1>
-            </div>
+        <div className="headerContainer">
+          <h1>All Requests</h1>
 
-            <div className="body">
-              {requestData.map((item, index) => (
-                <div key={index}>
-                  {item.organisation === organisationName && (
-                    <div className="small-box">
-                      <p>Organisation: {item.organisation}</p>
-                      <p>Organisation Type: {item.organisationType}</p>
-                      <p>Category: {item.category}</p>
-                      <p>Type: {item.type}</p>
-                      <p>Material: {item.material}</p>
-                      <p>
-                        <button
-                          className="search-button"
-                          onClick={() => backToUpdate(item.category)}
-                        >
-                          Update
-                        </button>
-                        <button
-                          onClick={() => callOnDelete(item.id)}
-                          className="search-button"
-                        >
-                          Delete
-                        </button>
-                      </p>
+          <div className="popupContainer">
+            {requestData.map((item, index) => (
+              <div key={index} className="containsContainer">
+                {item.organisation === organisationName && (
+                  <div className="small-box">
+                    <p>Organisation: {item.organisation}</p>
+                    <p>Organisation Type: {item.organisationType}</p>
+                    <p>Category: {item.category}</p>
+                    <p>Type: {item.type}</p>
+                    <p>Material: {item.material}</p>
+                    <div className="button-container">
+                      <button
+                        className="search-button"
+                        onClick={() => backToUpdate(item.category)}
+                      >
+                        Update
+                      </button>
+                      <button
+                        onClick={() => callOnDelete(item.id)}
+                        className="search-button"
+                      >
+                        Delete
+                      </button>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="footer">
-              <button onClick={() => closePopup(false)}> Back </button>
-            </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
+          <button onClick={() => closePopup(false)}> Back </button>
         </div>
       )}
     </div>

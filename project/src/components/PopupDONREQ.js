@@ -48,17 +48,21 @@ function PopupDONREQ({ closePopup, organisationName }) {
       teacherId={theTeacherId}
     />
   ) : (
-    <div className="popupBackground">
+    <div className="headerContainer">
+      <h1>Fulfilled Requests</h1>
+
       <div className="popupContainer">
-        <div className="title">
-          <h1>Fulfilled Requests</h1>
-        </div>
-        <div className="body">
-          {dataList.map((item, index) => (
-            <div key={index}>
-              {item.organisation === organisationName && (
-                <p>
-                  {item.type}
+        {dataList.map((item, index) => (
+          <div key={index} className="containsContainer">
+            {item.organisation === organisationName && (
+              <div>
+                {/* Check if item.type is empty or undefined */}
+                {item.type ? (
+                  <h2>{item.type}</h2>
+                ) : (
+                  <h2>Item Type Not Available</h2>
+                )}
+                <h2>
                   <button
                     onClick={() => newPopup(item.id)}
                     className="search-button"
@@ -69,8 +73,7 @@ function PopupDONREQ({ closePopup, organisationName }) {
                     className="search-button"
                     onClick={() => removeThis(item.id)}
                   >
-                    {" "}
-                    Delete{" "}
+                    Delete
                   </button>
                   {item.type === "Medical" ? (
                     <button
@@ -90,15 +93,14 @@ function PopupDONREQ({ closePopup, organisationName }) {
                       Teacher
                     </button>
                   ) : null}
-                  {}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-        <div className="footer">
-          <button onClick={() => closePopup(false)}> Back </button>
-        </div>
+                </h2>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div>
+        <button onClick={() => closePopup(false)}> Back </button>
       </div>
     </div>
   );

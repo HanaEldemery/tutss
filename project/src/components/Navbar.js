@@ -13,8 +13,11 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="leftSide" id={openLinks ? "open" : "close"}>
+      <div className="leftSide">
         <img src={Logo} />
+      </div>
+      <div className="rightSide">
+        <h1>HASSAH</h1>
       </div>
     </div>
   );

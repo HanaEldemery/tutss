@@ -101,11 +101,11 @@ button {
   margin-bottom: 20px;
 }
 
-.headerContainer {
+/* .headerContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
+} */
 
 .clothes-list,
 .schoolsup-list,
@@ -148,6 +148,7 @@ button {
     width: 150px;
   }
 }
+
 /* CSS for buttons at the top */
 .button-container {
   display: flex;
@@ -158,12 +159,14 @@ button {
 .donate-button {
   padding: 10px 20px;
   border: none;
-
+  padding: 5px 10px; /*SEIF SELIM ADDED*/
+  border-radius: 5px; /*SEIF SELIM ADDED*/
   cursor: pointer;
   background-color: #a8907d;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  margin-right: 10px; /*SEIF SELIM ADDED*/
 }
 
 .donate-button:hover {
@@ -179,7 +182,6 @@ button {
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
-
   cursor: pointer;
   background-color: #a8907d;
   color: white;
@@ -222,6 +224,11 @@ button {
 .headerContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-width: 1000px;
+  min-height: 1000px;
+  max-width: auto;
+  max-height: auto;
 }
 
 .buttons-container {
@@ -250,6 +257,7 @@ button {
 .detail-button:hover {
   background-color: rgb(75, 57, 47);
 }
+
 /* CSS for Popup components */
 
 /* Update the styles for Popup overlay */
@@ -283,4 +291,474 @@ button {
   max-height: 100%;
   width: auto;
   height: auto;
+}
+
+/* Additional styles for larger and better-looking input and option elements */
+input[type="text"],
+input[type="password"],
+select {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(168, 144, 125);
+  width: 50%;
+  margin: 10px;
+}
+
+option {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 99%;
+}
+
+/* PopupACC.css */
+
+.popupContainer {
+  max-width: 1010px;
+  max-height: 1010px;
+  overflow: auto;
+  padding: 20px;
+  background-color: rgb(240, 225, 202);
+  height: 1000px;
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+}
+
+/* Update the styles for Popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Update the styles for Popup content */
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-around; /* Distribute items evenly */
+}
+
+/* Update the styles for popup images */
+.popup-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.popupMessageContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.textInputContainer {
+  margin-bottom: 20px;
+}
+
+.textInputContainer input {
+  margin: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(168, 144, 125);
+  width: 50%;
+}
+
+.textInputContainer button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(168, 144, 125);
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.textInputContainer button:hover {
+  background-color: rgb(75, 57, 47);
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContainer h1 {
+  font-size: 70px;
+  margin-bottom: 50px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  .popupContainer {
+    max-width: 400px;
+  }
+}
+
+.containsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.search-button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a8907d;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: rgb(75, 57, 47);
+}
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.input-wrapper select {
+  width: 150px; /* Adjust the width as needed */
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column; /* Change to column */
+  align-items: center; /* Align items to the center */
+  margin-bottom: 20px;
+}
+
+.input-container label {
+  margin-bottom: 5px; /* Add margin-bottom to create space between label and input */
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+.iframe-container {
+  display: flex;
+  justify-content: center; /* Align items horizontally to the center */
+  color: #4b392f;
+}
+.admin-don-req-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #4b392f;
+}
+
+.admin-don-req-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4b392f;
+}
+
+.donors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  color: #4b392f;
+}
+
+.donor-item {
+  width: 300px;
+  padding: 20px;
+  border: 1px dashed grey;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  color: #4b392f;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 10px;
+  color: #4b392f;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.download-certificate {
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.accept-button,
+.reject-button,
+.certificate-button {
+  margin: 0 5px; /* Adjust button margin */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.accept-button {
+  background-color: #a8907d;
+  color: white;
+}
+
+.reject-button {
+  background-color: #a8907d;
+  color: white;
+}
+
+.certificate-button {
+  background-color: #a8907d;
+  color: white;
+}
+.accept-button:hover,
+.reject-button:hover,
+.certificate-button:hover {
+  background-color: rgb(75, 57, 47);
+}
+.seifhome {
+  color: rgb(75, 57, 47);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(
+    100vh - 100px
+  ); /* Adjust the height to leave space for the footer */
+  justify-content: center;
+}
+
+.seifhome-button {
+  padding: 15px 30px; /* Increase padding */
+  margin: 10px; /* Increase margin */
+  background-color: #a8907d;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius */
+  cursor: pointer;
+  font-size: 18px; /* Increase font size */
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  width: 420px;
+}
+
+/* Style the buttons on hover */
+.seifhome-button:hover {
+  background-color: rgb(75, 57, 47);
+}
+
+.seifhome-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the button rows */
+.seifhome-button-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Adjust the spacing between rows */
+}
+.organization-cell {
+  vertical-align: top;
+  padding-right: 20px;
+}
+.details-popup {
+  background-color: #f0e1ca;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.details-popup h2 {
+  color: #4b392f;
+  font-family: Montserrat, sans-serif;
+}
+
+.file-input {
+  /* Add your styles here */
+  /* For example: */
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a8907d;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.inputForm.biggerInput {
+  /* Increase the input size */
+  width: 250px;
+  padding: 10px;
+}
+
+.seifbutton-donation {
+  /* Style the buttons to match other buttons */
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #a8907d;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.seifbutton-donation:hover {
+  background-color: rgb(75, 57, 47);
+}
+
+/* Additional style for bigger buttons */
+.seifbutton-donation.big {
+  padding: 15px 30px; /* Increase padding for bigger buttons */
+  font-size: 18px; /* Increase font size for bigger buttons */
+  width: 200px; /* Adjust width for bigger buttons */
+}
+
+/* Style the submit button */
+.seifbutton-donation[type="submit"] {
+  background-color: #4b392f; /* Change background color for submit button */
+}
+
+.seifbutton-donation[type="submit"]:hover {
+  background-color: #33271f; /* Change hover background color for submit button */
+}
+/* Add this style to your App.css */
+
+.seifpopup-content button {
+  margin: 10px; /* Add some margin around the buttons */
+  padding: 10px 20px; /* Add padding to the buttons */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #a8907d; /* Button background color */
+  color: white; /* Button text color */
+  font-size: 16px; /* Button text size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.seifpopup-content button:hover {
+  background-color: rgb(75, 57, 47); /* Darker background color on hover */
+}
+
+/* Add these styles to your App.css */
+
+.seifpopup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 999; /* Ensure the overlay is on top of other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seifpopup-content {
+  background-color: #fff; /* White background */
+  padding: 20px; /* Padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow */
+  max-width: 80%; /* Maximum width */
+  max-height: 80%; /* Maximum height */
+  overflow: auto; /* Enable scrolling if content overflows */
+}
+
+.seifpopup-content button.back-button {
+  background-color: white; /* Set background color to white */
+  color: #a8907d; /* Set text color to the original color */
+}
+
+.seifpopup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.seifpopup-content {
+  background-color: white; /* Changed from khaki to white */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.seifpopup-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.seifpopup-close-button:hover {
+  background-color: #dddddd;
 }

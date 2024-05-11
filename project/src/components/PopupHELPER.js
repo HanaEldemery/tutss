@@ -4,28 +4,26 @@ import { data } from "../Data/accepteddonationreq";
 
 function Popup({ closePopup, currentItemId }) {
   return (
-    <div className="popupBackground">
+    <div className="headerContainer">
+      <div className="title">
+        <h1>Details</h1>
+      </div>
       <div className="popupContainer">
-        <div className="title">
-          <h1>Details</h1>
-        </div>
-        <div className="body">
-          {data.map((item, index) => (
-            <div key={index}>
-              {item.id === currentItemId && (
-                <div>
-                  <p>Category: {item.category}</p>
-                  <p>Type: {item.type}</p>
-                  <p>Material: {item.material}</p>
-                  <p>Year: {item.year}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <div className="footer">
-          <button onClick={() => closePopup(false)}> Back </button>
-        </div>
+        {data.map((item, index) => (
+          <div key={index}>
+            {item.id === currentItemId && (
+              <div>
+                <h2>Category: {item.category}</h2>
+                <h2>Type: {item.type}</h2>
+                <h2>Material: {item.material}</h2>
+                <h2>Year: {item.year}</h2>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div>
+        <button onClick={() => closePopup(false)}> Back </button>
       </div>
     </div>
   );

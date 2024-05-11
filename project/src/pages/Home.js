@@ -6,7 +6,8 @@ function Home() {
   return (
     <div className="home">
       <div className="headerContainer">
-        <h2>Who are you today?</h2>
+        <h1>Who are you today?</h1>
+
         <Link to="/adminlogin">
           <button> I am an Admin</button>
         </Link>

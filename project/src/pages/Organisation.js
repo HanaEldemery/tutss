@@ -30,28 +30,31 @@ function OrganisationSchool({ organisationName }) {
   };
 
   return (
-    <div className="all">
+    <div className="home">
       {showPopup ||
       showPopupAll ||
       showAccountInfo ||
       showAcceptedDonationReq ? null : (
-        <div className="addmargin">
+        <div className="headerContainer">
           <h1>Welcome School!</h1>
-          <button onClick={viewList} className="button-used">
-            Create a Request Donation Post
-          </button>
-          <button onClick={viewListALL} className="button-used">
-            View All Current Requests
-          </button>
-          <button onClick={viewAccountInformation} className="button-used">
-            Edit Account Information
-          </button>
-          <button onClick={viewAcceptedDonationReq} className="button-used">
-            View Fulfilled Donation Requests
-          </button>
-          <Link to="/DropoffSelection">
-            <button className="button-used">Set Suitable Time Slot</button>
-          </Link>
+          <div>
+            <button onClick={viewList} className="button-used">
+              Create a Request Donation Post
+            </button>
+            <button onClick={viewListALL} className="button-used">
+              View All Current Requests
+            </button>
+            <button onClick={viewAccountInformation} className="button-used">
+              Edit Account Information
+            </button>
+            <button onClick={viewAcceptedDonationReq} className="button-used">
+              View Fulfilled Donation Requests
+            </button>
+            <Link to="/DropoffSelection">
+              <button className="button-used">Set Suitable Time Slot</button>
+            </Link>
+          </div>
+          <br />
           <Link to="/">
             <button className="button-used"> Logout </button>
           </Link>

@@ -40,50 +40,54 @@ function DropoffSelection() {
   };
 
   return (
-    <div>
-      <h2>Drop Off Time Selection for Donation Drop Off</h2>
+    <div className="home">
+      <div className="headerContainer">
+        <h1>Drop Off Time Selection for Donation Drop Off</h1>
+        <div className="popupContainer">
+          <label htmlFor="time-slot-select">Choose a time slot:</label>
+          <select
+            id="time-slot-select"
+            value={selectedTimeSlot}
+            onChange={handleTimeSlotChange}
+          >
+            <option value="">Select a time slot</option>
+            {timeSlots.map((timeSlot) => (
+              <option key={timeSlot} value={timeSlot}>
+                {timeSlot}
+              </option>
+            ))}
+          </select>
 
-      <label htmlFor="time-slot-select">Choose a time slot:</label>
-      <select
-        id="time-slot-select"
-        value={selectedTimeSlot}
-        onChange={handleTimeSlotChange}
-      >
-        <option value="">Select a time slot</option>
-        {timeSlots.map((timeSlot) => (
-          <option key={timeSlot} value={timeSlot}>
-            {timeSlot}
-          </option>
-        ))}
-      </select>
+          {errorMessage && <p>{errorMessage}</p>}
 
-      <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
-
-      {errorMessage && <p>{errorMessage}</p>}
-
-      {showConfirmation}
-      <br />
-      {popupMessage && (
-        <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "white",
-            padding: "20px",
-            border: "1px solid black",
-            borderRadius: "5px",
-            zIndex: 1,
-          }}
-        >
-          {popupMessage}
+          {showConfirmation}
+          <br />
+          {popupMessage && (
+            <div
+              style={{
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                backgroundColor: "white",
+                padding: "20px",
+                border: "1px solid black",
+                borderRadius: "5px",
+                zIndex: 1,
+              }}
+            >
+              {popupMessage}
+            </div>
+          )}
         </div>
-      )}
-      <Link to="/organisationVet">
-        {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
-        <button>Back</button>
-      </Link>
+        <div className="button-container">
+          <Link to="/organisationVet">
+            {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
+            <button>Back</button>
+          </Link>
+          <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
+        </div>
+      </div>
     </div>
   );
 }

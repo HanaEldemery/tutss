@@ -43,7 +43,7 @@ function PopupACC({ closePopup, organisationName }) {
   };
 
   return (
-    <div className="popupBackground">
+    <div className="home">
       {popupMessage && (
         <div
           style={{
@@ -61,17 +61,17 @@ function PopupACC({ closePopup, organisationName }) {
           {popupMessage}
         </div>
       )}
-      <div className="popupContainer">
-        <div className="title">
-          <h1>Account Information</h1>
-        </div>
-        <div className="body">
+      <div className="headerContainer">
+        <h1>Account Information</h1>
+
+        <div className="popupContainer">
           {data.map((item, index) => (
             <div key={index}>
               {item.organisation === organisationName && (
                 <div className="textInputContainer">
                   <p>
-                    Name:
+                    <p>Name</p>
+
                     <input
                       type="text"
                       placeholder={item.organisation}
@@ -79,85 +79,75 @@ function PopupACC({ closePopup, organisationName }) {
                     />
                   </p>
                   <p>
-                    Type:
+                    <p>Type</p>
+
                     <input type="text" placeholder={item.type} disabled />
                   </p>
                   {areaButton ? (
                     <p>
-                      Area:
+                      <p>Area</p>
+
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
                       <p>
-                        Area:
+                        <p>Area</p>
+
                         <input type="text" placeholder={item.area} />
-                        <button onClick={areaClick} className="search-button">
-                          Delete
-                        </button>
+                        <button onClick={areaClick}>Delete</button>
                       </p>
                     </div>
                   )}
 
                   {governorateButton ? (
                     <p>
-                      Government:
+                      <p>Government</p>
+
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
                       <p>
-                        Government:
+                        <p>Government</p>
+
                         <input type="text" placeholder={item.governorate} />
-                        <button
-                          onClick={governorateClick}
-                          className="search-button"
-                        >
-                          {" "}
-                          Delete{" "}
-                        </button>
+                        <button onClick={governorateClick}> Delete </button>
                       </p>
                     </div>
                   )}
 
                   {detailsButton ? (
                     <p>
-                      Number:
+                      <p>Number</p>
+
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
                       <p>
-                        Number:
+                        <p>Number</p>
+
                         <input type="text" placeholder={item.details} />
-                        <button
-                          onClick={detailsClick}
-                          className="search-button"
-                        >
-                          {" "}
-                          Delete{" "}
-                        </button>
+                        <button onClick={detailsClick}> Delete </button>
                       </p>
                     </div>
                   )}
 
                   {addressButton ? (
                     <p>
-                      Address:
+                      <p>Address</p>
+
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
                       <p>
-                        Address:
+                        <p>Address</p>
+
                         <input type="text" placeholder={item.address} />
-                        <button
-                          onClick={addressClick}
-                          className="search-button"
-                        >
-                          {" "}
-                          Delete{" "}
-                        </button>
+
+                        <button onClick={addressClick}> Delete </button>
                       </p>
                     </div>
                   )}
@@ -165,14 +155,12 @@ function PopupACC({ closePopup, organisationName }) {
                   {locationButton ? null : (
                     <div>
                       <p>
-                        Location:
+                        <p>Location</p>
                         {item.location}
                         <button
-                          //onClick={locationClick}
-                          className="search-button"
+                        //onClick={locationClick}
                         >
-                          {" "}
-                          Delete{" "}
+                          Delete
                         </button>
                       </p>
                     </div>
@@ -182,7 +170,7 @@ function PopupACC({ closePopup, organisationName }) {
             </div>
           ))}
         </div>
-        <div className="footer">
+        <div>
           <button onClick={() => closePopup(false)}> Back </button>
           <button onClick={notify}> Save </button>
         </div>
