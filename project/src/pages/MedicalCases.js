@@ -54,6 +54,8 @@ function MedicalCases() {
         {filteredProductList.map((MedicalItem) => (
           <div key={MedicalItem.id} className="MedicalCasesItem">
             {showDetailsId === MedicalItem.id && (
+                     <div className="popup-overlay">
+                     <div className="popup-content">
               <MedicalPopup
                 closePopup={() => setShowDetailsId(null)}
                 theKey={MedicalItem.id}
@@ -61,6 +63,8 @@ function MedicalCases() {
                 setShowDonateOptions={setShowDonateOptions}
                 handleDonate={handleDonate}
               />
+              </div>
+              </div>
             )}
             {!showDetailsId && (
               <div>
@@ -68,7 +72,7 @@ function MedicalCases() {
 
                 <button
                   onClick={() => toggleDetails(MedicalItem.id)}
-                  className="MedicalCasesbutton"
+                  className="detail-button"
                 >
                   View Details
                 </button>
@@ -79,9 +83,9 @@ function MedicalCases() {
         {!showMedicalPopup && !showDetailsId && (
           <Link
             to="/donationRequestssDoctor"
-            className="MedicalCasesbutton-link"
+            className="button-link"
           >
-            <button className="MedicalCasesbutton">Back</button>
+            <button className="back-button">Back</button>
           </Link>
         )}
       </div>

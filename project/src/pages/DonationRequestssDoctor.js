@@ -168,14 +168,12 @@ function DonationRequestss() {
           </div>
           
           <br />
-          
-        <input
+          <input
           type="text"
           placeholder="Search by Type "
           value={searchTerm}
           onChange={handleChange}
           style={{ marginBottom: "20px" }}
-          className="DoctorDonationRequestsInput"
         />
           {showPopup ? (
         <div className="popup-overlay">
