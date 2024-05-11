@@ -35,61 +35,61 @@ function ClothingRequests() {
   };
 
   return (
-    <div>
-      <h1>Clothes Requests</h1>
-      <div>
-        <select onChange={handleAgeChange}>
-          <option value="">All Ages</option>
-          <option value="2">1-2</option>
-          <option value="3">3-4</option>
-          <option value="5">5-6</option>
-          <option value="7">7-8</option>
-          <option value="10">9-10</option>
-          <option value="12">11-12</option>
-          {/* Add options for other ages as needed */}
-        </select>
-      </div>
-      <div>
-        <select onChange={handleGenderChange}>
-          <option value="">All Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Unisex">Unisex</option>
-          {/* Add options for other genders as needed */}
-        </select>
-      </div>
-      <div>
-        <select onChange={handleSeasonChange}>
-          <option value="">All Seasons</option>
-          <option value="Summer">Summer</option>
-          <option value="Spring">Spring</option>
-          <option value="Winter">Winter</option>
-          <option value="Fall">Fall</option>
+    <div className="home">
+      <div className="headerContainer">
+        <h1>Clothes Requests</h1>
+        <div className="filter-container">
+          <select onChange={handleAgeChange}>
+            <option value="">All Ages</option>
+            <option value="2">1-2</option>
+            <option value="3">3-4</option>
+            <option value="5">5-6</option>
+            <option value="7">7-8</option>
+            <option value="10">9-10</option>
+            <option value="12">11-12</option>
+            {/* Add options for other ages as needed */}
+          </select>
 
-          {/* Add options for other genders as needed */}
-        </select>
-      </div>
-      <div className="all">
-        {showPopup ? (
-          <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
-        ) : (
-          <div className="clothes-list">
-            {filteredClothesList.map((clothesItem) => (
-              <div key={clothesItem.id} className="clothes-item">
-                {clothesItem.id}- {clothesItem.name}
-                <button
-                  onClick={() => viewDetails(clothesItem.id)}
-                  className="button-used"
-                >
-                  View Details
-                </button>
-              </div>
-            ))}
-            <Link to="/DonationRequestssDoctor">
-              <button> Back </button>
-            </Link>
-          </div>
-        )}
+          <select onChange={handleGenderChange}>
+            <option value="">All Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+            {/* Add options for other genders as needed */}
+          </select>
+
+          <select onChange={handleSeasonChange}>
+            <option value="">All Seasons</option>
+            <option value="Summer">Summer</option>
+            <option value="Spring">Spring</option>
+            <option value="Winter">Winter</option>
+            <option value="Fall">Fall</option>
+
+            {/* Add options for other genders as needed */}
+          </select>
+        </div>
+        <div>
+          {showPopup ? (
+            <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
+          ) : (
+            <div className="clothes-list">
+              {filteredClothesList.map((clothesItem) => (
+                <div key={clothesItem.id} className="clothes-item">
+                  <p>{clothesItem.name}</p>
+                  <button
+                    onClick={() => viewDetails(clothesItem.id)}
+                    className="button-used"
+                  >
+                    View Details
+                  </button>
+                </div>
+              ))}
+              <Link to="/DonationRequestssDoctor">
+                <button> Back </button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

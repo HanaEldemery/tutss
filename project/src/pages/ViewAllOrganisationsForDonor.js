@@ -45,10 +45,9 @@ function Search({ closePopup }) {
 
   return (
     <div className="all">
+      <h1 className="TEXT">Organization Names</h1>
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">Organization Names</h1>
-
           <Form className="form">
             <Form.Control
               onChange={(e) => setSearch(e.target.value)}

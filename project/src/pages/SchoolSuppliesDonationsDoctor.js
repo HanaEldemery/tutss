@@ -30,17 +30,17 @@ function SchoolSuppliesDonations() {
   };
 
   return (
-    <div>
-      <h1>School Supplies Requests</h1>
-      <div>
+    <div className="home">
+      <div className="headerContainer">
+        <h1>School Supplies Requests</h1>
+
         <select onChange={handleBookChange}>
           <option value="">All Books</option>
           <option value="Fiction">Fiction</option>
           <option value="Non-Fiction">Non-Fiction</option>
           {/* Add options for other ages as needed */}
         </select>
-      </div>
-      <div>
+
         <select onChange={handleStationaryChange}>
           <option value="">All Stationary</option>
           <option value="Copybook">Copybook</option>
@@ -51,29 +51,29 @@ function SchoolSuppliesDonations() {
 
           {/* Add options for other genders as needed */}
         </select>
-      </div>
 
-      <div className="all">
-        {showPopup ? (
-          <Popup closePopup={setShowPopup} theKey={clickedId} />
-        ) : (
-          <div className="schoolsup-list">
-            {filteredSchoolSupList.map((SchoolSupItem) => (
-              <div key={SchoolSupItem.id} className="schoolsup-item">
-                {SchoolSupItem.id}- {SchoolSupItem.name}
-                <button
-                  onClick={() => viewDetails(SchoolSupItem.id)}
-                  className="button-used"
-                >
-                  View Details
-                </button>
-              </div>
-            ))}
-            <Link to="/DonationRequestssDoctor">
-              <button> Back </button>
-            </Link>
-          </div>
-        )}
+        <div>
+          {showPopup ? (
+            <Popup closePopup={setShowPopup} theKey={clickedId} />
+          ) : (
+            <div className="schoolsup-list">
+              {filteredSchoolSupList.map((SchoolSupItem) => (
+                <div key={SchoolSupItem.id} className="schoolsup-item">
+                  <p>{SchoolSupItem.name}</p>
+                  <button
+                    onClick={() => viewDetails(SchoolSupItem.id)}
+                    className="button-used"
+                  >
+                    View Details
+                  </button>
+                </div>
+              ))}
+              <Link to="/DonationRequestssDoctor">
+                <button> Back </button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

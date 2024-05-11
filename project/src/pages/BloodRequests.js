@@ -37,54 +37,54 @@ function BloodRequests() {
   };
 
   return (
-    <div>
-      <h1>Blood Requests</h1>
-      <div>
-        <select onChange={handleHospitalNameChange}>
-          <option value="">All Hospitals</option>
-          <option value="Dar Al Fouad">Dar Al Fouad</option>
-          <option value="El Safa">El Safa</option>
-          <option value="Anglo American">Anglo American</option>
-        </select>
-      </div>
-      <div>
-        <select onChange={handleGovernorateChange}>
-          <option value="">All Governorates</option>
-          <option value="Cairo">Cairo</option>
-          <option value="Giza">Giza</option>
-          {/* Add options for other governorates as needed */}
-        </select>
-      </div>
-      <div>
-        <select onChange={handleAreaChange}>
-          <option value="">All Areas</option>
-          <option value="Nasr City">Nasr City</option>
-          <option value="Agouza">Agouza</option>
-          <option value="Zamalek">Zamalek</option>
-          {/* Add options for other areas as needed */}
-        </select>
-      </div>
-      <div className="all">
-        {showPopup ? (
-          <BloodPopup closePopup={setShowPopup} theKey={clickedId} />
-        ) : (
-          <div className="blood-list">
-            {filteredBloodList.map((bloodItem) => (
-              <div key={bloodItem.id} className="blood-item">
-                {bloodItem.id}- {bloodItem.name}
-                <button
-                  onClick={() => viewDetails(bloodItem.id)}
-                  className="button-used"
-                >
-                  View Details
-                </button>
-              </div>
-            ))}
-            <Link to="/DonationRequests">
-              <button>Back</button>
-            </Link>
-          </div>
-        )}
+    <div className="home">
+      <div className="headerContainer">
+        <h1>Blood Requests</h1>
+        <div className="filter-container">
+          <select onChange={handleHospitalNameChange}>
+            <option value="">All Hospitals</option>
+            <option value="Dar Al Fouad">Dar Al Fouad</option>
+            <option value="El Safa">El Safa</option>
+            <option value="Anglo American">Anglo American</option>
+          </select>
+
+          <select onChange={handleGovernorateChange}>
+            <option value="">All Governorates</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Giza">Giza</option>
+            {/* Add options for other governorates as needed */}
+          </select>
+
+          <select onChange={handleAreaChange}>
+            <option value="">All Areas</option>
+            <option value="Nasr City">Nasr City</option>
+            <option value="Agouza">Agouza</option>
+            <option value="Zamalek">Zamalek</option>
+            {/* Add options for other areas as needed */}
+          </select>
+        </div>
+        <div>
+          {showPopup ? (
+            <BloodPopup closePopup={setShowPopup} theKey={clickedId} />
+          ) : (
+            <div className="blood-list">
+              {filteredBloodList.map((bloodItem) => (
+                <div key={bloodItem.id} className="blood-item">
+                  <p>{bloodItem.name}</p>
+                  <button
+                    onClick={() => viewDetails(bloodItem.id)}
+                    className="button-used"
+                  >
+                    View Details
+                  </button>
+                </div>
+              ))}
+              <Link to="/DonationRequests">
+                <button>Back</button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

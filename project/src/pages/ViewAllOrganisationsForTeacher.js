@@ -45,10 +45,9 @@ function Search({ closePopup }) {
 
   return (
     <div className="all">
+      <h1 className="TEXT">Organization Names</h1>
       {popupFlag ? null : (
         <Container>
-          <h1 className="TEXT">Organization Names</h1>
-
           <Form className="form">
             <Form.Control
               onChange={(e) => setSearch(e.target.value)}
@@ -97,34 +96,48 @@ function Search({ closePopup }) {
             </Form.Control>
           </Form>
 
-          <Table className="table">
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  {popupFlag ? null : (
-                    <p>
-                      {item.organisation}
-                      <button
-                        onClick={() => handleDetailsClick(item.id)}
-                        className="search-button"
-                      >
-                        View Details
-                      </button>
-                      {/* <button
+          <div className="table-wrapper">
+            <Table className="table">
+              <tbody>
+                {filteredData.map((item, index) => (
+                  <tr key={index}>
+                    {popupFlag ? null : (
+                      <p>
+                        <div className="item-container">
+                          <p>{item.organisation}</p>
+
+                          <button
+                            onClick={() => handleDetailsClick(item.id)}
+                            className="search-button"
+                          >
+                            View Details
+                          </button>
+                          {/* <button
                         onClick={() => handleOnDelete(item.id)}
                         className="search-button"
                       >
                         DELETE
                       </button> */}
-                    </p>
-                  )}
+                        </div>
+                      </p>
+                    )}
+                  </tr>
+                ))}
+                <tr>
+                  <td>
+                    <div style={{ textAlign: "center" }}>
+                      <button
+                        onClick={handleRedirect}
+                        className="search-button"
+                      >
+                        Back
+                      </button>
+                    </div>
+                  </td>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
-          <button onClick={handleRedirect} className="search-button">
-            Back
-          </button>
+              </tbody>
+            </Table>
+          </div>
         </Container>
       )}
 
