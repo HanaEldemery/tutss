@@ -89,29 +89,29 @@ function DonationRequests() {
 
   return (
     <div className="home">
-      <div className="button-container">
-        <Link to="/SchoolSuppliesDonations">
-          <button className="donate-button">
-            View All School Supplies Requests
-          </button>
-        </Link>
-        <Link to="/ClothingRequests">
-          <button className="donate-button">View All Clothing Requests</button>
-        </Link>
-        <Link to="/toysRequests">
-          <button className="donate-button">View All Toy Requests</button>
-        </Link>
-        <Link to="/foodRequests">
-          <button className="donate-button">View All Food Requests</button>
-        </Link>
-        <Link to="/medicalSuppliesRequests">
-          <button className="donate-button">
-            View All Medical Supplies Requests
-          </button>
-        </Link>
-        <Link to="/bloodRequests">
-          <button className="donate-button">View All Blood Requests</button>
-        </Link>
+          <div className="button-container">
+            <Link to="/SchoolSuppliesDonations">
+              <button className="donate-button">
+                View All School Supplies Requests
+              </button>
+            </Link>
+            <Link to="/ClothingRequests">
+              <button className="donate-button">View All Clothing Requests</button>
+            </Link>
+            <Link to="/toysRequests">
+              <button className="donate-button">View All Toy Requests</button>
+            </Link>
+            <Link to="/foodRequests">
+              <button className="donate-button">View All Food Requests</button>
+            </Link>
+            <Link to="/medicalSuppliesRequests">
+              <button className="donate-button">
+                View All Medical Supplies Requests
+              </button>
+            </Link>
+            <Link to="/bloodRequests">
+              <button className="donate-button">View All Blood Requests</button>
+            </Link>
       </div>
       <br />
       <input
