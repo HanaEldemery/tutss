@@ -20,16 +20,16 @@ function Home() {
   return (
     <div className="home" style={backgroundImageStyle}>
       <div className="headerContainer">
-        <h1 style={{ fontSize: "75px", marginBottom: "40px", color: "#ffffff" }}>Who are you today?</h1>
+        <h1 style={{ fontSize: "75px", marginBottom: "40px", color: "#ffffff" }}>Continue as</h1>
 
         <Link to="/adminlogin">
-          <button> I am an Admin</button>
+          <button> Admin</button>
         </Link>
         <Link to="/loginorg">
-          <button>I am an Organization</button>
+          <button>Organization</button>
         </Link>
         <Link to="/logindonor">
-          <button>I am a Donor</button>
+          <button>Donor</button>
         </Link>
       </div>
     </div>
