@@ -504,13 +504,27 @@ button {
   justify-content: center; /* Align items horizontally to the center */
   color: #050606;
 }
+.bigadmin-don-req-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #050606;
+  width: 1300px; /* Example fixed width */
+  height: 1700px; /* Example fixed height */
+  overflow: auto; /* Add overflow to enable scrolling if content exceeds container size */
+}
 .admin-don-req-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   color: #050606;
+  width: auto; /* Example fixed width */
+  height: auto; /* Example fixed height */
+  overflow: hidden; /* Add overflow to enable scrolling if content exceeds container size */
 }
+
 
 .admin-don-req-heading {
   text-align: center;
@@ -586,7 +600,7 @@ button {
 .accept-button:hover,
 .reject-button:hover,
 .certificate-button:hover {
-  background-color: #050606;
+  background-color: #ADB3BC;
 }
 .seifhome {
   color: #050606;
@@ -613,6 +627,7 @@ button {
   vertical-align: middle;
   line-height: 1;
   width: 420px;
+  height:100px;
 }
 
 /* Style the buttons on hover */
@@ -1105,4 +1120,39 @@ h6 {
   border-radius: 5px;
   z-index: 1;
 }
+
+/* DonationRequest.css */
+
+/* DonationRequest.css */
+
+.button-container-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.button-container-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.sdonate-button {
+  width: auto; /* Let the width adjust based on content */
+  height: 120px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Adjust margin between buttons */
+  border-radius: 5px;
+  white-space: normal; /* Allow text wrapping */
+  word-wrap: break-word; /* Ensure long words break into multiple lines */
+}
+
+
+
 

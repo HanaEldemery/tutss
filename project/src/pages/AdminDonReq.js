@@ -103,6 +103,7 @@ function AdminDonReq() {
   };
 
   return (
+    <div className="bigadmin-don-req-container">
     <div className="admin-don-req-container">
       <h1 className="admin-don-req-heading">Pending Requesting Donors</h1>
       <div className="donors-list">
@@ -205,6 +206,8 @@ function AdminDonReq() {
               </div>
             )}
     </div>
+    </div>
+
   );
 }
 
