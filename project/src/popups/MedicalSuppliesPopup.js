@@ -43,10 +43,9 @@ class Popup extends Component {
     const { errorMessage, showTransportationSelection } = this.state;
 
     return (
-      <div className="popupBackground_clothesPopup">
-      <div className="popupContainer_clothesPopup">
-        <div className="title_clothesPopup"></div>
-        <div className="body_clothesPopup">
+      <div className="popupBackground_MedicalPopup">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
             <h1>{matchedItem.name}</h1>
             <p>Medical Supply Type: {matchedItem.type}</p>
             <p>Medical Supply Use: {matchedItem.use}</p>
