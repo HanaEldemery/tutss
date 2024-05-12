@@ -1,5 +1,11 @@
 import Clothing from "../assets/clothesOrphanage.jpg";
- 
+import Bag from "../picsss/bag.jpg";
+import Dress from "../picsss/dress.jpg";
+import Hoodie from "../picsss/hoodie.jpg";
+import Jeans from "../picsss/jeans.jpg";
+import Shoes from "../picsss/shoes.jpg";
+import Tshirt from "../picsss/tshirt.jpg";
+
 export const ClothesList = [
   {
     id: 1,
@@ -10,7 +16,7 @@ export const ClothesList = [
     Season: "Summer",
     Material: "jeans",
     Quantity: 3,
-    image: Clothing,
+    image: Jeans,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },
@@ -23,7 +29,7 @@ export const ClothesList = [
     Season: "Spring",
     Material: "Cotton",
     Quantity: 3,
-    image: Clothing,
+    image: Dress,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },
@@ -36,7 +42,7 @@ export const ClothesList = [
     Season: "Fall",
     Material: "Cotton",
     Quantity: 3,
-    image: Clothing,
+    image: Tshirt,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },
@@ -49,7 +55,7 @@ export const ClothesList = [
     Season: null,
     Material: "Fabric",
     Quantity: 3,
-    image: Clothing,
+    image: Bag,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },
@@ -62,7 +68,7 @@ export const ClothesList = [
     Season: null,
     Material: "Rubber",
     Quantity: 3,
-    image: Clothing,
+    image: Shoes,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },
@@ -75,7 +81,7 @@ export const ClothesList = [
     Season: "Winter",
     Material: "Cotton",
     Quantity: 3,
-    image: Clothing,
+    image: Hoodie,
     xyz: "Clothes",
     imageClass: "popup-image", // Add the CSS class here
   },

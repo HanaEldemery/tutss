@@ -1,4 +1,9 @@
 import SuppliesSchool from "../assets/suppliesSchool.jpg";
+import Book from "../picsss/book.png";
+import Case from "../picsss/case.jpg";
+import Eraser from "../picsss/eraser.jpg";
+import Sharp from "../picsss/sharp.jpg";
+import Pencil from "../picsss/pencil.jpg";
 
 export const SchoolSupList = [
   {
@@ -11,7 +16,7 @@ export const SchoolSupList = [
     Edition: "1994",
     Summary:
       "Featuring interactive die-cut pages, this board book edition is the perfect size for little hands and great for teaching counting and days of the week. The very hungry caterpillar literally eats his way through the pages of the book—and right into your child's heart... -Mother's Manual",
-    image: SuppliesSchool,
+    image: Book,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -25,7 +30,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    image: SuppliesSchool,
+    image: Book,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -39,7 +44,7 @@ export const SchoolSupList = [
     Edition: "Second Edition",
     Summary:
       "The Cambridge Lower Secondary Complete Mathematics 7 Student Book ensures students fully cover and excel in the curriculum, as well as embedding the learning they need to progress smoothly towards IGCSE® Mathematics. This resource provides a rigorous approach for teaching and studying Cambridge Lower Secondary Maths to ensure students learn everything that is required at that level. However, stretching materials and exercises also prepare students for a smooth transition to IGCSE Mathematics by supporting the development of required skills. It is written by the expert author of our previous, best-selling edition and maintains the strengths of the original book, but with updates and improvements to better meet students' and teachers' needs. The Student Book is supported by a Homework Book that provides opportunities for independent practice inside and outside the classroom, and a Teacher Handbook, which offers full teaching support.",
-    image: SuppliesSchool,
+    image: Book,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -53,7 +58,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    image: SuppliesSchool,
+    image: Case,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -67,7 +72,7 @@ export const SchoolSupList = [
     Edition: "Second Edition",
     Summary:
       "Your learners will develop their English skills as they write a poem, talk about characters and events and explore information books. You’ll find a wide range of international fiction, non-fiction and poetry throughout the book to help your learners develop their understanding of different genres and text types. Each unit includes activities that cover reading, writing, speaking and listening, as well as opportunities to develop 21st-century skills – such as collaboration and critical thinking. Units end with a project, like designing a bug hotel, to help learners communicate confidently and understand how to apply their learning to real-world scenarios.",
-    image: SuppliesSchool,
+    image: Book,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -81,7 +86,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    image: SuppliesSchool,
+    image: Pencil,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -95,7 +100,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    image: SuppliesSchool,
+    image: Eraser,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -109,7 +114,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    image: SuppliesSchool,
+    image: Sharp,
     quantity: 3,
     xyz: "School Supplies",
   },

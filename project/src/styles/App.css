@@ -299,7 +299,7 @@ option {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #FDFDFD;
+  border: 1px solid #fdfdfd;
   width: 50%;
   margin: 10px;
 }
@@ -311,7 +311,7 @@ option {
   max-height: 1010px;
   overflow: auto;
   padding: 20px;
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
   height: 1000px;
   width: 1000px;
   justify-content: center;
@@ -330,7 +330,7 @@ option {
 /* Change button hover color to #ADB3BC */
 .popupContainer button:hover,
 .seifpopup-content button:hover {
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
 }
 .popup-overlay button,
 .seifpopup-content button {
@@ -340,9 +340,8 @@ option {
 /* Change button hover color to #ADB3BC */
 .popup-overlay button:hover,
 .seifpopup-content button:hover {
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
 }
-
 
 /* Update the styles for Popup overlay */
 .popup-overlay,
@@ -404,7 +403,7 @@ option {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #FDFDFD;
+  border: 1px solid #fdfdfd;
   width: 50%;
 }
 
@@ -421,7 +420,7 @@ option {
 }
 
 .textInputContainer button:hover {
-  background-color: rgba(5, 6, 6,0.5);
+  background-color: rgba(5, 6, 6, 0.5);
 }
 
 .headerContainer {
@@ -546,7 +545,6 @@ button {
   overflow: hidden; /* Add overflow to enable scrolling if content exceeds container size */
 }
 
-
 .admin-don-req-heading {
   text-align: center;
   margin-bottom: 20px;
@@ -621,7 +619,7 @@ button {
 .accept-button:hover,
 .reject-button:hover,
 .certificate-button:hover {
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
 }
 .seifhome {
   color: #050606;
@@ -648,7 +646,7 @@ button {
   vertical-align: middle;
   line-height: 1;
   width: 420px;
-  height:100px;
+  height: 100px;
 }
 
 /* Style the buttons on hover */
@@ -673,7 +671,7 @@ button {
   padding-right: 20px;
 }
 .details-popup {
-  background-color: #FDFDFD;
+  background-color: #fdfdfd;
   padding: 20px;
   border-radius: 8px;
 }
@@ -827,7 +825,6 @@ button {
   width: 200px; /* Adjust the width as needed */
 }
 
-
 .missionAndVision {
   max-width: 800px;
   margin: auto;
@@ -871,7 +868,6 @@ button {
 .seifpopup-content button:hover {
   background-color: #050606; /* Darker background color on hover */
 }
-
 
 .table .search-button:hover,
 .donate-button:hover,
@@ -924,11 +920,9 @@ h6 {
   color: #000; /* Jet black */
 }
 
-
 .image {
   margin-top: 20px;
 }
-
 
 .image img {
   max-width: 350px; /* Adjust the width as needed */
@@ -942,8 +936,6 @@ h6 {
   text-align: left;
 }
 
-
-
 /*adhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaam---------------------------------------*/
 .popupBackground_clothesPopup {
   position: fixed;
@@ -951,20 +943,20 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .popupContainer_clothesPopup {
-  background-color:#FDFDFD;
+  background-color: #fdfdfd;
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
   width: 90%;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .popupContainer_clothesPopup h1 {
@@ -1015,7 +1007,7 @@ h6 {
 }
 
 .popupContainer_clothesPopup button:hover {
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
 }
 
 .title_clothesPopup {
@@ -1056,21 +1048,21 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: auto; /* Enable scrolling */
 }
 
-.popupContainer_MedicalPopup { 
-  background-color:white ;
+.popupContainer_MedicalPopup {
+  background-color: white;
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
   width: 90%;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   overflow-y: auto; /* Enable vertical scrolling within the container */
   max-height: 80%; /* Limit the height to 80% of viewport height */
 }
@@ -1123,7 +1115,7 @@ h6 {
 }
 
 .popupContainer_MedicalPopup button:hover {
-  background-color: #ADB3BC;
+  background-color: #adb3bc;
 }
 
 .popupContainer_MedicalPopup .popupDetailsButton {
@@ -1173,9 +1165,6 @@ h6 {
   white-space: normal; /* Allow text wrapping */
   word-wrap: break-word; /* Ensure long words break into multiple lines */
 }
-
-
-
 
 /* Add outlines to dropdowns, inputs, and search bars */
 input[type="text"],

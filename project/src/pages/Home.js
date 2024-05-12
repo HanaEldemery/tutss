@@ -20,7 +20,11 @@ function Home() {
   return (
     <div className="home" style={backgroundImageStyle}>
       <div className="headerContainer">
-        <h1 style={{ fontSize: "75px", marginBottom: "40px", color: "#ffffff" }}>Continue as</h1>
+        <h1
+          style={{ fontSize: "75px", marginBottom: "40px", color: "#ffffff" }}
+        >
+          Continue as
+        </h1>
 
         <Link to="/adminlogin">
           <button> Admin</button>
