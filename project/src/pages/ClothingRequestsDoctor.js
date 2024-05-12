@@ -54,7 +54,6 @@ function ClothingRequests() {
             <option value="">All Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-            <option value="Unisex">Unisex</option>
             {/* Add options for other genders as needed */}
           </select>
 
