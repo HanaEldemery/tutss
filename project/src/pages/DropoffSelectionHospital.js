@@ -58,7 +58,7 @@ function DropoffSelection() {
             ))}
           </select>
 
-          {errorMessage && <p>{errorMessage}</p>}
+          {errorMessage && <p className="error">{errorMessage}</p>}
 
           {showConfirmation}
           <br />

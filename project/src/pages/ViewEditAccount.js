@@ -92,7 +92,7 @@ function ViewEditAccount({ closePopup, donorId }) {
                           onClick={detailsClick}
                           className="search-button"
                         >
-                          Remove
+                          Delete
                         </button>
                       </p>
                     </div>
@@ -109,7 +109,7 @@ function ViewEditAccount({ closePopup, donorId }) {
                         <input type="text" placeholder={item.address} />
                         <p>
                           <button onClick={areaClick} className="search-button">
-                            Remove
+                            Delete
                           </button>
                         </p>
                       </p>
@@ -131,7 +131,7 @@ function ViewEditAccount({ closePopup, donorId }) {
                             onClick={governorateClick}
                             className="search-button"
                           >
-                            Remove
+                            Delete
                           </button>
                         </p>
                       </p>

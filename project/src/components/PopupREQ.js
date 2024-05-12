@@ -65,7 +65,7 @@ function PopupREQ({ closePopup, organisation }) {
 
       setPopupMessage("Request placed!");
       setTimeout(() => {
-        setPopupMessage("Request Accepted!");
+        setPopupMessage("Request Accepted by Donor!");
         setTimeout(() => {
           closePopup(false);
         }, 3000);
