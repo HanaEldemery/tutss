@@ -1,5 +1,5 @@
 import Clothing from "../assets/clothesOrphanage.jpg";
-
+ 
 export const ClothesList = [
   {
     id: 1,
@@ -58,7 +58,7 @@ export const ClothesList = [
     name: "Shoes",
     type: "sneakers",
     Age: "3",
-    Gender: "Unisex",
+    Gender: "Male",
     Season: null,
     Material: "Rubber",
     Quantity: 3,
@@ -71,7 +71,7 @@ export const ClothesList = [
     name: "Hoodie",
     type: "pullover hoodies",
     Age: "3",
-    Gender: "Unisex",
+    Gender: "Male",
     Season: "Winter",
     Material: "Cotton",
     Quantity: 3,
