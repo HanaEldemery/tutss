@@ -115,13 +115,13 @@ function Search({ closePopup }) {
                         </p>
                         <button
                           onClick={() => handleDetailsClick(item.id)}
-                          className="donation-button"
+                          className="detailButton_clothesPopup"
                         >
                           Details
                         </button>
                         <button
                           onClick={() => handleOnDelete(item.id)}
-                          className="donation-button"
+                          className="detailButton_clothesPopup"
                         >
                           Delete
                         </button>
