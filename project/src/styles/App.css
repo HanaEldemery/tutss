@@ -1177,3 +1177,12 @@ h6 {
 
 
 
+/* Add outlines to dropdowns, inputs, and search bars */
+input[type="text"],
+input[type="password"],
+select,
+option,
+.search-input,
+.inputForm {
+  outline: 2px solid #050606; /* Add outline with color jet black */
+}

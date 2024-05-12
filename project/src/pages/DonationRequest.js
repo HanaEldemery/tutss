@@ -166,7 +166,13 @@ function DonationRequest() {
             placeholder="Search by Type "
             value={searchTerm}
             onChange={handleChange}
-            style={{ marginBottom: "20px" }}
+            style={{
+              marginBottom: "20px",
+              border: "1px solid black", // Add black border
+              borderRadius: "5px", // Add border radius for rounded corners
+              padding: "8px", // Add padding for better appearance
+              width: "50%", // Set width to fill the container
+            }}
           />
           {showPopup ? (
             <div className="popup-overlay">
