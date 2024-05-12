@@ -102,11 +102,7 @@ function Search({ closePopup }) {
               <div className="menu">
                 <div className="menuList">
                   {filteredData.map((item, index) => (
-                    <div
-                      key={index}
-                      className="menuItem"
-                      onClick={() => handleDetailsClick(item.id)}
-                    >
+                    <div key={index} className="menuItem">
                       <div className="item-container">
                         <div
                           className="menuImage"
@@ -117,7 +113,12 @@ function Search({ closePopup }) {
                         <p style={{ textAlign: "center" }}>
                           {item.organisation}
                         </p>
-
+                        <button
+                          onClick={() => handleDetailsClick(item.id)}
+                          className="donation-button"
+                        >
+                          Details
+                        </button>
                         <button
                           onClick={() => handleOnDelete(item.id)}
                           className="donation-button"

@@ -52,11 +52,7 @@ function Search({ closePopup }) {
             <Table className="table">
               <div className="menuList">
                 {filteredData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="menuItem"
-                    onClick={() => handleDetailsClick(item.id)}
-                  >
+                  <div key={index} className="menuItem">
                     <div classNam="item-container">
                       <div
                         className="menuImage"
@@ -66,6 +62,17 @@ function Search({ closePopup }) {
                       />
                       <p style={{ textAlign: "center" }}>{item.patientName}</p>
 
+                      <button
+                        onClick={() => handleDetailsClick(item.id)}
+                        className="donate-button"
+                        style={{
+                          display: "block",
+                          margin: " auto",
+                          marginBottom: "5px",
+                        }}
+                      >
+                        Details
+                      </button>
                       <button
                         onClick={() => handleOnDelete(item.id)}
                         className="donate-button"
