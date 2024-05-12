@@ -40,10 +40,10 @@ class ClothesPopup extends Component {
     const { errorMessage, showTransportationSelection } = this.state;
 
     return (
-      <div className="popupBackground">
-        <div className="popupContainer">
-          <div className="title"></div>
-          <div className="body">
+      <div className="popupBackground_clothesPopup">
+        <div className="popupContainer_clothesPopup">
+          <div className="title_clothesPopup"></div>
+          <div className="body_clothesPopup">
             <h1>{matchedItem.name}</h1>
             <p>Clothes Type: {matchedItem.type}</p>
             <p>name: {matchedItem.name}</p>
@@ -67,12 +67,23 @@ class ClothesPopup extends Component {
               placeholder="Enter quantity (1-3)"
               value={this.state.quantity}
               onChange={this.handleQuantityChange}
+              className="input"
             />
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
-          <div className="footer">
-            <button className="detail-button" onClick={() => closePopup(false)}>Hide Details</button>
-            <button className= "detail-button" onClick={this.handleDonate}>Donate Now</button>
+          <div className="footer_clothesPopup">
+            <button
+              className="detailButton_clothesPopup"
+              onClick={() => closePopup(false)}
+            >
+              Hide Details
+            </button>
+            <button
+              className="detailButton_clothesPopup"
+              onClick={this.handleDonate}
+            >
+              Donate Now
+            </button>
           </div>
         </div>
         {showTransportationSelection && (
