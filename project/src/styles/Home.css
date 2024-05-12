@@ -1,4 +1,4 @@
-/*Home.css*/
+/* Home.css */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap");
 
 * {
@@ -17,9 +17,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fdfdfd; /* Background color */
+  background: url('../images/photo-1595561579181-263fe6175b73.avif') center center/cover no-repeat; /* Background image */
   color: #050606; /* Font color for headings */
-  margin: 0; /* Remove default margin */
   padding: 20px; /* Add padding */
 }
 
@@ -35,6 +34,7 @@ body {
 .headerContainer h1 {
   font-size: 40px;
   margin-bottom: 40px; /* Adjusted margin to create more space between h1 and buttons */
+  color: #ffffff; /* Set header text color to white */
 }
 
 .headerContainer button {
@@ -67,47 +67,4 @@ body {
     font-size: 16px;
     width: 150px; /* Adjust width for smaller screens */
   }
-
 }
-/*---------------------------*/
-/*.container {
-  position: relative;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-}
-
-.headerContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.headerContainer h1 {
-  font-size: 40px;
-  margin-bottom: 40px;
-}
-
-.headerContainer button {
-  margin: 10px;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #050606;
-  color: #fdfdfd;
-  font-size: 20px;
-  width: 200px;
-  transition: background-color 0.3s ease;
-}
-
-.headerContainer button:hover {
-  background-color: #adb3bc;
-}*/
-
-
-

@@ -1,6 +1,6 @@
 //NavBar.js
 import React, { useState } from "react";
-import Logo from "../images/logo.PNG";
+import Logo from "../images/Logo.png";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import { HelpOutline, HomeOutlined } from "@mui/icons-material"; // Import icons from Material-UI Icons
 import "../styles/NavBar.css";
