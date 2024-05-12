@@ -40,10 +40,9 @@ class ClothesPopup extends Component {
     const { errorMessage, showTransportationSelection } = this.state;
 
     return (
-      <div className="popupBackground_clothesPopup">
-        <div className="popupContainer_clothesPopup">
-          <div className="title_clothesPopup"></div>
-          <div className="body_clothesPopup">
+      <div className="popupBackground_MedicalPopup">
+    <div className="popupContainer_MedicalPopup">
+      <div className="popupBody">
             <h1>{matchedItem.name}</h1>
             <p>Clothes Type: {matchedItem.type}</p>
             <p>name: {matchedItem.name}</p>
@@ -51,13 +50,9 @@ class ClothesPopup extends Component {
             <p>Age: {matchedItem.Age}</p>
             <p>Gender: {matchedItem.Gender}</p>
             {matchedItem.Season && (
-              <div>
-                <p>Season:{matchedItem.Season}</p>
-              </div>
+                <p>Season: {matchedItem.Season}</p>
             )}
             <p>Material: {matchedItem.Material}</p>
-
-            <p>Image: </p>
             <img src={matchedItem.picture} alt="Clothes" />
             <p> Quantity: {matchedItem.Quantity}</p>
             {matchedItem.googleMarker}
@@ -82,7 +77,7 @@ class ClothesPopup extends Component {
               className="detailButton_clothesPopup"
               onClick={this.handleDonate}
             >
-              Donate Now
+              Donate
             </button>
           </div>
         </div>

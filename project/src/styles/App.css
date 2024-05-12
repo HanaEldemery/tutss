@@ -775,7 +775,6 @@ button {
 }
 
 /* clothesPopup.module.css */
-/* clothesPopup.module.css */
 
 .popupBackground_clothesPopup {
   position: fixed;
@@ -783,14 +782,14 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(240, 225, 202, 0.8); /* Semi-transparent background */
+  background-color: rgba(240, 225, 202);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .popupContainer_clothesPopup {
-  background-color: white;
+  background-color: rgba(255, 255, 255); /*ghayar hena*/
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -801,6 +800,7 @@ button {
 
 .popupContainer_clothesPopup h1 {
   color: #4b392f;
+  text-align: center;
 }
 
 .popupContainer_clothesPopup p {
@@ -810,12 +810,11 @@ button {
 }
 
 .popupContainer_clothesPopup img {
+  display: block; /* Ensures image is treated as a block element */
+  margin: 0 auto; /* Centers the image horizontally */
   max-width: 100%;
   height: auto;
-  margin-top: 20px; /* Increased margin for spacing */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 10px;
 }
 
 .popupContainer_clothesPopup input[type="text"] {
@@ -866,6 +865,110 @@ button {
   font-size: 16px;
 }
 
-.detailButton_clothesPopup {
+.detail-button_clothesPopup {
   margin-right: 10px;
+}
+
+.popupBackground_BloodPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 225, 202);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Medical*/
+.popupBackground_MedicalPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 225, 202);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto; /* Enable scrolling */
+}
+
+.popupContainer_MedicalPopup {
+  background-color: rgba(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  overflow-y: auto; /* Enable vertical scrolling within the container */
+  max-height: 80%; /* Limit the height to 80% of viewport height */
+}
+
+.popupContainer_MedicalPopup h1 {
+  color: #4b392f;
+  text-align: center;
+}
+
+.popupContainer_MedicalPopup p {
+  color: #4b392f;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.popupContainer_MedicalPopup img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.popupContainer_MedicalPopup input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.popupContainer_MedicalPopup .error {
+  color: red;
+  margin-top: 5px;
+}
+
+.popupContainer_MedicalPopup .popupFooter {
+  margin-top: 20px;
+}
+
+.popupContainer_MedicalPopup button {
+  color: white;
+  background-color: #a8907d;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popupContainer_MedicalPopup button:hover {
+  background-color: #4b392f;
+}
+
+.popupContainer_MedicalPopup .popupDetailsButton {
+  margin-right: 10px;
+}
+
+.popupConfirmationMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  z-index: 1;
 }

@@ -7,7 +7,7 @@ function DonationSuccessful() {
       <h1>Donation Confirmed</h1>
       <p>Thank You For Your Donation!</p>
         <Link to="/donationRequests">
-         <button>Go Back To Main Page</button>
+         <button className='donate-button'>Go Back To Main Page</button>
         </Link>
     </div>
   );

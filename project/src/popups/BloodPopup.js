@@ -13,10 +13,10 @@ function Popup({ closePopup, theKey }) {
   };
 
   return (
-    <div className="popupBackground">
-      <div className="popupContainer">
-        <div className="title"></div>
-        <div className="body">
+     <div className="popupBackground_clothesPopup">
+      <div className="popupContainer_clothesPopup">
+        <div className="title_clothesPopup"></div>
+        <div className="body_clothesPopup">
           <h1>{matchedItem.name}</h1>
           <p>Patient Name: {matchedItem.patientName}</p>
           <p>Blood Type: {matchedItem.bloodType}</p>
@@ -26,9 +26,9 @@ function Popup({ closePopup, theKey }) {
           <p>Hospital Address: {matchedItem.hospitalAddress}</p>
           {matchedItem.googleMarker}
         </div>
-        <div className="footer">
-          <button className="detail-button" onClick={() => closePopup(false)}>Hide Details</button>
-          <button className= "detail-button" onClick={handleDonate}>Donate Now</button>
+        <div className="footer_clothesPopup">
+          <button className="detailButton_clothesPopup" onClick={() => closePopup(false)}>Hide Details</button>
+          <button className= "detailButton_clothesPopup" onClick={handleDonate}>Donate</button>
         </div>
       </div>
       {showTransportationSelection && (
@@ -36,7 +36,7 @@ function Popup({ closePopup, theKey }) {
           closePopup={() => setShowTransportationSelection(false)}
         />
       )}
-    </div>
+      </div>
   );
 }
 

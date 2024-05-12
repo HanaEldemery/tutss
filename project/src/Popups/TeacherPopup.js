@@ -29,9 +29,9 @@ function TeacherPopup({
   };
 
   return (
-    <div className="popupBackground">
-      <div className="popupContainer">
-        <div className="body">
+    <div className="popupBackground_MedicalPopup">
+    <div className="popupContainer_MedicalPopup">
+      <div className="popupBody">
           <h1>{teacher.Subject}</h1>
           <p>{teacher.Subject} Teacher</p>
           <p>Area: {teacher.area}</p>
@@ -42,9 +42,9 @@ function TeacherPopup({
             <div className="google-maps">{teacher.Location_Google_Marker}</div>
           )}
         </div>
-        <div className="footer">
-          <button className="details-button" onClick={closePopup}>Hide Details</button>
-          <button className="details-button" onClick={() => setShowDonatePopup(true)}>Donate</button>
+        <div className="footer_clothesPopup">
+          <button className="detailButton_clothesPopup" onClick={closePopup}>Hide Details</button>
+          <button className="detailButton_clothesPopup" onClick={() => setShowDonatePopup(true)}>Donate</button>
         </div>
       </div>
       {showDonatePopup && (

@@ -79,30 +79,32 @@ function TransportationSelection({ closePopup }) {
             padding: "20px",
             border: "1px solid black",
             borderRadius: "5px",
-            zIndex: 1,
+            Index: 1,
           }}
         >
           {popupMessage}
         </div>
       )}
       <h2>Transportation Selection for Donation Pickup</h2>
-      <label htmlFor="vehicle-select">Choose a vehicle:</label>
-      <select
-        id="vehicle-select"
-        value={selectedVehicle}
-        onChange={handleVehicleChange}
-      >
-        <option value="">Select a vehicle</option>
-        {Object.keys(vehicles).map((vehicle) => (
-          <option key={vehicle} value={vehicle}>
-            {vehicle}
-          </option>
-        ))}
-      </select>
+      <div className="dropdown-container">
+        <label htmlFor="vehicle-select">Choose a vehicle:<br/></label>
+        <select
+          id="vehicle-select"
+          value={selectedVehicle}
+          onChange={handleVehicleChange}
+        >
+          <option value="">Select a vehicle</option>
+          {Object.keys(vehicles).map((vehicle) => (
+            <option key={vehicle} value={vehicle}>
+              {vehicle}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {selectedVehicle && (
-        <>
-          <label htmlFor="time-slot-select">Choose a time slot:</label>
+        <div className="dropdown-container">
+          <label htmlFor="time-slot-select">Choose a time slot:<br/></label>
           <select
             id="time-slot-select"
             value={selectedTimeSlot}
@@ -115,10 +117,12 @@ function TransportationSelection({ closePopup }) {
               </option>
             ))}
           </select>
-        </>
+        </div>
       )}
 
-      <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
+      <button className="donate-button" onClick={handleConfirmation}>
+        Confirm Pickup Slot
+      </button>
 
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
@@ -126,3 +130,4 @@ function TransportationSelection({ closePopup }) {
 }
 
 export default TransportationSelection;
+

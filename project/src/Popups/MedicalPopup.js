@@ -29,9 +29,9 @@ function MedicalPopup({
   };
 
   return (
-    <div className="popupBackground">
-      <div className="popupContainer">
-        <div className="body">
+    <div className="popupBackground_MedicalPopup">
+    <div className="popupContainer_MedicalPopup">
+      <div className="popupBody">
           <h1>{matchedItem.Patient_Name}</h1>
           <p>Age: {matchedItem.Age}</p>
           <p>Gender: {matchedItem.Gender}</p>
@@ -48,9 +48,9 @@ function MedicalPopup({
             </div>
           )}
         </div>
-        <div className="footer">
-          <button className="details-button" onClick={closePopup}>Hide Details</button>
-          <button className="details-button" onClick={() => setShowDonatePopup(true)}>Donate</button>
+        <div className="footer_clothesPopup">
+        <button className="detailButton_clothesPopup" onClick={closePopup}>Hide Details</button>
+        <button className="detailButton_clothesPopup" onClick={() => setShowDonatePopup(true)}>Donate</button>
         </div>
       </div>
       {showDonatePopup && (
@@ -66,17 +66,7 @@ function MedicalPopup({
       )}
       {donationConfirmed && (
         <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "white",
-            padding: "20px",
-            border: "1px solid black",
-            borderRadius: "5px",
-            zIndex: 1,
-          }}
+          className="popupConfirmationMessage"
         >
           Donation Confirmed
         </div>

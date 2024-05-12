@@ -43,10 +43,10 @@ class Popup extends Component {
     const { errorMessage, showTransportationSelection } = this.state;
 
     return (
-      <div className="popupBackground">
-        <div className="popupContainer">
-          <div className="title"></div>
-          <div className="body">
+      <div className="popupBackground_clothesPopup">
+      <div className="popupContainer_clothesPopup">
+        <div className="title_clothesPopup"></div>
+        <div className="body_clothesPopup">
             <h1>{matchedItem.name}</h1>
             <p>Food Type: {matchedItem.type}</p>
             <p>Food Quantity: {matchedItem.quantity}</p>
@@ -59,15 +59,15 @@ class Popup extends Component {
             />
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
-          <div className="footer">
-            <button className="detail-button" onClick={() => closePopup(false)}>Hide Details</button>
-            <button className="detail-button" onClick={this.handleDonate}>Donate Now</button>
+          <div className="footer_clothesPopup">
+            <button className="detailButton_Popup" onClick={() => closePopup(false)}>Hide Details</button>
+            <button className="detailButton_Popup" onClick={this.handleDonate}>Donate Now</button>
           </div>
         </div>
         {showTransportationSelection && (
           <TransportationSelection
             closePopup={() =>
-              this.setState({ showTransportationSelection: false })
+              this.setState({ showTransportationSelection : false })
             }
           />
         )}
