@@ -33,7 +33,7 @@ function DropoffSelection() {
       setTimeout(() => {
         setPopupMessage("");
         // Redirect to another page after the popup message disappears
-        window.location.href = "/organisation";
+        window.location.href = "/organisationHospital";
       }, 3000);
       setErrorMessage(""); // Clear any error messages
     }

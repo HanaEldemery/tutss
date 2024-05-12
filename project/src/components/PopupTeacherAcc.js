@@ -46,7 +46,7 @@ function PopupTeacherAcc({ closePopup, teacherName, teacherId }) {
               onClick={() => showContact(teacherId)}
               className="search-button"
             >
-              Contant Details
+              Contact Details
             </button>
           </div>
         </div>
