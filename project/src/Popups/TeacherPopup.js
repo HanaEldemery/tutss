@@ -28,10 +28,18 @@ function TeacherPopup({
     setShowDonatePopup(false); // Close the donation confirmation popup
   };
 
-  return (
+  return showTransportationSelection ? (
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <TransportationSelection3
+          closePopup={() => setShowTransportationSelection(false)}
+        />
+      </div>
+    </div>
+  ) : (
     <div className="popupBackground_MedicalPopup">
-    <div className="popupContainer_MedicalPopup">
-      <div className="popupBody">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
           <h1>{teacher.Subject}</h1>
           <p>{teacher.Subject} Teacher</p>
           <p>Area: {teacher.area}</p>
@@ -43,8 +51,15 @@ function TeacherPopup({
           )}
         </div>
         <div className="footer_clothesPopup">
-          <button className="detailButton_clothesPopup" onClick={closePopup}>Hide Details</button>
-          <button className="detailButton_clothesPopup" onClick={() => setShowDonatePopup(true)}>Donate</button>
+          <button className="detailButton_clothesPopup" onClick={closePopup}>
+            Hide Details
+          </button>
+          <button
+            className="detailButton_clothesPopup"
+            onClick={() => setShowDonatePopup(true)}
+          >
+            Donate
+          </button>
         </div>
       </div>
       {showDonatePopup && (
@@ -53,11 +68,7 @@ function TeacherPopup({
           handleRide={handleRide}
         />
       )}
-      {showTransportationSelection && (
-        <TransportationSelection3
-          closePopup={() => setShowTransportationSelection(false)}
-        />
-      )}
+
       {donationConfirmed && (
         <div
           style={{

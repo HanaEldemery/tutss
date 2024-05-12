@@ -39,20 +39,30 @@ class ClothesPopup extends Component {
     const matchedItem = ClothesList.find((item) => item.id === theKey);
     const { errorMessage, showTransportationSelection } = this.state;
 
-    return (
+    return showTransportationSelection ? (
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <TransportationSelection
+            closePopup={() =>
+              this.setState({ showTransportationSelection: false })
+            }
+          />
+        </div>
+      </div>
+    ) : (
       <div className="popupBackground_MedicalPopup">
         <div className="popupContainer_MedicalPopup">
           <div className="popupBody">
             <h1>{matchedItem.name}</h1>
-            <p>Clothes Type: {matchedItem.type}</p>
-            <p>name: {matchedItem.name}</p>
-            <p>type: {matchedItem.type}</p>
+            <p>Clothes Type NOW: {matchedItem.type}</p>
+            <p>Name: {matchedItem.name}</p>
+            <p>Type: {matchedItem.type}</p>
             <p>Age: {matchedItem.Age}</p>
             <p>Gender: {matchedItem.Gender}</p>
             {matchedItem.Season && <p>Season: {matchedItem.Season}</p>}
             <p>Material: {matchedItem.Material}</p>
             <img src={matchedItem.picture} alt="Clothes" />
-            <p> Quantity: {matchedItem.Quantity}</p>
+            <p>Quantity: {matchedItem.Quantity}</p>
             {matchedItem.googleMarker}
             <input
               id="quantity-id"
@@ -79,13 +89,6 @@ class ClothesPopup extends Component {
             </button>
           </div>
         </div>
-        {showTransportationSelection && (
-          <TransportationSelection
-            closePopup={() =>
-              this.setState({ showTransportationSelection: false })
-            }
-          />
-        )}
       </div>
     );
   }

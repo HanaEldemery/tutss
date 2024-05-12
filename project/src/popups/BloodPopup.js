@@ -12,10 +12,18 @@ function Popup({ closePopup, theKey }) {
     setShowTransportationSelection(true);
   };
 
-  return (
+  return showTransportationSelection ? (
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <TransportationSelection
+          closePopup={() => setShowTransportationSelection(false)}
+        />
+      </div>
+    </div>
+  ) : (
     <div className="popupBackground_MedicalPopup">
-    <div className="popupContainer_MedicalPopup">
-      <div className="popupBody">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
           <h1>{matchedItem.name}</h1>
           <p>Patient Name: {matchedItem.patientName}</p>
           <p>Blood Type: {matchedItem.bloodType}</p>
@@ -26,16 +34,18 @@ function Popup({ closePopup, theKey }) {
           {matchedItem.googleMarker}
         </div>
         <div className="footer_clothesPopup">
-          <button className="detailButton_clothesPopup" onClick={() => closePopup(false)}>Hide Details</button>
-          <button className= "detailButton_clothesPopup" onClick={handleDonate}>Donate</button>
+          <button
+            className="detailButton_clothesPopup"
+            onClick={() => closePopup(false)}
+          >
+            Hide Details
+          </button>
+          <button className="detailButton_clothesPopup" onClick={handleDonate}>
+            Donate
+          </button>
         </div>
       </div>
-      {showTransportationSelection && (
-        <TransportationSelection
-          closePopup={() => setShowTransportationSelection(false)}
-        />
-      )}
-      </div>
+    </div>
   );
 }
 

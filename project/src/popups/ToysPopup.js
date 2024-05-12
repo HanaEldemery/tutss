@@ -42,10 +42,20 @@ class Popup extends Component {
     const matchedItem = ToysList.find((item) => item.id === theKey);
     const { errorMessage, showTransportationSelection } = this.state;
 
-    return (
+    return showTransportationSelection ? (
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <TransportationSelection
+            closePopup={() =>
+              this.setState({ showTransportationSelection: false })
+            }
+          />
+        </div>
+      </div>
+    ) : (
       <div className="popupBackground_MedicalPopup">
-      <div className="popupContainer_MedicalPopup">
-        <div className="popupBody">
+        <div className="popupContainer_MedicalPopup">
+          <div className="popupBody">
             <h1>{matchedItem.name}</h1>
             <p>Toy Type: {matchedItem.type}</p>
             <p>Toy Age: {matchedItem.age}</p>
@@ -64,17 +74,20 @@ class Popup extends Component {
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
           <div className="footer_clothesPopup">
-            <button className="detailButton_clothesPopup" onClick={() => closePopup(false)}>Hide Details</button>
-            <button className="detailButton_clothesPopup" onClick={this.handleDonate}>Donate Now</button>
+            <button
+              className="detailButton_clothesPopup"
+              onClick={() => closePopup(false)}
+            >
+              Hide Details
+            </button>
+            <button
+              className="detailButton_clothesPopup"
+              onClick={this.handleDonate}
+            >
+              Donate Now
+            </button>
           </div>
         </div>
-        {showTransportationSelection && (
-          <TransportationSelection
-            closePopup={() =>
-              this.setState({ showTransportationSelection: false })
-            }
-          />
-        )}
       </div>
     );
   }

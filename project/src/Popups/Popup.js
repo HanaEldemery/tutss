@@ -42,13 +42,22 @@ class Popup extends Component {
     const matchedItem = SchoolSupList.find((item) => item.id === theKey);
     const { errorMessage, showTransportationSelection } = this.state;
 
-    return (
+    return showTransportationSelection ? (
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <TransportationSelection
+            closePopup={() =>
+              this.setState({ showTransportationSelection: false })
+            }
+          />
+        </div>
+      </div>
+    ) : (
       <div className="popupBackground_MedicalPopup">
-      <div className="popupContainer_MedicalPopup">
-        <div className="popupBody">
+        <div className="popupContainer_MedicalPopup">
+          <div className="popupBody">
             <h1>{matchedItem.name}</h1>
-
-            <p>type: {matchedItem.type}</p>
+            <p>Type: {matchedItem.type}</p>
             {matchedItem.BookName && <p>BookName: {matchedItem.BookName}</p>}
             {matchedItem.Author && <p>Author: {matchedItem.Author}</p>}
             {matchedItem.Language && <p>Language: {matchedItem.Language}</p>}
@@ -56,7 +65,7 @@ class Popup extends Component {
             {matchedItem.Summary && <p>Summary: {matchedItem.Summary}</p>}
             <p>Image: </p>
             <img src={matchedItem.picture} alt="SchoolSupply" />
-            <p> Quantity: {matchedItem.quantity}</p>
+            <p>Quantity: {matchedItem.quantity}</p>
             {matchedItem.googleMarker}
             <input
               id="quantity-id"
@@ -68,17 +77,20 @@ class Popup extends Component {
             {errorMessage && <p className="error">{errorMessage}</p>}
           </div>
           <div className="footer_clothesPopup">
-            <button className="detailButton_clothesPopup" onClick={() => closePopup(false)}>Hide Details</button>
-            <button className="detailButton_clothesPopup" onClick={this.handleDonate}>Donate Now</button>
+            <button
+              className="detailButton_clothesPopup"
+              onClick={() => closePopup(false)}
+            >
+              Hide Details
+            </button>
+            <button
+              className="detailButton_clothesPopup"
+              onClick={this.handleDonate}
+            >
+              Donate Now
+            </button>
           </div>
         </div>
-        {showTransportationSelection && (
-          <TransportationSelection
-            closePopup={() =>
-              this.setState({ showTransportationSelection: false })
-            }
-          />
-        )}
       </div>
     );
   }

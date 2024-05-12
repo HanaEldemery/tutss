@@ -127,31 +127,35 @@ function DonationRequestssDoctor() {
     <div className="home">
       <div className="headerContainer">
         <div className="button-container-top">
-          <Link to="/SchoolSuppliesDonationsTeacher">
+          <Link to="/SchoolSuppliesDonationsDoctor">
             <button className="sdonate-button">
               View All School Supplies Requests
             </button>
           </Link>
-          <Link to="/ClothingRequestsTeacher">
+          <Link to="/ClothingRequestsDoctor">
             <button className="sdonate-button">
               View All Clothing Requests
             </button>
           </Link>
-          <Link to="/toysRequestsTeacher">
+          <Link to="/toysRequestsDoctor">
             <button className="sdonate-button">View All Toy Requests</button>
           </Link>
-          <Link to="/foodRequestsTeacher">
+          <Link to="/foodRequestsDoctor">
             <button className="sdonate-button">View All Food Requests</button>
           </Link>
+<<<<<<< Updated upstream
           </div>
           <div className="button-container-top">
 
           <Link to="/medicalSuppliesRequestsTeacher">
+=======
+          <Link to="/medicalSuppliesRequestsDoctor">
+>>>>>>> Stashed changes
             <button className="sdonate-button">
               View All Medical Supplies Requests
             </button>
           </Link>
-          <Link to="/bloodRequestsTeacher">
+          <Link to="/bloodRequestsDoctor">
             <button className="sdonate-button">View All Blood Requests</button>
           </Link>
           <Link to="/MedicalCases">
