@@ -143,6 +143,8 @@ function DonationRequestssDoctor() {
           <Link to="/foodRequestsDoctor">
             <button className="sdonate-button">Food Requests</button>
           </Link>
+          </div>
+          <div className="button-container-top">
 
           <Link to="/medicalSuppliesRequestsDoctor">
             <button className="sdonate-button">
