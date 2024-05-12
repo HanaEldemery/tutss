@@ -345,7 +345,7 @@ function DonationRequestssDoctor() {
           </div>
         )}
         <div style={{ textAlign: "center" }}>
-          <Link to="/CommonPageTeacher">
+          <Link to="/CommonPageDoctor">
             <button className="donate-button">Back</button>
           </Link>
         </div>
