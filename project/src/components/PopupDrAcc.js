@@ -11,31 +11,37 @@ function PopupDrAcc({ closePopup, drName, drID }) {
   };
 
   return showNOW ? (
-    <ContactDrTeacher
-      closeThis={setShowNOW}
-      teacherDrId={drID}
-      teacherDrName={drName}
-    />
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <ContactDrTeacher
+          closeThis={setShowNOW}
+          teacherDrId={drID}
+          teacherDrName={drName}
+        />
+      </div>
+    </div>
   ) : (
-    <div className="headerContainer">
-      <div className="title">
-        <h1>Doctor Details</h1>
-      </div>
-      <div className="popupContainer">
-        {data.map((item, index) => (
-          <div key={index}>
-            {item.name === drName && item.id === drID && (
-              <>
-                <h2>Name: {item.name}</h2>
-                <h2>Experience: {item.exp}</h2>
-                <h2>Workplace: {item.workplace}</h2>
-                <h2>Specialty: {item.speciality}</h2>
-              </>
-            )}
+    <div className="popupBackground_MedicalPopup">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
+          <div className="title">
+            <h1>Doctor Details</h1>
           </div>
-        ))}
-      </div>
-      <div>
+          <div>
+            {data.map((item, index) => (
+              <div key={index}>
+                {item.name === drName && item.id === drID && (
+                  <>
+                    <h2>Name: {item.name}</h2>
+                    <h2>Experience: {item.exp}</h2>
+                    <h2>Workplace: {item.workplace}</h2>
+                    <h2>Specialty: {item.speciality}</h2>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
         <button onClick={() => closePopup(false)}> Back </button>
         <button onClick={() => showContact(drID)} className="search-button">
           Contact Details

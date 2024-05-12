@@ -38,40 +38,52 @@ function OrganisationSchool({ organisationName }) {
         <div className="seifhome">
           <h1>Welcome School!</h1>
           <div className="seifhome-button-container">
-            <div className="seifhome-button-row">            
-            <button onClick={viewList} className="seifhome-button">
-              Create a Request Donation Post
-            </button>
-            <button onClick={viewListALL} className="seifhome-button">
-              View All Current Requests
-            </button>
-            <button onClick={viewAccountInformation} className="seifhome-button">
-              Edit Account Information
-            </button>
+            <div className="seifhome-button-row">
+              <button onClick={viewList} className="seifhome-button">
+                Create a Request Donation Post
+              </button>
+              <button onClick={viewListALL} className="seifhome-button">
+                View All Current Requests
+              </button>
+              <button
+                onClick={viewAccountInformation}
+                className="seifhome-button"
+              >
+                Edit Account Information
+              </button>
             </div>
             <div className="seifhome-button-row">
-            <button onClick={viewAcceptedDonationReq} className="seifhome-button">
-              View Fulfilled Donation Requests
-            </button>
-            <Link to="/DropoffSelection">
-              <button className="seifhome-button">Set Suitable Time Slot</button>
-            </Link>
-          <br />
-          <Link to="/">
-            <button className="seifhome-button"> Logout </button>
-          </Link>
-        </div>
-        </div>
+              <button
+                onClick={viewAcceptedDonationReq}
+                className="seifhome-button"
+              >
+                View Fulfilled Donation Requests
+              </button>
+              <Link to="/DropoffSelection">
+                <button className="seifhome-button">
+                  Set Suitable Time Slot
+                </button>
+              </Link>
+              <br />
+              <Link to="/">
+                <button className="seifhome-button"> Logout </button>
+              </Link>
+            </div>
+          </div>
         </div>
       )}
       {showPopup && (
-        <PopupREQ
-          closePopup={setShowPopup}
-          organisation={
-            data.find((item) => item.organisation === organisationName)
-              .organisation
-          }
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupREQ
+              closePopup={setShowPopup}
+              organisation={
+                data.find((item) => item.organisation === organisationName)
+                  .organisation
+              }
+            />
+          </div>
+        </div>
       )}
       {showPopupAll && (
         <PopupALL
@@ -83,13 +95,17 @@ function OrganisationSchool({ organisationName }) {
         />
       )}
       {showAccountInfo && (
-        <PopupACC
-          closePopup={setShowAccountInfo}
-          organisationName={
-            data.find((item) => item.organisation === organisationName)
-              .organisation
-          }
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupACC
+              closePopup={setShowAccountInfo}
+              organisationName={
+                data.find((item) => item.organisation === organisationName)
+                  .organisation
+              }
+            />
+          </div>
+        </div>
       )}
       {showAcceptedDonationReq && (
         <PopupDONREQ

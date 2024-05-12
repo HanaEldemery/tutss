@@ -67,33 +67,34 @@ function PopupREQ({ closePopup, organisation, requestType }) {
   };
 
   return (
-    <div className="home">
-      {popupMessage && (
-        <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            backgroundColor: "white",
-            padding: "20px",
-            border: "1px solid black",
-            borderRadius: "5px",
-            zIndex: 1,
-          }}
-        >
-          {popupMessage}
-        </div>
-      )}
-      <div className="headerContainer">
-        <h1>Make a Request</h1>
+    <div className="popupBackground_MedicalPopup">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
+          {popupMessage && (
+            <div
+              style={{
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                backgroundColor: "white",
+                padding: "20px",
+                border: "1px solid black",
+                borderRadius: "5px",
+                zIndex: 1,
+              }}
+            >
+              {popupMessage}
+            </div>
+          )}
 
-        <div className="popupContainer">
+          <h1>Make a Request</h1>
+
           {data.map((item, index) => (
             <div key={index}>
               {item.organisation === organisation && (
                 <div className="requestType">
-                  <h3>{item.type} Request</h3>
+                  <h3>{item.type} Request </h3>
                   {requestType === "Supplies" && item.type === "School" && (
                     <div className="textInputContainer">
                       <input
@@ -352,11 +353,12 @@ function PopupREQ({ closePopup, organisation, requestType }) {
               )}
             </div>
           ))}
-        </div>
-        {error && <p className="error">{error}</p>}
-        <div className="button-container">
-          <button onClick={() => closePopup(false)}>Back</button>
-          <button onClick={notify}>Submit</button>
+
+          {error && <p className="error">{error}</p>}
+          <div className="footer_clothesPopup">
+            <button onClick={() => closePopup(false)}>Back</button>
+            <button onClick={notify}>Submit</button>
+          </div>
         </div>
         <ToastContainer />
       </div>

@@ -4,25 +4,29 @@ import { data } from "../Data/allDrsTeachers";
 
 function ContactDrTeacher({ closeThis, teacherDrId, teacherDrName }) {
   return (
-    <div className="headerContainer">
-      <div className="title">
-        <h1>Contact Details</h1>
-      </div>
-      <div className="popupContainer">
-        {data.map((item, index) => (
-          <div key={index}>
-            {item.name === teacherDrName && item.id === teacherDrId && (
-              <>
-                <h2>Number: {item.number}</h2>
-                <h2>Living: {item.living}</h2>
-                <h2>Email: {item.email}</h2>
-              </>
-            )}
+    <div className="popupBackground_MedicalPopup">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
+          <div className="title">
+            <h1>Contact Details</h1>
           </div>
-        ))}
-      </div>
-      <div>
-        <button onClick={() => closeThis(false)}> Back </button>
+          <div>
+            {data.map((item, index) => (
+              <div key={index}>
+                {item.name === teacherDrName && item.id === teacherDrId && (
+                  <>
+                    <h2>Number: {item.number}</h2>
+                    <h2>Living: {item.living}</h2>
+                    <h2>Email: {item.email}</h2>
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+          <div>
+            <button onClick={() => closeThis(false)}> Back </button>
+          </div>
+        </div>
       </div>
     </div>
   );

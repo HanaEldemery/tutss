@@ -59,7 +59,7 @@ function ViewEditAccount({ closePopup, donorId }) {
           {popupMessage}
         </div>
       )}
-      <div className="popupContainer">
+      <div>
         <div className="title">
           <h1>Account Information</h1>
         </div>

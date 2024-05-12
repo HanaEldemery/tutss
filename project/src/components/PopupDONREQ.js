@@ -42,24 +42,36 @@ function PopupDONREQ({ closePopup, organisationName }) {
   return (
     <div className="popupDonReqContainer">
       {showDetails && (
-        <PopupHELPER
-          closePopup={setShowDetails}
-          currentItemId={currentItemId}
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupHELPER
+              closePopup={setShowDetails}
+              currentItemId={currentItemId}
+            />
+          </div>
+        </div>
       )}
       {openDrAcc && (
-        <PopupDrAcc
-          closePopup={setOpenDrAcc}
-          drName={theDrName}
-          drID={theDrId}
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupDrAcc
+              closePopup={setOpenDrAcc}
+              drName={theDrName}
+              drID={theDrId}
+            />
+          </div>
+        </div>
       )}
       {openTeacherAcc && (
-        <PopupTeacherAcc
-          closePopup={setOpenTeacherAcc}
-          teacherName={theTeacherName}
-          teacherId={theTeacherId}
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupTeacherAcc
+              closePopup={setOpenTeacherAcc}
+              teacherName={theTeacherName}
+              teacherId={theTeacherId}
+            />
+          </div>
+        </div>
       )}
       {openTeacherAcc || openDrAcc || showDetails ? null : (
         <div className="headerContainer">

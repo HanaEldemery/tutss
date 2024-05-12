@@ -28,45 +28,70 @@ function PopupALL({ closePopup, organisationName }) {
   };
 
   return (
-    <div className="home">
-      <h1 className="menuTitle">All Requests</h1>
-      <div className="menuList">
-        {showUpdatePopup
-          ? null
-          : requestData.map((item, index) => (
-              <div
-                key={index}
-                className="menuItem"
-                onClick={() => handlePopupClick(item.id)}
-              >
-                <div
-                  className="menuImage"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                />
-
-                <div className="menuDetails">
-                  <h1>{item.organisation}</h1>
-                  <p>Organisation Type: {item.organisationType}</p>
-                  <p>Category: {item.category}</p>
-                  <p>Type: {item.type}</p>
-                  <p>Material: {item.material}</p>
-                </div>
-              </div>
-            ))}
-      </div>
-      {showUpdatePopup && selectedItemId && (
-        <PopupEDIT
-          organisation={organisationName}
-          requestType={itemCategory}
-          closePopup={() => {
-            setSelectedItemId(null);
-            setShowUpdatePopup(false);
-          }}
-        />
+    <div className="popupBody">
+      {showUpdatePopup ? (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupEDIT
+              organisation={organisationName}
+              requestType={itemCategory}
+              closePopup={() => {
+                setShowUpdatePopup(false);
+              }}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="headerContainer">
+          <h1>All Requests</h1>
+          <div className="menu">
+            <div className="menuList">
+              {requestData.map((item, index) => {
+                if (item.organisation === organisationName) {
+                  return (
+                    <div key={index} className="menuItem">
+                      <div
+                        className="menuImage"
+                        style={{ backgroundImage: `url(${item.image})` }}
+                      />
+                      <div className="menuDetails">
+                        <p>Organisation: {item.organisation}</p>
+                        <p>Organisation Type: {item.organisationType}</p>
+                        <p>Category: {item.category}</p>
+                        <p>Type: {item.type}</p>
+                        <p>Material: {item.material}</p>
+                        <div className="buttonContainer">
+                          <button
+                            className="search-button"
+                            onClick={() => backToUpdate(item.category)}
+                          >
+                            Update
+                          </button>
+                          <button
+                            onClick={() => callOnDelete(item.id)}
+                            className="search-button"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </div>
+            <button
+              onClick={() => closePopup(false)}
+              className="donation-button"
+            >
+              {" "}
+              Back{" "}
+            </button>{" "}
+          </div>
+        </div>
       )}
-      <button className="donation-button" onClick={() => closePopup(false)}>
-        Back
-      </button>
     </div>
   );
 }

@@ -14,20 +14,28 @@ function CommonPageDoctor(idOfDonorFromLogin) {
       <div className="headerContainer">
         <br />
         {showAccountInfo ? (
-          <ViewEditAccount
-            closePopup={setShowAccountInfo}
-            donorId={idOfDonorFromLogin}
-          />
+          <div className="popup-overlay">
+            <div className="popup-content">
+              <ViewEditAccount
+                closePopup={setShowAccountInfo}
+                donorId={idOfDonorFromLogin}
+              />
+            </div>
+          </div>
         ) : (
           <div>
             <h1>Welcome Doctor!</h1>
             <div className="seifhome-button-container">
               <div className="seifhome-button-row">
                 <Link to="/ViewAllOrganisationsForDoctor">
-                  <button className="seifhome-button">View All Organizations</button>
+                  <button className="seifhome-button">
+                    View All Organizations
+                  </button>
                 </Link>
                 <Link to="/DonationRequestssDoctor">
-                  <button className="seifhome-button">View All Donation Requests</button>
+                  <button className="seifhome-button">
+                    View All Donation Requests
+                  </button>
                 </Link>
                 <button className="seifhome-button" onClick={viewEditAccount}>
                   Manage Account Information

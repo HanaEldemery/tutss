@@ -45,16 +45,24 @@ function OrganisationVet({ organisationName }) {
               <button onClick={viewListALL} className="seifhome-button">
                 View All Current Requests
               </button>
-              <button onClick={viewAccountInformation} className="seifhome-button">
+              <button
+                onClick={viewAccountInformation}
+                className="seifhome-button"
+              >
                 Edit Account Information
               </button>
             </div>
             <div className="button-row">
-              <button onClick={viewAcceptedDonationReq} className="seifhome-button">
+              <button
+                onClick={viewAcceptedDonationReq}
+                className="seifhome-button"
+              >
                 View Fulfilled Donation Requests
               </button>
               <Link to="/DropoffSelectionVet">
-                <button className="seifhome-button">Set Suitable Time Slot</button>
+                <button className="seifhome-button">
+                  Set Suitable Time Slot
+                </button>
               </Link>
               <Link to="/">
                 <button className="seifhome-button"> Logout </button>
@@ -64,13 +72,17 @@ function OrganisationVet({ organisationName }) {
         </div>
       )}
       {showPopup && (
-        <PopupREQ
-          closePopup={setShowPopup}
-          organisation={
-            data.find((item) => item.organisation === organisationName)
-              .organisation
-          }
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupREQ
+              closePopup={setShowPopup}
+              organisation={
+                data.find((item) => item.organisation === organisationName)
+                  .organisation
+              }
+            />
+          </div>
+        </div>
       )}
       {showPopupAll && (
         <PopupALL
@@ -82,13 +94,17 @@ function OrganisationVet({ organisationName }) {
         />
       )}
       {showAccountInfo && (
-        <PopupACC
-          closePopup={setShowAccountInfo}
-          organisationName={
-            data.find((item) => item.organisation === organisationName)
-              .organisation
-          }
-        />
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <PopupACC
+              closePopup={setShowAccountInfo}
+              organisationName={
+                data.find((item) => item.organisation === organisationName)
+                  .organisation
+              }
+            />
+          </div>
+        </div>
       )}
       {showAcceptedDonationReq && (
         <PopupDONREQ

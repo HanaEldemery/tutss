@@ -15,20 +15,28 @@ function CommonPagegeneral(idOfDonorFromLogin) {
       <div className="headerContainer">
         <br />
         {showAccountInfo ? (
-          <ViewEditAccount
-            closePopup={setShowAccountInfo}
-            donorId={idOfDonorFromLogin}
-          />
+          <div className="popup-overlay">
+            <div className="popup-content">
+              <ViewEditAccount
+                closePopup={setShowAccountInfo}
+                donorId={idOfDonorFromLogin}
+              />
+            </div>
+          </div>
         ) : (
           <div>
             <h1>Welcome Donor!</h1>
             <div className="seifhome-button-container">
               <div className="seifhome-button-row">
                 <Link to="/ViewAllOrganisationsForDonor">
-                  <button className="seifhome-button">View All Organizations</button>
+                  <button className="seifhome-button">
+                    View All Organizations
+                  </button>
                 </Link>
                 <Link to="/DonationRequests">
-                  <button className="seifhome-button">View All Donation Requests</button>
+                  <button className="seifhome-button">
+                    View All Donation Requests
+                  </button>
                 </Link>
                 <button className="seifhome-button" onClick={viewEditAccount}>
                   Manage Account Information

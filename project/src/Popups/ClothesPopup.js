@@ -41,17 +41,15 @@ class ClothesPopup extends Component {
 
     return (
       <div className="popupBackground_MedicalPopup">
-    <div className="popupContainer_MedicalPopup">
-      <div className="popupBody">
+        <div className="popupContainer_MedicalPopup">
+          <div className="popupBody">
             <h1>{matchedItem.name}</h1>
             <p>Clothes Type: {matchedItem.type}</p>
             <p>name: {matchedItem.name}</p>
             <p>type: {matchedItem.type}</p>
             <p>Age: {matchedItem.Age}</p>
             <p>Gender: {matchedItem.Gender}</p>
-            {matchedItem.Season && (
-                <p>Season: {matchedItem.Season}</p>
-            )}
+            {matchedItem.Season && <p>Season: {matchedItem.Season}</p>}
             <p>Material: {matchedItem.Material}</p>
             <img src={matchedItem.picture} alt="Clothes" />
             <p> Quantity: {matchedItem.Quantity}</p>

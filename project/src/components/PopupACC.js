@@ -61,137 +61,147 @@ function PopupACC({ closePopup, organisationName }) {
           {popupMessage}
         </div>
       )}
-      <div className="headerContainer">
-        <h1>Account Information</h1>
+      <div className="popupBackground_MedicalPopup">
+        <div className="popupContainer_MedicalPopup">
+          <div className="popupBody">
+            <h1>Account Information</h1>
 
-        <div className="popupContainer">
-          {data.map((item, index) => (
-            <div key={index}>
-              {item.organisation === organisationName && (
-                <div className="textInputContainer">
-                  <p>
-                    <p>Name</p>
-                    <p>
-                      <input
-                        type="text"
-                        placeholder={item.organisation}
-                        disabled
-                      />
-                    </p>
-                  </p>
-                  <p>
-                    <p>Type</p>
-                    <p>
-                      <input type="text" placeholder={item.type} disabled />
-                    </p>
-                  </p>
-                  {areaButton ? (
-                    <p>
-                      <p>Area</p>
+            <div>
+              {data.map((item, index) => (
+                <div key={index}>
+                  {item.organisation === organisationName && (
+                    <div className="textInputContainer">
                       <p>
-                        <input type="text" />
-                      </p>
-                    </p>
-                  ) : (
-                    <div>
-                      <p>
-                        <p>Area</p>
+                        <p>Name</p>
                         <p>
-                          <input type="text" placeholder={item.area} />
-                        </p>
-                        <p>
-                          <button onClick={areaClick}>Delete</button>
+                          <input
+                            type="text"
+                            placeholder={item.organisation}
+                            disabled
+                          />
                         </p>
                       </p>
-                    </div>
-                  )}
+                      <p>
+                        <p>Type</p>
+                        <p>
+                          <input type="text" placeholder={item.type} disabled />
+                        </p>
+                      </p>
+                      {areaButton ? (
+                        <p>
+                          <p>Area</p>
+                          <p>
+                            <input type="text" />
+                          </p>
+                        </p>
+                      ) : (
+                        <div>
+                          <p>
+                            <p>Area</p>
+                            <p>
+                              <input type="text" placeholder={item.area} />
+                            </p>
+                            <p>
+                              <button onClick={areaClick}>Delete</button>
+                            </p>
+                          </p>
+                        </div>
+                      )}
 
-                  {governorateButton ? (
-                    <p>
-                      <p>Government</p>
-                      <p>
-                        <input type="text" />
-                      </p>
-                    </p>
-                  ) : (
-                    <div>
-                      <p>
-                        <p>Government</p>
+                      {governorateButton ? (
                         <p>
-                          <input type="text" placeholder={item.governorate} />
+                          <p>Government</p>
+                          <p>
+                            <input type="text" />
+                          </p>
                         </p>
-                        <p>
-                          <button onClick={governorateClick}> Delete </button>
-                        </p>
-                      </p>
-                    </div>
-                  )}
+                      ) : (
+                        <div>
+                          <p>
+                            <p>Government</p>
+                            <p>
+                              <input
+                                type="text"
+                                placeholder={item.governorate}
+                              />
+                            </p>
+                            <p>
+                              <button onClick={governorateClick}>
+                                {" "}
+                                Delete{" "}
+                              </button>
+                            </p>
+                          </p>
+                        </div>
+                      )}
 
-                  {detailsButton ? (
-                    <p>
-                      <p>Number</p>
-                      <p>
-                        <input type="text" />
-                      </p>
-                    </p>
-                  ) : (
-                    <div>
-                      <p>
-                        <p>Number</p>
+                      {detailsButton ? (
                         <p>
-                          <input type="text" placeholder={item.details} />
+                          <p>Number</p>
+                          <p>
+                            <input type="text" />
+                          </p>
                         </p>
-                        <p>
-                          <button onClick={detailsClick}> Delete </button>
-                        </p>
-                      </p>
-                    </div>
-                  )}
+                      ) : (
+                        <div>
+                          <p>
+                            <p>Number</p>
+                            <p>
+                              <input type="text" placeholder={item.details} />
+                            </p>
+                            <p>
+                              <button onClick={detailsClick}> Delete </button>
+                            </p>
+                          </p>
+                        </div>
+                      )}
 
-                  {addressButton ? (
-                    <p>
-                      <p>Address</p>
-                      <p>
-                        <input type="text" />
-                      </p>
-                    </p>
-                  ) : (
-                    <div>
-                      <p>
-                        <p>Address</p>
+                      {addressButton ? (
                         <p>
-                          <input type="text" placeholder={item.address} />
+                          <p>Address</p>
+                          <p>
+                            <input type="text" />
+                          </p>
                         </p>
-                        <p>
-                          <button onClick={addressClick}> Delete </button>
-                        </p>
-                      </p>
-                    </div>
-                  )}
+                      ) : (
+                        <div>
+                          <p>
+                            <p>Address</p>
+                            <p>
+                              <input type="text" placeholder={item.address} />
+                            </p>
+                            <p>
+                              <button onClick={addressClick}> Delete </button>
+                            </p>
+                          </p>
+                        </div>
+                      )}
 
-                  {locationButton ? null : (
-                    <div>
-                      <p>
-                        <p>Location</p>
-                        {item.location}
-                        <button
-                        //onClick={locationClick}
-                        >
-                          Delete
-                        </button>
-                      </p>
+                      {locationButton ? null : (
+                        <div>
+                          <p>
+                            <p>Location</p>
+                            {item.location}
+                            <button
+                            //onClick={locationClick}
+                            >
+                              Delete
+                            </button>
+                          </p>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+            <div>
+              <button onClick={() => closePopup(false)}> Back </button>
+              <button onClick={notify}> Save </button>
+            </div>
+            <ToastContainer />
+          </div>
         </div>
-        <div>
-          <button onClick={() => closePopup(false)}> Back </button>
-          <button onClick={notify}> Save </button>
-        </div>
-        <ToastContainer />
       </div>
     </div>
   );

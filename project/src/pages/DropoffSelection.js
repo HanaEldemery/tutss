@@ -41,10 +41,10 @@ function DropoffSelection() {
 
   return (
     <div className="home">
-      <div className="headerContainer">
-        <h1>Drop Off Time Selection for Donation Drop Off</h1>
-        <div className="popupContainer">
-          <label htmlFor="time-slot-select">Choose a time slot:</label>
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <h1>Drop Off Time Selection for Donation Drop Off</h1>
+
           <select
             id="time-slot-select"
             value={selectedTimeSlot}
@@ -79,13 +79,18 @@ function DropoffSelection() {
               {popupMessage}
             </div>
           )}
-        </div>
-        <div className="button-container">
-          <Link to="/organisation">
-            {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
-            <button>Back</button>
-          </Link>
-          <button onClick={handleConfirmation}>Confirm Pickup Slot</button>
+          <div className="footer_clothesPopup">
+            <Link to="/organisation">
+              {/*al 3amel organization yeghayarha lel howa 3ayzo*/}
+              <button className="detailButton_clothesPopup">Back</button>
+            </Link>
+            <button
+              onClick={handleConfirmation}
+              className="detailButton_clothesPopup"
+            >
+              Confirm Pickup Slot
+            </button>
+          </div>
         </div>
       </div>
     </div>
