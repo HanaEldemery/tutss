@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home">
       <div className="headerContainer">
-        <h1>Who are you today?</h1>
+      <h1 style={{ fontSize: "75px", marginBottom: "40px", color: "#ffffff" }}>Who are you today?</h1>
 
         <Link to="/adminlogin">
           <button> I am an Admin</button>
