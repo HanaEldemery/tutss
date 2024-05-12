@@ -17,7 +17,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../images/photo-1595561579181-263fe6175b73.avif') center center/cover no-repeat; /* Background image */
   color: #050606; /* Font color for headings */
   padding: 20px; /* Add padding */
 }
