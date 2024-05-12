@@ -130,25 +130,25 @@ function DonationRequestss() {
     <div>
       <div>
         <Link to="/SchoolSuppliesDonations">
-          <button> View All School Supplies Requests </button>
+          <button> School Supplies Requests </button>
         </Link>
         <Link to="/ClothingRequests">
-          <button> View All Clothing Requests </button>
+          <button> Clothing Requests </button>
         </Link>
         <Link to="/toysRequests">
-          <button> View All Toy Requests </button>
+          <button> Toy Requests </button>
         </Link>
         <Link to="/foodRequests">
-          <button> View All Food Requests </button>
+          <button> Food Requests </button>
         </Link>
         <Link to="/medicalSuppliesRequests">
-          <button> View All Medical Supplies Requests </button>
+          <button> Medical Supplies Requests </button>
         </Link>
         <Link to="/bloodRequests">
-          <button> View All Blood Requests </button>
+          <button> Blood Requests </button>
         </Link>
         <Link to="/MedicalCases">
-          <button>View All Medical Cases</button>
+          <button> Medical Cases</button>
         </Link>
         <br />
         <input

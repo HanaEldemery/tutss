@@ -29,12 +29,12 @@ function CommonPageDoctor(idOfDonorFromLogin) {
               <div className="seifhome-button-row">
                 <Link to="/ViewAllOrganisationsForDoctor">
                   <button className="seifhome-button">
-                    View All Organizations
+                    View Organizations
                   </button>
                 </Link>
                 <Link to="/DonationRequestssDoctor">
                   <button className="seifhome-button">
-                    View All Donation Requests
+                    View Donation Requests
                   </button>
                 </Link>
                 <button className="seifhome-button" onClick={viewEditAccount}>

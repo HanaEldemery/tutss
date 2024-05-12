@@ -49,7 +49,6 @@ function TeachingPosts() {
 
   return (
     <div className="home">
-      <h1>Hello from TeachingPosts</h1>
       <div className="headerContainer">
         <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
         <div className="menu">

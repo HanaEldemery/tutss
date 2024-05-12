@@ -9,19 +9,19 @@ function AdminHomePage() {
         {/* First row of buttons */}
         <div className="seifhome-button-row">
           <Link to="/AdminDonReq">
-            <button className="seifhome-button">View Pending Donor Requests</button>
+            <button className="seifhome-button">Pending Donor Requests</button>
           </Link>
           <Link to="/AdminOrgReq">
-            <button className="seifhome-button">View Pending Organization Requests</button>
+            <button className="seifhome-button">Pending Organization Requests</button>
           </Link>
           <Link to="/ViewAllOrganisations">
-            <button className="seifhome-button">View All Registered Organizations</button>
+            <button className="seifhome-button">Registered Organizations</button>
           </Link>
         </div>
         {/* Second row of buttons */}
         <div className="seifhome-button-row">
           <Link to="/ViewAllDonors">
-            <button className="seifhome-button">View All Registered Donors</button>
+            <button className="seifhome-button">Registered Donors</button>
           </Link>
           <Link to="/Adminchangepass">
             <button className="seifhome-button">Change your Password</button>

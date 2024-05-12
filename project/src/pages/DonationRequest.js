@@ -131,34 +131,34 @@ function DonationRequest() {
           <div className="button-container-top">
             <Link to="/SchoolSuppliesDonationsTeacher">
               <button className="sdonate-button">
-                View All School Supplies Requests
+                School Supplies Requests
               </button>
             </Link>
             <Link to="/ClothingRequestsTeacher">
               <button className="sdonate-button">
-                View All Clothing Requests
+                Clothing Requests
               </button>
             </Link>
             <Link to="/toysRequestsTeacher">
-              <button className="sdonate-button">View All Toy Requests</button>
+              <button className="sdonate-button">Toy Requests</button>
             </Link>
             <Link to="/foodRequestsTeacher">
-              <button className="sdonate-button">View All Food Requests</button>
+              <button className="sdonate-button">Food Requests</button>
             </Link>
             </div>
             <div className="button-container-bottom">
             <Link to="/medicalSuppliesRequestsTeacher">
               <button className="sdonate-button">
-                View All Medical Supplies Requests
+                Medical Supplies Requests
               </button>
             </Link>
 
 
             <Link to="/bloodRequestsTeacher">
-              <button className="sdonate-button">View All Blood Requests</button>
+              <button className="sdonate-button">Blood Requests</button>
             </Link>
             <Link to="/TeachingPosts">
-              <button className="sdonate-button">View All Teaching Posts</button>
+              <button className="sdonate-button">Teaching Requests</button>
             </Link>
           </div>
           <br />

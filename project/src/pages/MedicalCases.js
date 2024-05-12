@@ -48,7 +48,6 @@ function MedicalCases() {
 
   return (
     <div className="home">
-      <h1>Hello from MedicalCases</h1>
       <div className="headerContainer">
         <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
         <div className="menu">

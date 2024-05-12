@@ -43,7 +43,7 @@ function OrganisationOrphanage({ organisationName }) {
                 Create a Request Donation Post
               </button>
               <button onClick={viewListALL} className="seifhome-button">
-                View All Current Requests
+                View Current Requests
               </button>
               <button
                 onClick={viewAccountInformation}

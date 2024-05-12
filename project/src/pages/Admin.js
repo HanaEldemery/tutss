@@ -19,8 +19,8 @@ const Admin = () => {
       <div className="donor">
         {showPopup || showDonorPopup ? null : (
           <div className="buttonnow">
-            <button onClick={viewList}>Show All Organizations</button>
-            <button onClick={viewListDonor}> Show All Donors </button>
+            <button onClick={viewList}>View Organizations</button>
+            <button onClick={viewListDonor}> View Donors </button>
           </div>
         )}
         {showPopup && <ViewAllOrganisations closePopup={setShowPopup} />}

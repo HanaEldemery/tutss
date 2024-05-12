@@ -30,12 +30,12 @@ function CommonPagegeneral(idOfDonorFromLogin) {
               <div className="seifhome-button-row">
                 <Link to="/ViewAllOrganisationsForDonor">
                   <button className="seifhome-button">
-                    View All Organizations
+                    View Organizations
                   </button>
                 </Link>
                 <Link to="/DonationRequests">
                   <button className="seifhome-button">
-                    View All Donation Requests
+                    View Donation Requests
                   </button>
                 </Link>
                 <button className="seifhome-button" onClick={viewEditAccount}>

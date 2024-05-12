@@ -40,7 +40,7 @@ const Donor = ({ idOfDonorFromLogin }) => {
         {showPopup || showAccountInfo ? null : (
           <div className="buttonnow">
             <button onClick={notify}>Donate</button>
-            <button onClick={viewList}>View All Organizations</button>
+            <button onClick={viewList}>View Organizations</button>
             <button onClick={viewEditAccount}>Account Information</button>
           </div>
         )}

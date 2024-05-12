@@ -130,27 +130,27 @@ function DonationRequests() {
         <div className="button-container-top">
           <Link to="/SchoolSuppliesDonations">
             <button className="sdonate-button">
-              View All School Supplies Requests
+              School Supplies Requests
             </button>
           </Link>
           <Link to="/ClothingRequests">
             <button className="sdonate-button">
-              View All Clothing Requests
+              Clothing Requests
             </button>
           </Link>
           <Link to="/toysRequests">
-            <button className="sdonate-button">View All Toy Requests</button>
+            <button className="sdonate-button">Toy Requests</button>
           </Link>
           <Link to="/foodRequests">
-            <button className="sdonate-button">View All Food Requests</button>
+            <button className="sdonate-button">Food Requests</button>
           </Link>
           <Link to="/medicalSuppliesRequests">
             <button className="sdonate-button">
-              View All Medical Supplies Requests
+              Medical Supplies Requests
             </button>
           </Link>
           <Link to="/bloodRequests">
-            <button className="sdonate-button">View All Blood Requests</button>
+            <button className="sdonate-button">Blood Requests</button>
           </Link>
           {/* <Link to="/TeachingPosts">
             <button className="donate-button">View All Teaching Posts</button>

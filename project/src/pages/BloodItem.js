@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PopupHana from "../components/PopupHana";
-import { BloodList } from "../data/BloodList";
+import { BloodList } from "../lists/BloodList";
 
 function BloodItem({ key, name, description }) {
   const [selectedItemId, setSelectedItemId] = useState(null);

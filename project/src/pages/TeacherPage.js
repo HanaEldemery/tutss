@@ -92,13 +92,13 @@ function TeacherPage() {
                                 </button>
                             )}
                             <button onClick={() => handleViewLess()} style={{ margin: '10px' }}>
-                                View Less Details
+                                Less Details
                             </button>
                         </div>
                     )}
                     {expandedId !== item.id && (
                         <button onClick={() => toggleDetails(item.id)} style={{ margin: '10px' }}>
-                            View Details
+                            Details
                         </button>
                     )}
                 </div>
