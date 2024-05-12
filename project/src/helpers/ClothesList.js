@@ -75,7 +75,7 @@ export const ClothesList = [
   {
     id: 6,
     name: "Hoodie",
-    type: "pullover hoodies",
+    type: "Pullover hoodies",
     Age: "3",
     Gender: "Male",
     Season: "Winter",
