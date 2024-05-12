@@ -33,43 +33,51 @@ function SchoolSuppliesDonations() {
     <div className="home">
       <div className="headerContainer">
         <h1>School Supplies Requests</h1>
+        <div className="filter-container">
+          <select onChange={handleBookChange}>
+            <option value="">All Books</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            {/* Add options for other ages as needed */}
+          </select>
 
-        <select onChange={handleBookChange}>
-          <option value="">All Books</option>
-          <option value="Fiction">Fiction</option>
-          <option value="Non-Fiction">Non-Fiction</option>
-          {/* Add options for other ages as needed */}
-        </select>
+          <select onChange={handleStationaryChange}>
+            <option value="">All Stationary</option>
+            <option value="Copybook">Copybook</option>
+            <option value="Pencilcase">Pencilcase</option>
+            <option value="ColoringPencil">ColoringPencil</option>
+            <option value="eraser">eraser</option>
+            <option value="sharpener">sharpener</option>
 
-        <select onChange={handleStationaryChange}>
-          <option value="">All Stationary</option>
-          <option value="Copybook">Copybook</option>
-          <option value="Pencilcase">Pencilcase</option>
-          <option value="ColoringPencil">ColoringPencil</option>
-          <option value="eraser">eraser</option>
-          <option value="sharpener">sharpener</option>
-
-          {/* Add options for other genders as needed */}
-        </select>
-
+            {/* Add options for other genders as needed */}
+          </select>
+        </div>
         <div>
           {showPopup ? (
             <Popup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
-            <div className="schoolsup-list">
-              {filteredSchoolSupList.map((SchoolSupItem) => (
-                <div key={SchoolSupItem.id} className="schoolsup-item">
-                  <p>{SchoolSupItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredSchoolSupList.map((SchoolSupItem) => (
+                  <div
+                    key={SchoolSupItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(SchoolSupItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${SchoolSupItem.image})`,
+                        }}
+                      />
+                      <p>{SchoolSupItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequestssDoctor">
-                <button> Back </button>
+                <button>Back</button>
               </Link>
             </div>
           )}

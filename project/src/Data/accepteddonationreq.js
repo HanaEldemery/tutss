@@ -1,3 +1,13 @@
+import SuppliesSchool from "../assets/suppliesSchool.jpg";
+import FurnitureSchool from "../assets/furSchool.jpg";
+import ToysVet from "../assets/vetToys.jpg";
+import DryFood from "../assets/dryFood.jpg";
+import SuppliesHospital from "../assets/suppliesHospital.jpg";
+import MachinesHospital from "../assets/machinesHospital.jpg";
+import ClothesOrphanage from "../assets/clothesOrphanage.jpg";
+import Teacher from "../assets/teacher.jpg";
+import Doctor from "../assets/doctor.jpg";
+
 export const data = [
   {
     id: 1,
@@ -6,6 +16,7 @@ export const data = [
     type: "Bookmark",
     material: "Paper",
     year: "2025",
+    image: SuppliesSchool,
   },
   {
     id: 2,
@@ -14,6 +25,7 @@ export const data = [
     type: "Pencil",
     material: "2B",
     year: "2020",
+    image: SuppliesSchool,
   },
   {
     id: 3,
@@ -22,6 +34,7 @@ export const data = [
     type: "Chair",
     material: "Metal",
     year: "1990",
+    image: FurnitureSchool,
   },
   {
     id: 4,
@@ -30,6 +43,7 @@ export const data = [
     type: "Chair",
     material: "Leather",
     year: "2017",
+    image: FurnitureSchool,
   },
   {
     id: 6,
@@ -38,6 +52,7 @@ export const data = [
     type: "Table",
     material: "Glass",
     year: "2013",
+    image: FurnitureSchool,
   },
   {
     id: 7,
@@ -48,6 +63,7 @@ export const data = [
     drId: 2,
     material: "Pediatrics",
     year: "2020",
+    image: Doctor,
   },
   {
     id: 8,
@@ -58,6 +74,7 @@ export const data = [
     drId: 1,
     material: "Neurology",
     year: "2016",
+    image: Doctor,
   },
   {
     id: 9,
@@ -66,6 +83,7 @@ export const data = [
     type: "Surgical",
     material: "Steel",
     year: "2025",
+    image: SuppliesHospital,
   },
   {
     id: 10,
@@ -76,6 +94,7 @@ export const data = [
     teacherId: 5,
     material: "English",
     year: "Year 10",
+    image: Teacher,
   },
   {
     id: 11,
@@ -84,6 +103,7 @@ export const data = [
     category: "Boardgame",
     year: "2012",
     material: "Paper",
+    image: ToysVet,
   },
   {
     id: 12,
@@ -92,5 +112,6 @@ export const data = [
     category: "Cat Food",
     year: "2024",
     material: "Wet Food",
+    image: DryFood,
   },
 ];

@@ -73,18 +73,26 @@ function ToysRequests() {
           {showPopup ? (
             <ToysPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
-            <div className="toys-list">
-              {filteredToysList.map((toyItem) => (
-                <div key={toyItem.id} className="toy-item">
-                  <p>{toyItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredToysList.map((toyItem) => (
+                  <div
+                    key={toyItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(toyItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${toyItem.image})`,
+                        }}
+                      />
+                      <p>{toyItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequest">
                 <button>Back</button>
               </Link>

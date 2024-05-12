@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PopupHELPER from "../components/PopupHELPER";
 import PopupDrAcc from "../components/PopupDrAcc";
 import PopupTeacherAcc from "../components/PopupTeacherAcc";
 import { data } from "../Data/accepteddonationreq";
+import "../styles/theStyle.css";
 
 function PopupDONREQ({ closePopup, organisationName }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -37,71 +39,94 @@ function PopupDONREQ({ closePopup, organisationName }) {
     setDataList(updatedDataList);
   };
 
-  return showDetails ? (
-    <PopupHELPER closePopup={setShowDetails} currentItemId={currentItemId} />
-  ) : openDrAcc ? (
-    <PopupDrAcc closePopup={setOpenDrAcc} drName={theDrName} drID={theDrId} />
-  ) : openTeacherAcc ? (
-    <PopupTeacherAcc
-      closePopup={setOpenTeacherAcc}
-      teacherName={theTeacherName}
-      teacherId={theTeacherId}
-    />
-  ) : (
-    <div className="headerContainer">
-      <h1>Fulfilled Requests</h1>
-
-      <div className="popupContainer">
-        {dataList.map((item, index) => (
-          <div key={index} className="containsContainer">
-            {item.organisation === organisationName && (
-              <div>
-                {/* Check if item.type is empty or undefined */}
-                {item.type ? (
-                  <h2>{item.type}</h2>
-                ) : (
-                  <h2>Item Type Not Available</h2>
-                )}
-                <h2>
-                  <button
-                    onClick={() => newPopup(item.id)}
-                    className="search-button"
-                  >
-                    Details
-                  </button>
-                  <button
-                    className="search-button"
-                    onClick={() => removeThis(item.id)}
-                  >
-                    Delete
-                  </button>
-                  {item.type === "Medical" ? (
-                    <button
-                      className="search-button"
-                      onClick={() => openDoctorAccount(item.drName, item.drId)}
-                    >
-                      Doctor
-                    </button>
-                  ) : null}
-                  {item.type === "Education" ? (
-                    <button
-                      className="search-button"
-                      onClick={() =>
-                        openTeacherAccount(item.teacherName, item.teacherId)
-                      }
-                    >
-                      Teacher
-                    </button>
-                  ) : null}
-                </h2>
-              </div>
-            )}
+  return (
+    <div className="popupDonReqContainer">
+      {showDetails && (
+        <PopupHELPER
+          closePopup={setShowDetails}
+          currentItemId={currentItemId}
+        />
+      )}
+      {openDrAcc && (
+        <PopupDrAcc
+          closePopup={setOpenDrAcc}
+          drName={theDrName}
+          drID={theDrId}
+        />
+      )}
+      {openTeacherAcc && (
+        <PopupTeacherAcc
+          closePopup={setOpenTeacherAcc}
+          teacherName={theTeacherName}
+          teacherId={theTeacherId}
+        />
+      )}
+      {openTeacherAcc || openDrAcc || showDetails ? null : (
+        <div className="headerContainer">
+          <h1 className="menuTitle">Fulfilled Requests</h1>
+          <div className="menuList">
+            {dataList
+              .filter(
+                (item) => item.organisation === organisationName && item.type
+              )
+              .map((item, index) => (
+                <div key={index} className="menuItem">
+                  <div
+                    className="menuImage"
+                    style={{
+                      backgroundImage: `url(${item.image})`, // Assuming 'image' is a property in your data
+                    }}
+                  />
+                  <div className="menuDetails">
+                    <h2>{item.type}</h2>
+                    <div className="buttonContainer">
+                      <button
+                        onClick={() => newPopup(item.id)}
+                        className="small-button"
+                      >
+                        Details
+                      </button>
+                      <button
+                        className="small-button"
+                        onClick={() => removeThis(item.id)}
+                      >
+                        Delete
+                      </button>
+                      {item.type === "Medical" && (
+                        <button
+                          className="small-button"
+                          onClick={() =>
+                            openDoctorAccount(item.drName, item.drId)
+                          }
+                        >
+                          Doctor
+                        </button>
+                      )}
+                      {item.type === "Education" && (
+                        <button
+                          className="small-button"
+                          onClick={() =>
+                            openTeacherAccount(item.teacherName, item.teacherId)
+                          }
+                        >
+                          Teacher
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
-        ))}
-      </div>
-      <div>
-        <button onClick={() => closePopup(false)}> Back </button>
-      </div>
+          <div>
+            <button
+              className="donation-button"
+              onClick={() => closePopup(false)}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { data } from "../Data/allrequests";
 import PopupEDIT from "../components/PopupEDIT";
+import "../styles/theStyle.css"; // Import the CSS file for styling
 
 function PopupALL({ closePopup, organisationName }) {
+  const [selectedItemId, setSelectedItemId] = useState(null); // Track selected item ID
   const [showUpdatePopup, setShowUpdatePopup] = useState(false);
   const [requestData, setRequestData] = useState(data);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -20,50 +22,51 @@ function PopupALL({ closePopup, organisationName }) {
     console.log("Updated data:", updatedData);
   };
 
+  const handlePopupClick = (id) => {
+    setSelectedItemId(id);
+    setShowUpdatePopup(true);
+  };
+
   return (
     <div className="home">
-      {showUpdatePopup ? (
+      <h1 className="menuTitle">All Requests</h1>
+      <div className="menuList">
+        {showUpdatePopup
+          ? null
+          : requestData.map((item, index) => (
+              <div
+                key={index}
+                className="menuItem"
+                onClick={() => handlePopupClick(item.id)}
+              >
+                <div
+                  className="menuImage"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
+
+                <div className="menuDetails">
+                  <h1>{item.organisation}</h1>
+                  <p>Organisation Type: {item.organisationType}</p>
+                  <p>Category: {item.category}</p>
+                  <p>Type: {item.type}</p>
+                  <p>Material: {item.material}</p>
+                </div>
+              </div>
+            ))}
+      </div>
+      {showUpdatePopup && selectedItemId && (
         <PopupEDIT
           organisation={organisationName}
           requestType={itemCategory}
-          closePopup={setShowUpdatePopup}
+          closePopup={() => {
+            setSelectedItemId(null);
+            setShowUpdatePopup(false);
+          }}
         />
-      ) : (
-        <div className="headerContainer">
-          <h1>All Requests</h1>
-
-          <div className="popupContainer">
-            {requestData.map((item, index) => (
-              <div key={index} className="containsContainer">
-                {item.organisation === organisationName && (
-                  <div className="small-box">
-                    <p>Organisation: {item.organisation}</p>
-                    <p>Organisation Type: {item.organisationType}</p>
-                    <p>Category: {item.category}</p>
-                    <p>Type: {item.type}</p>
-                    <p>Material: {item.material}</p>
-                    <div className="button-container">
-                      <button
-                        className="search-button"
-                        onClick={() => backToUpdate(item.category)}
-                      >
-                        Update
-                      </button>
-                      <button
-                        onClick={() => callOnDelete(item.id)}
-                        className="search-button"
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <button onClick={() => closePopup(false)}> Back </button>
-        </div>
       )}
+      <button className="donation-button" onClick={() => closePopup(false)}>
+        Back
+      </button>
     </div>
   );
 }

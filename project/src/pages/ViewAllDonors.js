@@ -38,49 +38,60 @@ function Search({ closePopup }) {
     );
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
-  
+
   const handleRedirect = () => {
     window.location.href = "/AdminHomePage";
   };
 
   return (
-    <div className="all">
-      {popupFlag ? null : (
-        <Container>
-          <h1 className="TEXT">Donors</h1>
+    <div className="home">
+      <h1>Donors</h1>
+      <div className="menu">
+        {popupFlag ? null : (
+          <Container>
+            <Table className="table">
+              <div className="menuList">
+                {filteredData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="menuItem"
+                    onClick={() => handleDetailsClick(item.id)}
+                  >
+                    <div classNam="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${item.image})`,
+                        }}
+                      />
+                      <p style={{ textAlign: "center" }}>{item.patientName}</p>
 
-          <Table className="table">
-            <tbody>
-              {filteredData.map((item, index) => (
-                <tr key={index}>
-                  <td>
-                    <p style={{ textAlign: "center" }}>{item.patientName}</p>
-                    <button
-                      onClick={() => handleDetailsClick(item.id)}
-                      className="search-button"
-                    >
-                      View Details
-                    </button>
-                    <button
-                      onClick={() => handleOnDelete(item.id)}
-                      className="search-button"
-                    >
-                      Delete Donor
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-          <button onClick={handleRedirect} className="donation-button">
-            Back
-          </button>
-        </Container>
-      )}
+                      <button
+                        onClick={() => handleOnDelete(item.id)}
+                        className="donate-button"
+                        style={{
+                          display: "block",
+                          margin: " auto",
+                          marginBottom: "5px",
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Table>
+          </Container>
+        )}
 
-      {popupFlag && (
-        <DetailsDonor theKey={selectedItemId} closePopup={setPopupFlag} />
-      )}
+        {popupFlag && (
+          <DetailsDonor theKey={selectedItemId} closePopup={setPopupFlag} />
+        )}
+      </div>
+      <button onClick={handleRedirect} className="donation-button">
+        Back
+      </button>
     </div>
   );
 }

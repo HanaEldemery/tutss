@@ -1,7 +1,4 @@
-import mri from "../images/mri.jpg";
-import thermometer from "../images/thermometer.jpg";
-import panadol from "../images/panadol.jpg";
-import tylenol from "../images/tylenol.jpg";
+import MachineHospital from "../assets/machinesHospital.jpg";
 
 export const MedicalSuppliesList = [
   {
@@ -9,7 +6,7 @@ export const MedicalSuppliesList = [
     name: "MRI Machine",
     type: "Medical Equipment",
     use: "For brain scans",
-    image: mri,
+    image: MachineHospital,
     quantity: 3,
     xyz: "Medical Supplies",
   },
@@ -18,7 +15,7 @@ export const MedicalSuppliesList = [
     name: "Thermometer",
     type: "Medical Devices",
     use: "For measuring temperature",
-    image: thermometer,
+    image: MachineHospital,
     quantity: 3,
     xyz: "Medical Supplies",
   },
@@ -27,7 +24,7 @@ export const MedicalSuppliesList = [
     name: "Panadol",
     type: "Medications",
     use: "For headaches",
-    image: panadol,
+    image: MachineHospital,
     quantity: 3,
     xyz: "Medical Supplies",
   },
@@ -36,7 +33,7 @@ export const MedicalSuppliesList = [
     name: "Tylenol",
     type: "Medications",
     use: "For stomachaches",
-    image: tylenol,
+    image: MachineHospital,
     quantity: 3,
     xyz: "Medical Supplies",
   },

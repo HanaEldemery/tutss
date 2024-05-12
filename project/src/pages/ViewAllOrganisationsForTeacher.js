@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import { data } from "../Data/regorgname";
 import Details from "./Details";
 import { Link } from "react-router-dom";
+import "../styles/theStyle.css"; // Import your CSS file
 
 function Search({ closePopup }) {
   const [search, setSearch] = useState("");
@@ -40,13 +41,13 @@ function Search({ closePopup }) {
     setFilteredData(filtered);
   }, [search, areaFilter, governorateFilter, typeFilter]);
   const handleRedirect = () => {
-    window.location.href = "/CommonPageTeacher";
+    window.location.href = "/CommonPagegeneral";
   };
 
   return (
-    <div className="all">
-      <h1 className="TEXT">Organization Names</h1>
-      {popupFlag ? null : (
+    <div className="home">
+      <div className="headerContainer">
+        <h1 className="menuTitle">Organization Names</h1>
         <Container>
           <Form className="form">
             <Form.Control
@@ -96,50 +97,33 @@ function Search({ closePopup }) {
             </Form.Control>
           </Form>
 
-          <div className="table-wrapper">
-            <Table className="table">
-              <tbody>
-                {filteredData.map((item, index) => (
-                  <tr key={index}>
-                    {popupFlag ? null : (
-                      <p>
-                        <div className="item-container">
-                          <p>{item.organisation}</p>
-
-                          <button
-                            onClick={() => handleDetailsClick(item.id)}
-                            className="search-button"
-                          >
-                            View Details
-                          </button>
-                          {/* <button
-                        onClick={() => handleOnDelete(item.id)}
-                        className="search-button"
-                      >
-                        DELETE
-                      </button> */}
-                        </div>
-                      </p>
-                    )}
-                  </tr>
-                ))}
-                <tr>
-                  <td>
-                    <div style={{ textAlign: "center" }}>
-                      <button
-                        onClick={handleRedirect}
-                        className="search-button"
-                      >
-                        Back
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
+          <div className="menuList">
+            {filteredData.map((item, index) => (
+              <div
+                className="menuItem"
+                key={index}
+                onClick={() => handleDetailsClick(item.id)}
+              >
+                <div
+                  className="menuImage"
+                  style={{
+                    backgroundImage: `url(${item.image})`,
+                  }}
+                />
+                <div className="menuDetails">
+                  <h3>{item.organisation}</h3>
+                  <p>Area: {item.area}</p>
+                  <p>Governorate: {item.governorate}</p>
+                  <p>Type: {item.type}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </Container>
-      )}
+        <Link to="/CommonPageTeacher">
+          <button className="donate-button">Back</button>
+        </Link>
+      </div>
 
       {popupFlag && (
         <Details theKey={selectedItemId} closePopup={setPopupFlag} />

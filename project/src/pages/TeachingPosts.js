@@ -49,56 +49,60 @@ function TeachingPosts() {
 
   return (
     <div className="home">
-      <h2>Hello from TeachingPosts</h2>
+      <h1>Hello from TeachingPosts</h1>
       <div className="headerContainer">
-      <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
-        {filteredProductList.map((TeacherItem) => (
-          <div key={TeacherItem.id} className="TeacherItem">
-            {showDetailsId === TeacherItem.id && (
-                     <div className="popup-overlay">
-                     <div className="popup-content">
-              <TeacherPopup
-                closePopup={() => setShowDetailsId(null)}
-                theKey={TeacherItem.id}
-                showDonateOptions={showDonateOptions}
-                setShowDonateOptions={setShowDonateOptions}
-                handleDonate={handleDonate}
-              />
+        <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
+        <div className="menu">
+          <div className="menuList">
+            {filteredProductList.map((TeacherItem) => (
+              <div
+                key={TeacherItem.id}
+                className="menuItem"
+                onClick={() => toggleDetails(TeacherItem.id)}
+              >
+                {showDetailsId === TeacherItem.id && (
+                  <div className="popup-overlay">
+                    <div className="popup-content">
+                      <TeacherPopup
+                        closePopup={() => setShowDetailsId(null)}
+                        theKey={TeacherItem.id}
+                        showDonateOptions={showDonateOptions}
+                        setShowDonateOptions={setShowDonateOptions}
+                        handleDonate={handleDonate}
+                      />
+                    </div>
+                  </div>
+                )}
+                {!showDetailsId && (
+                  <div className="item-container">
+                    <div
+                      className="menuImage"
+                      style={{
+                        backgroundImage: `url(${TeacherItem.image})`,
+                      }}
+                    />
+                    <p>{TeacherItem.Subject}</p>
+                  </div>
+                )}
               </div>
-              </div>
-            )}
-            {!showDetailsId && (
-              <div>
-                <p>{TeacherItem.Subject}</p>
-
-                <button
-                  onClick={() => toggleDetails(TeacherItem.id)}
-                  className="detail-button"
-                >
-                  View Details
-                </button>
-              </div>
-            )}
+            ))}
           </div>
-        ))}
+          {showTeacherPopup && (
+            <TeacherPopup
+              closePopup={() => setShowTeacherPopup(false)}
+              theKey={clickedTeacherId}
+              showDonateOptions={showDonateOptions}
+              setShowDonateOptions={setShowDonateOptions}
+              handleDonate={handleDonate}
+            />
+          )}
+        </div>
         {!showTeacherPopup && !showDetailsId && (
-          <Link
-            to="/DonationRequest"
-            className="button-link"
-          >
+          <Link to="/DonationRequest" className="button-link">
             <button className="back-button">Back</button>
           </Link>
         )}
       </div>
-      {showTeacherPopup && (
-        <TeacherPopup
-          closePopup={() => setShowTeacherPopup(false)}
-          theKey={clickedTeacherId}
-          showDonateOptions={showDonateOptions}
-          setShowDonateOptions={setShowDonateOptions}
-          handleDonate={handleDonate}
-        />
-      )}
     </div>
   );
 }

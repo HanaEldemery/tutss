@@ -67,18 +67,26 @@ function BloodRequests() {
           {showPopup ? (
             <BloodPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
-            <div className="blood-list">
-              {filteredBloodList.map((bloodItem) => (
-                <div key={bloodItem.id} className="blood-item">
-                  <p>{bloodItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredBloodList.map((bloodItem) => (
+                  <div
+                    key={bloodItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(bloodItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${bloodItem.image})`,
+                        }}
+                      />
+                      <p>{bloodItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequests">
                 <button>Back</button>
               </Link>

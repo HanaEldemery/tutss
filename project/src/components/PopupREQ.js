@@ -418,10 +418,9 @@ function PopupREQ({ closePopup, organisation }) {
 
         <ToastContainer />
       </div>
-      <div>
-        <button onClick={() => closePopup(false)}>Back</button>
-        <button onClick={notify}>Submit</button>
-      </div>
+
+      <button onClick={() => closePopup(false)}>Back</button>
+      <button onClick={notify}>Submit</button>
     </div>
   );
 }

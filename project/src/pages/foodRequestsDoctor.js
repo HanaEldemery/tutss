@@ -43,18 +43,26 @@ function FoodRequests() {
           {showPopup ? (
             <FoodPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
-            <div className="food-list">
-              {filteredFoodList.map((foodItem) => (
-                <div key={foodItem.id} className="food-item">
-                  <p>{foodItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredFoodList.map((foodItem) => (
+                  <div
+                    key={foodItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(foodItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${foodItem.image})`,
+                        }}
+                      />
+                      <p>{foodItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequestssDoctor">
                 <button>Back</button>
               </Link>

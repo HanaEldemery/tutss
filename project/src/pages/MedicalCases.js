@@ -48,56 +48,60 @@ function MedicalCases() {
 
   return (
     <div className="home">
-      <h2>Hello from MedicalCases</h2>
+      <h1>Hello from MedicalCases</h1>
       <div className="headerContainer">
         <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
-        {filteredProductList.map((MedicalItem) => (
-          <div key={MedicalItem.id} className="MedicalCasesItem">
-            {showDetailsId === MedicalItem.id && (
-                     <div className="popup-overlay">
-                     <div className="popup-content">
-              <MedicalPopup
-                closePopup={() => setShowDetailsId(null)}
-                theKey={MedicalItem.id}
-                showDonateOptions={showDonateOptions}
-                setShowDonateOptions={setShowDonateOptions}
-                handleDonate={handleDonate}
-              />
+        <div className="menu">
+          <div className="menuList">
+            {filteredProductList.map((MedicalItem) => (
+              <div
+                key={MedicalItem.id}
+                className="menuItem"
+                onClick={() => toggleDetails(MedicalItem.id)}
+              >
+                {showDetailsId === MedicalItem.id && (
+                  <div className="popup-overlay">
+                    <div className="popup-content">
+                      <MedicalPopup
+                        closePopup={() => setShowDetailsId(null)}
+                        theKey={MedicalItem.id}
+                        showDonateOptions={showDonateOptions}
+                        setShowDonateOptions={setShowDonateOptions}
+                        handleDonate={handleDonate}
+                      />
+                    </div>
+                  </div>
+                )}
+                {!showDetailsId && (
+                  <div className="item-container">
+                    <div
+                      className="menuImage"
+                      style={{
+                        backgroundImage: `url(${MedicalItem.image})`,
+                      }}
+                    />
+                    <p>{MedicalItem.Patient_Name}</p>
+                  </div>
+                )}
               </div>
-              </div>
-            )}
-            {!showDetailsId && (
-              <div>
-                <p>{MedicalItem.Patient_Name}</p>
-
-                <button
-                  onClick={() => toggleDetails(MedicalItem.id)}
-                  className="detail-button"
-                >
-                  View Details
-                </button>
-              </div>
-            )}
+            ))}
           </div>
-        ))}
-        {!showMedicalPopup && !showDetailsId && (
-          <Link
-            to="/donationRequestssDoctor"
-            className="button-link"
-          >
-            <button className="back-button">Back</button>
-          </Link>
-        )}
+          {showMedicalPopup && (
+            <MedicalPopup
+              closePopup={() => setShowMedicalPopup(false)}
+              theKey={clickedMedicalId}
+              showDonateOptions={showDonateOptions}
+              setShowDonateOptions={setShowDonateOptions}
+              handleDonate={handleDonate}
+            />
+          )}
+          {!showMedicalPopup && !showDetailsId && (
+            <Link to="/donationRequestssDoctor" className="button-link">
+              <button className="back-button">Back</button>
+            </Link>
+          )}
+        </div>
       </div>
-      {showMedicalPopup && (
-        <MedicalPopup
-          closePopup={() => setShowMedicalPopup(false)}
-          theKey={clickedMedicalId}
-          showDonateOptions={showDonateOptions}
-          setShowDonateOptions={setShowDonateOptions}
-          handleDonate={handleDonate}
-        />
-      )}
     </div>
   );
 }

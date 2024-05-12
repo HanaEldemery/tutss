@@ -1,3 +1,8 @@
+import School from "../assets/school.jpg";
+import Hospital from "../assets/hospital.jpg";
+import Vet from "../assets/vet.jpg";
+import Orphanage from "../assets/orphanage.png";
+
 export const data = [
   {
     id: 1,
@@ -20,6 +25,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: School,
   },
   {
     id: 2,
@@ -42,6 +48,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Vet,
   },
   {
     id: 3,
@@ -64,6 +71,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Vet,
   },
   {
     id: 4,
@@ -86,6 +94,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Hospital,
   },
   {
     id: 5,
@@ -108,6 +117,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Hospital,
   },
   {
     id: 6,
@@ -130,6 +140,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Hospital,
   },
   {
     id: 7,
@@ -152,6 +163,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Orphanage,
   },
   {
     id: 8,
@@ -174,6 +186,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Hospital,
   },
   {
     id: 9,
@@ -196,6 +209,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: School,
   },
   {
     id: 10,
@@ -218,6 +232,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Orphanage,
   },
   {
     id: 11,
@@ -240,6 +255,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Orphanage,
   },
   {
     id: 12,
@@ -262,6 +278,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Vet,
   },
   {
     id: 13,
@@ -284,6 +301,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Vet,
   },
   {
     id: 14,
@@ -306,6 +324,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Vet,
   },
   {
     id: 15,
@@ -328,6 +347,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Orphanage,
   },
   {
     id: 16,
@@ -350,6 +370,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: Orphanage,
   },
   {
     id: 17,
@@ -372,6 +393,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: School,
   },
   {
     id: 18,
@@ -394,6 +416,7 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: School,
   },
   {
     id: 19,
@@ -416,5 +439,6 @@ export const data = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: School,
   },
 ];

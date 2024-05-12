@@ -72,18 +72,26 @@ function ClothingRequests() {
           {showPopup ? (
             <ClothesPopup closePopup={setShowPopup} theKey={clickedId} />
           ) : (
-            <div className="clothes-list">
-              {filteredClothesList.map((clothesItem) => (
-                <div key={clothesItem.id} className="clothes-item">
-                  <p>{clothesItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredClothesList.map((clothesItem) => (
+                  <div
+                    key={clothesItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(clothesItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${clothesItem.image})`,
+                        }}
+                      />
+                      <p>{clothesItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequest">
                 <button> Back </button>
               </Link>

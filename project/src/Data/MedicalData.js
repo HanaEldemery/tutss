@@ -1,153 +1,288 @@
+import Doctor from "../assets/doctor.jpg";
+
 export const MedicalData = [
-    {
-      "id": 1,
-      "Patient_Name": "Sarah Ahmed",
-      "Age": 45,
-      "Gender": "Female",
-      "Weight": 65,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=cairo%20medical%20center+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>,
-      "Address": "123 ABC Street, Cairo",
-      "Organization_Name": "Cairo Medical Center",
-      "Medical_Specialty": "Cardiology",
-      "Case_Description": "Patient experiencing chest pain and shortness of breath.",
-      "Area": "Tagamoa",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 2,
-      "Patient_Name": "Mohamed Ali",
-      "Age": 30,
-      "Gender": "Male",
-      "Weight": 75,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=nile%20hospital%20giza+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>,
-      "Address": "456 XYZ Street, Giza",
-      "Organization_Name": "Nile Hospital",
-      "Medical_Specialty": "Orthopedics",
-      "Case_Description": "Fractured leg due to sports injury.",
-      "Area": "Zamalek",
-      "Governorate": "Giza",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 3,
-      "Patient_Name": "Fatma Hassan",
-      "Age": 55,
-      "Gender": "Female",
-      "Weight": 70,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Althuria%20Hospital%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%8A%20%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%A7+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps vehicle tracker</a></iframe>,
-      "Address": "789 XYZ Street, Cairo",
-      "Organization_Name": "Althuria Hospital",
-      "Medical_Specialty": "Neurology",
-      "Case_Description": "Chronic headaches and dizziness.",
-      "Area": "Dokki",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 4,
-      "Patient_Name": "Ahmed Saleh",
-      "Age": 40,
-      "Gender": "Male",
-      "Weight": 80,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Mokattam%20Specialized%20Hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps systems</a></iframe>,
-      "Address": "Street 9, Al Abageyah, El Mokattam, Cairo Governorate 4413430",
-      "Organization_Name": "Mokattam Specialized Hospital",
-      "Medical_Specialty": "Dermatology",
-      "Case_Description": "Skin rash and itching.",
-      "Area": "Mokattam",
-      "Governorate": "Giza",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 5,
-      "Patient_Name": "Laila Kamal",
-      "Age": 28,
-      "Gender": "Female",
-      "Weight": 60,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=cairo%20medical%20center+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>,
-      "Address": "123 ABC Street, Cairo",
-      "Organization_Name": "Cairo Medical Center",
-      "Medical_Specialty": "Neurology",
-      "Case_Description": "Chronic headaches and dizziness.",
-      "Area": "Tagamoa",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 6,
-      "Patient_Name": "Khaled Farouk",
-      "Age": 50,
-      "Gender": "Male",
-      "Weight": 85,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Andalusia%20el%20maadi%20hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe>,
-      "Address": "654 ABC Street, Cairo",
-      "Organization_Name": "Andalusia Hospital",
-      "Medical_Specialty": "Cardiology",
-      "Case_Description": "Patient experiencing chest pain and shortness of breath.",
-      "Area": "Maadi",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 7,
-      "Patient_Name": "Nadia Samir",
-      "Age": 35,
-      "Gender": "Female",
-      "Weight": 55,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=MSR%20Clinic%20%D9%85%D8%B1%D9%83%D8%B2%20%D9%85%D8%B5%D8%B1%20%D9%84%D9%84%D8%B9%D9%84%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%D8%A9%20%D9%88%20%D8%A7%D9%84%D8%AA%D8%A3%D9%87%D9%8A%D9%84+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>,
-      "Address": "38J8+CG2, Mansheya El-Bakry, Heliopolis, Cairo Governorate 4460021",
-      "Organization_Name": "Masr Medical Clinic",
-      "Medical_Specialty": "Cardiology",
-      "Case_Description": "Patient experiencing chest pain and shortness of breath.",
-      "Area": "Tagamoa",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 8,
-      "Patient_Name": "Youssef Mansour",
-      "Age": 42,
-      "Gender": "Male",
-      "Weight": 78,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Andalusia%20el%20maadi%20hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe>,
-      "Address": "654 ABC Street, Cairo",
-      "Organization_Name": "Andalusia Hospital",
-      "Medical_Specialty": "Psychiatry",
-      "Case_Description": "Anxiety and mood disorder.",
-      "Area": "Maadi",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 9,
-      "Patient_Name": "Mona Adel",
-      "Age": 60,
-      "Gender": "Female",
-      "Weight": 65,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=El%20Zahraa%20Hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps vehicle tracker</a></iframe>,
-      "Address": "4924+M5G، El Galaa Street, Cairo Governorate 4471010",
-      "Organization_Name": "El Zahraa Medical Center",
-      "Medical_Specialty": "Dermatology",
-      "Case_Description": "Skin rash and itching.",
-      "Area": "Mokattam",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    },
-    {
-      "id": 10,
-      "Patient_Name": "Tarek Abdelrahman",
-      "Age": 38,
-      "Gender": "Male",
-      "Weight": 70,
-      "Location_Google_Marker": <iframe width="40%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=LOTUS%20Medical%20Center%20-%20Dr.%20Kresten%20Elia+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps devices</a></iframe>,
-      "Address": "987 XYZ Street, Cairo",
-      "Organization_Name": "Lotus Medical Center",
-      "Medical_Specialty": "Psychiatry",
-      "Case_Description": "Anxiety and mood disorder.",
-      "Area": "Tagamoa",
-      "Governorate": "Cairo",
-      "xyz": "Medical Cases"
-    }
-  ];
-  
+  {
+    id: 1,
+    Patient_Name: "Sarah Ahmed",
+    Age: 45,
+    Gender: "Female",
+    Weight: 65,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=cairo%20medical%20center+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps devices</a>
+      </iframe>
+    ),
+    Address: "123 ABC Street, Cairo",
+    Organization_Name: "Cairo Medical Center",
+    Medical_Specialty: "Cardiology",
+    Case_Description:
+      "Patient experiencing chest pain and shortness of breath.",
+    Area: "Tagamoa",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 2,
+    Patient_Name: "Mohamed Ali",
+    Age: 30,
+    Gender: "Male",
+    Weight: 75,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=nile%20hospital%20giza+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps devices</a>
+      </iframe>
+    ),
+    Address: "456 XYZ Street, Giza",
+    Organization_Name: "Nile Hospital",
+    Medical_Specialty: "Orthopedics",
+    Case_Description: "Fractured leg due to sports injury.",
+    Area: "Zamalek",
+    Governorate: "Giza",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 3,
+    Patient_Name: "Fatma Hassan",
+    Age: 55,
+    Gender: "Female",
+    Weight: 70,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Althuria%20Hospital%20%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%8A%20%D8%A7%D9%84%D8%AB%D8%B1%D9%8A%D8%A7+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps vehicle tracker</a>
+      </iframe>
+    ),
+    Address: "789 XYZ Street, Cairo",
+    Organization_Name: "Althuria Hospital",
+    Medical_Specialty: "Neurology",
+    Case_Description: "Chronic headaches and dizziness.",
+    Area: "Dokki",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 4,
+    Patient_Name: "Ahmed Saleh",
+    Age: 40,
+    Gender: "Male",
+    Weight: 80,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Mokattam%20Specialized%20Hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps systems</a>
+      </iframe>
+    ),
+    Address: "Street 9, Al Abageyah, El Mokattam, Cairo Governorate 4413430",
+    Organization_Name: "Mokattam Specialized Hospital",
+    Medical_Specialty: "Dermatology",
+    Case_Description: "Skin rash and itching.",
+    Area: "Mokattam",
+    Governorate: "Giza",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 5,
+    Patient_Name: "Laila Kamal",
+    Age: 28,
+    Gender: "Female",
+    Weight: 60,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=cairo%20medical%20center+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps devices</a>
+      </iframe>
+    ),
+    Address: "123 ABC Street, Cairo",
+    Organization_Name: "Cairo Medical Center",
+    Medical_Specialty: "Neurology",
+    Case_Description: "Chronic headaches and dizziness.",
+    Area: "Tagamoa",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 6,
+    Patient_Name: "Khaled Farouk",
+    Age: 50,
+    Gender: "Male",
+    Weight: 85,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Andalusia%20el%20maadi%20hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps tracker sport</a>
+      </iframe>
+    ),
+    Address: "654 ABC Street, Cairo",
+    Organization_Name: "Andalusia Hospital",
+    Medical_Specialty: "Cardiology",
+    Case_Description:
+      "Patient experiencing chest pain and shortness of breath.",
+    Area: "Maadi",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 7,
+    Patient_Name: "Nadia Samir",
+    Age: 35,
+    Gender: "Female",
+    Weight: 55,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=MSR%20Clinic%20%D9%85%D8%B1%D9%83%D8%B2%20%D9%85%D8%B5%D8%B1%20%D9%84%D9%84%D8%B9%D9%84%D8%A7%D8%AC%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A%D8%A9%20%D9%88%20%D8%A7%D9%84%D8%AA%D8%A3%D9%87%D9%8A%D9%84+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps devices</a>
+      </iframe>
+    ),
+    Address:
+      "38J8+CG2, Mansheya El-Bakry, Heliopolis, Cairo Governorate 4460021",
+    Organization_Name: "Masr Medical Clinic",
+    Medical_Specialty: "Cardiology",
+    Case_Description:
+      "Patient experiencing chest pain and shortness of breath.",
+    Area: "Tagamoa",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 8,
+    Patient_Name: "Youssef Mansour",
+    Age: 42,
+    Gender: "Male",
+    Weight: 78,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Andalusia%20el%20maadi%20hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps tracker sport</a>
+      </iframe>
+    ),
+    Address: "654 ABC Street, Cairo",
+    Organization_Name: "Andalusia Hospital",
+    Medical_Specialty: "Psychiatry",
+    Case_Description: "Anxiety and mood disorder.",
+    Area: "Maadi",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 9,
+    Patient_Name: "Mona Adel",
+    Age: 60,
+    Gender: "Female",
+    Weight: 65,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=El%20Zahraa%20Hospital+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps vehicle tracker</a>
+      </iframe>
+    ),
+    Address: "4924+M5G، El Galaa Street, Cairo Governorate 4471010",
+    Organization_Name: "El Zahraa Medical Center",
+    Medical_Specialty: "Dermatology",
+    Case_Description: "Skin rash and itching.",
+    Area: "Mokattam",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+  {
+    id: 10,
+    Patient_Name: "Tarek Abdelrahman",
+    Age: 38,
+    Gender: "Male",
+    Weight: 70,
+    Location_Google_Marker: (
+      <iframe
+        width="40%"
+        height="400"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=LOTUS%20Medical%20Center%20-%20Dr.%20Kresten%20Elia+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      >
+        <a href="https://www.gps.ie/">gps devices</a>
+      </iframe>
+    ),
+    Address: "987 XYZ Street, Cairo",
+    Organization_Name: "Lotus Medical Center",
+    Medical_Specialty: "Psychiatry",
+    Case_Description: "Anxiety and mood disorder.",
+    Area: "Tagamoa",
+    Governorate: "Cairo",
+    xyz: "Medical Cases",
+    image: Doctor,
+  },
+];

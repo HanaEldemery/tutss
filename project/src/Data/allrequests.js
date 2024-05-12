@@ -1,3 +1,13 @@
+import SuppliesSchool from "../assets/suppliesSchool.jpg";
+import FurnitureSchool from "../assets/furSchool.jpg";
+import ToysVet from "../assets/vetToys.jpg";
+import DryFood from "../assets/dryFood.jpg";
+import SuppliesHospital from "../assets/suppliesHospital.jpg";
+import MachinesHospital from "../assets/machinesHospital.jpg";
+import ClothesOrphanage from "../assets/clothesOrphanage.jpg";
+import Teacher from "../assets/teacher.jpg";
+import Doctor from "../assets/doctor.jpg";
+
 export const data = [
   {
     id: 1,
@@ -6,6 +16,7 @@ export const data = [
     category: "Supplies",
     type: "Pen",
     material: "HB",
+    image: SuppliesSchool,
   },
   {
     id: 2,
@@ -14,6 +25,7 @@ export const data = [
     category: "Supplies",
     type: "Pencil",
     material: "HB",
+    image: SuppliesSchool,
   },
   {
     id: 3,
@@ -22,6 +34,7 @@ export const data = [
     category: "Supplies",
     type: "Book",
     material: "A4",
+    image: SuppliesSchool,
   },
   {
     id: 4,
@@ -31,6 +44,7 @@ export const data = [
     type: "Chair",
     material: "Leather",
     model: "2017",
+    image: FurnitureSchool,
   },
   {
     id: 5,
@@ -40,6 +54,7 @@ export const data = [
     type: "Table",
     material: "Wood",
     model: "2013",
+    image: FurnitureSchool,
   },
   {
     id: 6,
@@ -49,6 +64,7 @@ export const data = [
     type: "Table",
     material: "Glass",
     model: "2013",
+    image: FurnitureSchool,
   },
   {
     id: 7,
@@ -58,6 +74,7 @@ export const data = [
     type: "Chair",
     material: "Wood",
     model: "2020",
+    image: FurnitureSchool,
   },
   {
     id: 8,
@@ -66,6 +83,7 @@ export const data = [
     category: "Supplies",
     type: "Pencil",
     material: "Wood",
+    image: SuppliesSchool,
   },
 
   {
@@ -77,6 +95,7 @@ export const data = [
     color: "Orange",
     type: "boarding game",
     material: "paper",
+    image: ToysVet,
   },
   {
     id: 10,
@@ -88,6 +107,7 @@ export const data = [
     typeofanimal: "Cat",
     type: "Crunchy",
     material: "Food",
+    image: DryFood,
   },
   {
     id: 11,
@@ -99,6 +119,7 @@ export const data = [
     typeofanimal: "Dog",
     type: "Crunchy",
     material: "Food",
+    image: DryFood,
   },
   {
     id: 12,
@@ -107,6 +128,7 @@ export const data = [
     category: "Supplies",
     type: "Surgical",
     material: "Metal",
+    image: SuppliesHospital,
   },
   {
     id: 13,
@@ -117,6 +139,7 @@ export const data = [
     capacity: "10 patients/day",
     type: "Machine",
     material: "Metal",
+    image: MachinesHospital,
   },
   {
     id: 14,
@@ -125,6 +148,7 @@ export const data = [
     category: "Supplies",
     type: "Surgical",
     material: "Iron",
+    image: SuppliesHospital,
   },
   {
     id: 15,
@@ -136,6 +160,7 @@ export const data = [
     size: "XS",
     color: "Purple",
     type: "Pants",
+    image: ClothesOrphanage,
   },
   {
     id: 16,
@@ -146,6 +171,7 @@ export const data = [
     speciality: "Pediatrics",
     type: "Pedia",
     material: "Pediatrics",
+    image: Doctor,
   },
   {
     id: 17,
@@ -156,6 +182,7 @@ export const data = [
     speciality: "Neurology",
     type: "Neuro",
     material: "Neurology",
+    image: Doctor,
   },
   {
     id: 18,
@@ -164,6 +191,7 @@ export const data = [
     category: "Supplies",
     type: "Surgical",
     material: "Steel",
+    image: SuppliesHospital,
   },
   {
     id: 19,
@@ -173,6 +201,7 @@ export const data = [
     type: "Education",
     material: "English",
     subject: "English",
+    image: Teacher,
   },
   {
     id: 20,
@@ -182,5 +211,6 @@ export const data = [
     type: "Education",
     material: "French",
     subject: "French",
+    image: Teacher,
   },
 ];

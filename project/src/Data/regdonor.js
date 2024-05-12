@@ -1,3 +1,9 @@
+import Hana from "../assets/hana.jpg";
+import Omar from "../assets/omar.jpg";
+import Seif from "../assets/seif.jpg";
+import Adham from "../assets/adham.jpg";
+import Halla from "../assets/halla.jpg";
+
 export const data = [
   {
     id: 1,
@@ -10,6 +16,7 @@ export const data = [
     hospitalGovernorate: "Cairo",
     hospitalArea: "Nasr City",
     address: "Nasr City, Cairo",
+    image: Halla,
   },
   {
     id: 2,
@@ -22,6 +29,7 @@ export const data = [
     hospitalGovernorate: "Giza",
     hospitalArea: "Agouza",
     address: "Agouza, Giza",
+    image: Seif,
   },
   {
     id: 3,
@@ -34,6 +42,7 @@ export const data = [
     hospitalGovernorate: "Cairo",
     hospitalArea: "Zamalek",
     address: "Zamalek, Cairo",
+    image: Omar,
   },
   {
     id: 4,
@@ -46,5 +55,19 @@ export const data = [
     hospitalGovernorate: "Giza",
     hospitalArea: "Agouza",
     address: "Agouza, Giza",
+    image: Hana,
+  },
+  {
+    id: 5,
+    name: "Blood Type B+",
+    patientName: "Adham Sameh",
+    bloodType: "B-",
+    age: "19",
+    typeDonor: "Normal",
+    hospitalName: "El Safa Hospital",
+    hospitalGovernorate: "Giza",
+    hospitalArea: "Agouza",
+    address: "Agouza, Giza",
+    image: Adham,
   },
 ];

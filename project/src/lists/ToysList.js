@@ -1,9 +1,4 @@
-import rabbit from "../images/rabbit.jpg";
-import car from "../images/car.jpg";
-import monopoly from "../images/monopoly.jpg";
-import barbie from "../images/barbie.jpg";
-import football from "../images/football.jpg";
-import rope from "../images/rope.jpg";
+import Toy from "../assets/toys.jpg";
 
 export const ToysList = [
   {
@@ -13,7 +8,7 @@ export const ToysList = [
     age: 2,
     gender: "Female",
     category: "Stuffed Toys",
-    picture: rabbit,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },
@@ -24,7 +19,7 @@ export const ToysList = [
     age: 3,
     gender: " Male",
     category: "Cars",
-    picture: car,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },
@@ -35,7 +30,7 @@ export const ToysList = [
     age: 7,
     gender: "Female",
     category: "Board Games",
-    picture: monopoly,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },
@@ -46,7 +41,7 @@ export const ToysList = [
     age: 5,
     gender: "Female",
     category: "Dolls",
-    picture: barbie,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },
@@ -57,7 +52,7 @@ export const ToysList = [
     age: 10,
     gender: "Male",
     category: "Sports",
-    picture: football,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },
@@ -68,7 +63,7 @@ export const ToysList = [
     age: 12,
     gender: "Male",
     category: "Outdoor",
-    picture: rope,
+    image: Toy,
     quantity: 3,
     xyz: "Toys",
   },

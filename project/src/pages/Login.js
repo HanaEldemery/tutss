@@ -34,40 +34,40 @@ function Login() {
       <div className="headerContainer">
         <h1>Admin Login</h1>
         <form onSubmit={handleSubmit} className="form">
-        <div className="input-container">
-          <div className="input-wrapper">
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="inputForm"
-            />
+          <div className="input-container">
+            <div className="input-wrapper">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="inputForm"
+              />
+            </div>
+            <div className="input-wrapper">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="inputForm"
+              />
+            </div>
+            {error && <p className="error">{error}</p>}
+            <div className="button-container">
+              <Link to="/">
+                <button className="back-button">Back</button>
+              </Link>
+              <button type="submit" className="donate-button">
+                Login
+              </button>
+            </div>
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="inputForm"
-            />
-          </div>
-          {error && <p className="error">{error}</p>}
-          <div className="button-container">
-            <Link to="/">
-              <button className="back-button">Back</button>
-            </Link>
-            <button type="submit" className="donate-button">Login</button>
-          </div>
-          </div>
-
         </form>
       </div>
     </div>
-    
   );
 }
 

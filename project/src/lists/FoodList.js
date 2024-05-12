@@ -1,3 +1,5 @@
+import FoodDonation from "../assets/fooddonation.jpg";
+
 export const FoodList = [
   {
     id: 1,
@@ -5,6 +7,7 @@ export const FoodList = [
     type: "Fruits",
     quantity: "3 KGs",
     xyz: "Food",
+    image: FoodDonation,
   },
   {
     id: 2,
@@ -12,6 +15,7 @@ export const FoodList = [
     type: "Vegetables",
     quantity: "3 KGs",
     xyz: "Food",
+    image: FoodDonation,
   },
   {
     id: 3,
@@ -19,6 +23,7 @@ export const FoodList = [
     type: "Canned Food",
     quantity: "3",
     xyz: "Food",
+    image: FoodDonation,
   },
   {
     id: 4,
@@ -26,6 +31,7 @@ export const FoodList = [
     type: "Fresh Meals",
     quantity: "3",
     xyz: "Food",
+    image: FoodDonation,
   },
   {
     id: 5,
@@ -33,6 +39,7 @@ export const FoodList = [
     type: "Baked Goods",
     quantity: "3",
     xyz: "Food",
+    image: FoodDonation,
   },
 ];
 

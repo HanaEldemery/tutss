@@ -45,102 +45,106 @@ function Search({ closePopup }) {
   };
 
   return (
-    <Container className="all">
-      {popupFlag ? null : (
-        <div>
-          <h1 className="TEXT">Organization Names</h1>
+    <div className="home">
+      <div className="headerContainer">
+        <h1 className="menuTitle">Organization Names</h1>
+        <Container>
+          {popupFlag ? null : (
+            <div>
+              <Form className="form">
+                <Form.Control
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Type search..."
+                  className="inputForm"
+                />
+                <Form.Control
+                  as="select"
+                  onChange={(e) => setAreaFilter(e.target.value)}
+                  value={areaFilter}
+                  className="inputForm"
+                >
+                  <option value="">All Areas</option>
+                  <option value="Zamalek">Zamalek</option>
+                  <option value="Maadi">Maadi</option>
+                  <option value="Shooting club">Shooting club</option>
+                  <option value="Rehab 2, group 117, building 13, floor 2">
+                    Rehab 2, group 117, building 13, floor 2
+                  </option>
+                  <option value="New Cairo">New Cairo</option>
+                  <option value="Nasr City">Nasr City</option>
+                </Form.Control>
+                <Form.Control
+                  as="select"
+                  onChange={(e) => setGovernorateFilter(e.target.value)}
+                  value={governorateFilter}
+                  className="inputForm"
+                >
+                  <option value="">All Governorates</option>
+                  <option value="Cairo">Cairo</option>
+                  <option value="Giza">Giza</option>
+                  <option value="Luxor">Luxor</option>
+                  <option value="Aswan">Aswan</option>
+                </Form.Control>
+                <Form.Control
+                  as="select"
+                  onChange={(e) => setTypeFilter(e.target.value)}
+                  value={typeFilter}
+                  className="inputForm"
+                >
+                  <option value="">All Types</option>
+                  <option value="School">School</option>
+                  <option value="Vet">Vet</option>
+                  <option value="Hospital">Hospital</option>
+                  <option value="Orphanage">Orphanage</option>
+                </Form.Control>
+              </Form>
 
-          <Form className="form">
-            <Form.Control
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Type search..."
-              className="inputForm"
-            />
-            <Form.Control
-              as="select"
-              onChange={(e) => setAreaFilter(e.target.value)}
-              value={areaFilter}
-              className="inputForm"
-            >
-              <option value="">All Areas</option>
-              <option value="Zamalek">Zamalek</option>
-              <option value="Maadi">Maadi</option>
-              <option value="Shooting club">Shooting club</option>
-              <option value="Rehab 2, group 117, building 13, floor 2">
-                Rehab 2, group 117, building 13, floor 2
-              </option>
-              <option value="New Cairo">New Cairo</option>
-              <option value="Nasr City">Nasr City</option>
-            </Form.Control>
-            <Form.Control
-              as="select"
-              onChange={(e) => setGovernorateFilter(e.target.value)}
-              value={governorateFilter}
-              className="inputForm"
-            >
-              <option value="">All Governorates</option>
-              <option value="Cairo">Cairo</option>
-              <option value="Giza">Giza</option>
-              <option value="Luxor">Luxor</option>
-              <option value="Aswan">Aswan</option>
-            </Form.Control>
-            <Form.Control
-              as="select"
-              onChange={(e) => setTypeFilter(e.target.value)}
-              value={typeFilter}
-              className="inputForm"
-            >
-              <option value="">All Types</option>
-              <option value="School">School</option>
-              <option value="Vet">Vet</option>
-              <option value="Hospital">Hospital</option>
-              <option value="Orphanage">Orphanage</option>
-            </Form.Control>
-          </Form>
+              <div className="menu">
+                <div className="menuList">
+                  {filteredData.map((item, index) => (
+                    <div
+                      key={index}
+                      className="menuItem"
+                      onClick={() => handleDetailsClick(item.id)}
+                    >
+                      <div className="item-container">
+                        <div
+                          className="menuImage"
+                          style={{
+                            backgroundImage: `url(${item.image})`,
+                          }}
+                        />
+                        <p style={{ textAlign: "center" }}>
+                          {item.organisation}
+                        </p>
 
-          <div className="table-wrapper">
-            <Table className="table">
-              <tbody>
-                {filteredData.map((item, index) => (
-                  <tr key={index}>
-                    <td>
-                      <p style={{ textAlign: "center" }}>{item.organisation}</p>
-                      <button
-                        onClick={() => handleDetailsClick(item.id)}
-                        className="donation-button"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={() => handleOnDelete(item.id)}
-                        className="donation-button"
-                      >
-                        Delete Organization
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </div>
+                        <button
+                          onClick={() => handleOnDelete(item.id)}
+                          className="donation-button"
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
 
+          {popupFlag && (
+            <div className="seifpopup-overlay">
+              <div className="seifpopup-content">
+                <Details theKey={selectedItemId} closePopup={setPopupFlag} />
+              </div>
+            </div>
+          )}
           <button onClick={handleRedirect} className="donation-button">
             Back
           </button>
-        </div>
-      )}
-
-{popupFlag && (
-  <div className="seifpopup-overlay">
-    <div className="seifpopup-content">
-      <Details theKey={selectedItemId} closePopup={setPopupFlag} />
-
+        </Container>
+      </div>
     </div>
-  </div>
-)}
-
-
-    </Container>
   );
 }
 

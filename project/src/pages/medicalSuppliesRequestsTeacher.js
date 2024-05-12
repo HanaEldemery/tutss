@@ -44,17 +44,16 @@ function MedicalSuppliesRequests() {
             <option value="Medications">Medications</option>
             {/* Add options for other types as needed */}
           </select>
-        </div>
-        {isMedicationsSelected && ( // Conditionally render use filter
-          <div>
+
+          {isMedicationsSelected && ( // Conditionally render use filter
             <select onChange={handleUseChange}>
               <option value="">All Uses</option>
               <option value="For headaches">For headaches</option>
               <option value="For stomachaches">For stomachaches</option>
               {/* Add options for other uses as needed */}
             </select>
-          </div>
-        )}
+          )}
+        </div>
         <div>
           {showPopup ? (
             <MedicalSuppliesPopup
@@ -62,18 +61,26 @@ function MedicalSuppliesRequests() {
               theKey={clickedId}
             />
           ) : (
-            <div className="medical-supplies-list">
-              {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
-                <div key={medicalSupplyItem.id} className="medical-supply-item">
-                  <p>{medicalSupplyItem.name}</p>
-                  <button
+            <div className="menu">
+              <div className="menuList">
+                {filteredMedicalSuppliesList.map((medicalSupplyItem) => (
+                  <div
+                    key={medicalSupplyItem.id}
+                    className="menuItem"
                     onClick={() => viewDetails(medicalSupplyItem.id)}
-                    className="button-used"
                   >
-                    View Details
-                  </button>
-                </div>
-              ))}
+                    <div className="item-container">
+                      <div
+                        className="menuImage"
+                        style={{
+                          backgroundImage: `url(${medicalSupplyItem.image})`,
+                        }}
+                      />
+                      <p>{medicalSupplyItem.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               <Link to="/DonationRequest">
                 <button>Back</button>
               </Link>

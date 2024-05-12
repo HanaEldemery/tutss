@@ -1,3 +1,5 @@
+import BloodDonation from "../assets/blooddonation.jpg";
+
 export const BloodList = [
   {
     id: 1,
@@ -22,6 +24,7 @@ export const BloodList = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: BloodDonation,
   },
   {
     id: 2,
@@ -46,6 +49,7 @@ export const BloodList = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: BloodDonation,
   },
   {
     id: 3,
@@ -70,6 +74,7 @@ export const BloodList = [
         <a href="https://www.gps.ie/">gps devices</a>
       </iframe>
     ),
+    image: BloodDonation,
   },
   {
     id: 4,
@@ -94,6 +99,7 @@ export const BloodList = [
         <a href="https://www.gps.ie/">gps trackers</a>
       </iframe>
     ),
+    image: BloodDonation,
   },
 ];
 

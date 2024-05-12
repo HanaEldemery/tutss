@@ -1,11 +1,4 @@
-import Childrensbook from "../assets/ChildrensBook.jpg";
-import Copybooks from "../assets/CopyBook.jpeg";
-import Mathsbook from "../assets/MathsBook.jpg";
-import Englishbook from "../assets/EnglishBook.jpg";
-import Pencilcase from "../assets/PencilCase.jpeg";
-import coloringPencils from "../assets/coloringPencils.jpeg";
-import eraser from "../assets/eraser.jpg";
-import sharpener from "../assets/sharpener.jpg";
+import SuppliesSchool from "../assets/suppliesSchool.jpg";
 
 export const SchoolSupList = [
   {
@@ -18,7 +11,7 @@ export const SchoolSupList = [
     Edition: "1994",
     Summary:
       "Featuring interactive die-cut pages, this board book edition is the perfect size for little hands and great for teaching counting and days of the week. The very hungry caterpillar literally eats his way through the pages of the book—and right into your child's heart... -Mother's Manual",
-    picture: Childrensbook,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -32,7 +25,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    picture: Copybooks,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -46,7 +39,7 @@ export const SchoolSupList = [
     Edition: "Second Edition",
     Summary:
       "The Cambridge Lower Secondary Complete Mathematics 7 Student Book ensures students fully cover and excel in the curriculum, as well as embedding the learning they need to progress smoothly towards IGCSE® Mathematics. This resource provides a rigorous approach for teaching and studying Cambridge Lower Secondary Maths to ensure students learn everything that is required at that level. However, stretching materials and exercises also prepare students for a smooth transition to IGCSE Mathematics by supporting the development of required skills. It is written by the expert author of our previous, best-selling edition and maintains the strengths of the original book, but with updates and improvements to better meet students' and teachers' needs. The Student Book is supported by a Homework Book that provides opportunities for independent practice inside and outside the classroom, and a Teacher Handbook, which offers full teaching support.",
-    picture: Mathsbook,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -60,7 +53,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    picture: Pencilcase,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -74,7 +67,7 @@ export const SchoolSupList = [
     Edition: "Second Edition",
     Summary:
       "Your learners will develop their English skills as they write a poem, talk about characters and events and explore information books. You’ll find a wide range of international fiction, non-fiction and poetry throughout the book to help your learners develop their understanding of different genres and text types. Each unit includes activities that cover reading, writing, speaking and listening, as well as opportunities to develop 21st-century skills – such as collaboration and critical thinking. Units end with a project, like designing a bug hotel, to help learners communicate confidently and understand how to apply their learning to real-world scenarios.",
-    picture: Englishbook,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -88,7 +81,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    picture: coloringPencils,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -102,7 +95,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    picture: eraser,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },
@@ -116,7 +109,7 @@ export const SchoolSupList = [
     Language: null,
     Edition: null,
     Summary: null,
-    picture: sharpener,
+    image: SuppliesSchool,
     quantity: 3,
     xyz: "School Supplies",
   },

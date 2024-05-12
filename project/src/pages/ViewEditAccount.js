@@ -69,7 +69,8 @@ function ViewEditAccount({ closePopup, donorId }) {
               {item.id === donorId && (
                 <div className="textInputContainer">
                   <p>
-                    Name:
+                    <p>Name</p>
+
                     <input
                       type="text"
                       placeholder={item.patientName}
@@ -79,50 +80,60 @@ function ViewEditAccount({ closePopup, donorId }) {
 
                   {detailsButton ? (
                     <p>
-                      Donor Type:
+                      <p>Donor Type</p>
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
-                      Donor Type:
+                      <p>Donor Type</p>
                       <input type="text" placeholder={item.typeDonor} />
-                      <button onClick={detailsClick} className="search-button">
-                        Remove
-                      </button>
-                    </div>
-                  )}
-                  {areaButton ? (
-                    <p>
-                      Address:
-                      <input type="text" />
-                    </p>
-                  ) : (
-                    <div>
                       <p>
-                        Address:
-                        <input type="text" placeholder={item.address} />
-                        <button onClick={areaClick} className="search-button">
+                        <button
+                          onClick={detailsClick}
+                          className="search-button"
+                        >
                           Remove
                         </button>
                       </p>
                     </div>
                   )}
-                  {governorateButton ? (
+                  {areaButton ? (
                     <p>
-                      Age:
+                      <p>Address</p>
                       <input type="text" />
                     </p>
                   ) : (
                     <div>
                       <p>
-                        Age:
+                        <p>Address</p>
+                        <input type="text" placeholder={item.address} />
+                        <p>
+                          <button onClick={areaClick} className="search-button">
+                            Remove
+                          </button>
+                        </p>
+                      </p>
+                    </div>
+                  )}
+                  {governorateButton ? (
+                    <p>
+                      <p>Age</p>
+                      <input type="text" />
+                    </p>
+                  ) : (
+                    <div>
+                      <p>
+                        <p>Age</p>
+
                         <input type="text" placeholder={item.age} />
-                        <button
-                          onClick={governorateClick}
-                          className="search-button"
-                        >
-                          Remove
-                        </button>
+                        <p>
+                          <button
+                            onClick={governorateClick}
+                            className="search-button"
+                          >
+                            Remove
+                          </button>
+                        </p>
                       </p>
                     </div>
                   )}
@@ -131,7 +142,7 @@ function ViewEditAccount({ closePopup, donorId }) {
             </div>
           ))}
         </div>
-        <div className="footer">
+        <div>
           <button onClick={() => closePopup(false)}> Back </button>
           <button onClick={notify}> Save </button>
         </div>
