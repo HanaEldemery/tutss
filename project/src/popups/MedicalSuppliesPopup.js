@@ -59,7 +59,6 @@ class Popup extends Component {
             <h1>{matchedItem.name}</h1>
             <p>Medical Supply Type: {matchedItem.type}</p>
             <p>Medical Supply Use: {matchedItem.use}</p>
-            <p>Image: </p>
             <img src={matchedItem.image} alt="Medical Supply" />
             <p>Medical Supply Quantity: {matchedItem.quantity}</p>
             <input
@@ -82,7 +81,7 @@ class Popup extends Component {
               className="detailButton_clothesPopup"
               onClick={this.handleDonate}
             >
-              Donate Now
+              Donate
             </button>
           </div>
         </div>

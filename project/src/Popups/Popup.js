@@ -63,8 +63,7 @@ class Popup extends Component {
             {matchedItem.Language && <p>Language: {matchedItem.Language}</p>}
             {matchedItem.Edition && <p>Edition: {matchedItem.Edition}</p>}
             {matchedItem.Summary && <p>Summary: {matchedItem.Summary}</p>}
-            <p>Image: </p>
-            <img src={matchedItem.picture} alt="SchoolSupply" />
+            <img src={matchedItem.image} alt="SchoolSupply" />
             <p>Quantity: {matchedItem.quantity}</p>
             {matchedItem.googleMarker}
             <input
@@ -87,7 +86,7 @@ class Popup extends Component {
               className="detailButton_clothesPopup"
               onClick={this.handleDonate}
             >
-              Donate Now
+              Donate
             </button>
           </div>
         </div>

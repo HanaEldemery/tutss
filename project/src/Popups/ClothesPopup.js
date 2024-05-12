@@ -61,7 +61,7 @@ class ClothesPopup extends Component {
             <p>Gender: {matchedItem.Gender}</p>
             {matchedItem.Season && <p>Season: {matchedItem.Season}</p>}
             <p>Material: {matchedItem.Material}</p>
-            <img src={matchedItem.picture} alt="Clothes" />
+            <img src={matchedItem.image} alt="Clothes" />
             <p>Quantity: {matchedItem.Quantity}</p>
             {matchedItem.googleMarker}
             <input

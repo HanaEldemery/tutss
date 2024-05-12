@@ -13,7 +13,7 @@ function Details({ theKey }) {
           <p>Hospital Governorate: {matchedItem.hospitalGovernorate}</p>
           <p>Hospital Area: {matchedItem.hospitalArea}</p>
           <p>Hospital Address: {matchedItem.hospitalAddress}</p>
-          <button> Donate Now </button>
+          <button> Donate </button>
         </div>
       ) : (
         <p>No item found with the provided key.</p>

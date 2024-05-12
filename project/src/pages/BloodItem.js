@@ -18,7 +18,7 @@ function BloodItem({ key, name, description }) {
           <tr key={index}>
             <td>{item.name}</td>
             <button onClick={() => handleDetailsClick(item.id)}>
-              View Details
+              Details
             </button>
           </tr>
         ) : null

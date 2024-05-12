@@ -76,7 +76,7 @@ class Popup extends Component {
               Hide Details
             </button>
             <button className="detailButton_Popup" onClick={this.handleDonate}>
-              Donate Now
+              Donate
             </button>
           </div>
         </div>

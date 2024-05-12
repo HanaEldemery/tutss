@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BloodList } from "../Data/BloodList";
+import { BloodList } from "../lists/BloodList";
 import PopupHana from "../components/PopupHana";
 
 function BloodRequests() {

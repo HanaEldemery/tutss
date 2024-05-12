@@ -242,7 +242,7 @@ function DonationRequestss() {
                       onClick={() => viewDetails5(medicalSupplyItem.id)}
                       className="button-used"
                     >
-                      View Details
+                      Details
                     </button>
                   </div>
                 ))}
@@ -259,7 +259,7 @@ function DonationRequestss() {
                       onClick={() => viewDetails2(bloodItem.id)}
                       className="button-used"
                     >
-                      View Details
+                      Details
                     </button>
                   </div>
                 ))}
