@@ -415,7 +415,7 @@ function OrgReg() {
               </select>
             </div>
             <div className="input-wrapper">
-              <label htmlFor="email">Enter Email:</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="text"
                 id="email"

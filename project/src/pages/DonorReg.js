@@ -18,7 +18,6 @@ function DonorReg() {
   const [gender, setgender] = useState("");
   const [governorate, setgovernorate] = useState("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -54,187 +53,178 @@ function DonorReg() {
         if (!flag)
           switch (donorType) {
             case "normal":
-              switch(governorate) {
+              switch (governorate) {
                 case "Alexandria":
-                  case "Aswan":
-                  case "Asyut":
-                  case "Beheira":
-                  case "Beni Suef":
-                  case "Cairo":
-                  case "Dakahlia":
-                  case "Damietta":
-                  case "Faiyum":
-                  case "Gharbia":
-                  case "Giza":
-                  case "Ismailia":
-                  case "Kafr El Sheikh":
-                  case "Luxor":
-                  case "Matrouh":
-                  case "Minya":
-                  case "Monufia":
-                  case "New Valley":
-                  case "North Sinai":
-                  case "Port Said":
-                  case "Qalyubia":
-                  case "Qena":
-                  case "Red Sea":
-                  case "Sharqia":
-                  case "Sohag":
-                  case "South Sinai":
-                  case "Suez":
-                    switch(gender) {
-                      case "male":
-                      case "female":
-                        setPopupMessage(
-                          `Registeration Accepted by Admin; Redirecting you to your Home Page.`
-                        );
-                        setTimeout(() => {
-                          setPopupMessage("");
-                          window.location.href = "/CommonPagegeneral";
-                        }, 3000);
-                        break;
-                        default:
-                          setError("Please Choose your Gender");
-                        const clearError = () => {
-                          setError(null);
-                        };
-          
-                        setTimeout(clearError, 3000);
-                        break;
-                          
-                    }
-                    break;
-                  
-              default:
-                setError("Please Choose your Governorate");
-              const clearError = () => {
-                setError(null);
-              };
+                case "Aswan":
+                case "Asyut":
+                case "Beheira":
+                case "Beni Suef":
+                case "Cairo":
+                case "Dakahlia":
+                case "Damietta":
+                case "Faiyum":
+                case "Gharbia":
+                case "Giza":
+                case "Ismailia":
+                case "Kafr El Sheikh":
+                case "Luxor":
+                case "Matrouh":
+                case "Minya":
+                case "Monufia":
+                case "New Valley":
+                case "North Sinai":
+                case "Port Said":
+                case "Qalyubia":
+                case "Qena":
+                case "Red Sea":
+                case "Sharqia":
+                case "Sohag":
+                case "South Sinai":
+                case "Suez":
+                  switch (gender) {
+                    case "male":
+                    case "female":
+                      setPopupMessage(
+                        `Registeration Accepted by Admin; Redirecting you to your Home Page.`
+                      );
+                      setTimeout(() => {
+                        setPopupMessage("");
+                        window.location.href = "/CommonPagegeneral";
+                      }, 3000);
+                      break;
+                    default:
+                      setError("Please Choose your Gender");
+                      const clearError = () => {
+                        setError(null);
+                      };
 
-              setTimeout(clearError, 3000);
-              break;
+                      setTimeout(clearError, 3000);
+                      break;
+                  }
+                  break;
 
+                default:
+                  setError("Please Choose your Governorate");
+                  const clearError = () => {
+                    setError(null);
+                  };
+
+                  setTimeout(clearError, 3000);
+                  break;
               }
               break;
-              
-            case "doctor":
-                switch(governorate) {
-                  case "Alexandria":
-                    case "Aswan":
-                    case "Asyut":
-                    case "Beheira":
-                    case "Beni Suef":
-                    case "Cairo":
-                    case "Dakahlia":
-                    case "Damietta":
-                    case "Faiyum":
-                    case "Gharbia":
-                    case "Giza":
-                    case "Ismailia":
-                    case "Kafr El Sheikh":
-                    case "Luxor":
-                    case "Matrouh":
-                    case "Minya":
-                    case "Monufia":
-                    case "New Valley":
-                    case "North Sinai":
-                    case "Port Said":
-                    case "Qalyubia":
-                    case "Qena":
-                    case "Red Sea":
-                    case "Sharqia":
-                    case "Sohag":
-                    case "South Sinai":
-                    case "Suez":
-                      switch(gender) {
-                        case "male":
-                        case "female":
-                          window.location.href = "/doctorrole"
 
-                          break;
-                          default:
-                            setError("Please Choose your Gender");
-                          const clearError = () => {
-                            setError(null);
-                          };
-            
-                          setTimeout(clearError, 3000);
-                          break;
-                            ;
-                      }
+            case "doctor":
+              switch (governorate) {
+                case "Alexandria":
+                case "Aswan":
+                case "Asyut":
+                case "Beheira":
+                case "Beni Suef":
+                case "Cairo":
+                case "Dakahlia":
+                case "Damietta":
+                case "Faiyum":
+                case "Gharbia":
+                case "Giza":
+                case "Ismailia":
+                case "Kafr El Sheikh":
+                case "Luxor":
+                case "Matrouh":
+                case "Minya":
+                case "Monufia":
+                case "New Valley":
+                case "North Sinai":
+                case "Port Said":
+                case "Qalyubia":
+                case "Qena":
+                case "Red Sea":
+                case "Sharqia":
+                case "Sohag":
+                case "South Sinai":
+                case "Suez":
+                  switch (gender) {
+                    case "male":
+                    case "female":
+                      window.location.href = "/doctorrole";
+
                       break;
-              
-              default:
-                setError("Please Choose your Governorate");
-                const clearError = () => {
-                  setError(null);
-                };
-  
-                setTimeout(clearError, 3000);
-                break;
-  
-              
+                    default:
+                      setError("Please Choose your Gender");
+                      const clearError = () => {
+                        setError(null);
+                      };
+
+                      setTimeout(clearError, 3000);
+                      break;
+                  }
+                  break;
+
+                default:
+                  setError("Please Choose your Governorate");
+                  const clearError = () => {
+                    setError(null);
+                  };
+
+                  setTimeout(clearError, 3000);
+                  break;
               }
 
               break;
             case "teacher":
-              switch(governorate) {
+              switch (governorate) {
                 case "Alexandria":
-                  case "Aswan":
-                  case "Asyut":
-                  case "Beheira":
-                  case "Beni Suef":
-                  case "Cairo":
-                  case "Dakahlia":
-                  case "Damietta":
-                  case "Faiyum":
-                  case "Gharbia":
-                  case "Giza":
-                  case "Ismailia":
-                  case "Kafr El Sheikh":
-                  case "Luxor":
-                  case "Matrouh":
-                  case "Minya":
-                  case "Monufia":
-                  case "New Valley":
-                  case "North Sinai":
-                  case "Port Said":
-                  case "Qalyubia":
-                  case "Qena":
-                  case "Red Sea":
-                  case "Sharqia":
-                  case "Sohag":
-                  case "South Sinai":
-                  case "Suez":
-                    switch(gender) {
-                      case "male":
-                      case "female":
-                          window.location.href = "/teacherprobo"
-                        break;
-                        default:
-                          setError("Please Choose your Gender");
-                        const clearError = () => {
-                          setError(null);
-                        };
-          
-                        setTimeout(clearError, 3000);
-                        break;
-                          ;
-                    }
-                    break;
-            
-            default:
-              setError("Please Choose your Governorate");
-              const clearError = () => {
-                setError(null);
-              };
+                case "Aswan":
+                case "Asyut":
+                case "Beheira":
+                case "Beni Suef":
+                case "Cairo":
+                case "Dakahlia":
+                case "Damietta":
+                case "Faiyum":
+                case "Gharbia":
+                case "Giza":
+                case "Ismailia":
+                case "Kafr El Sheikh":
+                case "Luxor":
+                case "Matrouh":
+                case "Minya":
+                case "Monufia":
+                case "New Valley":
+                case "North Sinai":
+                case "Port Said":
+                case "Qalyubia":
+                case "Qena":
+                case "Red Sea":
+                case "Sharqia":
+                case "Sohag":
+                case "South Sinai":
+                case "Suez":
+                  switch (gender) {
+                    case "male":
+                    case "female":
+                      window.location.href = "/teacherprobono";
+                      break;
+                    default:
+                      setError("Please Choose your Gender");
+                      const clearError = () => {
+                        setError(null);
+                      };
 
-              setTimeout(clearError, 3000);
-              break;
+                      setTimeout(clearError, 3000);
+                      break;
+                  }
+                  break;
 
-            
-            }
+                default:
+                  setError("Please Choose your Governorate");
+                  const clearError = () => {
+                    setError(null);
+                  };
 
+                  setTimeout(clearError, 3000);
+                  break;
+              }
 
               break;
             default:
@@ -246,8 +236,6 @@ function DonorReg() {
               setTimeout(clearError, 3000);
               break;
           }
-        
-          
       } else {
         setError("Password Confirmation Failed");
         const clearError = () => {
@@ -396,7 +384,7 @@ function DonorReg() {
                 <option value="Suez">Suez</option>
               </select>
             </div>
-  
+
             <div className="input-wrapper">
               <label htmlFor="type">Your Role?:</label>
               <select
@@ -430,7 +418,7 @@ function DonorReg() {
             </div>
           )}
           {error && <p className="error">{error}</p>}
-  
+
           <Link to="/logindonor">
             <button className="back-button"> Back </button>
           </Link>
@@ -439,7 +427,6 @@ function DonorReg() {
       </div>
     </div>
   );
-  }
-  
-  export default DonorReg;
-  
+}
+
+export default DonorReg;

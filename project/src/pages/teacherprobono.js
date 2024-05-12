@@ -39,7 +39,9 @@ function TeacherProbono() {
       };
       setTimeout(clearError, 3000);
     } else if (privateTutoringClasses <= "0") {
-      setError("Please specify the number of Private Tutoring classes.");
+      setError(
+        "Please specify the number of students in your private Tutoring classes."
+      );
       const clearError = () => {
         setError(null);
       };
@@ -68,12 +70,7 @@ function TeacherProbono() {
           Please Upload a Teacher Authentication Certificate to Verify Your
           Profession
         </h2>
-        <input
-          type="file"
-          accept=".pdf"
-          onChange={handleFileChange}
-          className="inputForm"
-        />
+        <input type="file" accept=".pdf" onChange={handleFileChange} />
       </div>
       <div className="input-container">
         <Box
@@ -121,7 +118,7 @@ function TeacherProbono() {
             <br />
             <br />
             <label htmlFor="normal-classes">
-              # of Probono Cases You Are Ready to take:
+              # of Probono Classes you are Going to Teach:
             </label>
             <input
               id="normal-classes"
@@ -133,7 +130,7 @@ function TeacherProbono() {
             <br />
             <br />
             <label htmlFor="private-classes">
-              # of Probono Cases You Are Ready to take:
+              # of Students you can give Probono Private Tutoring:
             </label>
             <input
               id="private-classes"
@@ -145,7 +142,7 @@ function TeacherProbono() {
             <br />
             <br />
             <br />
-            {error && <p>{error}</p>}
+            {error && <p className="error">{error}</p>}
             <p>
               <Link to="/DonorReg">
                 <button className="donation-button">Back</button>
