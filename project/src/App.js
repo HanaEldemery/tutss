@@ -79,6 +79,12 @@ import Navbar2 from "./pages/NavBar";
 import TransportationSelection2 from "./pages/TransportationSelection2";
 import TransportationSelection3 from "./pages/TransportationSelection3";
 import "./styles/App.css";
+import Missionandvision from "./pages/Missionandvision";
+import Aboutus from "./pages/Aboutus";
+import LoginOrg from "./pages/LoginOrg";
+import LoginDonor from "./pages/LoginDonor";
+
+
 
 function App() {
   return (
@@ -86,6 +92,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
+        <Route exact path="/loginorg" element={<LoginOrg />} />
+          <Route exact path="/logindonor" element={<LoginDonor />} />
           <Route exact path="/" element={<Home />} />
           <Route
             exact
@@ -302,6 +310,9 @@ function App() {
             path="/TransportationSelection2"
             element={<TransportationSelection3 />}
           />
+          <Route path="/Missionandvision" exact element={<Missionandvision />} />
+
+<Route path="/Aboutus" exact element={<Aboutus />} />
         </Routes>
         <Footer />
       </Router>

@@ -431,7 +431,7 @@ function DonorReg() {
           )}
           {error && <p className="error">{error}</p>}
   
-          <Link to="/">
+          <Link to="/logindonor">
             <button className="back-button"> Back </button>
           </Link>
           <button className="button-used"> Register </button>

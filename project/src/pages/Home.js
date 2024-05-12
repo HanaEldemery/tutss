@@ -11,10 +11,10 @@ function Home() {
         <Link to="/adminlogin">
           <button> I am an Admin</button>
         </Link>
-        <Link to="/OrgReg">
+        <Link to="/loginorg">
           <button>I am an Organization</button>
         </Link>
-        <Link to="/DonorReg">
+        <Link to="/logindonor">
           <button>I am a Donor</button>
         </Link>
       </div>

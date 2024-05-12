@@ -555,7 +555,7 @@ function OrgReg() {
 
           {error && <p className="error">{error}</p>}
 
-          <Link to="/">
+          <Link to="/loginorg">
             <button className="back-button">Back</button>
           </Link>
           <button type="submit" className="donation-button">

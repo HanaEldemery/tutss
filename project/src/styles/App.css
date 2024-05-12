@@ -9,7 +9,8 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background-color: #f0e1ca;
+  background-color: #fff; /* Set background to white */
+  color: #000; /* Set text color to jet black */
 }
 
 .all {
@@ -21,7 +22,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #4b392f;
+  color: #050606;
   margin: 0;
   padding: 20px;
 }
@@ -34,7 +35,7 @@ h1.TEXT {
 .form .inputForm {
   margin: 10px;
   padding: 10px;
-  border: 1px solid #a8907d;
+  border: 1px solid #050606;
   border-radius: 5px;
   font-size: 16px;
   width: 200px;
@@ -54,7 +55,7 @@ h1.TEXT {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 20px;
   width: 200px;
@@ -62,7 +63,7 @@ h1.TEXT {
 }
 
 .table .search-button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 
 .table-wrapper {
@@ -101,19 +102,12 @@ button {
   margin-bottom: 20px;
 }
 
-/* .headerContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-} */
-
 .clothes-list,
 .schoolsup-list,
 .toys-list,
 .food-list,
 .medical-supplies-list,
-.blood-list,
-.medical-list {
+.blood-list {
   flex-basis: 30%;
 }
 
@@ -122,8 +116,7 @@ button {
 .toy-item,
 .food-item,
 .medical-supply-item,
-.blood-item,
-.medical-item {
+.blood-item {
   margin-bottom: 10px;
 }
 
@@ -158,21 +151,23 @@ button {
   margin-bottom: 20px;
 }
 
-.donate-button {
+.donate-button,
+.donation-button {
   padding: 10px 20px;
   border: none;
   padding: 5px 10px; /*SEIF SELIM ADDED*/
   border-radius: 5px; /*SEIF SELIM ADDED*/
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
   margin-right: 10px; /*SEIF SELIM ADDED*/
 }
 
-.donate-button:hover {
-  background-color: rgb(75, 57, 47);
+.donate-button:hover,
+.donation-button:hover {
+  background-color: #050606;
 }
 
 /* CSS for item containers */
@@ -180,43 +175,37 @@ button {
   margin-bottom: 20px;
 }
 
-.detail-button {
+.detail-button,
+.detail-button,
+.certificate-button,
+.seifbutton-donation,
+.seifbutton-donation,
+.seifbutton-donation {
   margin-top: 10px;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
-.detail-button:hover {
-  background-color: rgb(75, 57, 47);
-}
-
-/* CSS for buttons at the top */
-.donation-button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #a8907d;
-  color: white;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.donation-button:hover {
-  background-color: rgb(75, 57, 47);
+.detail-button:hover,
+.detail-button:hover,
+.certificate-button:hover,
+.seifbutton-donation:hover,
+.seifbutton-donation:hover,
+.seifbutton-donation:hover {
+  background-color: #050606;
 }
 
 /* CSS for search input */
-.search-input {
+.search-input,
+.inputForm {
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid #a8907d;
+  border: 1px solid #050606;
   border-radius: 5px;
   font-size: 16px;
   width: 200px;
@@ -245,49 +234,56 @@ button {
   margin-bottom: 10px;
 }
 
+.detail-button,
+.detail-button,
 .detail-button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
+.detail-button:hover,
+.detail-button:hover,
 .detail-button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 
 /* CSS for Popup components */
 
 /* Update the styles for Popup overlay */
-.popup-overlay {
+.popup-overlay,
+.seifpopup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 999; /* Ensure the overlay is on top of other content */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* Update the styles for Popup content */
-.popup-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  max-width: 80%;
-  max-height: 80%;
-  overflow: auto;
+.popup-content,
+.seifpopup-content {
+  background-color: #fff; /* White background */
+  padding: 20px; /* Padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow */
+  max-width: 80%; /* Maximum width */
+  max-height: 80%; /* Maximum height */
+  overflow: auto; /* Enable scrolling if content overflows */
 }
 
 /* Update the styles for popup images */
+.popup-image,
 .popup-image {
   max-width: 100%;
   max-height: 100%;
@@ -298,20 +294,14 @@ button {
 /* Additional styles for larger and better-looking input and option elements */
 input[type="text"],
 input[type="password"],
-select {
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid rgb(168, 144, 125);
-  width: 50%;
-  margin: 10px;
-}
-
+select,
 option {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  width: 99%;
+  border: 1px solid #FDFDFD;
+  width: 50%;
+  margin: 10px;
 }
 
 /* PopupACC.css */
@@ -321,7 +311,7 @@ option {
   max-height: 1010px;
   overflow: auto;
   padding: 20px;
-  background-color: rgb(240, 225, 202);
+  background-color: #ADB3BC;
   height: 1000px;
   width: 1000px;
   justify-content: center;
@@ -329,9 +319,34 @@ option {
 
   flex-direction: row;
 }
+/* App.css */
+
+/* Change button background color to black */
+.popupContainer button,
+.seifpopup-content button {
+  background-color: #000; /* Jet black */
+}
+
+/* Change button hover color to #ADB3BC */
+.popupContainer button:hover,
+.seifpopup-content button:hover {
+  background-color: #ADB3BC;
+}
+.popup-overlay button,
+.seifpopup-content button {
+  background-color: #000; /* Jet black */
+}
+
+/* Change button hover color to #ADB3BC */
+.popup-overlay button:hover,
+.seifpopup-content button:hover {
+  background-color: #ADB3BC;
+}
+
 
 /* Update the styles for Popup overlay */
-.popup-overlay {
+.popup-overlay,
+.seifpopup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -345,7 +360,8 @@ option {
 }
 
 /* Update the styles for Popup content */
-.popup-content {
+.popup-content,
+.seifpopup-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -359,7 +375,8 @@ option {
 }
 
 /* Update the styles for popup images */
-.popup-image {
+.popup-image,
+.seifpopup-image {
   max-width: 100%;
   max-height: 100%;
   width: auto;
@@ -387,7 +404,7 @@ option {
   font-size: 16px;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid rgb(168, 144, 125);
+  border: 1px solid #FDFDFD;
   width: 50%;
 }
 
@@ -397,14 +414,14 @@ option {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: rgb(168, 144, 125);
+  background-color: rgb(5, 6, 6);
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
 .textInputContainer button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: rgba(5, 6, 6,0.5);
 }
 
 .headerContainer {
@@ -449,14 +466,14 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 .input-wrapper {
   display: flex;
@@ -485,20 +502,20 @@ button {
 .iframe-container {
   display: flex;
   justify-content: center; /* Align items horizontally to the center */
-  color: #4b392f;
+  color: #050606;
 }
 .admin-don-req-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  color: #4b392f;
+  color: #050606;
 }
 
 .admin-don-req-heading {
   text-align: center;
   margin-bottom: 20px;
-  color: #4b392f;
+  color: #050606;
 }
 
 .donors-list {
@@ -506,7 +523,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  color: #4b392f;
+  color: #050606;
 }
 
 .donor-item {
@@ -516,7 +533,7 @@ button {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  color: #4b392f;
+  color: #050606;
 }
 
 .pdf-viewer {
@@ -525,7 +542,7 @@ button {
   overflow: auto;
   margin-top: 20px;
   padding: 10px;
-  color: #4b392f;
+  color: #050606;
 }
 
 .action-buttons {
@@ -553,26 +570,26 @@ button {
 }
 
 .accept-button {
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
 }
 
 .reject-button {
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
 }
 
 .certificate-button {
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
 }
 .accept-button:hover,
 .reject-button:hover,
 .certificate-button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 .seifhome {
-  color: rgb(75, 57, 47);
+  color: #050606;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -585,7 +602,7 @@ button {
 .seifhome-button {
   padding: 15px 30px; /* Increase padding */
   margin: 10px; /* Increase margin */
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   border: none;
   border-radius: 8px; /* Increase border radius */
@@ -600,7 +617,7 @@ button {
 
 /* Style the buttons on hover */
 .seifhome-button:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 
 .seifhome-button-container {
@@ -620,13 +637,13 @@ button {
   padding-right: 20px;
 }
 .details-popup {
-  background-color: #f0e1ca;
+  background-color: #FDFDFD;
   padding: 20px;
   border-radius: 8px;
 }
 
 .details-popup h2 {
-  color: #4b392f;
+  color: #050606;
   font-family: Montserrat, sans-serif;
 }
 
@@ -638,7 +655,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
@@ -657,14 +674,14 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #a8907d;
+  background-color: #050606;
   color: white;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
 
 .seifbutton-donation:hover {
-  background-color: rgb(75, 57, 47);
+  background-color: #050606;
 }
 
 /* Additional style for bigger buttons */
@@ -676,7 +693,7 @@ button {
 
 /* Style the submit button */
 .seifbutton-donation[type="submit"] {
-  background-color: #4b392f; /* Change background color for submit button */
+  background-color: #050606; /* Change background color for submit button */
 }
 
 .seifbutton-donation[type="submit"]:hover {
@@ -690,14 +707,14 @@ button {
   border: none; /* Remove button border */
   border-radius: 5px; /* Add border radius for rounded corners */
   cursor: pointer; /* Change cursor to pointer on hover */
-  background-color: #a8907d; /* Button background color */
+  background-color: #050606; /* Button background color */
   color: white; /* Button text color */
   font-size: 16px; /* Button text size */
   transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .seifpopup-content button:hover {
-  background-color: rgb(75, 57, 47); /* Darker background color on hover */
+  background-color: #050606; /* Darker background color on hover */
 }
 
 /* Add these styles to your App.css */
@@ -727,7 +744,7 @@ button {
 
 .seifpopup-content button.back-button {
   background-color: white; /* Set background color to white */
-  color: #a8907d; /* Set text color to the original color */
+  color: #050606; /* Set text color to the original color */
 }
 
 .seifpopup-overlay {
@@ -774,8 +791,124 @@ button {
   width: 200px; /* Adjust the width as needed */
 }
 
-/* clothesPopup.module.css */
 
+.missionAndVision {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.missionAndVision h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.missionAndVision p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.missionAndVision .mission {
+  margin-bottom: 40px;
+}
+
+.missionAndVision .vision {
+  margin-top: 40px;
+  border-top: 2px solid #ccc;
+  padding-top: 40px;
+}
+.popup-content button,
+.seifpopup-content button {
+  margin: 10px; /* Add some margin around the buttons */
+  padding: 10px 20px; /* Add padding to the buttons */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #000; /* Jet black button background color */
+  color: #fff; /* White button text color */
+  font-size: 16px; /* Button text size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+.popup-content button:hover,
+.seifpopup-content button:hover {
+  background-color: #050606; /* Darker background color on hover */
+}
+
+
+.table .search-button:hover,
+.donate-button:hover,
+.donation-button:hover,
+.detail-button:hover,
+.certificate-button:hover,
+.seifbutton-donation:hover,
+.seifhome-button:hover,
+.popup-content button:hover,
+.seifpopup-content button:hover {
+  background-color: #adb3bc;
+}
+
+/* Change button color from khaki to jet black */
+.button-used,
+.back-button,
+.accept-button,
+.reject-button,
+.certificate-button,
+.seifbutton-donation,
+.seifhome-button,
+.popup-content button,
+.seifpopup-content button {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Change text color that is "carafe" to jet black */
+/* You mentioned that "carafe" text color is #050606 */
+/* So, changing #050606 to jet black (#000) */
+.all,
+.containsContainer,
+.admin-don-req-container,
+.donor-item,
+.headerContainer h1,
+.missionAndVision h2,
+.missionAndVision p {
+  color: #000;
+}
+
+/* App.css */
+
+/* Change any heading with color "carafe" to jet black */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000; /* Jet black */
+}
+
+
+.image {
+  margin-top: 20px;
+}
+
+
+.image img {
+  max-width: 350px; /* Adjust the width as needed */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.caption {
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+}
+
+
+
+/*adhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaam---------------------------------------*/
 .popupBackground_clothesPopup {
   position: fixed;
   top: 0;
@@ -887,15 +1020,15 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(240, 225, 202);
+  background-color: #ADB3BC;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: auto; /* Enable scrolling */
 }
 
-.popupContainer_MedicalPopup {
-  background-color: rgba(255, 255, 255);
+.popupContainer_MedicalPopup { 
+  background-color:white ;
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -907,12 +1040,12 @@ button {
 }
 
 .popupContainer_MedicalPopup h1 {
-  color: #4b392f;
+  color: #050606;
   text-align: center;
 }
 
 .popupContainer_MedicalPopup p {
-  color: #4b392f;
+  color: #050606;
   text-align: center;
   margin: 10px 0;
 }
@@ -945,7 +1078,7 @@ button {
 
 .popupContainer_MedicalPopup button {
   color: white;
-  background-color: #a8907d;
+  background-color: #050606;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -954,7 +1087,7 @@ button {
 }
 
 .popupContainer_MedicalPopup button:hover {
-  background-color: #4b392f;
+  background-color: #ADB3BC;
 }
 
 .popupContainer_MedicalPopup .popupDetailsButton {
