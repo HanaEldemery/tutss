@@ -35,11 +35,11 @@ function TransportationSelection({ closePopup }) {
 
       // Show notifications sequentially
       setTimeout(() => {
-        setPopupMessage("A driver has accepted your order!"); // New notification
+        setPopupMessage("A driver has accepted your request"); // New notification
         setTimeout(() => {
-          setPopupMessage("Estimated Delivery Time: 2 days");
+          setPopupMessage("Estimated Arrival Time: 7 mins");
           setTimeout(() => {
-            setPopupMessage("Your order has been delivered!");
+            setPopupMessage("Your driver has arrived!");
             setTimeout(() => {
               closePopup(false);
             }, 3000);
@@ -52,11 +52,11 @@ function TransportationSelection({ closePopup }) {
   useEffect(() => {
     if (showConfirmation) {
       setTimeout(() => {
-        setPopupMessage("A driver has accepted your order!");
+        setPopupMessage("A driver has accepted your request");
         setTimeout(() => {
-          setPopupMessage("Estimated Delivery Time: 2 days");
+          setPopupMessage("Estimated Arrival Time: 7 mins");
           setTimeout(() => {
-            setPopupMessage("Your order has been delivered!");
+            setPopupMessage("Your driver has arrived!");
             setTimeout(() => {
               closePopup(false);
             }, 3000);
@@ -87,7 +87,10 @@ function TransportationSelection({ closePopup }) {
       )}
       <h2>Transportation Selection for Donation Pickup</h2>
       <div className="dropdown-container">
-        <label htmlFor="vehicle-select">Choose a vehicle:<br/></label>
+        <label htmlFor="vehicle-select">
+          Choose a vehicle:
+          <br />
+        </label>
         <select
           id="vehicle-select"
           value={selectedVehicle}
@@ -104,7 +107,10 @@ function TransportationSelection({ closePopup }) {
 
       {selectedVehicle && (
         <div className="dropdown-container">
-          <label htmlFor="time-slot-select">Choose a time slot:<br/></label>
+          <label htmlFor="time-slot-select">
+            Choose a time slot:
+            <br />
+          </label>
           <select
             id="time-slot-select"
             value={selectedTimeSlot}
@@ -130,4 +136,3 @@ function TransportationSelection({ closePopup }) {
 }
 
 export default TransportationSelection;
-

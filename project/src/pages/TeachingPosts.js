@@ -47,42 +47,32 @@ function TeachingPosts() {
     }
   };
 
+  const viewDetails = (teacherItemId) => {
+    setShowTeacherPopup(true);
+    setClickedTeacherId(teacherItemId);
+  };
+
   return (
     <div className="home">
       <div className="headerContainer">
         <FilterTeaching filters={filters} onFilterChange={handleFilterChange} />
         <div className="menu">
           <div className="menuList">
-            {filteredProductList.map((TeacherItem) => (
+            {filteredProductList.map((teacherItem) => (
               <div
-                key={TeacherItem.id}
+                key={teacherItem.id}
                 className="menuItem"
-                onClick={() => toggleDetails(TeacherItem.id)}
+                onClick={() => viewDetails(teacherItem.id)}
               >
-                {showDetailsId === TeacherItem.id && (
-                  <div className="popup-overlay">
-                    <div className="popup-content">
-                      <TeacherPopup
-                        closePopup={() => setShowDetailsId(null)}
-                        theKey={TeacherItem.id}
-                        showDonateOptions={showDonateOptions}
-                        setShowDonateOptions={setShowDonateOptions}
-                        handleDonate={handleDonate}
-                      />
-                    </div>
-                  </div>
-                )}
-                {!showDetailsId && (
-                  <div className="item-container">
-                    <div
-                      className="menuImage"
-                      style={{
-                        backgroundImage: `url(${TeacherItem.image})`,
-                      }}
-                    />
-                    <p>{TeacherItem.Subject}</p>
-                  </div>
-                )}
+                <div className="item-container">
+                  <div
+                    className="menuImage"
+                    style={{
+                      backgroundImage: `url(${teacherItem.image})`,
+                    }}
+                  />
+                  <p>{teacherItem.Subject}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -95,12 +85,12 @@ function TeachingPosts() {
               handleDonate={handleDonate}
             />
           )}
+          {!showTeacherPopup && !showDetailsId && (
+            <Link to="/DonationRequest" className="button-link">
+              <button className="back-button">Back</button>
+            </Link>
+          )}
         </div>
-        {!showTeacherPopup && !showDetailsId && (
-          <Link to="/DonationRequest" className="button-link">
-            <button className="back-button">Back</button>
-          </Link>
-        )}
       </div>
     </div>
   );

@@ -28,10 +28,18 @@ function MedicalPopup({
     setShowDonatePopup(false); // Close the donation confirmation popup
   };
 
-  return (
+  return showTransportationSelection ? (
+    <div className="popup-overlay">
+      <div className="popup-content">
+        <TransportationSelection2
+          closePopup={() => setShowTransportationSelection(false)}
+        />
+      </div>
+    </div>
+  ) : (
     <div className="popupBackground_MedicalPopup">
-    <div className="popupContainer_MedicalPopup">
-      <div className="popupBody">
+      <div className="popupContainer_MedicalPopup">
+        <div className="popupBody">
           <h1>{matchedItem.Patient_Name}</h1>
           <p>Age: {matchedItem.Age}</p>
           <p>Gender: {matchedItem.Gender}</p>
@@ -49,8 +57,15 @@ function MedicalPopup({
           )}
         </div>
         <div className="footer_clothesPopup">
-        <button className="detailButton_clothesPopup" onClick={closePopup}>Hide Details</button>
-        <button className="detailButton_clothesPopup" onClick={() => setShowDonatePopup(true)}>Donate</button>
+          <button className="detailButton_clothesPopup" onClick={closePopup}>
+            Hide Details
+          </button>
+          <button
+            className="detailButton_clothesPopup"
+            onClick={() => setShowDonatePopup(true)}
+          >
+            Donate
+          </button>
         </div>
       </div>
       {showDonatePopup && (
@@ -59,17 +74,9 @@ function MedicalPopup({
           handleRide={handleRide}
         />
       )}
-      {showTransportationSelection && (
-        <TransportationSelection2
-          closePopup={() => setShowTransportationSelection(false)}
-        />
-      )}
+
       {donationConfirmed && (
-        <div
-          className="popupConfirmationMessage"
-        >
-          Donation Confirmed
-        </div>
+        <div className="popupConfirmationMessage">Donation Confirmed</div>
       )}
     </div>
   );

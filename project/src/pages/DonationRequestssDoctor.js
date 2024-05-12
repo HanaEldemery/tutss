@@ -13,11 +13,11 @@ import { MedicalData } from "../Data/MedicalData";
 import { ToysList } from "../lists/ToysList";
 import { FoodList } from "../lists/FoodList";
 import { MedicalSuppliesList } from "../lists/MedicalSuppliesList";
-import TeacherPopup from "../Popups/TeacherPopup";
+import MedicalPopup from "../Popups/MedicalPopup";
 
 function DonationRequestssDoctor() {
-  const [showTeacherPopup, setShowTeacherPopup] = useState(false);
-  const [clickedTeacherId, setClickedTeacherId] = useState(null);
+  const [showMedicalPopup, setShowMedicalPopup] = useState(false);
+  const [clickedMedicalId, setClickedMedicalId] = useState(null);
   const [showPopup1, setShowPopup1] = useState(false);
   const [clickedId1, setClickedId1] = useState("");
 
@@ -70,9 +70,9 @@ function DonationRequestssDoctor() {
     ? filterList(MedicalData)
     : MedicalData;
 
-  const viewTeacherDetails = (id) => {
-    setShowTeacherPopup(true);
-    setClickedTeacherId(id);
+  const viewMedicalDetails = (id) => {
+    setShowMedicalPopup(true);
+    setClickedMedicalId(id);
   };
 
   const viewDetails1 = (schoolsupItem) => {
@@ -128,14 +128,10 @@ function DonationRequestssDoctor() {
       <div className="headerContainer">
         <div className="button-container-top">
           <Link to="/SchoolSuppliesDonationsDoctor">
-            <button className="sdonate-button">
-              School Supplies Requests
-            </button>
+            <button className="sdonate-button">School Supplies Requests</button>
           </Link>
           <Link to="/ClothingRequestsDoctor">
-            <button className="sdonate-button">
-              Clothing Requests
-            </button>
+            <button className="sdonate-button">Clothing Requests</button>
           </Link>
           <Link to="/toysRequestsDoctor">
             <button className="sdonate-button">Toy Requests</button>
@@ -143,9 +139,8 @@ function DonationRequestssDoctor() {
           <Link to="/foodRequestsDoctor">
             <button className="sdonate-button">Food Requests</button>
           </Link>
-          </div>
-          <div className="button-container-top">
-
+        </div>
+        <div className="button-container-top">
           <Link to="/medicalSuppliesRequestsDoctor">
             <button className="sdonate-button">
               Medical Supplies Requests
@@ -211,12 +206,12 @@ function DonationRequestssDoctor() {
               <BloodPopup closePopup={setShowPopup2} theKey={clickedId2} />
             </div>
           </div>
-        ) : showTeacherPopup ? (
+        ) : showMedicalPopup ? (
           <div className="popup-overlay">
             <div className="popup-content">
-              <TeacherPopup
-                closePopup={() => setShowTeacherPopup(false)}
-                theKey={clickedTeacherId}
+              <MedicalPopup
+                closePopup={() => setShowMedicalPopup(false)}
+                theKey={clickedMedicalId}
                 showDonateOptions={showDonateOptions}
                 setShowDonateOptions={setShowDonateOptions}
                 handleDonate={handleDonate}
@@ -333,7 +328,7 @@ function DonationRequestssDoctor() {
                 <div
                   key={MedicalItem.id}
                   className="menuItem"
-                  onClick={() => viewTeacherDetails(MedicalItem.id)}
+                  onClick={() => viewMedicalDetails(MedicalItem.id)}
                 >
                   <div className="item-container">
                     <div

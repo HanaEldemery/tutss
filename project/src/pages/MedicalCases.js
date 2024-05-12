@@ -46,42 +46,32 @@ function MedicalCases() {
     }
   };
 
+  const viewDetails = (medicalItemId) => {
+    setShowMedicalPopup(true);
+    setClickedMedicalId(medicalItemId);
+  };
+
   return (
     <div className="home">
       <div className="headerContainer">
         <FilterMedical filters={filters} onFilterChange={handleFilterChange} />
         <div className="menu">
           <div className="menuList">
-            {filteredProductList.map((MedicalItem) => (
+            {filteredProductList.map((medicalItem) => (
               <div
-                key={MedicalItem.id}
+                key={medicalItem.id}
                 className="menuItem"
-                onClick={() => toggleDetails(MedicalItem.id)}
+                onClick={() => viewDetails(medicalItem.id)}
               >
-                {showDetailsId === MedicalItem.id && (
-                  <div className="popup-overlay">
-                    <div className="popup-content">
-                      <MedicalPopup
-                        closePopup={() => setShowDetailsId(null)}
-                        theKey={MedicalItem.id}
-                        showDonateOptions={showDonateOptions}
-                        setShowDonateOptions={setShowDonateOptions}
-                        handleDonate={handleDonate}
-                      />
-                    </div>
-                  </div>
-                )}
-                {!showDetailsId && (
-                  <div className="item-container">
-                    <div
-                      className="menuImage"
-                      style={{
-                        backgroundImage: `url(${MedicalItem.image})`,
-                      }}
-                    />
-                    <p>{MedicalItem.Patient_Name}</p>
-                  </div>
-                )}
+                <div className="item-container">
+                  <div
+                    className="menuImage"
+                    style={{
+                      backgroundImage: `url(${medicalItem.image})`,
+                    }}
+                  />
+                  <p>{medicalItem.Patient_Name}</p>
+                </div>
               </div>
             ))}
           </div>
