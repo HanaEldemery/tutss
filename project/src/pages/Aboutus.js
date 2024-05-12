@@ -11,7 +11,7 @@ function Aboutus() {
           <div className="content">
             <h1>About Us</h1>
             <p>
-              Welcome to HASSAH, where passion meets purpose. Founded on the principles of compassion and community, we strive to make a meaningful difference in the world. Our mission is to [briefly describe your mission/goal], empowering individuals to join us in creating positive change.
+              Welcome to HASSAH, where passion meets purpose. Founded on the principles of compassion and community, we strive to make a meaningful difference in the world. Our mission is to empower individuals to join us in creating positive change.
               <br />
               <br />
               At HASSAH, we envision a world where every act of kindness contributes to a brighter future. With dedication and determination, we're committed to harnessing the collective power of individuals, communities, and partners to address pressing social and environmental challenges. Through strategic partnerships and innovative solutions, we aim to maximize the impact of every donation and initiative. Transparency and accountability are at the core of our operations, ensuring that resources are efficiently allocated and outcomes are measurable.
