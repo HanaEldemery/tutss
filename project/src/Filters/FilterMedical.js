@@ -33,10 +33,8 @@ const FilterMedical = ({ filters, onFilterChange }) => {
           onChange={(e) => onFilterChange("Medical_Specialty", e.target.value)}
           value={filters["Medical_Specialty"] || "default"}
         >
-          <option value="default" disabled>
-            Select Medical Specialty
-          </option>
-          <option value="all">All</option>
+         
+          <option value="all">All Medical Speciality</option>
           {medicalSpecialties.map((spec) => (
             <option key={spec} value={spec}>
               {spec}
@@ -49,10 +47,8 @@ const FilterMedical = ({ filters, onFilterChange }) => {
           onChange={(e) => onFilterChange("Organization_Name", e.target.value)}
           value={filters["Organization_Name"] || "default"}
         >
-          <option value="default" disabled>
-            Select Organization
-          </option>
-          <option value="all">All</option>
+        
+          <option value="all">All Organization</option>
           {organizationNames.map((org) => (
             <option key={org} value={org}>
               {org}
@@ -65,10 +61,8 @@ const FilterMedical = ({ filters, onFilterChange }) => {
           onChange={(e) => onFilterChange("Area", e.target.value)}
           value={filters["Area"] || "default"}
         >
-          <option value="default" disabled>
-            Select Area
-          </option>
-          <option value="all">All</option>
+      
+          <option value="all">All Area</option>
           {areas.map((area) => (
             <option key={area} value={area}>
               {area}
@@ -81,10 +75,7 @@ const FilterMedical = ({ filters, onFilterChange }) => {
           onChange={(e) => onFilterChange("Governorate", e.target.value)}
           value={filters["Governorate"] || "default"}
         >
-          <option value="default" disabled>
-            Select Governorate
-          </option>
-          <option value="all">All</option>
+          <option value="all">All Governorate</option>
           {governorates.map((gov) => (
             <option key={gov} value={gov}>
               {gov}
