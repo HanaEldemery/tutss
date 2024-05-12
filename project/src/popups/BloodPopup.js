@@ -13,10 +13,9 @@ function Popup({ closePopup, theKey }) {
   };
 
   return (
-     <div className="popupBackground_clothesPopup">
-      <div className="popupContainer_clothesPopup">
-        <div className="title_clothesPopup"></div>
-        <div className="body_clothesPopup">
+    <div className="popupBackground_MedicalPopup">
+    <div className="popupContainer_MedicalPopup">
+      <div className="popupBody">
           <h1>{matchedItem.name}</h1>
           <p>Patient Name: {matchedItem.patientName}</p>
           <p>Blood Type: {matchedItem.bloodType}</p>
