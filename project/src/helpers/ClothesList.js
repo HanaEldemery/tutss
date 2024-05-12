@@ -14,7 +14,7 @@ export const ClothesList = [
     Age: "2",
     Gender: "Male",
     Season: "Summer",
-    Material: "jeans",
+    Material: "Jeans",
     Quantity: 3,
     image: Jeans,
     xyz: "Clothes",

@@ -54,8 +54,6 @@ class ClothesPopup extends Component {
         <div className="popupContainer_MedicalPopup">
           <div className="popupBody">
             <h1>{matchedItem.name}</h1>
-            <p>Clothes Type NOW: {matchedItem.type}</p>
-            <p>Name: {matchedItem.name}</p>
             <p>Type: {matchedItem.type}</p>
             <p>Age: {matchedItem.Age}</p>
             <p>Gender: {matchedItem.Gender}</p>

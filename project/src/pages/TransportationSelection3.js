@@ -9,8 +9,8 @@ function TransportationSelection({ closePopup }) {
   const [popupMessage, setPopupMessage] = useState(""); // State for popup notifications
 
   const vehicles = {
-    Truck: ["9:00 AM - 11:00 AM", "1:00 PM - 3:00 PM"],
-    Car: ["10:00 AM - 12:00 PM", "2:00 PM - 4:00 PM"],
+    Truck: ["9:00 AM - 11:00 AM", "1:00 PM - 3:00 PM", "4:00 PM - 6:00PM"],
+    Car: ["10:00 AM - 12:00 PM", "1:00 PM - 3:00 PM", "2:00 PM - 4:00 PM"],
     Motorcycle: ["11:00 AM - 1:00 PM", "3:00 PM - 5:00 PM"],
   };
 
@@ -85,7 +85,7 @@ function TransportationSelection({ closePopup }) {
           {popupMessage}
         </div>
       )}
-      <h2>Transportation Selection for Donation Pickup</h2>
+      <h2>Transportation Selection for Teacher Pickup</h2>
       <div className="dropdown-container">
         <label htmlFor="vehicle-select">
           Choose a vehicle:

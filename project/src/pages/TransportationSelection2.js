@@ -85,7 +85,7 @@ function TransportationSelection({ closePopup }) {
           {popupMessage}
         </div>
       )}
-      <h2>Transportation Selection for Donation Pickup</h2>
+      <h2>Transportation Selection for Doctor Pickup</h2>
       <div className="dropdown-container">
         <label htmlFor="vehicle-select">
           Choose a vehicle:
