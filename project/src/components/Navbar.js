@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Logo from "../images/logo.PNG";
 
 import { Link } from "react-router-dom"; // Import Link from React Router
-import { HelpOutline, HomeOutlined } from "@mui/icons-material"; // Import icons from Material-UI Icons
+import { HelpOutline, HomeOutlined, Visibility } from "@mui/icons-material"; // Import icons from Material-UI Icons
 import "../styles/NavBar.css";
 
 function Navbar() {
@@ -22,17 +22,19 @@ function Navbar() {
       <div className="rightSide">
         {/* Use HomeOutlined icon for home button */}
         <Link to="/" className="navLink">
-          <button className="toggleButton">
+          <button className="toggleButton" title="Home Page">
             <HomeOutlined />
           </button>
         </Link>
         <Link to="/Missionandvision" className="navLink">
-          {/* Create a button for Mission and Vision */}
-          <button className="toggleButton">Mission and Vision</button>
+          {/* Use Visibility icon for Mission and Vision */}
+          <button className="toggleButton" title="Mission and Vision">
+            <Visibility />
+          </button>
         </Link>
         {/* Use HelpOutline icon for toggle button */}
         <Link to="/AboutUs" className="navLink">
-          <button onClick={toggleNavbar} className="toggleButton">
+          <button onClick={toggleNavbar} className="toggleButton" title="About Us">
             <HelpOutline />
           </button>
         </Link>
