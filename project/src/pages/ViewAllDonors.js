@@ -45,11 +45,11 @@ function Search({ closePopup }) {
 
   return (
     <div className="home">
-      <h1>Donors</h1>
-      <div className="menu">
-        {popupFlag ? null : (
-          <Container>
-            <Table className="table">
+      <div className="headerContainer">
+        <h1>Donors</h1>
+        <div className="menu">
+          {popupFlag ? null : (
+            <div className="table">
               <div className="menuList">
                 {filteredData.map((item, index) => (
                   <div key={index} className="menuItem">
@@ -88,17 +88,18 @@ function Search({ closePopup }) {
                   </div>
                 ))}
               </div>
-            </Table>
-          </Container>
-        )}
+            </div>
+          )}
 
-        {popupFlag && (
-          <DetailsDonor theKey={selectedItemId} closePopup={setPopupFlag} />
-        )}
+          {popupFlag && (
+            <DetailsDonor theKey={selectedItemId} closePopup={setPopupFlag} />
+          )}
+        </div>
+        <br />
+        <button onClick={handleRedirect} className="donation-button">
+          Back
+        </button>
       </div>
-      <button onClick={handleRedirect} className="donation-button">
-        Back
-      </button>
     </div>
   );
 }

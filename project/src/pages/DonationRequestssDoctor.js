@@ -143,14 +143,8 @@ function DonationRequestssDoctor() {
           <Link to="/foodRequestsDoctor">
             <button className="sdonate-button">View All Food Requests</button>
           </Link>
-<<<<<<< Updated upstream
-          </div>
-          <div className="button-container-top">
 
-          <Link to="/medicalSuppliesRequestsTeacher">
-=======
           <Link to="/medicalSuppliesRequestsDoctor">
->>>>>>> Stashed changes
             <button className="sdonate-button">
               View All Medical Supplies Requests
             </button>
@@ -174,7 +168,8 @@ function DonationRequestssDoctor() {
             borderRadius: "5px", // Add border radius for rounded corners
             padding: "8px", // Add padding for better appearance
             width: "50%", // Set width to fill the container
-          }}        />
+          }}
+        />
         {showPopup ? (
           <div className="popup-overlay">
             <div className="popup-content">
